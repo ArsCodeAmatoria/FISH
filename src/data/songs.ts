@@ -5,6 +5,7 @@ export interface Song {
   description: string;
   image: string;
   audioSrc: string;
+  writtenBy?: string;
 }
 
 export const songs: Song[] = [
@@ -14,6 +15,7 @@ export const songs: Song[] = [
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/zuri.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Fish (Intro).wav",
   },
   {
@@ -22,6 +24,7 @@ export const songs: Song[] = [
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/zuri.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Fish (2).wav",
   },
   {
@@ -30,6 +33,7 @@ export const songs: Song[] = [
     singers: "Ripple & Chorus",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/sets/Kojin_Fox_Tugboat_on_the_Bayou_at_night_--v_7_8daf94d2-426f-48fb-b785-b6e35ea04de6_2.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/ECHO IN THE WATER.wav",
   },
   {
@@ -38,6 +42,7 @@ export const songs: Song[] = [
     singers: "Captain Beignet",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/sets/Kojin_Fox_60s_retro_poster_of_a_Creole_Band_Stage_in_a_Fishin_d40b13de-c33f-44a5-ae74-a644deec40bb_0.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/ALIEN GROOVE.wav",
   },
   {
@@ -46,6 +51,7 @@ export const songs: Song[] = [
     singers: "Pants",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/pants.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Glazed.wav",
   },
   {
@@ -54,6 +60,7 @@ export const songs: Song[] = [
     singers: "Ensemble",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/sets/Kojin_Fox_disney_shot_of_a_fishing_town_dock_and_boats_downto_820f0e62-c360-4ecb-a446-44efe821e2b2_0.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Bank (River Z).wav",
   },
   {
@@ -62,6 +69,7 @@ export const songs: Song[] = [
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/sets/Kojin_Fox_Creole_Fishing_town_on_a_River._3D_Pixar_Disney_Sty_e6e098ed-7798-4c2b-a537-1d05737f282c_3.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/FLOW ON.wav",
   },
   {
@@ -70,6 +78,7 @@ export const songs: Song[] = [
     singers: "Ade",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/ade.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Quiet River (Creole Version).wav",
   },
   {
@@ -78,6 +87,7 @@ export const songs: Song[] = [
     singers: "Holly",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/holly.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/Keys to the Block.wav",
   },
   {
@@ -86,6 +96,7 @@ export const songs: Song[] = [
     singers: "Holly & Ensemble",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/holly.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/STARS OVER THE BLOCK (2).wav",
   },
   {
@@ -94,6 +105,7 @@ export const songs: Song[] = [
     singers: "Mama Sabine & Pants",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/pants.png",
+    writtenBy: "Leigh Akin",
     audioSrc: "/songs/THE GIRL WHO SHIT HER PANTS (7).wav",
   },
 ];

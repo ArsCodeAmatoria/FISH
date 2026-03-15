@@ -182,6 +182,14 @@ export function LyricsSection({ openCharacter }: Props) {
                   <Mic2 className="size-3" />
                   {song.singers}
                 </p>
+                {song.writtenBy && (
+                  <p
+                    className="mt-0.5 text-[10px] text-white/35"
+                    style={{ fontFamily: "var(--font-screenplay)" }}
+                  >
+                    Written by {song.writtenBy}
+                  </p>
+                )}
               </div>
             </div>
 
