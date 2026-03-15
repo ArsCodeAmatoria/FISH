@@ -27,7 +27,7 @@ export const characters: Character[] = [
     description:
       "Zuri's father and a hardworking fisherman who runs the boat Mama Amara, named after his late wife. He represents grief and responsibility — he believes music caused tragedy but eventually finds the strength to support Zuri.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
-    image: "/characters/trumpet.png",
+    image: "/characters/father.png",
     songIds: ["bank-river-z"],
   },
   {
@@ -37,7 +37,7 @@ export const characters: Character[] = [
     description:
       "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. He introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
-    image: "/characters/father.png",
+    image: "/characters/trumpet.png",
     songIds: ["quiet-river", "fish-2", "bank-river-z"],
   },
   {
