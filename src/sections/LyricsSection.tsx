@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Play, Pause, Music2, Mic2, Users } from "lucide-react";
 import { songs } from "@/data/songs";
 import { characters } from "@/data/characters";
+import { crew } from "@/data/crew";
 import { allLyrics } from "@/data/lyrics";
 import { cn } from "@/lib/utils";
 
@@ -376,22 +377,38 @@ export function LyricsSection({ openCharacter }: Props) {
             );
           })()}
 
-          {/* Song description */}
-          <div>
-            <div className="h-px w-full bg-white/8 mb-5" />
-            <p
-              className="text-[10px] uppercase tracking-[0.25em] text-white/55 mb-2"
-              style={{ fontFamily: "var(--font-cinematic)" }}
-            >
-              About
-            </p>
-            <p
-              className="text-[11px] leading-relaxed text-white/70"
-              style={{ fontFamily: "var(--font-screenplay)" }}
-            >
-              {song.description}
-            </p>
-          </div>
+          {/* Written by */}
+          {song.writtenBy && (() => {
+            const writer = crew.find((m) => m.name === song.writtenBy);
+            return (
+              <div>
+                <div className="h-px w-full bg-white/8 mb-5" />
+                <p
+                  className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/55"
+                  style={{ fontFamily: "var(--font-cinematic)" }}
+                >
+                  Written By
+                </p>
+                <div className="flex items-center gap-2.5 rounded-xl p-1.5">
+                  {writer && (
+                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
+                      <Image src={writer.image} alt={writer.name} fill className="object-cover object-top" sizes="36px" />
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <p className="truncate text-[11px] font-medium text-white/85" style={{ fontFamily: "var(--font-cinematic)" }}>
+                      {song.writtenBy}
+                    </p>
+                    {writer && (
+                      <p className="mt-0.5 truncate text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>
+                        {writer.role}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
 
