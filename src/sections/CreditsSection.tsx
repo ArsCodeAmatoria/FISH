@@ -336,7 +336,7 @@ export function CreditsSection() {
           </div>
 
           {/* ── Song player bar ────────────────────────────────── */}
-          <div className="relative z-20 mx-4 mb-2 shrink-0 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md">
+          <div className="relative z-20 mx-4 mb-20 shrink-0 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-md">
             <div className="flex items-center gap-3">
               {/* Album art */}
               <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
