@@ -25,7 +25,7 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "A hardworking fisherman who owns a small boat called Mama Amara, named after his late wife. Protective, disciplined, and deeply loyal to the fishing community. After losing his wife during a storm connected to a music performance, he developed a fear that music leads to danger — and forbids Zuri from singing publicly, believing he is protecting her. Beneath his stern exterior is a loving father who struggles with unresolved grief. His arc is learning that protecting Zuri means allowing her to become who she truly is. Speaks little, but when he does, people listen.",
+      "A hardworking fisherman and Zuri's father — disciplined, protective, and quietly grieving. He lost his wife in a storm tied to a music event and has kept Zuri from singing ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
     songIds: ["quiet-river"],
@@ -35,7 +35,7 @@ export const characters: Character[] = [
     name: "Louis",
     role: "Musical Mentor",
     description:
-      "An old jazz musician who spends his days wandering the docks with a battered trumpet. He sees music everywhere and believes rhythm connects generations, cultures, and stories — where others hear noise, he hears harmony. Louis immediately recognises Zuri's gift and gently encourages her to explore music without pushing too hard. He teaches her the idea of the Wheel of Groove — how rhythms travel across time and people. Laughs like he already knows the punchline to life.",
+      "An old jazz musician wandering the docks with a battered trumpet. He hears harmony where others hear noise, and immediately recognises Zuri's gift. He introduces her to the Wheel of Groove — the idea that rhythm connects all people across time.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
     songIds: [],
@@ -45,7 +45,7 @@ export const characters: Character[] = [
     name: "Mama Sabine",
     role: "Spiritual Guide",
     description:
-      "Owner of a mysterious shop filled with candles, shells, records, wind chimes, and handmade charms. Wise, calm, and slightly mystical — but never intimidating. She often speaks in poetic metaphors. Mama Sabine knew Zuri's mother well and keeps old recordings of her music. She encourages Zuri to trust her inner voice and reminds her that the river carries memory. Seems to know things before they happen.",
+      "Owner of a mysterious shop of candles, shells, and records. Wise, calm, and slightly mystical — she speaks in poetic metaphors and seems to know things before they happen. She knew Zuri's mother well and keeps recordings of her voice.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
     songIds: ["echo-in-the-water"],
@@ -55,7 +55,7 @@ export const characters: Character[] = [
     name: "Amara",
     role: "Zuri's Late Mother",
     description:
-      "A passionate singer who loved performing for the community and believed music could unite people. Although she died during a storm years earlier, her voice continues to inspire Zuri through recordings and memories. Her music and her memory are the emotional engine of the entire journey — every song Zuri finds leads back to her. A voice that could calm a crowd.",
+      "Zuri's late mother — a beloved singer who believed music could unite people. She died in a storm years before the story begins, but her voice lives on in recordings, and every path Zuri takes leads back to her.",
     personalityTraits: ["Soulful", "Courageous", "Artistic"],
     image: "/characters/mother2.png",
     songIds: [],
@@ -99,7 +99,7 @@ export const characters: Character[] = [
     name: "Marcus Vale",
     role: "Former Hometown Hero Turned Tech CEO",
     description:
-      "Marcus grew up in the town and was once a talented young singer who performed on the dock stage. He left years ago chasing success and eventually became the CEO of a powerful tech company. The town admired him — until they learn his company plans to build a massive data center that will damage the marsh and fishing waters. He is not cruel, but has become disconnected from the community that raised him. Zuri's song \"Stars Over the Block\" forces him to confront the past he tried to leave behind. Hides emotional conflict behind professionalism.",
+      "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. Zuri's music forces him to confront the community he left behind.",
     personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
     image: "/characters/MarcusVale1.png",
     songIds: [],
@@ -109,7 +109,7 @@ export const characters: Character[] = [
     name: "Victor Kane",
     role: "Corporate Antagonist",
     description:
-      "The aggressive operations director overseeing the construction project. He believes growth and profit justify any environmental damage. Unlike Marcus, Victor has no emotional connection to the town. Confident, calculating, and impatient with anyone who slows progress. He secretly pushes illegal dredging operations to accelerate construction. Always thinking three steps ahead — usually for profit.",
+      "Operations director pushing the construction project at any cost. Unlike Marcus, he has no emotional connection to the town — only targets. He secretly runs illegal dredging operations and is always three steps ahead, all of them for profit.",
     personalityTraits: ["Ruthless", "Calculating", "Profit-driven"],
     image: "/characters/VictorKane.png",
     songIds: [],
