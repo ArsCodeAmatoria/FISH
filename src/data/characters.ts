@@ -15,7 +15,7 @@ export const characters: Character[] = [
     name: "Zuri",
     role: "Protagonist",
     description:
-      "A curious, sharp-witted 15-year-old who hears rhythm everywhere — waves on the dock, knives cutting fish, train wheels in the distance. She grew up helping her father on the docks but secretly dreams of performing music like her late mother. Observant, compassionate, and quietly rebellious, she expresses herself through freestyle lyrics and rhythm tapping when she thinks no one is watching. Although shy about performing publicly, she possesses natural stage presence and emotional depth. Her journey is about finding her voice and realising that music can bring a community together.",
+      "A sharp-witted 15-year-old who hears rhythm in everything. She grew up on the docks helping her father but secretly dreams of music like her late mother. Quietly rebellious, deeply observant, and naturally gifted — she just hasn't found the courage to share it yet.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
     songIds: ["fish", "fish-2", "stars-over-the-block"],
