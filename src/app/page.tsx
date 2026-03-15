@@ -2,7 +2,6 @@
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Image from "next/image";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
@@ -82,17 +81,6 @@ function HomeInner() {
           className="fixed right-7 top-4 z-[1001] flex select-none items-center gap-2.5 transition-opacity duration-200 hover:opacity-70"
           aria-label="Go to home"
         >
-          {/* Redfish logo */}
-          <div className="relative h-10 w-10 shrink-0">
-            <Image
-              src="/songs/covers/redfish.png"
-              alt="FISH"
-              fill
-              className="object-contain"
-              sizes="40px"
-            />
-          </div>
-          {/* Title text */}
           <div className="text-right">
             <div
               className="leading-none text-white"
