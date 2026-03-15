@@ -37,7 +37,7 @@ export const characters: Character[] = [
     description:
       "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. Louis introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
-    image: "/characters/trumpet.png",
+    image: "/characters/louis.png",
     songIds: ["fish-2", "bank-river-z"],
   },
   {
