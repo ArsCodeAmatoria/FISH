@@ -15,7 +15,7 @@ export const characters: Character[] = [
     name: "Zuri",
     role: "Protagonist",
     description:
-      "A 15-year-old girl who hears rhythm in everyday life. She secretly raps and dreams of music but fears disappointing her father. She discovers her mother's musical legacy and ultimately leads the final river protest concert.",
+      "A curious, sharp-witted 15-year-old who hears rhythm everywhere — waves on the dock, knives cutting fish, train wheels in the distance. She grew up helping her father on the docks but secretly dreams of performing music like her late mother. Observant, compassionate, and quietly rebellious, she expresses herself through freestyle lyrics and rhythm tapping when she thinks no one is watching. Although shy about performing publicly, she possesses natural stage presence and emotional depth. Her journey is about finding her voice and realising that music can bring a community together.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
     songIds: ["fish", "fish-2", "flow-on", "stars-over-the-block"],
@@ -25,7 +25,7 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "Zuri's father and a hardworking fisherman who runs the boat Mama Amara, named after his late wife. He represents grief and responsibility — he believes music caused tragedy but eventually finds the strength to support Zuri.",
+      "A hardworking fisherman who owns a small boat called Mama Amara, named after his late wife. Protective, disciplined, and deeply loyal to the fishing community. After losing his wife during a storm connected to a music performance, he developed a fear that music leads to danger — and forbids Zuri from singing publicly, believing he is protecting her. Beneath his stern exterior is a loving father who struggles with unresolved grief. His arc is learning that protecting Zuri means allowing her to become who she truly is. Speaks little, but when he does, people listen.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
     songIds: ["quiet-river"],
@@ -35,7 +35,7 @@ export const characters: Character[] = [
     name: "Louis",
     role: "Musical Mentor",
     description:
-      "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. Louis introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
+      "An old jazz musician who spends his days wandering the docks with a battered trumpet. He sees music everywhere and believes rhythm connects generations, cultures, and stories — where others hear noise, he hears harmony. Louis immediately recognises Zuri's gift and gently encourages her to explore music without pushing too hard. He teaches her the idea of the Wheel of Groove — how rhythms travel across time and people. Laughs like he already knows the punchline to life.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
     songIds: [],
@@ -43,9 +43,9 @@ export const characters: Character[] = [
   {
     id: "mama-sabine",
     name: "Mama Sabine",
-    role: "Spiritual Guide & Witch Doctor",
+    role: "Spiritual Guide",
     description:
-      "A spiritual shopkeeper and the town's witch doctor — ancient, ambiguous, and never quite what she seems. She connects Zuri to her mother's legacy, reveals Amara's recordings, and appears at precisely the wrong moment with a riddle and a knowing look.",
+      "Owner of a mysterious shop filled with candles, shells, records, wind chimes, and handmade charms. Wise, calm, and slightly mystical — but never intimidating. She often speaks in poetic metaphors. Mama Sabine knew Zuri's mother well and keeps old recordings of her music. She encourages Zuri to trust her inner voice and reminds her that the river carries memory. Seems to know things before they happen.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
     songIds: ["echo-in-the-water"],
@@ -55,7 +55,7 @@ export const characters: Character[] = [
     name: "Amara",
     role: "Zuri's Late Mother",
     description:
-      "Zuri's late mother, a beloved singer who once performed on the dock stage. Her music and her memory are the emotional engine of the entire journey — every song Zuri finds leads back to her.",
+      "A passionate singer who loved performing for the community and believed music could unite people. Although she died during a storm years earlier, her voice continues to inspire Zuri through recordings and memories. Her music and her memory are the emotional engine of the entire journey — every song Zuri finds leads back to her. A voice that could calm a crowd.",
     personalityTraits: ["Soulful", "Courageous", "Artistic"],
     image: "/characters/mother2.png",
     songIds: [],
@@ -67,7 +67,7 @@ export const characters: Character[] = [
     name: "Captain Beignet",
     role: "Leader of the Fish Thieves",
     description:
-      "A dramatic pelican who believes he is a tactical mastermind. Known for heroic speeches, a pouch full of random objects, and an inexplicable boat bow dance. He takes everything seriously — except the things that matter.",
+      "A pelican who sees himself as a brilliant criminal mastermind — in reality he is chaotic and constantly improvising. His enormous pelican pouch functions as a portable storage vault for stolen fish, donuts, and random objects. Despite his schemes, he secretly loves the town. Everything somehow ends up in his pouch.",
     personalityTraits: ["Theatrical", "Overly serious", "Secretly a hoarder"],
     image: "/characters/captain.png",
     songIds: ["alien-groove"],
@@ -75,9 +75,9 @@ export const characters: Character[] = [
   {
     id: "pants",
     name: "Pants",
-    role: "The Realist",
+    role: "Reluctant Accomplice",
     description:
-      "A sarcastic tabby cat obsessed with grooming and dignity. The self-appointed voice of reason in the trio. Famous for the donut philosophy song, a coffee addiction, and the phrase \"I just licked all this.\"",
+      "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos.",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
     image: "/characters/pants.png",
     songIds: ["glazed", "pants-song"],
@@ -85,9 +85,9 @@ export const characters: Character[] = [
   {
     id: "ripple",
     name: "Ripple",
-    role: "Accidental Chaos Agent",
+    role: "Chaos Engine",
     description:
-      "An energetic river otter who loves machines and chaos in equal measure. An accidental catalyst for many events — if something spinny is nearby, Ripple will turn it, and disaster will follow with a giant smile.",
+      "A playful, hyperactive otter who loves water, gadgets, and pressing buttons he should not press. Most of the trio's accidents happen because Ripple touched something. Despite this, his curiosity accidentally helps uncover the villain's scheme. Cannot resist pushing buttons.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
     songIds: [],
@@ -97,9 +97,9 @@ export const characters: Character[] = [
   {
     id: "marcus-vale",
     name: "Marcus Vale",
-    role: "Corporate Antagonist",
+    role: "Former Hometown Hero Turned Tech CEO",
     description:
-      "CEO of the technology company building the data center on the river. A conflicted corporate leader who ultimately halts the project — pragmatic enough to see when he has gone too far.",
+      "Marcus grew up in the town and was once a talented young singer who performed on the dock stage. He left years ago chasing success and eventually became the CEO of a powerful tech company. The town admired him — until they learn his company plans to build a massive data center that will damage the marsh and fishing waters. He is not cruel, but has become disconnected from the community that raised him. Zuri's song \"Stars Over the Block\" forces him to confront the past he tried to leave behind. Hides emotional conflict behind professionalism.",
     personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
     image: "/characters/MarcusVale1.png",
     songIds: [],
@@ -107,9 +107,9 @@ export const characters: Character[] = [
   {
     id: "victor-kane",
     name: "Victor Kane",
-    role: "Primary Human Antagonist",
+    role: "Corporate Antagonist",
     description:
-      "Operations director pushing the construction project forward regardless of environmental damage. Ruthless, calculating, and entirely profit-driven — the human face of everything threatening the river.",
+      "The aggressive operations director overseeing the construction project. He believes growth and profit justify any environmental damage. Unlike Marcus, Victor has no emotional connection to the town. Confident, calculating, and impatient with anyone who slows progress. He secretly pushes illegal dredging operations to accelerate construction. Always thinking three steps ahead — usually for profit.",
     personalityTraits: ["Ruthless", "Calculating", "Profit-driven"],
     image: "/characters/VictorKane.png",
     songIds: [],
@@ -180,9 +180,9 @@ export const characters: Character[] = [
   {
     id: "sticks",
     name: "Sticks",
-    role: "Market Busker & Market Boy",
+    role: "Busker & Market Boy",
     description:
-      "One of the Market Boys and a born busker — always drumming on something. Crates, barrels, lampposts. Wherever Sticks goes, there's a beat.",
+      "A high-energy street percussionist who performs using buckets, fish crates, and anything that makes noise. He loves rhythm and believes music should be loud, fun, and shared. He's among the first to treat Zuri like a fellow musician. Can turn any object into a drum.",
     personalityTraits: ["Rhythmic", "Restless", "Energetic"],
     image: "/characters/sticks.png",
     songIds: [],
@@ -192,7 +192,7 @@ export const characters: Character[] = [
     name: "Chops",
     role: "Market Busker",
     description:
-      "An electric guitar player who sets up on the market corner and turns the whole block into a stage. His riffs cut through the noise like nobody's business.",
+      "The loudest personality on the block. He performs near the train yard, blasting electric guitar solos that sync with passing trains. Loves dramatic riffs and playful showmanship. Treats every performance like a stadium concert.",
     personalityTraits: ["Flashy", "Passionate", "Showman"],
     image: "/characters/chops.png",
     songIds: [],
@@ -202,7 +202,7 @@ export const characters: Character[] = [
     name: "Bass",
     role: "Market Busker",
     description:
-      "A deep-grooved market busker who holds down the low end wherever she plays. Her bass lines drift through the stalls and stop people mid-step.",
+      "Calm, quiet, and deeply cool. Rarely speaks and prefers communicating through bass lines — kids dance when she plays. When something important happens, she expresses it through music rather than words. Answers questions with bass riffs.",
     personalityTraits: ["Soulful", "Cool", "Grounded"],
     image: "/characters/bass.png",
     songIds: [],
@@ -212,7 +212,7 @@ export const characters: Character[] = [
     name: "Holly",
     role: "Fish Market Busker",
     description:
-      "Holly plays her guitar on the corner of the Fish Market every morning, rain or shine. Her music drifts between the stalls and sets the mood for the whole market day.",
+      "Holly has the most traditional street-performer style — sings soulful songs in the open market square and her voice draws crowds naturally. She is the first person to tell Zuri she should sing publicly. A voice that makes strangers stop walking.",
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
     songIds: ["keys-to-the-block"],
