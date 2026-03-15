@@ -109,4 +109,14 @@ export const characters: Character[] = [
     image: "/characters/witchdoctor.png",
     songIds: ["fish-2", "echo-in-the-water"],
   },
+  {
+    id: "sushi",
+    name: "Sushi",
+    role: "Sushi Shop Owner",
+    description:
+      "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and always behind the counter.",
+    personalityTraits: ["Resourceful", "Sharp", "Welcoming", "Proud"],
+    image: "/characters/sushi.png",
+    songIds: [],
+  },
 ];
