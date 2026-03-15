@@ -60,20 +60,22 @@ export default function Home() {
         <ScriptSection />
       </div>
 
-      {/* Floating FISH home link — top left */}
-      <button
-        type="button"
-        onClick={() => goToSlide(0)}
-        className="fixed left-7 top-6 z-[1001] select-none text-white/30 transition-all duration-200 hover:text-white/80"
-        style={{
-          fontFamily: "var(--font-title)",
-          fontSize: "1.35rem",
-          letterSpacing: "0.15em",
-        }}
-        aria-label="Go to home"
-      >
-        FISH
-      </button>
+      {/* Floating FISH home link — top right, hidden on title slide */}
+      {currentSlide !== 0 && (
+        <button
+          type="button"
+          onClick={() => goToSlide(0)}
+          className="fixed right-7 top-6 z-[1001] select-none text-white"
+          style={{
+            fontFamily: "var(--font-title)",
+            fontSize: "1.35rem",
+            letterSpacing: "0.15em",
+          }}
+          aria-label="Go to home"
+        >
+          FISH
+        </button>
+      )}
 
       {/* Floating section links — bottom center */}
       <FloatingLinks goToSlide={goToSlide} currentSlide={currentSlide} />
