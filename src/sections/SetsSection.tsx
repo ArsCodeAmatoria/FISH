@@ -68,128 +68,140 @@ export function SetsSection() {
       {/* ── Right: details panel ────────────────────────────────── */}
       <div
         key={`details-${set.id}`}
-        className="flex flex-1 flex-col justify-center overflow-hidden px-12 py-14"
+        className="relative flex flex-1 flex-col overflow-hidden px-12 pt-14 pb-0"
         style={{ animation: "fadeIn 0.35s ease-out both" }}
       >
-        {/* Counter */}
-        <p
-          className="mb-6 text-xs text-white/30"
-          style={{ fontFamily: "var(--font-screenplay)" }}
+        {/* ── Fixed top info ────────────────────────────────── */}
+        <div className="shrink-0">
+          {/* Counter */}
+          <p
+            className="mb-6 text-xs text-white/30"
+            style={{ fontFamily: "var(--font-screenplay)" }}
+          >
+            {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          </p>
+
+          {/* Section label */}
+          <p
+            className="mb-2 text-[10px] uppercase tracking-[0.3em] text-white/40"
+            style={{ fontFamily: "var(--font-cinematic)" }}
+          >
+            Sets
+          </p>
+
+          {/* Slug */}
+          <p
+            className="mb-2 text-xs uppercase tracking-[0.25em] text-white/55"
+            style={{ fontFamily: "var(--font-screenplay)" }}
+          >
+            {set.slug}
+          </p>
+
+          {/* Location name */}
+          <h2
+            className="mb-5 text-5xl font-extrabold uppercase leading-none text-white xl:text-6xl"
+            style={{ fontFamily: "var(--font-cinematic)" }}
+          >
+            {set.name}
+          </h2>
+
+          {/* Divider */}
+          <div className="mb-5 h-px w-14 bg-white/20" />
+
+          {/* Description */}
+          <p className="mb-6 max-w-sm text-sm leading-relaxed text-white/70">
+            {set.description}
+          </p>
+
+          {/* Page count badge */}
+          {pageCount > 0 && (
+            <div className="mb-5 flex items-center gap-2">
+              <MapPin className="size-3 text-white/35" />
+              <span
+                className="text-xs text-white/50"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                {pageCount} scene{pageCount !== 1 ? "s" : ""} in script
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* ── Scrollable: Characters + Scenes ───────────────── */}
+        <div
+          className="flex-1 overflow-y-auto pb-28"
+          style={{ scrollbarWidth: "none" }}
         >
-          {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-        </p>
+          {/* Characters seen in this set */}
+          {setCharacters.length > 0 && (
+            <div className="mb-7">
+              <p
+                className="mb-3 text-[10px] uppercase tracking-[0.25em] text-white/40"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                Characters Here
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {setCharacters.map((char) => (
+                  <Link
+                    key={char.id}
+                    href={`/characters/${char.id}`}
+                    className="group/char flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 transition-all hover:border-white/35 hover:bg-white/10"
+                  >
+                    <div className="relative h-5 w-5 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
+                      <Image
+                        src={char.image}
+                        alt={char.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="20px"
+                      />
+                    </div>
+                    <span
+                      className="text-xs text-white/75 group-hover/char:text-white"
+                      style={{ fontFamily: "var(--font-cinematic)" }}
+                    >
+                      {char.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
-        {/* Section label */}
-        <p
-          className="mb-2 text-[10px] uppercase tracking-[0.3em] text-white/40"
-          style={{ fontFamily: "var(--font-cinematic)" }}
-        >
-          Sets
-        </p>
-
-        {/* Slug */}
-        <p
-          className="mb-2 text-xs uppercase tracking-[0.25em] text-white/55"
-          style={{ fontFamily: "var(--font-screenplay)" }}
-        >
-          {set.slug}
-        </p>
-
-        {/* Location name */}
-        <h2
-          className="mb-5 text-5xl font-extrabold uppercase leading-none text-white xl:text-6xl"
-          style={{ fontFamily: "var(--font-cinematic)" }}
-        >
-          {set.name}
-        </h2>
-
-        {/* Divider */}
-        <div className="mb-5 h-px w-14 bg-white/20" />
-
-        {/* Description */}
-        <p className="mb-7 max-w-sm text-sm leading-relaxed text-white/70">
-          {set.description}
-        </p>
-
-        {/* Page count badge */}
-        {pageCount > 0 && (
-          <div className="mb-6 flex items-center gap-2">
-            <MapPin className="size-3 text-white/35" />
-            <span
-              className="text-xs text-white/50"
-              style={{ fontFamily: "var(--font-cinematic)" }}
-            >
-              {pageCount} scene{pageCount !== 1 ? "s" : ""} in script
-            </span>
-          </div>
-        )}
-
-        {/* Characters seen in this set */}
-        {setCharacters.length > 0 && (
-          <div className="mb-7">
-            <p
-              className="mb-3 text-[10px] uppercase tracking-[0.25em] text-white/40"
-              style={{ fontFamily: "var(--font-cinematic)" }}
-            >
-              Characters Here
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {setCharacters.map((char) => (
-                <Link
-                  key={char.id}
-                  href={`/characters/${char.id}`}
-                  className="group/char flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 transition-all hover:border-white/35 hover:bg-white/10"
-                >
-                  <div className="relative h-5 w-5 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
-                    <Image
-                      src={char.image}
-                      alt={char.name}
-                      fill
-                      className="object-cover object-top"
-                      sizes="20px"
-                    />
+          {/* Script scenes */}
+          {scenes.length > 0 && (
+            <div>
+              <p
+                className="mb-3 text-[10px] uppercase tracking-[0.25em] text-white/40"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                Scenes
+              </p>
+              <div className="flex flex-col gap-1.5">
+                {scenes.map((s) => (
+                  <div key={s.pageNum} className="flex items-baseline gap-3">
+                    <span
+                      className="shrink-0 text-[9px] tabular-nums text-white/35"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      p.{String(s.pageNum).padStart(2, "0")}
+                    </span>
+                    <span
+                      className="truncate text-xs text-white/60"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      {s.heading}
+                    </span>
                   </div>
-                  <span
-                    className="text-xs text-white/75 group-hover/char:text-white"
-                    style={{ fontFamily: "var(--font-cinematic)" }}
-                  >
-                    {char.name}
-                  </span>
-                </Link>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
 
-        {/* Script scenes */}
-        {scenes.length > 0 && (
-          <div>
-            <p
-              className="mb-3 text-[10px] uppercase tracking-[0.25em] text-white/40"
-              style={{ fontFamily: "var(--font-cinematic)" }}
-            >
-              Scenes
-            </p>
-            <div className="flex flex-col gap-1.5">
-              {scenes.map((s) => (
-                <div key={s.pageNum} className="flex items-baseline gap-3">
-                  <span
-                    className="shrink-0 text-[9px] tabular-nums text-white/35"
-                    style={{ fontFamily: "var(--font-screenplay)" }}
-                  >
-                    p.{String(s.pageNum).padStart(2, "0")}
-                  </span>
-                  <span
-                    className="truncate text-xs text-white/60"
-                    style={{ fontFamily: "var(--font-screenplay)" }}
-                  >
-                    {s.heading}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* ── Scroll fade-out before thumbnails ─────────────── */}
+        <div className="pointer-events-none absolute bottom-24 left-0 right-0 h-12 bg-gradient-to-t from-black to-transparent" />
       </div>
 
       {/* ── Set thumbnail strip — above floating nav ───────────── */}
