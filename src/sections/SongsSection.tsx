@@ -304,12 +304,14 @@ export function SongsSection() {
                     >
                       {s.singers}
                     </p>
-                    <p
-                      className="mt-1 line-clamp-1 text-[10px] text-white/35"
-                      style={{ fontFamily: "var(--font-screenplay)" }}
-                    >
-                      {s.description}
-                    </p>
+                    {s.writtenBy && (
+                      <p
+                        className="mt-1 text-[10px] text-white/35"
+                        style={{ fontFamily: "var(--font-screenplay)" }}
+                      >
+                        Written by {s.writtenBy}
+                      </p>
+                    )}
                   </div>
 
                   {/* Right: like + track number */}
