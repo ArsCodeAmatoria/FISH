@@ -119,4 +119,34 @@ export const characters: Character[] = [
     image: "/characters/sushi.png",
     songIds: [],
   },
+  {
+    id: "j",
+    name: "J",
+    role: "Market Girl",
+    description:
+      "One of the Market Girls — quick with a laugh and quicker with her hands. She knows every stall, every vendor, and every secret the Fish Market holds.",
+    personalityTraits: ["Quick", "Street-smart", "Playful", "Bold"],
+    image: "/characters/J.png",
+    songIds: [],
+  },
+  {
+    id: "cedar",
+    name: "Cedar",
+    role: "Market Girl",
+    description:
+      "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
+    personalityTraits: ["Steady", "Loyal", "Calm", "Protective"],
+    image: "/characters/cedar.png",
+    songIds: [],
+  },
+  {
+    id: "miss-pine",
+    name: "Miss Pine",
+    role: "Market Girl",
+    description:
+      "One of the Market Girls — the eldest of the trio, with a sharp eye and sharper wit. Miss Pine has seen it all and has an opinion about all of it.",
+    personalityTraits: ["Witty", "Observant", "Confident", "Spirited"],
+    image: "/characters/misspine.png",
+    songIds: [],
+  },
 ];
