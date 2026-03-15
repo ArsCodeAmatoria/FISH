@@ -1,6 +1,6 @@
 <div align="center">
 
-![FISH](public/deadfish.png)
+<img width="928" height="1232" alt="Image" src="https://github.com/user-attachments/assets/fc579784-a69e-4530-8530-f2f2fdcfc620" />
 
 # F I S H
 ### A RIVER STORY
