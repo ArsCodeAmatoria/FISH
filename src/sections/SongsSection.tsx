@@ -213,108 +213,97 @@ export function SongsSection() {
           </span>
         </div>
 
-        {/* 3 × 3 grid */}
+        {/* Track list */}
         <div className="flex-1 overflow-y-auto pb-24" style={{ scrollbarWidth: "none" }}>
-        <div className="grid grid-cols-3 gap-3" style={{ gridAutoRows: "calc((100vh - 160px) / 3)" }}>
-          {songs.map((s, i) => {
-            const active = s.id === selectedId;
-            const playing = playingId === s.id;
-            const isLiked = liked.has(s.id);
+          <div className="flex flex-col gap-1.5">
+            {songs.map((s, i) => {
+              const active = s.id === selectedId;
+              const playing = playingId === s.id;
+              const isLiked = liked.has(s.id);
 
-            return (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => selectAndPlay(s)}
-                className={cn(
-                  "group relative overflow-hidden rounded-2xl border text-left transition-all duration-300",
-                  active
-                    ? "border-white/35 shadow-[0_0_24px_rgba(255,255,255,0.07)]"
-                    : "border-white/8 hover:border-white/22"
-                )}
-                style={{
-                  animation: "fadeIn 0.4s ease-out both",
-                  animationDelay: `${i * 0.035}s`,
-                }}
-              >
-                {/* Album art */}
-                <Image
-                  src={s.image}
-                  alt={s.title}
-                  fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  sizes="18vw"
-                />
-
-                {/* Overlay */}
-                <div
-                  className={cn(
-                    "absolute inset-0 transition-opacity duration-300",
-                    active ? "bg-black/40" : "bg-black/20 group-hover:bg-black/40"
-                  )}
-                />
-                <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-black/90 to-transparent" />
-
-                {/* Track number */}
-                <span
-                  className="absolute left-2.5 top-2.5 text-[9px] text-white/40"
-                  style={{ fontFamily: "var(--font-screenplay)" }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
-                {/* Like button */}
+              return (
                 <button
+                  key={s.id}
                   type="button"
-                  onClick={(e) => toggleLike(e, s.id)}
-                  aria-label="Like"
-                  className="absolute right-2 top-2 rounded-full p-1.5 opacity-0 transition-opacity group-hover:opacity-100"
-                >
-                  <Heart
-                    className={cn(
-                      "size-3",
-                      isLiked ? "fill-white text-white" : "text-white/60"
-                    )}
-                  />
-                </button>
-
-                {/* Play icon overlay */}
-                <div
+                  onClick={() => selectAndPlay(s)}
                   className={cn(
-                    "absolute inset-0 flex items-center justify-center transition-all duration-200",
-                    playing
-                      ? "opacity-100"
-                      : "opacity-0 group-hover:opacity-100"
+                    "group flex items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-all duration-200",
+                    active
+                      ? "border-white/25 bg-white/8"
+                      : "border-transparent hover:border-white/12 hover:bg-white/5"
                   )}
+                  style={{
+                    animation: "fadeIn 0.4s ease-out both",
+                    animationDelay: `${i * 0.035}s`,
+                  }}
                 >
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90 shadow-lg">
-                    {playing ? (
-                      <Pause className="size-3.5 fill-black text-black" />
-                    ) : (
-                      <Play className="ml-0.5 size-3.5 fill-black text-black" />
-                    )}
+                  {/* Avatar */}
+                  <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl">
+                    <Image
+                      src={s.image}
+                      alt={s.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      sizes="48px"
+                    />
+                    {/* Play overlay on avatar */}
+                    <div className={cn(
+                      "absolute inset-0 flex items-center justify-center bg-black/50 transition-opacity duration-200",
+                      playing ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    )}>
+                      {playing ? (
+                        <Pause className="size-3.5 fill-white text-white" />
+                      ) : (
+                        <Play className="ml-0.5 size-3.5 fill-white text-white" />
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Title + singer */}
-                <div className="absolute inset-x-0 bottom-0 px-2.5 pb-2">
-                  <p
-                    className="truncate text-[11px] font-bold leading-tight text-white"
-                    style={{ fontFamily: "var(--font-cinematic)" }}
-                  >
-                    {s.title}
-                  </p>
-                  <p
-                    className="mt-0.5 truncate text-[9px] text-white/65"
-                    style={{ fontFamily: "var(--font-screenplay)" }}
-                  >
-                    {s.singers}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
+                  {/* Title + singer */}
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={cn(
+                        "truncate text-sm font-semibold leading-tight transition-colors",
+                        active ? "text-white" : "text-white/80 group-hover:text-white"
+                      )}
+                      style={{ fontFamily: "var(--font-cinematic)" }}
+                    >
+                      {s.title}
+                    </p>
+                    <p
+                      className="mt-0.5 truncate text-[11px] text-white/55"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      {s.singers}
+                    </p>
+                  </div>
+
+                  {/* Right: like + track number */}
+                  <div className="flex shrink-0 items-center gap-2.5">
+                    <button
+                      type="button"
+                      onClick={(e) => toggleLike(e, s.id)}
+                      aria-label="Like"
+                      className="rounded-full p-1 opacity-0 transition-opacity group-hover:opacity-100"
+                    >
+                      <Heart
+                        className={cn(
+                          "size-3.5",
+                          isLiked ? "fill-white text-white" : "text-white/55"
+                        )}
+                      />
+                    </button>
+                    <span
+                      className="w-5 text-right text-[10px] text-white/30"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
