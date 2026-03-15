@@ -252,49 +252,68 @@ export function CharactersSection({ openCharacter }: Props) {
         </div>
         {/* Scrollable list */}
       <div
-        className="flex flex-1 flex-col gap-1 overflow-y-auto pr-4 pl-2 pb-24"
+        className="flex flex-1 flex-col overflow-y-auto pr-4 pl-2 pb-24"
         style={{ scrollbarWidth: "none" }}
       >
-        {characters.map((c, i) => {
-          const active = i === index;
-          return (
-            <button
-              key={c.id}
-              type="button"
-              onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
-              className={cn(
-                "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-200",
-                active
-                  ? "bg-white/12 text-white"
-                  : "text-white/85 hover:bg-white/6 hover:text-white"
-              )}
+        {[
+          { label: "Main",      ids: ["zuri","ade","papa-louis","mama-sabine","amara"] },
+          { label: "Corporate", ids: ["marcus-vale","victor-kane","henchman"] },
+          { label: "Comedy",    ids: ["captain-beignet","pants","ripple","fish-thief-cat","fish-thief-dog"] },
+          { label: "Market",    ids: ["sushi","j","cedar","sticks","chops","bass","holly"] },
+        ].map(({ label, ids }) => (
+          <div key={label} className="mb-1">
+            {/* Group label */}
+            <p
+              className="px-3 pt-4 pb-1.5 text-[9px] uppercase tracking-[0.3em] text-white/30"
+              style={{ fontFamily: "var(--font-cinematic)" }}
             >
-              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-                <Image
-                  src={c.image}
-                  alt={c.name}
-                  fill
-                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                  sizes="40px"
-                />
-              </div>
-              <div className="min-w-0">
-                <p
-                  className="truncate text-xs font-medium leading-tight"
-                  style={{ fontFamily: "var(--font-cinematic)" }}
+              {label}
+            </p>
+            {ids.map((id) => {
+              const i = characters.findIndex((c) => c.id === id);
+              if (i === -1) return null;
+              const c = characters[i];
+              const active = i === index;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
+                  className={cn(
+                    "group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-200",
+                    active
+                      ? "bg-white/12 text-white"
+                      : "text-white/85 hover:bg-white/6 hover:text-white"
+                  )}
                 >
-                  {c.name}
-                </p>
-                <p
-                  className="mt-0.5 truncate text-[10px] text-white/70"
-                  style={{ fontFamily: "var(--font-screenplay)" }}
-                >
-                  {c.role}
-                </p>
-              </div>
-            </button>
-          );
-        })}
+                  <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
+                    <Image
+                      src={c.image}
+                      alt={c.name}
+                      fill
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      sizes="40px"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <p
+                      className="truncate text-xs font-medium leading-tight"
+                      style={{ fontFamily: "var(--font-cinematic)" }}
+                    >
+                      {c.name}
+                    </p>
+                    <p
+                      className="mt-0.5 truncate text-[10px] text-white/70"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      {c.role}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </div>
       </div>
       <style>{`
