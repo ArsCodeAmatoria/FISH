@@ -74,7 +74,7 @@ export function LyricsSection() {
       <div className="flex flex-1 overflow-hidden">
         {/* ── Left: Song list ──────────────────────────────────── */}
         <div
-          className="w-52 shrink-0 overflow-y-auto pl-8 pr-3"
+          className="w-52 shrink-0 overflow-y-auto pl-8 pr-3 pb-20"
           style={{ scrollbarWidth: "none" }}
         >
           <p
@@ -210,7 +210,7 @@ export function LyricsSection() {
           {/* Lyrics scroll area */}
           <div
             key={`lyrics-${song.id}`}
-            className="flex-1 overflow-y-auto pr-6 pb-6"
+            className="flex-1 overflow-y-auto pr-6 pb-24"
             style={{
               scrollbarWidth: "none",
               animation: "fadeIn 0.35s ease-out both",
@@ -252,7 +252,7 @@ export function LyricsSection() {
 
         {/* ── Right: Singer / cast sidebar ─────────────────────── */}
         <div
-          className="mr-8 flex w-52 shrink-0 flex-col gap-5 overflow-y-auto rounded-2xl border border-white/8 p-4"
+          className="mr-8 flex w-52 shrink-0 flex-col gap-5 overflow-y-auto rounded-2xl border border-white/8 p-4 pb-20"
           style={{ background: "rgba(255,255,255,0.03)", scrollbarWidth: "none" }}
         >
           {/* Singers */}
