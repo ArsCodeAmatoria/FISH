@@ -153,7 +153,7 @@ export function LyricsSection() {
           {/* Song header */}
           <div
             key={`header-${song.id}`}
-            className="mb-6 flex shrink-0 items-end justify-between pr-6"
+            className="mb-6 flex shrink-0 items-center justify-between pr-6"
             style={{ animation: "fadeIn 0.3s ease-out both" }}
           >
             <div className="flex items-center gap-5">
@@ -217,7 +217,7 @@ export function LyricsSection() {
             }}
           >
             {lyrics ? (
-              <div className="space-y-0.5">
+              <div className="space-y-0.5 text-center">
                 {lyrics.lines.map((line, i) => {
                   if (line.type === "blank")
                     return <div key={i} className="h-4" />;
