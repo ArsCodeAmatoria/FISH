@@ -14,7 +14,7 @@ export const songs: Song[] = [
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/zuri.png",
-    audioSrc: "/songs/Fish.wav",
+    audioSrc: "/songs/Fish (Intro).wav",
   },
   {
     id: "fish-2",
@@ -79,6 +79,14 @@ export const songs: Song[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/holly.png",
     audioSrc: "/songs/Keys to the Block.wav",
+  },
+  {
+    id: "stars-over-the-block",
+    title: "Stars Over the Block",
+    singers: "Holly & Ensemble",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/characters/holly.png",
+    audioSrc: "/songs/STARS OVER THE BLOCK (2).wav",
   },
   {
     id: "pants-song",

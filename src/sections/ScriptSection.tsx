@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
+import { ChevronLeft, ChevronRight, Play, Pause, Download } from "lucide-react";
 import { scriptPages, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
@@ -273,6 +273,25 @@ export function ScriptSection({ openCharacter }: Props) {
           className="flex w-56 shrink-0 flex-col gap-5 overflow-y-auto rounded-2xl border border-white/8 p-4 mr-8"
           style={{ background: "rgba(255,255,255,0.03)", scrollbarWidth: "none" }}
         >
+          {/* Download script PDF */}
+          <a
+            href="/pdf/fish-script.pdf"
+            download="FISH-Script.pdf"
+            className="group flex items-center gap-2.5 rounded-xl border border-white/15 px-3 py-2.5 transition-all hover:border-white/30 hover:bg-white/8"
+          >
+            <Download className="size-3.5 shrink-0 text-white/60 transition-colors group-hover:text-white" />
+            <div className="min-w-0">
+              <p className="text-[11px] font-semibold text-white/80 group-hover:text-white" style={{ fontFamily: "var(--font-cinematic)" }}>
+                Download Script
+              </p>
+              <p className="text-[9px] text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
+                FISH — PDF
+              </p>
+            </div>
+          </a>
+
+          <div className="h-px bg-white/8" />
+
           {/* Cast */}
           {pageCharacters.length > 0 && (
             <div>

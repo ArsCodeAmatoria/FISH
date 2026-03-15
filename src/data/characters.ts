@@ -9,6 +9,18 @@ export interface Character {
 }
 
 export const characters: Character[] = [
+  // ── Creators ───────────────────────────────────────────────
+  {
+    id: "leigh-akin",
+    name: "Leigh Akin",
+    role: "Writer & Songwriter",
+    description:
+      "Writer of FISH and composer of all original songs. Leigh Akin created the world of the river town, its characters, and the music that runs through every scene.",
+    personalityTraits: ["Creative", "Visionary", "Storyteller"],
+    image: "/characters/leighakin.svg.png",
+    songIds: ["fish", "fish-2", "echo-in-the-water", "alien-groove", "glazed", "bank-river-z", "flow-on", "quiet-river", "keys-to-the-block", "stars-over-the-block", "pants-song"],
+  },
+
   // ── Main Characters ────────────────────────────────────────
   {
     id: "zuri",
@@ -215,6 +227,6 @@ export const characters: Character[] = [
       "Holly plays her guitar on the corner of the Fish Market every morning, rain or shine. Her music drifts between the stalls and sets the mood for the whole market day.",
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
-    songIds: ["keys-to-the-block"],
+    songIds: ["keys-to-the-block", "stars-over-the-block"],
   },
 ];
