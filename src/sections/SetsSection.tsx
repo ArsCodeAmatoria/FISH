@@ -68,7 +68,7 @@ export function SetsSection() {
       {/* ── Right: details panel ────────────────────────────────── */}
       <div
         key={`details-${set.id}`}
-        className="relative flex flex-1 flex-col overflow-hidden px-12 pt-14 pb-0"
+        className="relative flex flex-1 flex-col px-12 pt-14 pb-0 min-h-0"
         style={{ animation: "fadeIn 0.35s ease-out both" }}
       >
         {/* ── Fixed top info ────────────────────────────────── */}
@@ -111,7 +111,7 @@ export function SetsSection() {
 
         {/* ── Scrollable: Description + Characters + Scenes ─── */}
         <div
-          className="flex-1 overflow-y-auto pb-4"
+          className="flex-1 overflow-y-auto pb-28 min-h-0"
           style={{ scrollbarWidth: "none" }}
         >
           {/* Description */}
