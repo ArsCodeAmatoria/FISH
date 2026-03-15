@@ -120,7 +120,7 @@ export function SongsSection() {
         {/* Bottom info */}
         <div
           key={`info-${song.id}`}
-          className="absolute inset-x-0 bottom-0 px-8 pb-12"
+          className="absolute inset-x-0 bottom-0 px-14 pb-12"
           style={{ animation: "fadeIn 0.4s ease-out both" }}
         >
           {/* Track number */}
