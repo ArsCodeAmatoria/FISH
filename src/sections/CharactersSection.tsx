@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, ArrowUpRight, Music } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight, Music, Play, Pause } from "lucide-react";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { cn } from "@/lib/utils";
 
 export function CharactersSection() {
   const [index, setIndex] = useState(0);
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const total = characters.length;
   const character = characters[index];
 
@@ -17,15 +19,38 @@ export function CharactersSection() {
     character.songIds.includes(s.id)
   );
 
+  const togglePlay = useCallback((e: React.MouseEvent, song: typeof songs[0]) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (playingId === song.id) {
+      audioRef.current?.pause();
+      setPlayingId(null);
+    } else {
+      audioRef.current?.pause();
+      const audio = new Audio(song.audioSrc);
+      audio.addEventListener("ended", () => setPlayingId(null));
+      audio.play().catch(() => {});
+      audioRef.current = audio;
+      setPlayingId(song.id);
+    }
+  }, [playingId]);
+
+  // Stop audio when switching characters
+  const switchCharacter = useCallback((i: number) => {
+    audioRef.current?.pause();
+    setPlayingId(null);
+    setIndex(i);
+  }, []);
+
   const prev = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    setIndex((i) => Math.max(0, i - 1));
-  }, []);
+    switchCharacter(Math.max(0, index - 1));
+  }, [index, switchCharacter]);
 
   const next = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    setIndex((i) => Math.min(total - 1, i + 1));
-  }, []);
+    switchCharacter(Math.min(total - 1, index + 1));
+  }, [index, total, switchCharacter]);
 
   return (
     <section
@@ -126,28 +151,62 @@ export function CharactersSection() {
               Songs
             </p>
             <div className="flex flex-wrap gap-2">
-              {characterSongs.map((song) => (
-                <div
-                  key={song.id}
-                  className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5"
-                >
-                  <div className="relative h-5 w-5 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      src={song.image}
-                      alt={song.title}
-                      fill
-                      className="object-cover object-top"
-                      sizes="20px"
-                    />
-                  </div>
-                  <span
-                    className="text-xs text-white/75"
-                    style={{ fontFamily: "var(--font-cinematic)" }}
+              {characterSongs.map((song) => {
+                const isPlaying = playingId === song.id;
+                return (
+                  <button
+                    key={song.id}
+                    type="button"
+                    onClick={(e) => togglePlay(e, song)}
+                    className={cn(
+                      "group flex items-center gap-2 rounded-full border px-3 py-1.5 transition-all duration-200",
+                      isPlaying
+                        ? "border-white/40 bg-white/15"
+                        : "border-white/15 bg-white/5 hover:border-white/30 hover:bg-white/10"
+                    )}
                   >
-                    {song.title}
-                  </span>
-                </div>
-              ))}
+                    <div className="relative h-5 w-5 shrink-0 overflow-hidden rounded-full">
+                      <Image
+                        src={song.image}
+                        alt={song.title}
+                        fill
+                        className="object-cover object-top"
+                        sizes="20px"
+                      />
+                      {/* Play/pause overlay on image */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                        {isPlaying
+                          ? <Pause className="size-2 fill-white text-white" />
+                          : <Play className="size-2 fill-white text-white" />
+                        }
+                      </div>
+                    </div>
+                    <span
+                      className={cn(
+                        "text-xs transition-colors",
+                        isPlaying ? "text-white" : "text-white/70"
+                      )}
+                      style={{ fontFamily: "var(--font-cinematic)" }}
+                    >
+                      {song.title}
+                    </span>
+                    {isPlaying && (
+                      <span className="flex items-end gap-px" style={{ height: "10px" }}>
+                        {[0, 1, 2].map((b) => (
+                          <span
+                            key={b}
+                            className="w-px rounded-sm bg-white/70"
+                            style={{
+                              height: "60%",
+                              animation: `waveBar 0.6s ease-in-out ${b * 0.12}s infinite alternate`,
+                            }}
+                          />
+                        ))}
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
         )}
@@ -191,13 +250,13 @@ export function CharactersSection() {
         <ChevronRight className="size-5 stroke-[1.5]" />
       </button>
 
-      {/* Character avatar strip — bottom */}
-      <div className="absolute bottom-7 left-[40%] right-0 flex items-end justify-center gap-3 px-12">
+      {/* Character avatar strip — above floating links */}
+      <div className="absolute bottom-20 left-[40%] right-0 flex items-end justify-center gap-3 px-12">
         {characters.map((c, i) => (
           <button
             key={c.id}
             type="button"
-            onClick={(e) => { e.stopPropagation(); setIndex(i); }}
+            onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
             aria-label={c.name}
             className={cn(
               "shrink-0 overflow-hidden rounded-full transition-all duration-300",
@@ -218,6 +277,12 @@ export function CharactersSection() {
           </button>
         ))}
       </div>
+      <style>{`
+        @keyframes waveBar {
+          from { transform: scaleY(0.2); }
+          to   { transform: scaleY(1); }
+        }
+      `}</style>
     </section>
   );
 }

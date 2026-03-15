@@ -68,7 +68,7 @@ export default function Home() {
           className="fixed right-7 top-6 z-[1001] select-none text-white"
           style={{
             fontFamily: "var(--font-title)",
-            fontSize: "1.35rem",
+            fontSize: "2rem",
             letterSpacing: "0.15em",
           }}
           aria-label="Go to home"
