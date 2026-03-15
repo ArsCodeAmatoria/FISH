@@ -254,8 +254,8 @@ export function CharactersSection({ openCharacter }: Props) {
               className={cn(
                 "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-left transition-all duration-200",
                 active
-                  ? "bg-white/10 text-white"
-                  : "text-white/55 hover:bg-white/5 hover:text-white/85"
+                  ? "bg-white/12 text-white"
+                  : "text-white/70 hover:bg-white/6 hover:text-white/90"
               )}
             >
               <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
@@ -275,7 +275,7 @@ export function CharactersSection({ openCharacter }: Props) {
                   {c.name}
                 </p>
                 <p
-                  className="mt-0.5 truncate text-[9px] text-white/45"
+                  className="mt-0.5 truncate text-[9px] text-white/60"
                   style={{ fontFamily: "var(--font-screenplay)" }}
                 >
                   {c.role}
