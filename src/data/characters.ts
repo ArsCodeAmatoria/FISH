@@ -188,6 +188,16 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
+    id: "sticks",
+    name: "Sticks",
+    role: "Market Boy",
+    description:
+      "One of the Market Boys — always drumming on something. Crates, barrels, lampposts. Wherever Sticks goes, there's a beat.",
+    personalityTraits: ["Rhythmic", "Restless", "Energetic"],
+    image: "/characters/sticks.png",
+    songIds: [],
+  },
+  {
     id: "holly",
     name: "Holly",
     role: "Fish Market Busker",
