@@ -7,6 +7,7 @@ import { scriptPages, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { sets } from "@/data/sets";
+import { crew } from "@/data/crew";
 import { cn } from "@/lib/utils";
 
 // ── Act / scene structure ──────────────────────────────────────────────────
@@ -417,6 +418,35 @@ export function ScriptSection({ openCharacter }: Props) {
               </div>
             </div>
           )}
+
+          {/* Written by */}
+          {(() => {
+            const writer = crew[0];
+            return (
+              <div>
+                <div className="h-px bg-white/8 mb-4" />
+                <p
+                  className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/55"
+                  style={{ fontFamily: "var(--font-cinematic)" }}
+                >
+                  Written By
+                </p>
+                <div className="flex items-center gap-2.5 rounded-xl p-1.5">
+                  <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
+                    <Image src={writer.image} alt={writer.name} fill className="object-cover object-top" sizes="36px" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="truncate text-[11px] font-medium text-white/85" style={{ fontFamily: "var(--font-cinematic)" }}>
+                      {writer.name}
+                    </p>
+                    <p className="mt-0.5 truncate text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>
+                      {writer.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
 
