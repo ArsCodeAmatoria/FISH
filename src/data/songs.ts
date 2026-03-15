@@ -57,7 +57,7 @@ export const songs: Song[] = [
   {
     id: "bank-river-z",
     title: "Bank (River Z)",
-    singers: "Ensemble",
+    singers: "J",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/songs/covers/angler.png",
     writtenBy: "Leigh Akin",

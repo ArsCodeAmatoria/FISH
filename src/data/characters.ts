@@ -18,7 +18,7 @@ export const characters: Character[] = [
       "A 15-year-old girl who hears rhythm in everyday life. She secretly raps and dreams of music but fears disappointing her father. She discovers her mother's musical legacy and ultimately leads the final river protest concert.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
-    songIds: ["fish", "fish-2", "flow-on", "bank-river-z", "stars-over-the-block"],
+    songIds: ["fish", "fish-2", "flow-on", "stars-over-the-block"],
   },
   {
     id: "ade",
@@ -38,7 +38,7 @@ export const characters: Character[] = [
       "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. Louis introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
-    songIds: ["bank-river-z"],
+    songIds: [],
   },
   {
     id: "mama-sabine",
@@ -165,7 +165,7 @@ export const characters: Character[] = [
       "One of the Market Girls — quick with a laugh and quicker with her hands. She knows every stall, every vendor, and every secret the Fish Market holds.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
-    songIds: [],
+    songIds: ["bank-river-z"],
   },
   {
     id: "cedar",
