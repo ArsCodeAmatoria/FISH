@@ -11,6 +11,8 @@
 
 ---
 
+<img width="928" height="1232" alt="Image" src="https://github.com/user-attachments/assets/fc579784-a69e-4530-8530-f2f2fdcfc620" />
+
 ## Overview
 
 **FISH** is a visual screenplay and film world explorer built as a widescreen, side-scrolling slideshow. It combines characters, locations, songs, and a formatted script into a single cinematic interface — white on black, film grain and all.
