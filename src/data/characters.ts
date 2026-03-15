@@ -101,7 +101,7 @@ export const characters: Character[] = [
     description:
       "CEO of the technology company building the data center on the river. A conflicted corporate leader who ultimately halts the project — pragmatic enough to see when he has gone too far.",
     personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
-    image: "/characters/MarcusVale.png",
+    image: "/characters/MarcusVale1.png",
     songIds: [],
   },
   {
