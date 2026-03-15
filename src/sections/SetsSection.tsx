@@ -205,7 +205,7 @@ export function SetsSection() {
       </div>
 
       {/* ── Right: vertical location column ─────────────────────── */}
-      <div className="flex w-24 shrink-0 flex-col items-center justify-center gap-3 py-10 pr-6">
+      <div className="flex w-24 shrink-0 flex-col items-center gap-3 overflow-y-auto pt-20 pb-24 pr-6" style={{ scrollbarWidth: "none" }}>
         {sets.map((s, i) => (
           <button
             key={s.id}
