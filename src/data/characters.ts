@@ -95,6 +95,26 @@ export const characters: Character[] = [
 
   // ── Corporate Antagonists ──────────────────────────────────
   {
+    id: "marcus-vale",
+    name: "Marcus Vale",
+    role: "Corporate Antagonist",
+    description:
+      "CEO of the technology company building the data center on the river. A conflicted corporate leader who ultimately halts the project — pragmatic enough to see when he has gone too far.",
+    personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
+    image: "/characters/MarcusVale.png",
+    songIds: [],
+  },
+  {
+    id: "victor-kane",
+    name: "Victor Kane",
+    role: "Primary Human Antagonist",
+    description:
+      "Operations director pushing the construction project forward regardless of environmental damage. Ruthless, calculating, and entirely profit-driven — the human face of everything threatening the river.",
+    personalityTraits: ["Ruthless", "Calculating", "Profit-driven"],
+    image: "/characters/VictorKane.png",
+    songIds: [],
+  },
+  {
     id: "fish-thief-cat",
     name: "Fish Thief Cat",
     role: "Antagonist",
