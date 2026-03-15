@@ -198,19 +198,27 @@ export function SongsSection() {
       {/* ── Right: Song grid ─────────────────────────────────── */}
       <div className="flex flex-1 flex-col px-8 pt-10 pb-8">
         {/* Header */}
-        <div className="mb-5 shrink-0 flex items-baseline justify-between">
-          <h1
-            className="section-heading text-2xl"
-            style={{ fontFamily: "var(--font-cinematic)" }}
-          >
-            All Tracks
-          </h1>
-          <span
-            className="text-[10px] text-white/30"
+        <div className="mb-5 shrink-0">
+          <div className="flex items-baseline justify-between">
+            <h1
+              className="section-heading text-2xl"
+              style={{ fontFamily: "var(--font-cinematic)" }}
+            >
+              All Tracks
+            </h1>
+            <span
+              className="text-[10px] text-white/30"
+              style={{ fontFamily: "var(--font-screenplay)" }}
+            >
+              {songs.length} songs
+            </span>
+          </div>
+          <p
+            className="mt-1.5 text-[11px] text-white/45"
             style={{ fontFamily: "var(--font-screenplay)" }}
           >
-            {songs.length} songs
-          </span>
+            The complete soundtrack — click any track to play.
+          </p>
         </div>
 
         {/* Track list */}
