@@ -192,8 +192,8 @@ export function SetsSection() {
         )}
       </div>
 
-      {/* ── Set thumbnail strip ─────────────────────────────────── */}
-      <div className="absolute bottom-7 left-[52%] right-0 flex items-end justify-center gap-2.5 px-12">
+      {/* ── Set thumbnail strip — above floating nav ───────────── */}
+      <div className="absolute bottom-20 left-[52%] right-0 flex items-end justify-center gap-2.5 px-12">
         {sets.map((s, i) => (
           <button
             key={s.id}
