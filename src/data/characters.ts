@@ -178,16 +178,6 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
-    id: "miss-pine",
-    name: "Miss Pine",
-    role: "Market Girl",
-    description:
-      "The eldest of the Market Girls, with a sharp eye and sharper wit. Miss Pine has seen it all at the market — and has an opinion about all of it.",
-    personalityTraits: ["Witty", "Observant", "Spirited"],
-    image: "/characters/cedar.png",
-    songIds: [],
-  },
-  {
     id: "sticks",
     name: "Sticks",
     role: "Market Busker & Market Boy",
