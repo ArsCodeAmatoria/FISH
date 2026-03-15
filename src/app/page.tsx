@@ -67,7 +67,7 @@ function HomeInner() {
         <TitleSlide />
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
-        <SongsSection />
+        <SongsSection openCharacter={openCharacter} />
         <ScriptSection openCharacter={openCharacter} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
