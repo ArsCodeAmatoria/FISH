@@ -13,9 +13,9 @@ import { cn } from "@/lib/utils";
 // ── Act / scene structure ──────────────────────────────────────────────────
 
 const ACTS = [
-  { label: "ACT I",   roman: "I",   start: 0,  end: 6  },
-  { label: "ACT II",  roman: "II",  start: 7,  end: 18 },
-  { label: "ACT III", roman: "III", start: 19, end: 26 },
+  { label: "ACT I",   roman: "I",   start: 0,   end: 29  },
+  { label: "ACT II",  roman: "II",  start: 30,  end: 89  },
+  { label: "ACT III", roman: "III", start: 90,  end: 119 },
 ];
 
 /** Extract the first SCENE heading text from a page */
@@ -169,7 +169,7 @@ export function ScriptSection() {
                   "mb-2 flex items-center gap-2 text-left transition-colors",
                   page >= act.start && page <= act.end
                     ? "text-white"
-                    : "text-white/30 hover:text-white/60"
+                    : "text-white/55 hover:text-white/80"
                 )}
               >
                 <span
@@ -199,11 +199,11 @@ export function ScriptSection() {
                         "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
                         isActive
                           ? "bg-white/10 text-white"
-                          : "text-white/35 hover:bg-white/5 hover:text-white/70"
+                          : "text-white/60 hover:bg-white/5 hover:text-white/85"
                       )}
                     >
                       <span
-                        className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/25"
+                        className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
                         style={{ fontFamily: "var(--font-screenplay)" }}
                       >
                         {String(sceneNum).padStart(2, "0")}
