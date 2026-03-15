@@ -38,7 +38,7 @@ export const characters: Character[] = [
       "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. Louis introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
-    songIds: ["fish-2", "bank-river-z"],
+    songIds: ["bank-river-z"],
   },
   {
     id: "mama-sabine",
@@ -48,7 +48,7 @@ export const characters: Character[] = [
       "A spiritual shopkeeper and the town's witch doctor — ancient, ambiguous, and never quite what she seems. She connects Zuri to her mother's legacy, reveals Amara's recordings, and appears at precisely the wrong moment with a riddle and a knowing look.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
-    songIds: ["fish-2", "bank-river-z", "echo-in-the-water"],
+    songIds: ["bank-river-z", "echo-in-the-water"],
   },
   {
     id: "amara",
@@ -70,7 +70,7 @@ export const characters: Character[] = [
       "A dramatic pelican who believes he is a tactical mastermind. Known for heroic speeches, a pouch full of random objects, and an inexplicable boat bow dance. He takes everything seriously — except the things that matter.",
     personalityTraits: ["Theatrical", "Overly serious", "Secretly a hoarder"],
     image: "/characters/captain.png",
-    songIds: ["alien-groove", "fish-2"],
+    songIds: ["alien-groove"],
   },
   {
     id: "pants",
@@ -90,7 +90,7 @@ export const characters: Character[] = [
       "An energetic river otter who loves machines and chaos in equal measure. An accidental catalyst for many events — if something spinny is nearby, Ripple will turn it, and disaster will follow with a giant smile.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
-    songIds: ["fish-2"],
+    songIds: [],
   },
 
   // ── Corporate Antagonists ──────────────────────────────────
@@ -132,7 +132,7 @@ export const characters: Character[] = [
       "Cunning, sly, and driven by greed. Operates in the shadows of the Fish Market and will take whatever isn't nailed down.",
     personalityTraits: ["Cunning", "Sly", "Greedy"],
     image: "/characters/fishtheifcat.png",
-    songIds: ["fish-2"],
+    songIds: [],
   },
   {
     id: "fish-thief-dog",
@@ -142,7 +142,7 @@ export const characters: Character[] = [
       "Brash and loud where the cat is quiet and careful. The muscle of the operation — loyal to whoever fed him last.",
     personalityTraits: ["Brash", "Loud", "Impulsive"],
     image: "/characters/fishtheifdog1.png",
-    songIds: ["fish-2"],
+    songIds: [],
   },
 
 
