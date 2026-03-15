@@ -66,7 +66,7 @@ export const songs: Song[] = [
   {
     id: "flow-on",
     title: "Flow On",
-    singers: "Zuri",
+    singers: "Cedar",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/songs/covers/puffer.png",
     writtenBy: "Leigh Akin",
