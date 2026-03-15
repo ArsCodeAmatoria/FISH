@@ -240,8 +240,19 @@ export function CharactersSection({ openCharacter }: Props) {
       </button>
 
       {/* Right: scrollable character thumbnail column */}
+      <div className="flex w-56 shrink-0 flex-col overflow-hidden">
+        {/* Sticky title */}
+        <div className="shrink-0 pt-20 pr-4 pl-3 pb-3">
+          <p
+            className="text-[10px] uppercase tracking-[0.3em] text-white/40"
+            style={{ fontFamily: "var(--font-cinematic)" }}
+          >
+            Characters
+          </p>
+        </div>
+        {/* Scrollable list */}
       <div
-        className="flex w-56 shrink-0 flex-col gap-1 overflow-y-auto pt-20 pr-4 pl-2 pb-24"
+        className="flex flex-1 flex-col gap-1 overflow-y-auto pr-4 pl-2 pb-24"
         style={{ scrollbarWidth: "none" }}
       >
         {characters.map((c, i) => {
@@ -284,6 +295,7 @@ export function CharactersSection({ openCharacter }: Props) {
             </button>
           );
         })}
+      </div>
       </div>
       <style>{`
         @keyframes waveBar {
