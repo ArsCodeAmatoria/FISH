@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowUpRight, Music, Play, Pause } from "lucide-react";
+import { ChevronLeft, ArrowUpRight, Music, Play, Pause } from "lucide-react";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { cn } from "@/lib/utils";
@@ -239,22 +239,11 @@ export function CharactersSection({ openCharacter }: Props) {
         <ChevronLeft className="size-5 stroke-[1.5]" />
       </button>
 
-      {/* Internal next arrow */}
-      <button
-        type="button"
-        onClick={next}
-        disabled={index === total - 1}
-        aria-label="Next character"
-        className={cn(
-          "absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white backdrop-blur-sm transition-all hover:border-white/40",
-          "disabled:pointer-events-none disabled:opacity-0"
-        )}
+      {/* Right: scrollable character thumbnail column */}
+      <div
+        className="flex w-20 shrink-0 flex-col items-center gap-2.5 overflow-y-auto py-16 pr-3 pl-2 pb-24"
+        style={{ scrollbarWidth: "none" }}
       >
-        <ChevronRight className="size-5 stroke-[1.5]" />
-      </button>
-
-      {/* Character avatar strip — above floating links */}
-      <div className="absolute bottom-20 left-[40%] right-0 flex items-end justify-center gap-3 px-12">
         {characters.map((c, i) => (
           <button
             key={c.id}
@@ -262,21 +251,22 @@ export function CharactersSection({ openCharacter }: Props) {
             onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
             aria-label={c.name}
             className={cn(
-              "shrink-0 overflow-hidden rounded-full transition-all duration-300",
+              "group relative w-full shrink-0 overflow-hidden rounded-xl transition-all duration-200",
               i === index
-                ? "h-10 w-10 ring-2 ring-white/70 ring-offset-2 ring-offset-black"
-                : "h-8 w-8 opacity-65 hover:opacity-90 hover:ring-1 hover:ring-white/30 hover:ring-offset-1 hover:ring-offset-black"
+                ? "h-14 ring-2 ring-white/60 ring-offset-2 ring-offset-black"
+                : "h-11 opacity-45 hover:opacity-80 hover:ring-1 hover:ring-white/25 hover:ring-offset-1 hover:ring-offset-black"
             )}
           >
-            <div className="relative h-full w-full">
-              <Image
-                src={c.image}
-                alt={c.name}
-                fill
-                className="object-cover object-top"
-                sizes="40px"
-              />
-            </div>
+            <Image
+              src={c.image}
+              alt={c.name}
+              fill
+              className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+              sizes="64px"
+            />
+            {i === index && (
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+            )}
           </button>
         ))}
       </div>
