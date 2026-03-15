@@ -115,6 +115,16 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
+    id: "henchman",
+    name: "Henchman",
+    role: "Victor Kane's Enforcer",
+    description:
+      "Victor Kane's on-the-ground enforcer at the construction site. Does what he's told, asks no questions, and makes sure the project keeps moving no matter what stands in the way.",
+    personalityTraits: ["Obedient", "Intimidating", "Blunt"],
+    image: "/characters/henchman.png",
+    songIds: [],
+  },
+  {
     id: "fish-thief-cat",
     name: "Fish Thief Cat",
     role: "Antagonist",
