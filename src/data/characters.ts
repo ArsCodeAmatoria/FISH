@@ -141,7 +141,7 @@ export const characters: Character[] = [
     description:
       "Brash and loud where the cat is quiet and careful. The muscle of the operation — loyal to whoever fed him last.",
     personalityTraits: ["Brash", "Loud", "Impulsive"],
-    image: "/characters/fishtheifdog.png",
+    image: "/characters/fishtheifdog1.png",
     songIds: ["fish-2"],
   },
 
@@ -190,11 +190,21 @@ export const characters: Character[] = [
   {
     id: "sticks",
     name: "Sticks",
-    role: "Market Boy",
+    role: "Market Busker & Market Boy",
     description:
-      "One of the Market Boys — always drumming on something. Crates, barrels, lampposts. Wherever Sticks goes, there's a beat.",
+      "One of the Market Boys and a born busker — always drumming on something. Crates, barrels, lampposts. Wherever Sticks goes, there's a beat.",
     personalityTraits: ["Rhythmic", "Restless", "Energetic"],
     image: "/characters/sticks.png",
+    songIds: [],
+  },
+  {
+    id: "bass",
+    name: "Bass",
+    role: "Market Busker",
+    description:
+      "A deep-grooved market busker who holds down the low end wherever he plays. His bass lines drift through the stalls and stop people mid-step.",
+    personalityTraits: ["Soulful", "Cool", "Grounded"],
+    image: "/characters/bass.png",
     songIds: [],
   },
   {
