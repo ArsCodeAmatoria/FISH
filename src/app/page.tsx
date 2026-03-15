@@ -6,10 +6,9 @@ import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
 import { SongsSection } from "@/sections/SongsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
-import { SlideshowArrows } from "@/components/SlideshowArrows";
 import { FloatingLinks } from "@/components/FloatingLinks";
 
-const SLIDE_COUNT = 5; // title, characters, sets, songs, script
+const SLIDE_COUNT = 5;
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,9 +20,7 @@ export default function Home() {
     setCurrentSlide(i);
     isScrollingRef.current = true;
     const el = containerRef.current;
-    if (el) {
-      el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
-    }
+    if (el) el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
   }, []);
 
   useEffect(() => {
@@ -62,12 +59,23 @@ export default function Home() {
         <SongsSection />
         <ScriptSection />
       </div>
-      <SlideshowArrows
-        current={currentSlide}
-        total={SLIDE_COUNT}
-        onPrev={() => goToSlide(currentSlide - 1)}
-        onNext={() => goToSlide(currentSlide + 1)}
-      />
+
+      {/* Floating FISH home link — top left */}
+      <button
+        type="button"
+        onClick={() => goToSlide(0)}
+        className="fixed left-7 top-6 z-[1001] select-none text-white/30 transition-all duration-200 hover:text-white/80"
+        style={{
+          fontFamily: "var(--font-title)",
+          fontSize: "1.35rem",
+          letterSpacing: "0.15em",
+        }}
+        aria-label="Go to home"
+      >
+        FISH
+      </button>
+
+      {/* Floating section links — bottom center */}
       <FloatingLinks goToSlide={goToSlide} currentSlide={currentSlide} />
     </div>
   );
