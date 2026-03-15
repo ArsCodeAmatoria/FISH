@@ -214,7 +214,8 @@ export function SongsSection() {
         </div>
 
         {/* 3 × 3 grid */}
-        <div className="grid flex-1 grid-cols-3 gap-3" style={{ gridTemplateRows: "repeat(3, 1fr)" }}>
+        <div className="flex-1 overflow-y-auto pb-24" style={{ scrollbarWidth: "none" }}>
+        <div className="grid grid-cols-3 gap-3" style={{ gridAutoRows: "calc((100vh - 160px) / 3)" }}>
           {songs.map((s, i) => {
             const active = s.id === selectedId;
             const playing = playingId === s.id;
@@ -313,6 +314,7 @@ export function SongsSection() {
               </button>
             );
           })}
+        </div>
         </div>
       </div>
 
