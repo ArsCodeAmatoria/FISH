@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```
+███████╗██╗███████╗██╗  ██╗
+██╔════╝██║██╔════╝██║  ██║
+█████╗  ██║███████╗███████║
+██╔══╝  ██║╚════██║██╔══██║
+██║     ██║███████║██║  ██║
+╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+```
+
+> *A cinematic screenplay web experience.*
+
+---
+
+## Overview
+
+**FISH** is a visual screenplay and film world explorer built as a widescreen, side-scrolling slideshow. It combines characters, locations, songs, and a formatted script into a single cinematic interface — white on black, film grain and all.
+
+---
+
+## Slides
+
+| # | Slide | Description |
+|---|-------|-------------|
+| 0 | **FISH** | Title card with animated letter reveal and radial vignette |
+| 1 | **Characters** | Full-height portrait gallery — 10 characters with role and traits |
+| 2 | **Sets** | 3×2 full-bleed location grid with INT./EXT. screenplay sluglines |
+| 3 | **Songs** | SoundCloud-style cards with real audio playback and animated waveforms |
+| 4 | **Script** | Screenplay-formatted scenes in Courier Prime, paginated |
+
+---
+
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** — App Router, TypeScript
+- **[Tailwind CSS v4](https://tailwindcss.com)** — utility-first styling
+- **[Lucide React](https://lucide.dev)** — icons
+- **[Lilita One](https://fonts.google.com/specimen/Lilita+One)** — title font
+- **[Cinzel](https://fonts.google.com/specimen/Cinzel)** — section headings
+- **[Courier Prime](https://fonts.google.com/specimen/Courier+Prime)** — screenplay text
+
+---
+
+## Characters
+
+| Character | Role |
+|-----------|------|
+| Zuri | Protagonist |
+| Ade | Supporting Lead |
+| Papa Louis | Elder / Mentor |
+| Mama Sabine | Matriarch / Shopkeeper |
+| Captain Beignet | River Captain |
+| Pants | Comic Relief |
+| Ripple | Mysterious Guide |
+| Fish Thief Cat | Antagonist |
+| Fish Thief Dog | Henchman |
+| Witch Doctor | Mystical Force |
+
+---
+
+## Songs
+
+| Title | Singer(s) |
+|-------|-----------|
+| Fish | Zuri & Ade |
+| Fish (Reprise) | Full Company |
+| Echo in the Water | Ripple & Chorus |
+| Alien Groove | Captain Beignet |
+| Glazed | Pants |
+| Bank (River Z) | Ensemble |
+| Flow On | Zuri |
+| Quiet River | Papa Louis |
+| The Girl Who Pooped Her Pants | Mama Sabine & Pants |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+/public
+  /characters   — character portrait images
+  /sets         — location artwork
+  /songs        — .wav audio files
 
-To learn more about Next.js, take a look at the following resources:
+/src
+  /app          — Next.js App Router (layout, page, globals.css)
+  /components   — Nav, SlideshowArrows, FloatingLinks, ScreenplayBlock, UI
+  /data         — characters.ts, sets.ts, songs.ts, script.ts
+  /sections     — TitleSlide, CharactersSection, SetsSection, SongsSection, ScriptSection
+  /lib          — utils (cn)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Live at **[fish-kmk8lqht3-kojin-foxs-projects.vercel.app](https://fish-kmk8lqht3-kojin-foxs-projects.vercel.app)**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Hosted on [Vercel](https://vercel.com). Every push to `main` triggers a new production build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+*© FISH — A Cinematic Journey*
