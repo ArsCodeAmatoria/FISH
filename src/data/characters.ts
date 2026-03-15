@@ -174,7 +174,7 @@ export const characters: Character[] = [
     description:
       "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
     personalityTraits: ["Steady", "Loyal", "Protective"],
-    image: "/characters/cedar.png",
+    image: "/characters/misspine.png",
     songIds: [],
   },
   {
@@ -184,7 +184,7 @@ export const characters: Character[] = [
     description:
       "The eldest of the Market Girls, with a sharp eye and sharper wit. Miss Pine has seen it all at the market — and has an opinion about all of it.",
     personalityTraits: ["Witty", "Observant", "Spirited"],
-    image: "/characters/misspine.png",
+    image: "/characters/cedar.png",
     songIds: [],
   },
   {
