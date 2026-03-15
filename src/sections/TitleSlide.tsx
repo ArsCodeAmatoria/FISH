@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { songs } from "@/data/songs";
 import { crew } from "@/data/crew";
@@ -45,6 +46,23 @@ export function TitleSlide() {
       id="title"
       className="relative flex h-screen w-screen shrink-0 flex-col items-center justify-center overflow-hidden bg-black"
     >
+      {/* Redfish watermark */}
+      <div
+        className="pointer-events-none absolute inset-0 flex items-center justify-center"
+        style={{ animation: "fadeIn 2.4s ease both", animationDelay: "0.3s" }}
+      >
+        <div className="relative h-[70vh] w-[70vh] opacity-[0.06]">
+          <Image
+            src="/songs/covers/redfish.png"
+            alt=""
+            fill
+            className="object-contain"
+            sizes="70vh"
+            priority
+          />
+        </div>
+      </div>
+
       {/* Radial vignette */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
 
