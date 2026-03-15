@@ -28,7 +28,7 @@ export const characters: Character[] = [
       "Zuri's father and a hardworking fisherman who runs the boat Mama Amara, named after his late wife. He represents grief and responsibility — he believes music caused tragedy but eventually finds the strength to support Zuri.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
-    songIds: ["quiet-river", "bank-river-z"],
+    songIds: ["quiet-river"],
   },
   {
     id: "papa-louis",
