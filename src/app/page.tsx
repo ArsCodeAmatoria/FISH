@@ -6,9 +6,10 @@ import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
 import { SongsSection } from "@/sections/SongsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
+import { LyricsSection } from "@/sections/LyricsSection";
 import { FloatingLinks } from "@/components/FloatingLinks";
 
-const SLIDE_COUNT = 5;
+const SLIDE_COUNT = 6;
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -58,6 +59,7 @@ export default function Home() {
         <SetsSection />
         <SongsSection />
         <ScriptSection />
+        <LyricsSection />
       </div>
 
       {/* Floating FISH home link — top right, hidden on title slide */}
