@@ -43,12 +43,12 @@ export const characters: Character[] = [
   {
     id: "mama-sabine",
     name: "Mama Sabine",
-    role: "Spiritual Guide",
+    role: "Spiritual Guide & Witch Doctor",
     description:
-      "A spiritual shopkeeper who connects Zuri to her mother's legacy. She reveals Amara's recordings and holds the memory of the town's musical past with quiet, unwavering certainty.",
-    personalityTraits: ["Mysterious", "Calm", "Insightful"],
-    image: "/characters/mother.png",
-    songIds: ["pants-song", "fish-2", "bank-river-z"],
+      "A spiritual shopkeeper and the town's witch doctor — ancient, ambiguous, and never quite what she seems. She connects Zuri to her mother's legacy, reveals Amara's recordings, and appears at precisely the wrong moment with a riddle and a knowing look.",
+    personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
+    image: "/characters/witchdoctor.png",
+    songIds: ["pants-song", "fish-2", "bank-river-z", "echo-in-the-water"],
   },
   {
     id: "amara",
@@ -134,16 +134,7 @@ export const characters: Character[] = [
     image: "/characters/fishtheifdog.png",
     songIds: ["fish-2"],
   },
-  {
-    id: "witch-doctor",
-    name: "Witch Doctor",
-    role: "Mystical Force",
-    description:
-      "Ancient and ambiguous — it is never quite clear whether the Witch Doctor is a threat or a guide. He speaks in riddles and appears at precisely the wrong moment.",
-    personalityTraits: ["Ancient", "Cryptic", "Powerful"],
-    image: "/characters/witchdoctor.png",
-    songIds: ["fish-2", "echo-in-the-water"],
-  },
+
 
   // ── Market Characters ──────────────────────────────────────
   {
