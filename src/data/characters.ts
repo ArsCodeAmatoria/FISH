@@ -9,83 +9,98 @@ export interface Character {
 }
 
 export const characters: Character[] = [
+  // ── Main Characters ────────────────────────────────────────
   {
     id: "zuri",
     name: "Zuri",
     role: "Protagonist",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    personalityTraits: ["Determined", "Curious", "Resilient", "Compassionate"],
+      "A 15-year-old girl who hears rhythm in everyday life. She secretly raps and dreams of music but fears disappointing her father. She discovers her mother's musical legacy and ultimately leads the final river protest concert.",
+    personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
     songIds: ["fish", "fish-2", "flow-on", "bank-river-z"],
   },
   {
     id: "ade",
     name: "Ade",
-    role: "Supporting Lead",
+    role: "Zuri's Father",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.",
-    personalityTraits: ["Loyal", "Witty", "Adventurous", "Kind"],
+      "Zuri's father and a hardworking fisherman who runs the boat Mama Amara, named after his late wife. He represents grief and responsibility — he believes music caused tragedy but eventually finds the strength to support Zuri.",
+    personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/trumpet.png",
     songIds: ["bank-river-z"],
   },
   {
     id: "papa-louis",
     name: "Papa Louis",
-    role: "Elder / Mentor",
+    role: "Musical Mentor",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.",
-    personalityTraits: ["Wise", "Patient", "Warm", "Storyteller"],
+      "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. He introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
+    personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/father.png",
     songIds: ["quiet-river", "fish-2", "bank-river-z"],
   },
   {
     id: "mama-sabine",
     name: "Mama Sabine",
-    role: "Matriarch / Shopkeeper",
+    role: "Spiritual Guide",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sunt in culpa qui officia deserunt mollit anim.",
-    personalityTraits: ["Strong", "Nurturing", "Sharp", "Generous"],
+      "A spiritual shopkeeper who connects Zuri to her mother's legacy. She reveals Amara's recordings and holds the memory of the town's musical past with quiet, unwavering certainty.",
+    personalityTraits: ["Mysterious", "Calm", "Insightful"],
     image: "/characters/mother.png",
     songIds: ["pants-song", "fish-2", "bank-river-z"],
   },
   {
+    id: "amara",
+    name: "Amara",
+    role: "Zuri's Late Mother",
+    description:
+      "Zuri's late mother, a beloved singer who once performed on the dock stage. Her music and her memory are the emotional engine of the entire journey — every song Zuri finds leads back to her.",
+    personalityTraits: ["Soulful", "Courageous", "Artistic"],
+    image: "/characters/mother2.png",
+    songIds: [],
+  },
+
+  // ── Animal Comedy Trio (Fish Thieves) ──────────────────────
+  {
     id: "captain-beignet",
     name: "Captain Beignet",
-    role: "River Captain",
+    role: "Leader of the Fish Thieves",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisi ut aliquip ex ea commodo consequat.",
-    personalityTraits: ["Bold", "Charming", "Resourceful", "Larger-than-life"],
+      "A dramatic pelican who believes he is a tactical mastermind. Known for heroic speeches, a pouch full of random objects, and an inexplicable boat bow dance. He takes everything seriously — except the things that matter.",
+    personalityTraits: ["Theatrical", "Overly serious", "Secretly a hoarder"],
     image: "/characters/captain.png",
     songIds: ["alien-groove", "fish-2"],
   },
   {
     id: "pants",
     name: "Pants",
-    role: "Comic Relief",
+    role: "The Realist",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.",
-    personalityTraits: ["Funny", "Loyal", "Clumsy", "Heart of Gold"],
+      "A sarcastic tabby cat obsessed with grooming and dignity. The self-appointed voice of reason in the trio. Famous for the donut philosophy song, a coffee addiction, and the phrase \"I just licked all this.\"",
+    personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
     image: "/characters/pants.png",
     songIds: ["glazed", "pants-song", "fish-2"],
   },
   {
     id: "ripple",
     name: "Ripple",
-    role: "Mysterious Guide",
+    role: "Accidental Chaos Agent",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.",
-    personalityTraits: ["Mysterious", "Gentle", "Knowing", "Ethereal"],
+      "An energetic river otter who loves machines and chaos in equal measure. An accidental catalyst for many events — if something spinny is nearby, Ripple will turn it, and disaster will follow with a giant smile.",
+    personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
     songIds: ["echo-in-the-water", "fish-2"],
   },
+
+  // ── Corporate Antagonists ──────────────────────────────────
   {
     id: "fish-thief-cat",
     name: "Fish Thief Cat",
     role: "Antagonist",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-    personalityTraits: ["Cunning", "Sly", "Greedy", "Agile"],
+      "Cunning, sly, and driven by greed. Operates in the shadows of the Fish Market and will take whatever isn't nailed down.",
+    personalityTraits: ["Cunning", "Sly", "Greedy"],
     image: "/characters/fishtheifcat.png",
     songIds: ["fish-2"],
   },
@@ -94,8 +109,8 @@ export const characters: Character[] = [
     name: "Fish Thief Dog",
     role: "Henchman",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam quis nostrud.",
-    personalityTraits: ["Brash", "Loud", "Clumsy", "Loyal"],
+      "Brash and loud where the cat is quiet and careful. The muscle of the operation — loyal to whoever fed him last.",
+    personalityTraits: ["Brash", "Loud", "Impulsive"],
     image: "/characters/fishtheifdog.png",
     songIds: ["fish-2"],
   },
@@ -104,18 +119,20 @@ export const characters: Character[] = [
     name: "Witch Doctor",
     role: "Mystical Force",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.",
-    personalityTraits: ["Ancient", "Cryptic", "Powerful", "Ambiguous"],
+      "Ancient and ambiguous — it is never quite clear whether the Witch Doctor is a threat or a guide. He speaks in riddles and appears at precisely the wrong moment.",
+    personalityTraits: ["Ancient", "Cryptic", "Powerful"],
     image: "/characters/witchdoctor.png",
     songIds: ["fish-2", "echo-in-the-water"],
   },
+
+  // ── Market Characters ──────────────────────────────────────
   {
     id: "sushi",
     name: "Sushi",
     role: "Sushi Shop Owner",
     description:
       "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and always behind the counter.",
-    personalityTraits: ["Resourceful", "Sharp", "Welcoming", "Proud"],
+    personalityTraits: ["Resourceful", "Sharp", "Welcoming"],
     image: "/characters/sushi.png",
     songIds: [],
   },
@@ -125,7 +142,7 @@ export const characters: Character[] = [
     role: "Market Girl",
     description:
       "One of the Market Girls — quick with a laugh and quicker with her hands. She knows every stall, every vendor, and every secret the Fish Market holds.",
-    personalityTraits: ["Quick", "Street-smart", "Playful", "Bold"],
+    personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
     songIds: [],
   },
@@ -135,7 +152,7 @@ export const characters: Character[] = [
     role: "Market Girl",
     description:
       "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
-    personalityTraits: ["Steady", "Loyal", "Calm", "Protective"],
+    personalityTraits: ["Steady", "Loyal", "Protective"],
     image: "/characters/cedar.png",
     songIds: [],
   },
@@ -144,8 +161,8 @@ export const characters: Character[] = [
     name: "Miss Pine",
     role: "Market Girl",
     description:
-      "One of the Market Girls — the eldest of the trio, with a sharp eye and sharper wit. Miss Pine has seen it all and has an opinion about all of it.",
-    personalityTraits: ["Witty", "Observant", "Confident", "Spirited"],
+      "The eldest of the Market Girls, with a sharp eye and sharper wit. Miss Pine has seen it all at the market — and has an opinion about all of it.",
+    personalityTraits: ["Witty", "Observant", "Spirited"],
     image: "/characters/misspine.png",
     songIds: [],
   },
