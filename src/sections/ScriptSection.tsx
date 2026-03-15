@@ -276,7 +276,7 @@ export function ScriptSection() {
           {pageCharacters.length > 0 && (
             <div>
               <p
-                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/30"
+                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/55"
                 style={{ fontFamily: "var(--font-cinematic)" }}
               >
                 Cast
@@ -292,10 +292,10 @@ export function ScriptSection() {
                       <Image src={char.image} alt={char.name} fill className="object-cover object-top" sizes="32px" />
                     </div>
                     <div className="min-w-0">
-                      <p className="truncate text-[11px] font-semibold text-white/80 group-hover:text-white" style={{ fontFamily: "var(--font-cinematic)" }}>
+                      <p className="truncate text-[11px] font-semibold text-white/90 group-hover:text-white" style={{ fontFamily: "var(--font-cinematic)" }}>
                         {char.name}
                       </p>
-                      <p className="truncate text-[9px] text-white/35">{char.role}</p>
+                      <p className="truncate text-[9px] text-white/55">{char.role}</p>
                     </div>
                   </Link>
                 ))}
@@ -309,7 +309,7 @@ export function ScriptSection() {
           {pageSongs.length > 0 && (
             <div>
               <p
-                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/30"
+                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/55"
                 style={{ fontFamily: "var(--font-cinematic)" }}
               >
                 Songs
@@ -336,11 +336,11 @@ export function ScriptSection() {
                         </div>
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className={cn("truncate text-[11px] font-semibold leading-tight", isPlaying ? "text-white" : "text-white/70")} style={{ fontFamily: "var(--font-cinematic)" }}>
+                        <p className={cn("truncate text-[11px] font-semibold leading-tight", isPlaying ? "text-white" : "text-white/85")} style={{ fontFamily: "var(--font-cinematic)" }}>
                           {song.title}
                         </p>
                         <div className="flex items-center gap-1.5">
-                          <p className="truncate text-[9px] text-white/35">{song.singers}</p>
+                          <p className="truncate text-[9px] text-white/55">{song.singers}</p>
                           {isPlaying && (
                             <span className="flex items-end gap-px" style={{ height: "8px" }}>
                               {[0, 1, 2].map((b) => (
@@ -363,21 +363,33 @@ export function ScriptSection() {
           {pageSets.length > 0 && (
             <div>
               <p
-                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/30"
+                className="mb-3 text-[9px] uppercase tracking-[0.28em] text-white/55"
                 style={{ fontFamily: "var(--font-cinematic)" }}
               >
                 Location
               </p>
               <div className="flex flex-col gap-2">
                 {pageSets.map((set) => (
-                  <div key={set.id} className="overflow-hidden rounded-xl">
-                    <div className="relative h-16 w-full overflow-hidden">
-                      <Image src={set.image} alt={set.name} fill className="object-cover" sizes="224px" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 px-2 pb-1.5">
-                        <p className="text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{set.slug}</p>
-                        <p className="truncate text-[10px] font-semibold text-white" style={{ fontFamily: "var(--font-cinematic)" }}>{set.name}</p>
-                      </div>
+                  <div
+                    key={set.id}
+                    className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 transition-all hover:border-white/15 hover:bg-white/5"
+                  >
+                    <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-lg ring-1 ring-white/15">
+                      <Image src={set.image} alt={set.name} fill className="object-cover" sizes="32px" />
+                    </div>
+                    <div className="min-w-0">
+                      <p
+                        className="truncate text-[11px] font-semibold text-white/90 group-hover:text-white"
+                        style={{ fontFamily: "var(--font-cinematic)" }}
+                      >
+                        {set.name}
+                      </p>
+                      <p
+                        className="text-[9px] text-white/55"
+                        style={{ fontFamily: "var(--font-screenplay)" }}
+                      >
+                        {set.slug}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -387,23 +399,6 @@ export function ScriptSection() {
         </div>
       </div>
 
-      {/* ── Bottom dot indicators ───────────────────────────────── */}
-      <div className="flex shrink-0 items-center justify-center gap-1.5 pt-4">
-        {scriptPages.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            aria-label={`Page ${i + 1}`}
-            onClick={() => goToPage(i)}
-            className={cn(
-              "rounded-full transition-all duration-200",
-              i === page
-                ? "h-1.5 w-5 bg-white/70"
-                : "h-1.5 w-1.5 bg-white/20 hover:bg-white/50"
-            )}
-          />
-        ))}
-      </div>
 
       <style>{`
         @keyframes waveBar {
