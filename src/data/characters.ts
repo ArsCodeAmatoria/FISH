@@ -198,6 +198,16 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
+    id: "chops",
+    name: "Chops",
+    role: "Market Busker",
+    description:
+      "An electric guitar player who sets up on the market corner and turns the whole block into a stage. His riffs cut through the noise like nobody's business.",
+    personalityTraits: ["Flashy", "Passionate", "Showman"],
+    image: "/characters/chops.png",
+    songIds: [],
+  },
+  {
     id: "bass",
     name: "Bass",
     role: "Market Busker",
