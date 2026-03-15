@@ -2,7 +2,7 @@
 
 import { useRef, useState, useCallback } from "react";
 import Image from "next/image";
-import { Play, Pause, Heart, Music } from "lucide-react";
+import { Play, Pause, Heart, Music, RotateCcw } from "lucide-react";
 import { songs } from "@/data/songs";
 import { cn } from "@/lib/utils";
 
@@ -64,6 +64,15 @@ export function SongsSection() {
       setPlayingId(song.id);
     }
   }, [isPlaying, song]);
+
+  const replay = useCallback(() => {
+    audioRef.current?.pause();
+    const audio = new Audio(song.audioSrc);
+    audio.addEventListener("ended", () => setPlayingId(null));
+    audio.play().catch(() => {});
+    audioRef.current = audio;
+    setPlayingId(song.id);
+  }, [song]);
 
   const toggleLike = useCallback((e: React.MouseEvent, id: string) => {
     e.stopPropagation();
@@ -176,6 +185,15 @@ export function SongsSection() {
               ) : (
                 <Play className="ml-0.5 size-5 fill-current" />
               )}
+            </button>
+
+            <button
+              type="button"
+              onClick={replay}
+              aria-label="Replay"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/50 transition-all hover:bg-white/12 hover:text-white"
+            >
+              <RotateCcw className="size-4" />
             </button>
 
             <button

@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, RotateCcw } from "lucide-react";
 import { songs } from "@/data/songs";
 import { crew } from "@/data/crew";
 import { cn } from "@/lib/utils";
@@ -174,6 +174,18 @@ export function CreditsSection() {
       setPlaying(true);
     }
   }, [playing, tick, stopRaf]);
+
+  const replay = useCallback(() => {
+    const audio = audioRef.current;
+    const el = scrollRef.current;
+    if (!audio) return;
+    stopRaf();
+    audio.currentTime = 0;
+    if (el) el.scrollTop = 0;
+    audio.play().catch(() => {});
+    rafRef.current = requestAnimationFrame(tick);
+    setPlaying(true);
+  }, [tick, stopRaf]);
 
   useEffect(() => () => stopRaf(), [stopRaf]);
 
@@ -380,6 +392,16 @@ export function CreditsSection() {
               >
                 {fmt(currentTime)} / {fmt(duration)}
               </span>
+
+              {/* Replay */}
+              <button
+                type="button"
+                onClick={replay}
+                aria-label="Replay from beginning"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white/50 transition-all duration-200 hover:border-white/35 hover:bg-white/12 hover:text-white"
+              >
+                <RotateCcw className="size-3.5" />
+              </button>
 
               {/* Play / Pause */}
               <button
