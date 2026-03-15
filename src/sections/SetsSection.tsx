@@ -111,7 +111,7 @@ export function SetsSection() {
 
         {/* ── Scrollable: Description + Characters + Scenes ─── */}
         <div
-          className="flex-1 overflow-y-auto pb-28"
+          className="flex-1 overflow-y-auto pb-4"
           style={{ scrollbarWidth: "none" }}
         >
           {/* Description */}
@@ -200,12 +200,12 @@ export function SetsSection() {
           )}
         </div>
 
-        {/* ── Scroll fade-out before thumbnails ─────────────── */}
-        <div className="pointer-events-none absolute bottom-24 left-0 right-0 h-12 bg-gradient-to-t from-black to-transparent" />
+        {/* Scroll fade at bottom */}
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black to-transparent" />
       </div>
 
-      {/* ── Set thumbnail strip — above floating nav ───────────── */}
-      <div className="absolute bottom-20 left-[52%] right-0 flex items-end justify-center gap-2.5 px-12">
+      {/* ── Right: vertical location column ─────────────────────── */}
+      <div className="flex w-24 shrink-0 flex-col items-center justify-center gap-3 py-10 pr-6">
         {sets.map((s, i) => (
           <button
             key={s.id}
@@ -213,21 +213,23 @@ export function SetsSection() {
             onClick={(e) => { e.stopPropagation(); switchSet(i); }}
             aria-label={s.name}
             className={cn(
-              "shrink-0 overflow-hidden rounded-lg transition-all duration-300",
+              "group relative shrink-0 overflow-hidden rounded-xl transition-all duration-300",
               i === index
-                ? "h-12 w-16 ring-2 ring-white/60 ring-offset-2 ring-offset-black"
-                : "h-9 w-12 opacity-50 hover:opacity-80 hover:ring-1 hover:ring-white/30 hover:ring-offset-1 hover:ring-offset-black"
+                ? "h-14 w-full ring-2 ring-white/60 ring-offset-2 ring-offset-black"
+                : "h-11 w-full opacity-50 hover:opacity-85 hover:ring-1 hover:ring-white/30 hover:ring-offset-1 hover:ring-offset-black"
             )}
           >
-            <div className="relative h-full w-full">
-              <Image
-                src={s.image}
-                alt={s.name}
-                fill
-                className="object-cover"
-                sizes="64px"
-              />
-            </div>
+            <Image
+              src={s.image}
+              alt={s.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              sizes="80px"
+            />
+            {/* Active overlay label */}
+            {i === index && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            )}
           </button>
         ))}
       </div>
@@ -244,20 +246,6 @@ export function SetsSection() {
         )}
       >
         <ChevronLeft className="size-5 stroke-[1.5]" />
-      </button>
-
-      {/* Internal next arrow */}
-      <button
-        type="button"
-        onClick={next}
-        disabled={index === total - 1}
-        aria-label="Next set"
-        className={cn(
-          "absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white backdrop-blur-sm transition-all hover:border-white/40",
-          "disabled:pointer-events-none disabled:opacity-0"
-        )}
-      >
-        <ChevronRight className="size-5 stroke-[1.5]" />
       </button>
     </section>
   );
