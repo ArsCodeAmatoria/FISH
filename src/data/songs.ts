@@ -23,7 +23,7 @@ export const songs: Song[] = [
     title: "Fish (Reprise)",
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/characters/zuri.png",
+    image: "/songs/covers/reprisals.png",
     writtenBy: "Leigh Akin",
     audioSrc: "/songs/Fish (2).wav",
   },
