@@ -2,14 +2,15 @@
 
 import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Play, Pause, Music2, Mic2, Users } from "lucide-react";
 import { songs } from "@/data/songs";
 import { characters } from "@/data/characters";
 import { allLyrics } from "@/data/lyrics";
 import { cn } from "@/lib/utils";
 
-export function LyricsSection() {
+interface Props { openCharacter: (id: string) => void; }
+
+export function LyricsSection({ openCharacter }: Props) {
   const [selectedId, setSelectedId] = useState(songs[0].id);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -267,10 +268,11 @@ export function LyricsSection() {
             {singers.length > 0 ? (
               <div className="flex flex-col gap-2.5">
                 {singers.map((c) => (
-                  <Link
+                  <button
                     key={c.id}
-                    href={`/characters/${c.id}`}
-                    className="group flex items-center gap-2.5 rounded-xl p-1.5 transition-colors hover:bg-white/6"
+                    type="button"
+                    onClick={() => openCharacter(c.id)}
+                    className="group flex items-center gap-2.5 rounded-xl p-1.5 text-left transition-colors hover:bg-white/6"
                   >
                     <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
                       <Image
@@ -295,7 +297,7 @@ export function LyricsSection() {
                         {c.role}
                       </p>
                     </div>
-                  </Link>
+                  </button>
                 ))}
               </div>
             ) : (

@@ -2,13 +2,14 @@
 
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight, ArrowUpRight, Music, Play, Pause } from "lucide-react";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { cn } from "@/lib/utils";
 
-export function CharactersSection() {
+interface Props { openCharacter: (id: string) => void; }
+
+export function CharactersSection({ openCharacter }: Props) {
   const [index, setIndex] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -58,8 +59,9 @@ export function CharactersSection() {
       className="relative flex h-screen w-screen shrink-0 overflow-hidden bg-black"
     >
       {/* Portrait — left half */}
-      <Link
-        href={`/characters/${character.id}`}
+      <button
+        type="button"
+        onClick={() => openCharacter(character.id)}
         className="group relative h-full w-[40%] shrink-0 overflow-hidden"
       >
         <Image
@@ -79,7 +81,7 @@ export function CharactersSection() {
         <div className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/40 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
           <ArrowUpRight className="size-4 text-white" />
         </div>
-      </Link>
+      </button>
 
       {/* Details — right half */}
       <div
@@ -211,15 +213,16 @@ export function CharactersSection() {
           </div>
         )}
 
-        {/* View profile link */}
-        <Link
-          href={`/characters/${character.id}`}
+        {/* View profile button */}
+        <button
+          type="button"
+          onClick={() => openCharacter(character.id)}
           className="group/link inline-flex w-fit items-center gap-2 text-sm text-white/50 transition-colors hover:text-white"
           style={{ fontFamily: "var(--font-cinematic)" }}
         >
           <span className="uppercase tracking-widest">Full Profile</span>
           <ArrowUpRight className="size-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-        </Link>
+        </button>
       </div>
 
       {/* Internal prev arrow */}

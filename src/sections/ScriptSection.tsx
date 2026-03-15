@@ -2,7 +2,6 @@
 
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { scriptPages, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
@@ -85,7 +84,9 @@ function ScriptLine({
 
 // ── Main component ─────────────────────────────────────────────────────────
 
-export function ScriptSection() {
+interface Props { openCharacter: (id: string) => void; }
+
+export function ScriptSection({ openCharacter }: Props) {
   const [page, setPage] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -283,10 +284,11 @@ export function ScriptSection() {
               </p>
               <div className="flex flex-col gap-2">
                 {pageCharacters.map((char) => (
-                  <Link
+                  <button
                     key={char.id}
-                    href={`/characters/${char.id}`}
-                    className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 transition-all hover:border-white/15 hover:bg-white/5"
+                    type="button"
+                    onClick={() => openCharacter(char.id)}
+                    className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 text-left transition-all hover:border-white/15 hover:bg-white/5"
                   >
                     <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full ring-1 ring-white/15">
                       <Image src={char.image} alt={char.name} fill className="object-cover object-top" sizes="32px" />
@@ -297,7 +299,7 @@ export function ScriptSection() {
                       </p>
                       <p className="truncate text-[9px] text-white/55">{char.role}</p>
                     </div>
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>

@@ -2,7 +2,6 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { sets } from "@/data/sets";
 import { characters } from "@/data/characters";
@@ -29,7 +28,9 @@ function useSetContext(setId: string) {
   return { setCharacters, scenes, pageCount: pages.length };
 }
 
-export function SetsSection() {
+interface Props { openCharacter: (id: string) => void; }
+
+export function SetsSection({ openCharacter }: Props) {
   const [index, setIndex] = useState(0);
   const total = sets.length;
   const set = sets[index];
@@ -143,9 +144,10 @@ export function SetsSection() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {setCharacters.map((char) => (
-                  <Link
+                  <button
                     key={char.id}
-                    href={`/characters/${char.id}`}
+                    type="button"
+                    onClick={() => openCharacter(char.id)}
                     className="group/char flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 transition-all hover:border-white/35 hover:bg-white/10"
                   >
                     <div className="relative h-5 w-5 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
@@ -163,7 +165,7 @@ export function SetsSection() {
                     >
                       {char.name}
                     </span>
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
@@ -8,6 +9,7 @@ import { SongsSection } from "@/sections/SongsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
 import { LyricsSection } from "@/sections/LyricsSection";
 import { FloatingLinks } from "@/components/FloatingLinks";
+import { CharacterModal } from "@/components/CharacterModal";
 
 const SLIDE_COUNT = 6;
 
@@ -15,6 +17,9 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isScrollingRef = useRef(false);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const activeCharacterId = searchParams.get("character");
 
   const goToSlide = useCallback((index: number) => {
     const i = Math.max(0, Math.min(index, SLIDE_COUNT - 1));
@@ -23,6 +28,10 @@ export default function Home() {
     const el = containerRef.current;
     if (el) el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
   }, []);
+
+  const openCharacter = useCallback((id: string) => {
+    router.push(`?character=${id}`, { scroll: false });
+  }, [router]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -55,11 +64,11 @@ export default function Home() {
         style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
       >
         <TitleSlide />
-        <CharactersSection />
-        <SetsSection />
+        <CharactersSection openCharacter={openCharacter} />
+        <SetsSection openCharacter={openCharacter} />
         <SongsSection />
-        <ScriptSection />
-        <LyricsSection />
+        <ScriptSection openCharacter={openCharacter} />
+        <LyricsSection openCharacter={openCharacter} />
       </div>
 
       {/* Floating home link — top right, hidden on title slide */}
@@ -87,6 +96,14 @@ export default function Home() {
 
       {/* Floating section links — bottom center */}
       <FloatingLinks goToSlide={goToSlide} currentSlide={currentSlide} />
+
+      {/* Character modal overlay */}
+      {activeCharacterId && (
+        <CharacterModal
+          characterId={activeCharacterId}
+          onOpenCharacter={openCharacter}
+        />
+      )}
     </div>
   );
 }
