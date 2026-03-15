@@ -106,8 +106,14 @@ export function SetsSection() {
           </h2>
 
           {/* Divider */}
-          <div className="mb-5 h-px w-14 bg-white/20" />
+          <div className="mb-4 h-px w-14 bg-white/20" />
+        </div>
 
+        {/* ── Scrollable: Description + Characters + Scenes ─── */}
+        <div
+          className="flex-1 overflow-y-auto pb-28"
+          style={{ scrollbarWidth: "none" }}
+        >
           {/* Description */}
           <p className="mb-6 max-w-sm text-sm leading-relaxed text-white/70">
             {set.description}
@@ -125,13 +131,7 @@ export function SetsSection() {
               </span>
             </div>
           )}
-        </div>
 
-        {/* ── Scrollable: Characters + Scenes ───────────────── */}
-        <div
-          className="flex-1 overflow-y-auto pb-28"
-          style={{ scrollbarWidth: "none" }}
-        >
           {/* Characters seen in this set */}
           {setCharacters.length > 0 && (
             <div className="mb-7">
