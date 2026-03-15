@@ -175,7 +175,7 @@ export function LyricsSection() {
                   {song.title}
                 </h2>
                 <p
-                  className="mt-1.5 flex items-center gap-1.5 text-xs text-white/50"
+                  className="mt-1.5 flex items-center gap-1.5 text-xs text-white/65"
                   style={{ fontFamily: "var(--font-screenplay)" }}
                 >
                   <Mic2 className="size-3" />
@@ -217,15 +217,15 @@ export function LyricsSection() {
             }}
           >
             {lyrics ? (
-              <div className="space-y-0.5 text-center">
+              <div className="space-y-1 text-center">
                 {lyrics.lines.map((line, i) => {
                   if (line.type === "blank")
-                    return <div key={i} className="h-4" />;
+                    return <div key={i} className="h-5" />;
                   if (line.type === "label")
                     return (
                       <p
                         key={i}
-                        className="mb-1 mt-1 text-[10px] uppercase tracking-[0.25em] text-white/35"
+                        className="mb-2 mt-5 text-[10px] uppercase tracking-[0.3em] text-white/40"
                         style={{ fontFamily: "var(--font-cinematic)" }}
                       >
                         {line.text}
@@ -234,7 +234,7 @@ export function LyricsSection() {
                   return (
                     <p
                       key={i}
-                      className="text-[15px] leading-relaxed text-white/80"
+                      className="text-lg leading-8 text-white/90"
                       style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {line.text}
@@ -243,7 +243,7 @@ export function LyricsSection() {
                 })}
               </div>
             ) : (
-              <p className="text-sm text-white/30" style={{ fontFamily: "var(--font-screenplay)" }}>
+              <p className="text-sm text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
                 Lyrics not available.
               </p>
             )}
