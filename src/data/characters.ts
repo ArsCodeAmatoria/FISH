@@ -166,4 +166,14 @@ export const characters: Character[] = [
     image: "/characters/misspine.png",
     songIds: [],
   },
+  {
+    id: "holly",
+    name: "Holly",
+    role: "Fish Market Busker",
+    description:
+      "Holly plays her guitar on the corner of the Fish Market every morning, rain or shine. Her music drifts between the stalls and sets the mood for the whole market day.",
+    personalityTraits: ["Free-spirited", "Warm", "Resilient"],
+    image: "/characters/holly.png",
+    songIds: [],
+  },
 ];
