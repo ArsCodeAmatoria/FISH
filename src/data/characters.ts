@@ -18,7 +18,7 @@ export const characters: Character[] = [
       "A 15-year-old girl who hears rhythm in everyday life. She secretly raps and dreams of music but fears disappointing her father. She discovers her mother's musical legacy and ultimately leads the final river protest concert.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
-    songIds: ["fish", "fish-2", "flow-on", "bank-river-z"],
+    songIds: ["fish", "fish-2", "flow-on", "bank-river-z", "echo-in-the-water", "stars-over-the-block"],
   },
   {
     id: "ade",
@@ -48,7 +48,7 @@ export const characters: Character[] = [
       "A spiritual shopkeeper and the town's witch doctor — ancient, ambiguous, and never quite what she seems. She connects Zuri to her mother's legacy, reveals Amara's recordings, and appears at precisely the wrong moment with a riddle and a knowing look.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
-    songIds: ["pants-song", "fish-2", "bank-river-z", "echo-in-the-water"],
+    songIds: ["fish-2", "bank-river-z", "echo-in-the-water"],
   },
   {
     id: "amara",
@@ -80,7 +80,7 @@ export const characters: Character[] = [
       "A sarcastic tabby cat obsessed with grooming and dignity. The self-appointed voice of reason in the trio. Famous for the donut philosophy song, a coffee addiction, and the phrase \"I just licked all this.\"",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
     image: "/characters/pants.png",
-    songIds: ["glazed", "pants-song", "fish-2"],
+    songIds: ["glazed", "pants-song"],
   },
   {
     id: "ripple",
@@ -90,7 +90,7 @@ export const characters: Character[] = [
       "An energetic river otter who loves machines and chaos in equal measure. An accidental catalyst for many events — if something spinny is nearby, Ripple will turn it, and disaster will follow with a giant smile.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
-    songIds: ["echo-in-the-water", "fish-2"],
+    songIds: ["fish-2"],
   },
 
   // ── Corporate Antagonists ──────────────────────────────────
@@ -215,6 +215,6 @@ export const characters: Character[] = [
       "Holly plays her guitar on the corner of the Fish Market every morning, rain or shine. Her music drifts between the stalls and sets the mood for the whole market day.",
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
-    songIds: ["keys-to-the-block", "stars-over-the-block"],
+    songIds: ["keys-to-the-block"],
   },
 ];

@@ -30,7 +30,7 @@ export const songs: Song[] = [
   {
     id: "echo-in-the-water",
     title: "Echo in the Water",
-    singers: "Ripple & Chorus",
+    singers: "Zuri & Mama Sabine",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/songs/covers/angelfish.png",
     writtenBy: "Leigh Akin",
@@ -93,16 +93,16 @@ export const songs: Song[] = [
   {
     id: "stars-over-the-block",
     title: "Stars Over the Block",
-    singers: "Holly & Ensemble",
+    singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/characters/holly.png",
+    image: "/characters/zuri.png",
     writtenBy: "Leigh Akin",
     audioSrc: "/songs/STARS OVER THE BLOCK (2).wav",
   },
   {
     id: "pants-song",
     title: "The Girl Who Pooped Her Pants",
-    singers: "Mama Sabine & Pants",
+    singers: "Pants",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/pants.png",
     writtenBy: "Leigh Akin",

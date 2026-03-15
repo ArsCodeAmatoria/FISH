@@ -11,10 +11,10 @@ import { cn } from "@/lib/utils";
 // ── Track groups ────────────────────────────────────────────────────────────
 
 const groups = [
-  { label: "Zuri",       ids: ["fish", "fish-2", "flow-on"] },
+  { label: "Zuri",       ids: ["fish", "fish-2", "flow-on", "stars-over-the-block"] },
   { label: "The River",  ids: ["quiet-river", "bank-river-z", "echo-in-the-water"] },
   { label: "The Trio",   ids: ["alien-groove", "glazed", "pants-song"] },
-  { label: "The Market", ids: ["keys-to-the-block", "stars-over-the-block"] },
+  { label: "The Market", ids: ["keys-to-the-block"] },
 ];
 
 const songMap = Object.fromEntries(songs.map((s) => [s.id, s]));
