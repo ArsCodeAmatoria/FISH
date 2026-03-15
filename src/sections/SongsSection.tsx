@@ -183,12 +183,14 @@ export function SongsSection() {
             const isLiked = liked.has(song.id);
 
             return (
-              <button
+              <div
                 key={song.id}
-                type="button"
+                role="button"
+                tabIndex={0}
                 onClick={() => togglePlay(song)}
+                onKeyDown={(e) => e.key === "Enter" && togglePlay(song)}
                 className={cn(
-                  "group flex flex-1 items-center gap-2.5 overflow-hidden rounded-xl px-2 transition-all duration-200",
+                  "group flex flex-1 cursor-pointer items-center gap-2.5 overflow-hidden rounded-xl px-2 transition-all duration-200",
                   isPlaying
                     ? "bg-white/12 border border-white/20"
                     : "border border-transparent hover:bg-white/8"
@@ -252,7 +254,7 @@ export function SongsSection() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-              </button>
+              </div>
             );
           })}
         </div>
