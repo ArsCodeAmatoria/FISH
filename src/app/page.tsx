@@ -88,7 +88,7 @@ function HomeInner() {
               src="/songs/covers/redfish.png"
               alt="FISH"
               fill
-              className="object-contain brightness-0 invert"
+              className="object-contain"
               sizes="40px"
             />
           </div>
