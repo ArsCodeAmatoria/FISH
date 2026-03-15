@@ -18,7 +18,7 @@ export const characters: Character[] = [
       "A 15-year-old girl who hears rhythm in everyday life. She secretly raps and dreams of music but fears disappointing her father. She discovers her mother's musical legacy and ultimately leads the final river protest concert.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
-    songIds: ["fish", "fish-2", "flow-on", "bank-river-z", "echo-in-the-water", "stars-over-the-block"],
+    songIds: ["fish", "fish-2", "flow-on", "bank-river-z", "stars-over-the-block"],
   },
   {
     id: "ade",
@@ -48,7 +48,7 @@ export const characters: Character[] = [
       "A spiritual shopkeeper and the town's witch doctor — ancient, ambiguous, and never quite what she seems. She connects Zuri to her mother's legacy, reveals Amara's recordings, and appears at precisely the wrong moment with a riddle and a knowing look.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
-    songIds: ["bank-river-z", "echo-in-the-water"],
+    songIds: ["echo-in-the-water"],
   },
   {
     id: "amara",

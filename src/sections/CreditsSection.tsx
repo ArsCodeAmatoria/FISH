@@ -84,7 +84,7 @@ const creditLines: CreditLine[] = [
   { type: "gap" },
   { type: "role-name", role: "Fish",                          name: "Zuri" },
   { type: "role-name", role: "Fish (Reprise)",                name: "Zuri" },
-  { type: "role-name", role: "Echo in the Water",             name: "Zuri & Mama Sabine" },
+  { type: "role-name", role: "Echo in the Water",             name: "Mama Sabine" },
   { type: "role-name", role: "Alien Groove",                  name: "Captain Beignet" },
   { type: "role-name", role: "Glazed",                        name: "Pants" },
   { type: "role-name", role: "Bank (River Z)",                name: "Ensemble" },

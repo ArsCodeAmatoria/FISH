@@ -30,7 +30,7 @@ export const songs: Song[] = [
   {
     id: "echo-in-the-water",
     title: "Echo in the Water",
-    singers: "Zuri & Mama Sabine",
+    singers: "Mama Sabine",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/songs/covers/angelfish.png",
     writtenBy: "Leigh Akin",
