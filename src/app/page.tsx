@@ -2,6 +2,7 @@
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
@@ -78,20 +79,33 @@ function HomeInner() {
         <button
           type="button"
           onClick={() => goToSlide(0)}
-          className="fixed right-7 top-5 z-[1001] select-none text-right transition-opacity duration-200 hover:opacity-70"
+          className="fixed right-7 top-4 z-[1001] flex select-none items-center gap-2.5 transition-opacity duration-200 hover:opacity-70"
           aria-label="Go to home"
         >
-          <div
-            className="leading-none text-white"
-            style={{ fontFamily: "var(--font-title)", fontSize: "1.6rem", letterSpacing: "0.12em" }}
-          >
-            FISH
+          {/* Redfish logo */}
+          <div className="relative h-10 w-10 shrink-0">
+            <Image
+              src="/songs/covers/redfish.png"
+              alt="FISH"
+              fill
+              className="object-contain brightness-0 invert"
+              sizes="40px"
+            />
           </div>
-          <div
-            className="mt-0.5 text-white/50"
-            style={{ fontFamily: "var(--font-title)", fontSize: "0.55rem", letterSpacing: "0.22em" }}
-          >
-            A RIVER STORY
+          {/* Title text */}
+          <div className="text-right">
+            <div
+              className="leading-none text-white"
+              style={{ fontFamily: "var(--font-title)", fontSize: "1.6rem", letterSpacing: "0.12em" }}
+            >
+              FISH
+            </div>
+            <div
+              className="mt-0.5 text-white/50"
+              style={{ fontFamily: "var(--font-title)", fontSize: "0.55rem", letterSpacing: "0.22em" }}
+            >
+              A RIVER STORY
+            </div>
           </div>
         </button>
       )}
