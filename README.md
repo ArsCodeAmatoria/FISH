@@ -1,15 +1,22 @@
 <div align="center">
 
-![FISH](public/deadfish.png)
+<img width="480" alt="FISH — A River Story" src="https://github.com/user-attachments/assets/fc579784-a69e-4530-8530-f2f2fdcfc620" />
+
+<br/>
 
 # F I S H
 ### A RIVER STORY
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=flat-square&logo=vercel)](https://fish-kmk8lqht3-kojin-foxs-projects.vercel.app)
-[![License](https://img.shields.io/badge/License-MIT-white?style=flat-square)](LICENSE)
+<br/>
+
+[![](https://img.shields.io/badge/GENRE-ANIMATED_MUSICAL-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/RUNTIME-120_MIN-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/SONGS-10_ORIGINALS-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/SCRIPT-120_PAGES-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+
+<br/>
+
+[![](https://img.shields.io/badge/WATCH_NOW-LIVE_ON_VERCEL-ffffff?style=for-the-badge&logo=vercel&logoColor=black&labelColor=ffffff)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
 
 </div>
 
@@ -23,10 +30,11 @@
 
 ## INT. RIVER TOWN — DAWN
 
-A cinematic screenplay web experience. **FISH** is a widescreen, side-scrolling
-slideshow that brings a full animated feature to life — characters, locations,
-songs, lyrics, and a formatted screenplay, all in white on black, film grain
-and all.
+> *A girl. A river. A song her mother left behind.*
+
+**FISH** is a cinematic web experience — a full animated feature world told through a
+widescreen side-scrolling slideshow. Characters, locations, songs, lyrics, and a
+120-page formatted screenplay. White on black. Film grain. All of it.
 
 ---
 
@@ -37,6 +45,20 @@ and all.
 
                                                          SMASH CUT:
 ```
+
+---
+
+## THE STORY
+
+**ZURI** is fifteen. She hears rhythm in everything — the market, the river, the rain on
+the dock. Her father **ADE** lost his wife to a flood and banned music from their home.
+What Zuri doesn't know is that her late mother **AMARA** was the most beloved singer the
+river town had ever heard.
+
+When a corporate developer threatens to dam the river, Zuri uncovers her mother's
+recordings, assembles the most unlikely crew in town — a dramatic pelican, a sarcastic
+cat, and an otter with no regard for consequence — and leads a protest concert on the
+dock that changes everything.
 
 ---
 
@@ -87,8 +109,8 @@ CORPORATE ANTAGONISTS
 | CHARACTER | ROLE |
 |-----------|------|
 | **Marcus Vale** | CEO — morally conflicted corporate leader |
-| **Victor Kane** | Primary Human Antagonist — operations director |
-| **Henchman** | Victor Kane's Enforcer |
+| **Victor Kane** | Primary Human Antagonist — ruthless operations director |
+| **Henchman** | Victor Kane's on-the-ground enforcer |
 | **Fish Thief Cat** | Cunning market antagonist |
 | **Fish Thief Dog** | The muscle of the operation |
 
@@ -109,10 +131,10 @@ MARKET CHARACTERS
 
 ---
 
-## THE SONGS
+## ORIGINAL SOUNDTRACK
 
 ```
-ORIGINAL SOUNDTRACK
+10 ORIGINAL SONGS
 ───────────────────────────────────────────────────────
 ```
 
@@ -131,65 +153,35 @@ ORIGINAL SOUNDTRACK
 
 ---
 
-## THE STACK
+## THE SCREENPLAY
 
 ```
-PRODUCTION CREDITS
+THREE ACTS · 22 LOCATIONS · 120 PAGES
 ───────────────────────────────────────────────────────
-```
 
-| TOOL | PURPOSE |
-|------|---------|
-| [Next.js 15](https://nextjs.org) | App Router, TypeScript |
-| [Tailwind CSS v4](https://tailwindcss.com) | Utility-first styling |
-| [Lucide React](https://lucide.dev) | Iconography |
-| [Lilita One](https://fonts.google.com/specimen/Lilita+One) | Display title font |
-| [Cinzel](https://fonts.google.com/specimen/Cinzel) | Section headings |
-| [Courier Prime](https://fonts.google.com/specimen/Courier+Prime) | Screenplay text |
+ACT ONE    — The River Town. Zuri's world, Ade's grief, the market
+             alive with music she's not allowed to make.
 
----
+ACT TWO    — The Discovery. Amara's recordings. The dam threat.
+             Unlikely alliances and the cost of speaking up.
 
-## GETTING STARTED
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
----
-
-## PROJECT STRUCTURE
-
-```
-FISH/
-├── public/
-│   ├── characters/     — character portrait images
-│   ├── sets/           — location artwork
-│   └── songs/          — .wav audio files
-│
-└── src/
-    ├── app/            — Next.js App Router (layout, page, globals.css)
-    ├── components/     — FloatingLinks, CharacterModal, UI
-    ├── data/           — characters.ts, sets.ts, songs.ts, script.ts, lyrics.ts
-    ├── sections/       — TitleSlide, CharactersSection, SetsSection,
-    │                     SongsSection, LyricsSection, ScriptSection
-    └── lib/            — utils (cn)
+ACT THREE  — The Concert. The dock stage. The river saved —
+             or at least, the fight begun.
 ```
 
 ---
-
-## DEPLOYMENT
 
 ```
                     PRODUCED BY KOJIN FOX
-                    HOSTED ON VERCEL
 ```
 
-Live at **[fish-kmk8lqht3-kojin-foxs-projects.vercel.app](https://fish-kmk8lqht3-kojin-foxs-projects.vercel.app)**
+<div align="center">
 
-Every push to `main` triggers a new production build.
+[![](https://img.shields.io/badge/NEXT.JS_15-App_Router-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![](https://img.shields.io/badge/TYPESCRIPT-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![](https://img.shields.io/badge/TAILWIND_CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+
+</div>
 
 ---
 
