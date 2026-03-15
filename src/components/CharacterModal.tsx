@@ -53,69 +53,14 @@ export function CharacterModal({ characterId, onOpenCharacter }: CharacterModalP
       {/* Panel */}
       <div className="relative z-10 ml-auto flex h-full w-full max-w-5xl shadow-2xl">
 
-        {/* ── Left: scrollable character list ───────────────── */}
-        <div
-          className="w-52 shrink-0 overflow-y-auto border-r border-white/8 bg-black py-6"
-          style={{ scrollbarWidth: "none" }}
-        >
-          <p
-            className="mb-4 px-5 text-[9px] uppercase tracking-[0.3em] text-white/35"
-            style={{ fontFamily: "var(--font-cinematic)" }}
-          >
-            Characters
-          </p>
-          <div className="flex flex-col gap-0.5 px-3">
-            {characters.map((c) => {
-              const active = c.id === characterId;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => onOpenCharacter(c.id)}
-                  className={cn(
-                    "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-left transition-all duration-150",
-                    active
-                      ? "bg-white/12 text-white"
-                      : "text-white/55 hover:bg-white/6 hover:text-white/85"
-                  )}
-                >
-                  <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-lg">
-                    <Image
-                      src={c.image}
-                      alt={c.name}
-                      fill
-                      className="object-cover object-top"
-                      sizes="32px"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <p
-                      className="truncate text-[11px] font-medium leading-tight"
-                      style={{ fontFamily: "var(--font-cinematic)" }}
-                    >
-                      {c.name}
-                    </p>
-                    <p
-                      className="mt-0.5 truncate text-[9px] text-white/40"
-                      style={{ fontFamily: "var(--font-screenplay)" }}
-                    >
-                      {c.role}
-                    </p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* ── Right: character detail ────────────────────────── */}
+        {/* ── Main: character detail ─────────────────────────── */}
         <div className="flex flex-1 flex-col overflow-hidden bg-black">
           {/* Close button */}
           <button
             type="button"
             onClick={close}
             aria-label="Close"
-            className="absolute right-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/60 backdrop-blur-sm transition-colors hover:border-white/35 hover:text-white"
+            className="absolute left-5 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/60 backdrop-blur-sm transition-colors hover:border-white/35 hover:text-white"
           >
             <X className="size-4" />
           </button>
@@ -136,7 +81,7 @@ export function CharacterModal({ characterId, onOpenCharacter }: CharacterModalP
 
             {/* Counter */}
             <p
-              className="absolute right-5 bottom-4 text-[10px] text-white/30"
+              className="absolute left-5 bottom-4 text-[10px] text-white/30"
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
               {String(index + 1).padStart(2, "0")} / {String(characters.length).padStart(2, "0")}
@@ -243,6 +188,41 @@ export function CharacterModal({ characterId, onOpenCharacter }: CharacterModalP
               </div>
             )}
           </div>
+        </div>
+
+        {/* ── Right: scrollable character thumbnails ─────────── */}
+        <div
+          className="flex w-20 shrink-0 flex-col items-center gap-2.5 overflow-y-auto border-l border-white/8 bg-black py-6 pr-3 pl-2"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {characters.map((c) => {
+            const active = c.id === characterId;
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => onOpenCharacter(c.id)}
+                aria-label={c.name}
+                className={cn(
+                  "group relative w-full shrink-0 overflow-hidden rounded-xl transition-all duration-200",
+                  active
+                    ? "h-14 ring-2 ring-white/60 ring-offset-2 ring-offset-black"
+                    : "h-11 opacity-45 hover:opacity-80 hover:ring-1 hover:ring-white/25 hover:ring-offset-1 hover:ring-offset-black"
+                )}
+              >
+                <Image
+                  src={c.image}
+                  alt={c.name}
+                  fill
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  sizes="64px"
+                />
+                {active && (
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>
