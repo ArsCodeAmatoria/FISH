@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Play, Pause, Heart, Music, Music2, RotateCcw, Users } from "lucide-react";
 import { songs, type Song } from "@/data/songs";
 import { characters } from "@/data/characters";
+import { crew } from "@/data/crew";
 import { cn } from "@/lib/utils";
 
 // ── Track groups ────────────────────────────────────────────────────────────
@@ -175,7 +176,7 @@ export function SongsSection({ openCharacter }: Props) {
           src={song.image}
           alt={song.title}
           fill
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
           sizes="60vw"
           priority
           style={{ animation: "fadeIn 0.5s ease-out both" }}
@@ -331,17 +332,36 @@ export function SongsSection({ openCharacter }: Props) {
         <div className="h-px bg-white/8" />
 
         {/* Written by */}
-        <div>
-          <p
-            className="mb-2 text-[9px] uppercase tracking-[0.28em] text-white/55"
-            style={{ fontFamily: "var(--font-cinematic)" }}
-          >
-            Written By
-          </p>
-          <p className="text-[11px] text-white/75" style={{ fontFamily: "var(--font-screenplay)" }}>
-            {song.writtenBy ?? "—"}
-          </p>
-        </div>
+        {song.writtenBy && (() => {
+          const writer = crew.find((m) => m.name === song.writtenBy);
+          return (
+            <div>
+              <p
+                className="mb-2 text-[9px] uppercase tracking-[0.28em] text-white/55"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                Written By
+              </p>
+              <div className="flex items-center gap-2.5 rounded-xl p-1.5">
+                {writer && (
+                  <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full ring-1 ring-white/20">
+                    <Image src={writer.image} alt={writer.name} fill className="object-cover object-top" sizes="36px" />
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <p className="truncate text-[11px] font-medium text-white/85" style={{ fontFamily: "var(--font-cinematic)" }}>
+                    {song.writtenBy}
+                  </p>
+                  {writer && (
+                    <p className="mt-0.5 truncate text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>
+                      {writer.role}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       <style>{`
