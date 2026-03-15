@@ -238,7 +238,7 @@ export function LyricsSection({ openCharacter }: Props) {
                         className="mb-2 mt-5 text-[10px] uppercase tracking-[0.3em] text-white/40"
                         style={{ fontFamily: "var(--font-cinematic)" }}
                       >
-                        {line.text}
+                        {line.text.replace(/^\[|\]$/g, "")}
                       </p>
                     );
                   return (
