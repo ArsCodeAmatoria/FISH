@@ -241,34 +241,49 @@ export function CharactersSection({ openCharacter }: Props) {
 
       {/* Right: scrollable character thumbnail column */}
       <div
-        className="flex w-20 shrink-0 flex-col items-center gap-2.5 overflow-y-auto py-16 pr-3 pl-2 pb-24"
+        className="flex w-52 shrink-0 flex-col gap-1 overflow-y-auto py-16 pr-4 pl-2 pb-24"
         style={{ scrollbarWidth: "none" }}
       >
-        {characters.map((c, i) => (
-          <button
-            key={c.id}
-            type="button"
-            onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
-            aria-label={c.name}
-            className={cn(
-              "group relative w-full shrink-0 overflow-hidden rounded-xl transition-all duration-200",
-              i === index
-                ? "h-14 ring-2 ring-white/60 ring-offset-2 ring-offset-black"
-                : "h-11 opacity-45 hover:opacity-80 hover:ring-1 hover:ring-white/25 hover:ring-offset-1 hover:ring-offset-black"
-            )}
-          >
-            <Image
-              src={c.image}
-              alt={c.name}
-              fill
-              className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-              sizes="64px"
-            />
-            {i === index && (
-              <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
-            )}
-          </button>
-        ))}
+        {characters.map((c, i) => {
+          const active = i === index;
+          return (
+            <button
+              key={c.id}
+              type="button"
+              onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
+              className={cn(
+                "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-left transition-all duration-200",
+                active
+                  ? "bg-white/10 text-white"
+                  : "text-white/55 hover:bg-white/5 hover:text-white/85"
+              )}
+            >
+              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
+                <Image
+                  src={c.image}
+                  alt={c.name}
+                  fill
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  sizes="36px"
+                />
+              </div>
+              <div className="min-w-0">
+                <p
+                  className="truncate text-[11px] font-medium leading-tight"
+                  style={{ fontFamily: "var(--font-cinematic)" }}
+                >
+                  {c.name}
+                </p>
+                <p
+                  className="mt-0.5 truncate text-[9px] text-white/45"
+                  style={{ fontFamily: "var(--font-screenplay)" }}
+                >
+                  {c.role}
+                </p>
+              </div>
+            </button>
+          );
+        })}
       </div>
       <style>{`
         @keyframes waveBar {
