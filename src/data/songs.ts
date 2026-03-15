@@ -67,7 +67,7 @@ export const songs: Song[] = [
   {
     id: "quiet-river",
     title: "Quiet River",
-    singers: "Papa Louis",
+    singers: "Louis",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/father.png",
     audioSrc: "/songs/Quiet River (Creole Version).wav",

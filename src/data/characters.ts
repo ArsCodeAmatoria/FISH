@@ -32,10 +32,10 @@ export const characters: Character[] = [
   },
   {
     id: "papa-louis",
-    name: "Papa Louis",
+    name: "Louis",
     role: "Musical Mentor",
     description:
-      "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. He introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
+      "An elderly jazz musician who mentors Zuri and teaches her how rhythm connects cultures. Louis introduces the Wheel of Groove — a philosophy that music is the common language of all living things.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/trumpet.png",
     songIds: ["quiet-river", "fish-2", "bank-river-z"],
