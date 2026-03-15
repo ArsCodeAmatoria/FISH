@@ -202,7 +202,7 @@ export const characters: Character[] = [
     name: "Bass",
     role: "Market Busker",
     description:
-      "A deep-grooved market busker who holds down the low end wherever he plays. His bass lines drift through the stalls and stop people mid-step.",
+      "A deep-grooved market busker who holds down the low end wherever she plays. Her bass lines drift through the stalls and stop people mid-step.",
     personalityTraits: ["Soulful", "Cool", "Grounded"],
     image: "/characters/bass.png",
     songIds: [],
