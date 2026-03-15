@@ -78,7 +78,7 @@ export function LyricsSection() {
           style={{ scrollbarWidth: "none" }}
         >
           <p
-            className="mb-3 text-[9px] uppercase tracking-[0.3em] text-white/30"
+            className="mb-3 text-[9px] uppercase tracking-[0.3em] text-white/50"
             style={{ fontFamily: "var(--font-cinematic)" }}
           >
             <Music2 className="mb-0.5 mr-1 inline size-2.5" />
@@ -96,7 +96,7 @@ export function LyricsSection() {
                     "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-left transition-all duration-200",
                     active
                       ? "bg-white/10 text-white"
-                      : "text-white/55 hover:bg-white/5 hover:text-white/85"
+                      : "text-white/70 hover:bg-white/5 hover:text-white/90"
                   )}
                 >
                   <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
@@ -136,7 +136,7 @@ export function LyricsSection() {
                       {s.title}
                     </p>
                     <p
-                      className="mt-0.5 truncate text-[9px] text-white/40"
+                      className="mt-0.5 truncate text-[9px] text-white/60"
                       style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {s.singers}
@@ -234,7 +234,7 @@ export function LyricsSection() {
                   return (
                     <p
                       key={i}
-                      className="text-lg leading-8 text-white/90"
+                      className="text-[15px] leading-relaxed text-white/90"
                       style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {line.text}
@@ -258,7 +258,7 @@ export function LyricsSection() {
           {/* Singers */}
           <div>
             <p
-              className="mb-3 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.28em] text-white/40"
+              className="mb-3 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.28em] text-white/55"
               style={{ fontFamily: "var(--font-cinematic)" }}
             >
               <Users className="size-2.5" />
@@ -289,7 +289,7 @@ export function LyricsSection() {
                         {c.name}
                       </p>
                       <p
-                        className="mt-0.5 truncate text-[9px] text-white/40"
+                        className="mt-0.5 truncate text-[9px] text-white/60"
                         style={{ fontFamily: "var(--font-screenplay)" }}
                       >
                         {c.role}
@@ -300,7 +300,7 @@ export function LyricsSection() {
               </div>
             ) : (
               <p
-                className="text-[10px] text-white/30"
+                className="text-[10px] text-white/55"
                 style={{ fontFamily: "var(--font-screenplay)" }}
               >
                 Full ensemble
@@ -322,7 +322,7 @@ export function LyricsSection() {
             return (
               <div>
                 <p
-                  className="mb-3 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.28em] text-white/40"
+                  className="mb-3 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.28em] text-white/55"
                   style={{ fontFamily: "var(--font-cinematic)" }}
                 >
                   <Music2 className="size-2.5" />
@@ -347,13 +347,13 @@ export function LyricsSection() {
                       </div>
                       <div className="min-w-0">
                         <p
-                          className="truncate text-[10px] font-medium text-white/70 group-hover:text-white/90"
+                          className="truncate text-[10px] font-medium text-white/80 group-hover:text-white"
                           style={{ fontFamily: "var(--font-cinematic)" }}
                         >
                           {s.title}
                         </p>
                         <p
-                          className="mt-0.5 truncate text-[9px] text-white/35"
+                          className="mt-0.5 truncate text-[9px] text-white/55"
                           style={{ fontFamily: "var(--font-screenplay)" }}
                         >
                           {s.singers}
@@ -370,13 +370,13 @@ export function LyricsSection() {
           <div>
             <div className="h-px w-full bg-white/8 mb-5" />
             <p
-              className="text-[10px] uppercase tracking-[0.25em] text-white/35 mb-2"
+              className="text-[10px] uppercase tracking-[0.25em] text-white/55 mb-2"
               style={{ fontFamily: "var(--font-cinematic)" }}
             >
               About
             </p>
             <p
-              className="text-[11px] leading-relaxed text-white/55"
+              className="text-[11px] leading-relaxed text-white/70"
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
               {song.description}
