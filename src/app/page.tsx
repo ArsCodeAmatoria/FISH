@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
@@ -63,22 +62,26 @@ export default function Home() {
         <LyricsSection />
       </div>
 
-      {/* Floating home logo — top right, hidden on title slide */}
+      {/* Floating home link — top right, hidden on title slide */}
       {currentSlide !== 0 && (
         <button
           type="button"
           onClick={() => goToSlide(0)}
-          className="fixed right-7 top-5 z-[1001] select-none transition-opacity duration-200 hover:opacity-75"
+          className="fixed right-7 top-5 z-[1001] select-none text-right transition-opacity duration-200 hover:opacity-70"
           aria-label="Go to home"
         >
-          <Image
-            src="/deadfish.png"
-            alt="FISH"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
-            style={{ filter: "brightness(0) invert(1)" }}
-          />
+          <div
+            className="leading-none text-white"
+            style={{ fontFamily: "var(--font-title)", fontSize: "1.6rem", letterSpacing: "0.12em" }}
+          >
+            FISH
+          </div>
+          <div
+            className="mt-0.5 text-white/50"
+            style={{ fontFamily: "var(--font-title)", fontSize: "0.55rem", letterSpacing: "0.22em" }}
+          >
+            A RIVER STORY
+          </div>
         </button>
       )}
 
