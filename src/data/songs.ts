@@ -73,6 +73,14 @@ export const songs: Song[] = [
     audioSrc: "/songs/Quiet River (Creole Version).wav",
   },
   {
+    id: "keys-to-the-block",
+    title: "Keys to the Block",
+    singers: "Holly",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/characters/holly.png",
+    audioSrc: "/songs/Keys to the Block.wav",
+  },
+  {
     id: "pants-song",
     title: "The Girl Who Pooped Her Pants",
     singers: "Mama Sabine & Pants",

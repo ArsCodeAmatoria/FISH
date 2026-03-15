@@ -225,6 +225,6 @@ export const characters: Character[] = [
       "Holly plays her guitar on the corner of the Fish Market every morning, rain or shine. Her music drifts between the stalls and sets the mood for the whole market day.",
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
-    songIds: [],
+    songIds: ["keys-to-the-block"],
   },
 ];
