@@ -241,7 +241,7 @@ export function CharactersSection({ openCharacter }: Props) {
 
       {/* Right: scrollable character thumbnail column */}
       <div
-        className="flex w-52 shrink-0 flex-col gap-1 overflow-y-auto py-16 pr-4 pl-2 pb-24"
+        className="flex w-56 shrink-0 flex-col gap-1 overflow-y-auto pt-20 pr-4 pl-2 pb-24"
         style={{ scrollbarWidth: "none" }}
       >
         {characters.map((c, i) => {
@@ -252,30 +252,30 @@ export function CharactersSection({ openCharacter }: Props) {
               type="button"
               onClick={(e) => { e.stopPropagation(); switchCharacter(i); }}
               className={cn(
-                "group flex items-center gap-3 rounded-xl px-2.5 py-2 text-left transition-all duration-200",
+                "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-200",
                 active
                   ? "bg-white/12 text-white"
                   : "text-white/70 hover:bg-white/6 hover:text-white/90"
               )}
             >
-              <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
+              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
                 <Image
                   src={c.image}
                   alt={c.name}
                   fill
                   className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                  sizes="36px"
+                  sizes="40px"
                 />
               </div>
               <div className="min-w-0">
                 <p
-                  className="truncate text-[11px] font-medium leading-tight"
+                  className="truncate text-xs font-medium leading-tight"
                   style={{ fontFamily: "var(--font-cinematic)" }}
                 >
                   {c.name}
                 </p>
                 <p
-                  className="mt-0.5 truncate text-[9px] text-white/60"
+                  className="mt-0.5 truncate text-[10px] text-white/60"
                   style={{ fontFamily: "var(--font-screenplay)" }}
                 >
                   {c.role}
