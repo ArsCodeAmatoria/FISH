@@ -187,7 +187,7 @@ export function SongsSection({ openCharacter }: Props) {
 
         <div
           key={`info-${song.id}`}
-          className="absolute inset-x-0 bottom-0 px-12 pb-14"
+          className="absolute inset-x-0 bottom-0 px-12 pb-28"
           style={{ animation: "fadeIn 0.4s ease-out both" }}
         >
           <p className="mb-3 text-xs text-white/30" style={{ fontFamily: "var(--font-screenplay)" }}>

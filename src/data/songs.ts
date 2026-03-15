@@ -14,7 +14,7 @@ export const songs: Song[] = [
     title: "Fish",
     singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "/characters/zuri.png",
+    image: "/songs/covers/redfish.png",
     writtenBy: "Leigh Akin",
     audioSrc: "/songs/Fish (Intro).wav",
   },
