@@ -259,7 +259,7 @@ export function SongsSection() {
                     </div>
                   </div>
 
-                  {/* Title + singer */}
+                  {/* Title + singer + description */}
                   <div className="min-w-0 flex-1">
                     <p
                       className={cn(
@@ -275,6 +275,12 @@ export function SongsSection() {
                       style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {s.singers}
+                    </p>
+                    <p
+                      className="mt-1 line-clamp-1 text-[10px] text-white/35"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
+                    >
+                      {s.description}
                     </p>
                   </div>
 
