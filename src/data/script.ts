@@ -15,288 +15,133 @@ export interface ScriptElement {
 export interface ScriptPage {
   id: string;
   elements: ScriptElement[];
+  characterIds?: string[];
+  songIds?: string[];
+  setIds?: string[];
 }
 
 export const scriptPages: ScriptPage[] = [
   {
     id: "page-1",
+    characterIds: ["zuri"],
+    songIds: ["fish", "flow-on"],
+    setIds: ["fish-market"],
     elements: [
       { type: "fade", text: "FADE IN:" },
-      {
-        type: "scene",
-        text: "EXT. RIVERSIDE FISH MARKET — DAWN",
-      },
-      {
-        type: "action",
-        text: "Golden light breaks across the rooftops of a Creole fishing town. The river hums. Vendors stack crates of silver fish. Somewhere, a trumpet wails.",
-      },
-      {
-        type: "action",
-        text: "ZURI (17), quick-eyed and barefoot, weaves through the crowd with an empty bucket and a full mind.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "parenthetical",
-        text: "(to herself)",
-      },
-      {
-        type: "dialogue",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      },
+      { type: "scene", text: "EXT. RIVERSIDE FISH MARKET — DAWN" },
+      { type: "action", text: "Golden light breaks across the rooftops of a Creole fishing town. The river hums. Vendors stack crates of silver fish. Somewhere, a trumpet wails." },
+      { type: "action", text: "ZURI (17), quick-eyed and barefoot, weaves through the crowd with an empty bucket and a full mind." },
+      { type: "character", text: "ZURI" },
+      { type: "parenthetical", text: "(to herself)" },
+      { type: "dialogue", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
     ],
   },
   {
     id: "page-2",
+    characterIds: ["zuri", "ade"],
+    songIds: ["fish"],
+    setIds: ["river-docks"],
     elements: [
-      {
-        type: "scene",
-        text: "EXT. RIVER DOCKS — CONTINUOUS",
-      },
-      {
-        type: "action",
-        text: "ADE (17), lanky and perpetually grinning, balances on a dock post with impossible ease. He spots Zuri.",
-      },
-      {
-        type: "character",
-        text: "ADE",
-      },
-      {
-        type: "dialogue",
-        text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "dialogue",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      },
-      {
-        type: "character",
-        text: "ADE",
-      },
-      {
-        type: "parenthetical",
-        text: "(shaking his head)",
-      },
-      {
-        type: "dialogue",
-        text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      },
+      { type: "scene", text: "EXT. RIVER DOCKS — CONTINUOUS" },
+      { type: "action", text: "ADE (17), lanky and perpetually grinning, balances on a dock post with impossible ease. He spots Zuri." },
+      { type: "character", text: "ADE" },
+      { type: "dialogue", text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+      { type: "character", text: "ZURI" },
+      { type: "dialogue", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
+      { type: "character", text: "ADE" },
+      { type: "parenthetical", text: "(shaking his head)" },
+      { type: "dialogue", text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
     ],
   },
   {
     id: "page-3",
+    characterIds: ["mama-sabine", "zuri"],
+    songIds: ["pants-song"],
+    setIds: ["mama-sabine-shop"],
     elements: [
-      {
-        type: "scene",
-        text: "INT. MAMA SABINE'S SHOP — DAY",
-      },
-      {
-        type: "action",
-        text: "A shop bursting with dried herbs, river stones, and the smell of frying dough. MAMA SABINE (50s) rules it all from behind a worn wooden counter.",
-      },
-      {
-        type: "character",
-        text: "MAMA SABINE",
-      },
-      {
-        type: "dialogue",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-      },
-      {
-        type: "action",
-        text: "Zuri shifts her weight. She knows that look.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "dialogue",
-        text: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit.",
-      },
-      {
-        type: "character",
-        text: "MAMA SABINE",
-      },
-      {
-        type: "parenthetical",
-        text: "(firm, but warm)",
-      },
-      {
-        type: "dialogue",
-        text: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Consectetur adipiscing elit.",
-      },
+      { type: "scene", text: "INT. MAMA SABINE'S SHOP — DAY" },
+      { type: "action", text: "A shop bursting with dried herbs, river stones, and the smell of frying dough. MAMA SABINE (50s) rules it all from behind a worn wooden counter." },
+      { type: "character", text: "MAMA SABINE" },
+      { type: "dialogue", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." },
+      { type: "action", text: "Zuri shifts her weight. She knows that look." },
+      { type: "character", text: "ZURI" },
+      { type: "dialogue", text: "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. Duis aute irure dolor in reprehenderit." },
+      { type: "character", text: "MAMA SABINE" },
+      { type: "parenthetical", text: "(firm, but warm)" },
+      { type: "dialogue", text: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Consectetur adipiscing elit." },
     ],
   },
   {
     id: "page-4",
+    characterIds: ["ripple", "zuri"],
+    songIds: ["echo-in-the-water"],
+    setIds: ["marsh-wetlands"],
     elements: [
-      {
-        type: "scene",
-        text: "EXT. MARSH WETLANDS — DUSK",
-      },
-      {
-        type: "action",
-        text: "Fireflies blink in the cypress trees. The water is black glass. Something stirs beneath the surface — then RIPPLE emerges. Ancient. Ageless.",
-      },
-      {
-        type: "character",
-        text: "RIPPLE",
-      },
-      {
-        type: "dialogue",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.",
-      },
-      {
-        type: "action",
-        text: "Zuri takes a slow step back. The bucket in her hand trembles.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "parenthetical",
-        text: "(barely a whisper)",
-      },
-      {
-        type: "dialogue",
-        text: "Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-      },
-      {
-        type: "character",
-        text: "RIPPLE",
-      },
-      {
-        type: "dialogue",
-        text: "Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.",
-      },
+      { type: "scene", text: "EXT. MARSH WETLANDS — DUSK" },
+      { type: "action", text: "Fireflies blink in the cypress trees. The water is black glass. Something stirs beneath the surface — then RIPPLE emerges. Ancient. Ageless." },
+      { type: "character", text: "RIPPLE" },
+      { type: "dialogue", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore." },
+      { type: "action", text: "Zuri takes a slow step back. The bucket in her hand trembles." },
+      { type: "character", text: "ZURI" },
+      { type: "parenthetical", text: "(barely a whisper)" },
+      { type: "dialogue", text: "Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi." },
+      { type: "character", text: "RIPPLE" },
+      { type: "dialogue", text: "Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit." },
     ],
   },
   {
     id: "page-5",
+    characterIds: ["captain-beignet", "pants"],
+    songIds: ["alien-groove"],
     elements: [
-      {
-        type: "scene",
-        text: "INT. CAPTAIN BEIGNET'S BOAT — NIGHT",
-      },
-      {
-        type: "action",
-        text: "The cabin sways. CAPTAIN BEIGNET (60s) navigates by stars and instinct, a half-eaten beignet perpetually in one hand.",
-      },
-      {
-        type: "character",
-        text: "CAPTAIN BEIGNET",
-      },
-      {
-        type: "dialogue",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.",
-      },
-      {
-        type: "character",
-        text: "PANTS",
-      },
-      {
-        type: "parenthetical",
-        text: "(mouth full)",
-      },
-      {
-        type: "dialogue",
-        text: "Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      },
-      {
-        type: "action",
-        text: "The river bends. Something massive ripples the surface alongside the boat.",
-      },
+      { type: "scene", text: "INT. CAPTAIN BEIGNET'S BOAT — NIGHT" },
+      { type: "action", text: "The cabin sways. CAPTAIN BEIGNET (60s) navigates by stars and instinct, a half-eaten beignet perpetually in one hand." },
+      { type: "character", text: "CAPTAIN BEIGNET" },
+      { type: "dialogue", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat." },
+      { type: "character", text: "PANTS" },
+      { type: "parenthetical", text: "(mouth full)" },
+      { type: "dialogue", text: "Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
+      { type: "action", text: "The river bends. Something massive ripples the surface alongside the boat." },
     ],
   },
   {
     id: "page-6",
+    characterIds: ["zuri", "papa-louis"],
+    songIds: ["fish-2"],
+    setIds: ["festival-stage"],
     elements: [
-      {
-        type: "scene",
-        text: "EXT. FESTIVAL STAGE — NIGHT",
-      },
-      {
-        type: "action",
-        text: "The whole town is here. Lanterns hang like constellations. The stage blazes. This is the moment everything has been leading to.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "dialogue",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      },
-      {
-        type: "action",
-        text: "The crowd falls silent. Even the river seems to hold its breath.",
-      },
-      {
-        type: "character",
-        text: "PAPA LOUIS",
-      },
-      {
-        type: "parenthetical",
-        text: "(quietly proud)",
-      },
-      {
-        type: "dialogue",
-        text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      },
-      {
-        type: "transition",
-        text: "CUT TO:",
-      },
+      { type: "scene", text: "EXT. FESTIVAL STAGE — NIGHT" },
+      { type: "action", text: "The whole town is here. Lanterns hang like constellations. The stage blazes. This is the moment everything has been leading to." },
+      { type: "character", text: "ZURI" },
+      { type: "dialogue", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+      { type: "action", text: "The crowd falls silent. Even the river seems to hold its breath." },
+      { type: "character", text: "PAPA LOUIS" },
+      { type: "parenthetical", text: "(quietly proud)" },
+      { type: "dialogue", text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+      { type: "transition", text: "CUT TO:" },
     ],
   },
   {
     id: "page-7",
+    characterIds: ["ade", "zuri"],
+    songIds: ["fish", "flow-on"],
+    setIds: ["fish-market"],
     elements: [
-      {
-        type: "scene",
-        text: "EXT. RIVERSIDE FISH MARKET — DAWN",
-      },
-      {
-        type: "action",
-        text: "Morning again. But the town feels different now — lighter, somehow. Zuri walks the same path as the beginning, but she is not the same.",
-      },
-      {
-        type: "character",
-        text: "ADE",
-      },
-      {
-        type: "dialogue",
-        text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      },
-      {
-        type: "character",
-        text: "ZURI",
-      },
-      {
-        type: "parenthetical",
-        text: "(smiling)",
-      },
-      {
-        type: "dialogue",
-        text: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet.",
-      },
-      {
-        type: "action",
-        text: "She tosses a fish back into the river. It splashes. The river sings.",
-      },
+      { type: "scene", text: "EXT. RIVERSIDE FISH MARKET — DAWN" },
+      { type: "action", text: "Morning again. But the town feels different now — lighter, somehow. Zuri walks the same path as the beginning, but she is not the same." },
+      { type: "character", text: "ADE" },
+      { type: "dialogue", text: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." },
+      { type: "character", text: "ZURI" },
+      { type: "parenthetical", text: "(smiling)" },
+      { type: "dialogue", text: "Sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet." },
+      { type: "action", text: "She tosses a fish back into the river. It splashes. The river sings." },
       { type: "fade", text: "FADE OUT." },
     ],
   },
   {
     id: "page-8",
+    characterIds: ["papa-louis", "zuri"],
+    songIds: ["quiet-river"],
     elements: [
       { type: "scene", text: "INT. PAPA LOUIS'S WORKSHOP — MORNING" },
       { type: "action", text: "Tools hang in precise rows. The smell of cedar and river mud. PAPA LOUIS bends over a half-built pirogue, humming to himself." },
@@ -312,6 +157,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-9",
+    characterIds: ["pants", "ade", "fish-thief-cat"],
+    songIds: ["bank-river-z"],
+    setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. CREOLE DOCKS — EARLY MORNING" },
       { type: "action", text: "Fishing boats idle in the mist. A CAT — sleek, one-eyed, watching — perches on a dock post. This is the FISH THIEF CAT." },
@@ -326,6 +174,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-10",
+    characterIds: ["mama-sabine", "pants"],
+    songIds: ["pants-song"],
+    setIds: ["mama-sabine-shop"],
     elements: [
       { type: "scene", text: "INT. MAMA SABINE'S SHOP — DAY" },
       { type: "action", text: "Crates of smoked fish. Jars of dark honey. The hum of a radio from somewhere in the back." },
@@ -341,6 +192,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-11",
+    characterIds: ["ade", "zuri"],
+    songIds: ["bank-river-z"],
     elements: [
       { type: "scene", text: "EXT. BAYOU ROAD — AFTERNOON" },
       { type: "action", text: "Spanish moss drips from live oaks. The air is thick. Zuri and Ade move fast along a dirt road, glancing behind them." },
@@ -355,6 +208,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-12",
+    characterIds: ["fish-thief-dog"],
+    setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVERSIDE — DUSK" },
       { type: "action", text: "The river is low and slow. A DOG — shaggy, loud, bad at sneaking — crashes through the reeds. The FISH THIEF DOG." },
@@ -369,6 +224,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-13",
+    characterIds: ["captain-beignet", "zuri"],
+    songIds: ["alien-groove"],
     elements: [
       { type: "scene", text: "INT. CAPTAIN BEIGNET'S WHEELHOUSE — NIGHT" },
       { type: "action", text: "Charts cover every surface. A coffee mug steams beside a compass. Captain Beignet studies the map with a magnifying glass." },
@@ -384,6 +241,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-14",
+    characterIds: ["ripple", "zuri"],
+    songIds: ["echo-in-the-water"],
+    setIds: ["marsh-wetlands"],
     elements: [
       { type: "scene", text: "EXT. MARSH WETLANDS — BEFORE DAWN" },
       { type: "action", text: "Fog sits low on the water. There is no sound. Then — a single note. Then another. RIPPLE is singing." },
@@ -398,6 +258,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-15",
+    characterIds: ["witch-doctor", "zuri"],
+    songIds: ["echo-in-the-water"],
     elements: [
       { type: "scene", text: "EXT. WITCH DOCTOR'S CLEARING — NIGHT" },
       { type: "action", text: "Smoke rises from a carved stone bowl. The WITCH DOCTOR sits cross-legged, face obscured by a wide brim hat and shadow." },
@@ -413,6 +275,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-16",
+    characterIds: ["ade"],
+    songIds: ["bank-river-z"],
+    setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "INT. FISH MARKET STOREROOM — DAY" },
       { type: "action", text: "Cramped. Dark. Crates stacked to the ceiling. Ade wedges himself between two columns of boxes and listens through the wall." },
@@ -427,6 +292,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-17",
+    characterIds: ["pants", "mama-sabine"],
+    songIds: ["pants-song"],
+    setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL GROUNDS — AFTERNOON" },
       { type: "action", text: "Workers string lanterns across the field. A stage is being assembled. The smell of frying dough fills the air." },
@@ -442,6 +310,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-18",
+    characterIds: ["zuri"],
+    songIds: ["flow-on"],
+    setIds: ["marsh-wetlands"],
     elements: [
       { type: "scene", text: "EXT. RIVER BEND — GOLDEN HOUR" },
       { type: "action", text: "Zuri sits alone on a flat rock at the river's edge. Her feet dangle in the current. She holds the glowing vial." },
@@ -455,6 +326,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-19",
+    characterIds: ["captain-beignet", "ade", "pants", "zuri"],
+    songIds: ["alien-groove"],
     elements: [
       { type: "scene", text: "INT. CAPTAIN BEIGNET'S BOAT — MOVING — DAY" },
       { type: "action", text: "The whole crew is aboard. Zuri at the bow. Ade amidships. Pants in the way. The boat moves upriver against a strong current." },
@@ -469,6 +342,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-20",
+    characterIds: ["zuri", "ripple"],
+    songIds: ["echo-in-the-water", "fish"],
+    setIds: ["marsh-wetlands"],
     elements: [
       { type: "scene", text: "EXT. DEEP RIVER — UNDERWATER (DREAM SEQUENCE)" },
       { type: "action", text: "Blue light. Silence. Schools of fish part like curtains. At the center of it all — a great old catfish, still as a cathedral." },
@@ -482,6 +358,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-21",
+    characterIds: ["ripple", "zuri"],
+    songIds: ["echo-in-the-water"],
     elements: [
       { type: "scene", text: "EXT. DEEP RIVER — CONTINUOUS" },
       { type: "action", text: "The light expands. Every fish, every creature, turns toward it. Zuri reaches out her hand — and touches something vast and ancient." },
@@ -494,6 +372,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-22",
+    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    songIds: ["bank-river-z"],
+    setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — THAT EVENING" },
       { type: "action", text: "Word travels fast in a small town. Half the market vendors have already heard. The other half are pretending not to." },
@@ -509,6 +390,8 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-23",
+    characterIds: ["papa-louis", "zuri"],
+    songIds: ["quiet-river"],
     elements: [
       { type: "scene", text: "INT. PAPA LOUIS'S WORKSHOP — NIGHT" },
       { type: "action", text: "The pirogue is finished. Papa Louis runs a hand along its hull — smooth, watertight, ready." },
@@ -524,6 +407,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-24",
+    characterIds: ["witch-doctor", "mama-sabine", "zuri"],
+    songIds: ["fish-2"],
+    setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. TOWN SQUARE — PRE-FESTIVAL — NIGHT" },
       { type: "action", text: "Firelight. Drums. The whole town circles the square in a slow procession. Everyone wears something borrowed from water." },
@@ -537,6 +423,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-25",
+    characterIds: ["captain-beignet", "ade", "pants"],
+    songIds: ["alien-groove", "fish-2"],
+    setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL STAGE — NIGHT" },
       { type: "action", text: "The band strikes up. Brass and percussion and something electric in the air. The crowd surges forward." },
@@ -551,6 +440,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-26",
+    characterIds: ["ripple", "zuri"],
+    songIds: ["fish", "echo-in-the-water"],
+    setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL STAGE — CONTINUOUS" },
       { type: "action", text: "Zuri stands in the wings. She can hear the river from here — it is closer than it should be." },
@@ -566,6 +458,9 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-27",
+    characterIds: ["zuri", "papa-louis", "mama-sabine", "pants"],
+    songIds: ["fish", "fish-2"],
+    setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL STAGE — MOMENTS LATER" },
       { type: "action", text: "Zuri walks out. The whole town is watching. Papa Louis in the front row. Mama Sabine with her arms crossed and her eyes shining." },

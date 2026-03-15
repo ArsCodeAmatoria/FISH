@@ -27,7 +27,7 @@ export const characters: Character[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate.",
     personalityTraits: ["Loyal", "Witty", "Adventurous", "Kind"],
     image: "/characters/trumpet.png",
-    songIds: ["fish", "fish-2", "bank-river-z"],
+    songIds: ["bank-river-z"],
   },
   {
     id: "papa-louis",

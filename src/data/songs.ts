@@ -11,7 +11,7 @@ export const songs: Song[] = [
   {
     id: "fish",
     title: "Fish",
-    singers: "Zuri & Ade",
+    singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/zuri.png",
     audioSrc: "/songs/Fish.wav",
@@ -19,7 +19,7 @@ export const songs: Song[] = [
   {
     id: "fish-2",
     title: "Fish (Reprise)",
-    singers: "Full Company",
+    singers: "Zuri",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/zuri.png",
     audioSrc: "/songs/Fish (2).wav",
