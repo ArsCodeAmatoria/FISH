@@ -230,12 +230,14 @@ export function SongsSection() {
               const isLiked = liked.has(s.id);
 
               return (
-                <button
+                <div
                   key={s.id}
-                  type="button"
+                  role="button"
+                  tabIndex={0}
                   onClick={() => selectAndPlay(s)}
+                  onKeyDown={(e) => e.key === "Enter" && selectAndPlay(s)}
                   className={cn(
-                    "group flex items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-all duration-200",
+                    "group flex cursor-pointer items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-all duration-200",
                     active
                       ? "border-white/25 bg-white/8"
                       : "border-transparent hover:border-white/12 hover:bg-white/5"
@@ -314,7 +316,7 @@ export function SongsSection() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                </button>
+                </div>
               );
             })}
           </div>
