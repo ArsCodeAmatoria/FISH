@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Play, Pause, Download } from "lucide-react";
+import { Play, Pause, Download } from "lucide-react";
 import { scriptPages, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
@@ -265,6 +265,8 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
   const [page, setPage] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const total = scriptPages.length;
   const current = scriptPages[page];
 
@@ -277,6 +279,23 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
   const pageSets = (current.setIds ?? [])
     .map((id) => sets.find((s) => s.id === id))
     .filter(Boolean) as typeof sets;
+
+  // Track visible page via IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = pageRefs.current.findIndex((r) => r === entry.target);
+            if (idx !== -1) setPage(idx);
+          }
+        });
+      },
+      { root: scrollRef.current, threshold: 0.4 }
+    );
+    pageRefs.current.forEach((ref) => { if (ref) observer.observe(ref); });
+    return () => observer.disconnect();
+  }, []);
 
   const stopAudio = useCallback(() => {
     audioRef.current?.pause();
@@ -300,16 +319,11 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
     [playingId]
   );
 
-  const goToPage = useCallback(
-    (i: number) => {
-      stopAudio();
-      setPage(Math.max(0, Math.min(total - 1, i)));
-    },
-    [total, stopAudio]
-  );
-
-  const prev = useCallback((e: React.MouseEvent) => { e.stopPropagation(); goToPage(page - 1); }, [page, goToPage]);
-  const next = useCallback((e: React.MouseEvent) => { e.stopPropagation(); goToPage(page + 1); }, [page, goToPage]);
+  const scrollToPage = useCallback((i: number) => {
+    stopAudio();
+    const target = pageRefs.current[Math.max(0, Math.min(total - 1, i))];
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [total, stopAudio]);
 
   return (
     <section
@@ -317,10 +331,10 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
       className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14 pb-20"
     >
       {/* ── Header ─────────────────────────────────────────────── */}
-      <div className="mb-5 flex shrink-0 items-center justify-between px-8">
+      <div className="mb-4 flex shrink-0 items-center justify-between px-8">
         <div className="section-heading flex-1 text-2xl">Script</div>
         <span
-          className="text-[11px] text-white/25"
+          className="text-[11px] tabular-nums text-white/25"
           style={{ fontFamily: "var(--font-screenplay)" }}
         >
           {String(page + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
@@ -337,10 +351,9 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
         >
           {ACTS.map((act) => (
             <div key={act.label} className="mb-5">
-              {/* Act label */}
               <button
                 type="button"
-                onClick={() => goToPage(act.start)}
+                onClick={() => scrollToPage(act.start)}
                 className={cn(
                   "mb-2 flex items-center gap-2 text-left transition-colors",
                   page >= act.start && page <= act.end
@@ -359,18 +372,16 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 )}
               </button>
 
-              {/* Scene links */}
               <div className="flex flex-col gap-0.5">
                 {scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
                   const idx = act.start + offset;
                   const isActive = idx === page;
                   const label = sceneLabel(p);
-                  const sceneNum = idx + 1;
                   return (
                     <button
                       key={p.id}
                       type="button"
-                      onClick={() => goToPage(idx)}
+                      onClick={() => scrollToPage(idx)}
                       className={cn(
                         "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
                         isActive
@@ -382,7 +393,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                         className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
                         style={{ fontFamily: "var(--font-screenplay)" }}
                       >
-                        {String(sceneNum).padStart(2, "0")}
+                        {String(idx + 1).padStart(2, "0")}
                       </span>
                       <span
                         className="line-clamp-2 text-[10px] leading-snug"
@@ -396,52 +407,45 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
               </div>
             </div>
           ))}
-
         </div>
 
-        {/* ── Center: Script text + own arrows ───────────────── */}
-        <div className="relative flex flex-1 items-center justify-center overflow-hidden">
-          {/* Screenplay left margin rule */}
+        {/* ── Center: Scrolling screenplay ─────────────────────── */}
+        <div
+          ref={scrollRef}
+          className="relative flex-1 overflow-y-auto"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {/* Left margin rule */}
           <div className="pointer-events-none absolute left-[calc(50%-20rem)] top-0 bottom-0 w-px bg-white/8" />
 
-          {/* Script content */}
-          <div
-            key={current.id}
-            className="w-full max-w-xl space-y-2 px-4"
-            style={{ animation: "fadeIn 0.3s ease-out both" }}
-          >
-            {current.elements.map((el, i) => (
-              <ScriptLine key={i} type={el.type} text={el.text} />
+          <div className="mx-auto max-w-xl px-4 py-6 pb-16">
+            {scriptPages.map((p, idx) => (
+              <div
+                key={p.id}
+                ref={(el) => { pageRefs.current[idx] = el; }}
+                className="mb-1"
+              >
+                {/* Page separator + number */}
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="h-px flex-1 bg-white/6" />
+                  <span
+                    className="text-[9px] tabular-nums text-white/20"
+                    style={{ fontFamily: "var(--font-screenplay)" }}
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                  <div className="h-px flex-1 bg-white/6" />
+                </div>
+
+                {/* Page content */}
+                <div className="space-y-2 pb-12">
+                  {p.elements.map((el, i) => (
+                    <ScriptLine key={i} type={el.type} text={el.text} />
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
-
-          {/* Center-column prev arrow */}
-          <button
-            type="button"
-            onClick={prev}
-            disabled={page === 0}
-            aria-label="Previous page"
-            className={cn(
-              "absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur-sm transition-all hover:border-white/40",
-              "disabled:pointer-events-none disabled:opacity-0"
-            )}
-          >
-            <ChevronLeft className="size-4 stroke-[1.5]" />
-          </button>
-
-          {/* Center-column next arrow */}
-          <button
-            type="button"
-            onClick={next}
-            disabled={page === total - 1}
-            aria-label="Next page"
-            className={cn(
-              "absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur-sm transition-all hover:border-white/40",
-              "disabled:pointer-events-none disabled:opacity-0"
-            )}
-          >
-            <ChevronRight className="size-4 stroke-[1.5]" />
-          </button>
         </div>
 
         {/* ── Right: Contextual sidebar ───────────────────────── */}
