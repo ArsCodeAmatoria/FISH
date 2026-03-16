@@ -56,6 +56,12 @@ const ANIMAL_BEATS: Beat[] = [
   { act: 1, scene: "The Naming",                  chars: ["Captain Beignet", "Pants"],            location: "Market Square", status: "written", description: "Captain Beignet names himself on the crate. Then names Pants because she isn't wearing any. She points out none of them are. He says: exactly. This is the whole film in miniature." },
   { act: 1, scene: "Ripple Arrives",              chars: ["Ripple", "Pants"],                     location: "Market Square", status: "written", description: "Ripple erupts from the harbour and soaks Pants. She has just cleaned her paw. The sponge appears. The trio is complete. Pants sighs. This is her life now." },
   { act: 1, scene: "The Gang is Formed",          chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "Captain declares the formation of the Fish Thief Gang. He has a name, a crate headquarters, and a manifesto. Pants asks what the plan is. Captain says: fish. Ripple says: yes. Pants says: that is not a plan. Captain says: it is a philosophy." },
+  { act: 1, scene: "The Name",                    chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Every gang needs a name. Captain proposes several — all very long, all involving the word 'revolutionary'. Pants vetoes each one. Ripple suggests 'Fish.' Dead silence. Captain stares at him. Then: yes. That's it. Fish. Pants: that is literally the thing we are stealing. Captain: exactly. It is a statement." },
+  { act: 1, scene: "The Gang Sign",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Pants says every gang needs a sign. Captain raises his paw and produces the Spock live-long-and-prosper. He holds it proudly. Pants stares at it for a long time. Ripple tries it. His paw does not cooperate. He does something else entirely. Captain tries to correct him. There are several beats of this. Nobody's paw is doing the right thing. Captain declares this is the sign." },
+  { act: 1, scene: "Sign Practice",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Market Square", status: "tbw",     description: "Montage. The trio practicing the sign in various locations around the market. A fish vendor glances over and looks confused. A child tries to copy Ripple's version. Captain greets a pigeon with the sign. The pigeon does not respond. Pants has perfected it but refuses to admit this." },
+  { act: 1, scene: "Elmer and Pepe",              chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "Elmer — a lean, street-hardened cat in a very small vest — and Pepe — an enormous dog with extremely gentle eyes — appear from around a corner. Elmer sees Captain's sign. He goes very still. He raises the exact same sign back. Captain raises his. Elmer raises his. Long pause. Elmer: that's our sign. Captain: we invented it. Elmer: we invented it two years ago. Pants: we invented it this morning. Pepe (to Elmer, quietly): they're doing the sign, Elmer." },
+  { act: 1, scene: "The Standoff",                chars: ["Captain Beignet", "Pants", "Elmer", "Pepe"],           location: "Market Square", status: "tbw", description: "A tense and extremely small territorial dispute. Elmer explains calmly that this sign belongs to his outfit — the Fish. Captain: we are also called Fish. Elmer: we were called Fish first. Captain: we were called Fish independently. Pants (to Captain, low): we were called Fish ten minutes ago. Captain (to Pants, lower): not helpful. Pepe watches both conversations with great interest and no opinion." },
+  { act: 1, scene: "The New Sign",                chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "A resolution is reached. Elmer keeps the Spock sign. Fish — their Fish — needs a new one. Long pause. Captain slowly raises one index finger. Straight up. He looks at it. He looks at the others. Ripple raises his. Pants raises hers with visible reluctance. Elmer studies this. Nods once. Pepe smiles. They go their separate ways. The sign is one finger up. No one asks what it means." },
   { act: 1, scene: "First Heist — Total Failure", chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Fish Market",   status: "written", description: "The first heist is elaborate. There is a diagram. There are assigned roles. Ripple goes off-script immediately. Pants goes off-script correcting Ripple. Captain improvises everything. The whole market watches. They escape with one very small fish." },
   { act: 1, scene: "Ripple Eats the Fish",        chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "The trio regroup at the crate. Captain presents the fish for division. Ripple has already eaten it. He looks very pleased. Captain stares at the empty space where the fish was. Pants stares at Captain. Long pause." },
   { act: 2, scene: "They Steal a Boat",           chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Captain decides the gang needs an operational base. They borrow a small rowboat. It is unclear from whom. Ripple rows — he is excellent at this. Pants refuses to enjoy it. Captain stands at the bow like a figurehead and points at things." },
@@ -125,7 +131,7 @@ const ACT_SUMMARIES: {
     label: "The Market Wakes",
     subtitle: "Morning. Everyone arrives. The world is established.",
     corporate: "MU proposes the data center. Kane buries the environmental reports. Marcus comes to town and says nothing.",
-    animals: "The trio forms on a crate. The Gang is declared. The first heist produces one fish. Ripple eats it.",
+    animals: "The trio forms on a crate. Gang name: Fish. Gang sign: Captain does the Spock. Elmer and Pepe appear — that's their sign. New sign: one index finger up. The first heist produces one fish. Ripple eats it.",
     zuri: "Mama Amara sails into town. Zuri hears the buskers. Louis plays. She stays and listens. She does not play.",
   },
   {
@@ -579,8 +585,8 @@ export function ConstructionSection() {
                   },
                   {
                     track: "Animals",
-                    chars: "Captain / Pants / Ripple",
-                    body: "Three animals, one crate, one failed heist. They steal a boat. Find donuts and espresso. Pants sings twice — once in joy, once in desperate urgency. Ripple floods a filing office by accident. Captain takes full credit.",
+                    chars: "Captain / Pants / Ripple / Elmer / Pepe",
+                    body: "Three animals, one crate. They name the gang Fish. Pants invents the idea of a gang sign. Captain produces the Spock. They almost lose it to Elmer and Pepe, who invented it two years ago. The new sign is one finger up. Then the heist. Then a boat. Then donuts.",
                   },
                   {
                     track: "Zuri & Ade",
@@ -677,9 +683,9 @@ export function ConstructionSection() {
           {activePage === "animals" && (
             <div className="mx-auto max-w-xl py-2 pb-16">
               <div className="mb-4 border-b border-white/8 pb-4">
-                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Animals — The Trio</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Animals — The Trio + Elmer & Pepe</p>
                 <p className="mt-1.5 text-[11px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
-                  A fish thief gang. One failed heist. One stolen boat. One donut shop. One espresso too many. Pants sings Glazed, then the Pants Song. Ripple floods a filing office by accident. Captain takes full credit for everything.
+                  They name the gang Fish. They need a sign. Captain does the Spock. They almost lose it to Elmer (Fish Thief Cat) and Pepe (Fish Thief Dog), who own that sign. New sign: one finger up. Then the heist. Then a boat. Then donuts. Then the espresso. Then the Pants Song.
                 </p>
               </div>
               <BeatList beats={ANIMAL_BEATS} />
