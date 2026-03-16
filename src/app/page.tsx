@@ -5,6 +5,7 @@ import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
+import { SongsSection } from "@/sections/SongsSection";
 import { LyricsSection } from "@/sections/LyricsSection";
 import { CreditsSection } from "@/sections/CreditsSection";
 import { ConstructionSection } from "@/sections/ConstructionSection";
@@ -12,7 +13,7 @@ import { FloatingLinks } from "@/components/FloatingLinks";
 import { CharacterModal } from "@/components/CharacterModal";
 import { SetModal } from "@/components/SetModal";
 
-const SLIDE_COUNT = 7;
+const SLIDE_COUNT = 8;
 
 function HomeInner() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -71,6 +72,7 @@ function HomeInner() {
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
         <ScriptSection openCharacter={openCharacter} openSet={openSet} />
+        <SongsSection openCharacter={openCharacter} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
         <ConstructionSection />
