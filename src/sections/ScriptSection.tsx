@@ -332,7 +332,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
 
         {/* ── Left: Act / Scene navigation ───────────────────── */}
         <div
-          className="flex w-44 shrink-0 flex-col overflow-y-auto pl-8 pr-4"
+          className="w-44 shrink-0 overflow-y-auto pl-8 pr-4"
           style={{ scrollbarWidth: "none" }}
         >
           {ACTS.map((act) => (
@@ -397,7 +397,6 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
             </div>
           ))}
 
-          <MoonWidget />
         </div>
 
         {/* ── Center: Script text + own arrows ───────────────── */}
@@ -625,6 +624,8 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
               </div>
             );
           })()}
+
+          <MoonWidget />
         </div>
       </div>
 
