@@ -1019,7 +1019,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-15",
+    id: "page-115",
     characterIds: ["witch-doctor", "zuri"],
     songIds: ["echo-in-the-water"],
     elements: [
@@ -1036,7 +1036,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-16",
+    id: "page-116",
     characterIds: ["ade"],
     songIds: ["bank-river-z"],
     setIds: ["fish-market"],
@@ -1053,7 +1053,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-17",
+    id: "page-117",
     characterIds: ["pants", "mama-sabine"],
     songIds: ["pants-song"],
     setIds: ["festival-stage"],
@@ -1071,7 +1071,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-18",
+    id: "page-118",
     characterIds: ["zuri"],
     songIds: ["flow-on"],
     setIds: ["marsh-wetlands"],
@@ -1087,7 +1087,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-19",
+    id: "page-119",
     characterIds: ["captain-beignet", "ade", "pants", "zuri"],
     songIds: ["alien-groove"],
     elements: [
@@ -1103,7 +1103,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-20",
+    id: "page-120",
     characterIds: ["zuri", "ripple"],
     songIds: ["echo-in-the-water", "fish"],
     setIds: ["marsh-wetlands"],
@@ -1119,7 +1119,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-21",
+    id: "page-121",
     characterIds: ["ripple", "zuri"],
     songIds: ["echo-in-the-water"],
     elements: [
@@ -1133,7 +1133,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-22",
+    id: "page-122",
     characterIds: ["fish-thief-cat", "fish-thief-dog"],
     songIds: ["bank-river-z"],
     setIds: ["fish-market"],
@@ -1151,7 +1151,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-23",
+    id: "page-123",
     characterIds: ["papa-louis", "zuri"],
     songIds: ["quiet-river"],
     elements: [
@@ -1168,7 +1168,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-24",
+    id: "page-124",
     characterIds: ["witch-doctor", "mama-sabine", "zuri"],
     songIds: ["fish-2"],
     setIds: ["festival-stage"],
@@ -1184,7 +1184,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-25",
+    id: "page-125",
     characterIds: ["captain-beignet", "ade", "pants"],
     songIds: ["alien-groove", "fish-2"],
     setIds: ["festival-stage"],
@@ -1201,7 +1201,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-26",
+    id: "page-126",
     characterIds: ["ripple", "zuri"],
     songIds: ["fish", "echo-in-the-water"],
     setIds: ["festival-stage"],
@@ -1219,7 +1219,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-27",
+    id: "page-127",
     characterIds: ["zuri", "papa-louis", "mama-sabine", "pants"],
     songIds: ["fish", "fish-2"],
     setIds: ["festival-stage"],
@@ -1241,7 +1241,7 @@ export const scriptPages: ScriptPage[] = [
   // ─── ACT I continued (pages 28–30) ──────────────────────────────────────
 
   {
-    id: "page-28",
+    id: "page-128",
     characterIds: ["zuri", "ade"],
     setIds: ["donut-shop"],
     elements: [
@@ -2549,7 +2549,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-115",
+    id: "page-x115",
     characterIds: ["witch-doctor"],
     elements: [
       { type: "scene", text: "EXT. WITCH DOCTOR'S CLEARING — NIGHT" },
@@ -2563,7 +2563,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-116",
+    id: "page-x116",
     characterIds: ["zuri", "ade"],
     setIds: ["fish-market"],
     elements: [
@@ -2577,7 +2577,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-117",
+    id: "page-x117",
     characterIds: ["zuri"],
     songIds: ["flow-on"],
     setIds: ["river-docks"],
@@ -2591,7 +2591,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-118",
+    id: "page-x118",
     characterIds: ["captain-beignet", "ade"],
     setIds: ["river-docks"],
     elements: [
@@ -2606,7 +2606,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-119",
+    id: "page-x119",
     characterIds: ["zuri", "mama-sabine", "papa-louis"],
     setIds: ["fish-market"],
     elements: [
@@ -2622,7 +2622,7 @@ export const scriptPages: ScriptPage[] = [
     ],
   },
   {
-    id: "page-120",
+    id: "page-x120",
     characterIds: ["zuri"],
     songIds: ["fish"],
     setIds: ["fish-market"],
