@@ -253,8 +253,8 @@ export function LyricsSection({ openCharacter }: Props) {
                 })}
               </div>
             ) : (
-              <p className="text-sm text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
-                Lyrics not available.
+              <p className="text-sm italic text-white/30" style={{ fontFamily: "var(--font-screenplay)" }}>
+                {song.description === "Instrumental." ? "Instrumental" : "Lyrics not available."}
               </p>
             )}
           </div>

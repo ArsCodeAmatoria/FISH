@@ -103,7 +103,7 @@ export const songs: Song[] = [
     id: "trumpet",
     title: "Trumpet",
     singers: "Louis",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "Instrumental.",
     image: "/characters/louis.png",
     writtenBy: "Leigh Akin",
     audioSrc: "/songs/Trumpet.wav",
