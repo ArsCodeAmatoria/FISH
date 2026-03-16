@@ -4,7 +4,6 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
-import { SongsSection } from "@/sections/SongsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
 import { LyricsSection } from "@/sections/LyricsSection";
 import { CreditsSection } from "@/sections/CreditsSection";
@@ -12,7 +11,7 @@ import { FloatingLinks } from "@/components/FloatingLinks";
 import { CharacterModal } from "@/components/CharacterModal";
 import { SetModal } from "@/components/SetModal";
 
-const SLIDE_COUNT = 7;
+const SLIDE_COUNT = 6;
 
 function HomeInner() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -70,7 +69,6 @@ function HomeInner() {
         <TitleSlide />
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
-        <SongsSection openCharacter={openCharacter} />
         <ScriptSection openCharacter={openCharacter} openSet={openSet} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
