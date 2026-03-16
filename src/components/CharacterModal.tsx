@@ -64,52 +64,52 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
           <X className="size-4" />
         </button>
 
-        {/* ── Left: full-height portrait ───────────────────────── */}
-        <div className="relative h-full w-[38%] shrink-0 overflow-hidden">
-          <Image
-            key={character.id}
-            src={character.image}
-            alt={character.name}
-            fill
-            className="object-contain object-top"
-            sizes="500px"
-            style={{ animation: "fadeIn 0.35s ease-out both" }}
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-black/80" />
-          <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
-          {/* Counter */}
-          <p
-            className="absolute bottom-4 left-5 text-[10px] text-white/30"
-            style={{ fontFamily: "var(--font-screenplay)" }}
-          >
-            {String(index + 1).padStart(2, "0")} / {String(characters.length).padStart(2, "0")}
-          </p>
-        </div>
-
-        {/* ── Right: scrollable detail ─────────────────────────── */}
+        {/* ── Main: detail with circular portrait ─────────────── */}
         <div
-          className="flex flex-1 flex-col justify-center overflow-y-auto px-10 py-14"
+          className="flex flex-1 flex-col overflow-y-auto px-12 py-12"
           style={{ scrollbarWidth: "none", animation: "fadeIn 0.35s ease-out both" }}
           key={character.id}
         >
-          {/* Role label */}
-          <p
-            className="mb-2 text-[10px] uppercase tracking-[0.3em] text-white/40"
-            style={{ fontFamily: "var(--font-cinematic)" }}
-          >
-            {character.role}
-          </p>
-
-          {/* Name */}
-          <h2
-            className="mb-6 text-5xl font-extrabold uppercase leading-none text-white"
-            style={{ fontFamily: "var(--font-cinematic)" }}
-          >
-            {character.name}
-          </h2>
+          {/* Large circular portrait */}
+          <div className="mb-7 flex items-center gap-7">
+            <div className="relative h-36 w-36 shrink-0 overflow-hidden rounded-full ring-2 ring-white/20 ring-offset-4 ring-offset-black">
+              <Image
+                key={character.id}
+                src={character.image}
+                alt={character.name}
+                fill
+                className="object-cover object-top"
+                sizes="144px"
+                style={{ animation: "fadeIn 0.35s ease-out both" }}
+              />
+            </div>
+            <div>
+              {/* Counter */}
+              <p
+                className="mb-2 text-[10px] text-white/30"
+                style={{ fontFamily: "var(--font-screenplay)" }}
+              >
+                {String(index + 1).padStart(2, "0")} / {String(characters.length).padStart(2, "0")}
+              </p>
+              {/* Role label */}
+              <p
+                className="mb-2 text-[10px] uppercase tracking-[0.3em] text-white/40"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                {character.role}
+              </p>
+              {/* Name */}
+              <h2
+                className="text-5xl font-extrabold uppercase leading-none text-white"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                {character.name}
+              </h2>
+            </div>
+          </div>
 
           {/* Divider */}
-          <div className="mb-6 h-px w-14 bg-white/20" />
+          <div className="mb-6 h-px w-full bg-white/10" />
 
           {/* Description */}
           <p
@@ -185,9 +185,9 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
               </div>
             </div>
           )}
-        </div>
+        </div> {/* end main detail */}
 
-        {/* ── Far right: character strip ───────────────────────── */}
+        {/* ── Right: character strip ───────────────────────── */}
         <div
           className="flex w-20 shrink-0 flex-col items-center gap-2 overflow-y-auto border-l border-white/8 py-6 pr-3 pl-2"
           style={{ scrollbarWidth: "none" }}
