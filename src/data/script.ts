@@ -18,9 +18,124 @@ export interface ScriptPage {
   characterIds?: string[];
   songIds?: string[];
   setIds?: string[];
+  isBible?: boolean;
 }
 
 export const scriptPages: ScriptPage[] = [
+
+  // ── STORY BIBLE ───────────────────────────────────────────────────────────
+
+  {
+    id: "bible-1",
+    isBible: true,
+    elements: [
+      { type: "scene",  text: "FISH" },
+      { type: "action", text: "A Feature-Length Musical Dramedy" },
+      { type: "action", text: "Written by Leigh Akin" },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "LOGLINE" },
+      { type: "action", text: "In a coastal market town where music, food, and small lives intersect, a scruffy philosopher-cat, his cautious companion, and a chaotic river otter stumble through the rhythms of daily life — and accidentally become the town's last hope." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "TONE" },
+      { type: "action", text: "Whimsical. Philosophical. Slightly absurd. Heartfelt. Musical like community-driven street jazz. Emotionally sincere beneath the humor." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "SETTING" },
+      { type: "action", text: "A coastal market town. The story unfolds mostly around The Fish Market, docks, river, and surrounding streets. The town is a living organism — its heartbeat is the daily market, its blood is music." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "MUSIC" },
+      { type: "action", text: "Street jazz. Trumpet busking. Creole / New Orleans influence. Folk harbor songs. Quiet reflective ballads. Music emerges naturally from street life — buskers appear throughout the town, never performing together, but their music forms the soundtrack of the city." },
+    ],
+  },
+
+  {
+    id: "bible-2",
+    isBible: true,
+    characterIds: ["captain-beignet", "pants", "ripple", "sushi"],
+    elements: [
+      { type: "scene",  text: "THE TRIO" },
+      { type: "fade",   text: "——" },
+      { type: "character", text: "CAPTAIN BEIGNET" },
+      { type: "action", text: "A scruffy orange street cat who believes himself to be a philosopher, pirate, and revolutionary. Charismatic, ridiculous confidence, morally flexible. He speaks in strange wisdom and half-truths. His goal is simple: survive the day and enjoy life. Secretly deeply protective of his friends. Believes stealing food is \"redistribution.\"" },
+      { type: "fade",   text: "——" },
+      { type: "character", text: "PANTS" },
+      { type: "action", text: "A gray cat with a thoughtful personality. Practical, cautious, ethical. Often confused by Captain's logic but deeply loyal. She constantly questions Captain's philosophy. Her running joke: she is named \"Pants\" despite wearing none." },
+      { type: "fade",   text: "——" },
+      { type: "character", text: "RIPPLE" },
+      { type: "action", text: "A playful river otter. Chaotic, joyful, physical comedy. Loves splashing water everywhere. Thinks everything is an adventure. Lives partly in the harbor and appears suddenly in scenes. He represents pure spontaneity and childhood joy." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "SUPPORTING CAST" },
+      { type: "character", text: "SUSHI" },
+      { type: "action", text: "Owner of a sushi stall in the market. Quiet, reflective, and proud of her work. Her song explores what it means to belong to a place." },
+      { type: "character", text: "THE MARKET VENDORS" },
+      { type: "action", text: "A rotating cast: fishmongers, bakers, musicians, street cooks, sailors. They form the living ecosystem of the town. Each one has a life, a history, a reason to be here." },
+      { type: "character", text: "THE BUSKERS" },
+      { type: "action", text: "Musicians scattered across the town. They never perform together — but their music forms the invisible architecture of the city. They are the town's unconscious." },
+    ],
+  },
+
+  {
+    id: "bible-3",
+    isBible: true,
+    elements: [
+      { type: "scene",  text: "THEMES" },
+      { type: "fade",   text: "——" },
+      { type: "action", text: "Belonging to a place." },
+      { type: "action", text: "Work as identity." },
+      { type: "action", text: "Community survival." },
+      { type: "action", text: "Small acts of kindness." },
+      { type: "action", text: "The philosophy of sharing." },
+      { type: "action", text: "Chaos vs. responsibility." },
+      { type: "action", text: "Joy in ordinary life." },
+      { type: "fade",   text: "——" },
+      { type: "action", text: "Captain's philosophy of \"redistribution\" is comedic — but it raises real questions about fairness, ownership, and who the market truly belongs to." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "CAPTAIN'S PHILOSOPHY" },
+      { type: "character", text: "CAPTAIN BEIGNET" },
+      { type: "dialogue", text: "The market belongs to the people who live in it." },
+      { type: "action", text: "By the end:" },
+      { type: "character", text: "CAPTAIN BEIGNET" },
+      { type: "dialogue", text: "Redistribution isn't stealing. It's remembering who things belong to." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "STYLE NOTES" },
+      { type: "action", text: "Dialogue should feel natural and comedic. Humor comes from character personality, never from situation alone. Music should emerge naturally from street life. The town should feel like a living organism. Scenes should balance comedy and quiet reflection." },
+    ],
+  },
+
+  {
+    id: "bible-4",
+    isBible: true,
+    elements: [
+      { type: "scene",  text: "STORY STRUCTURE" },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "ACT I — THE MARKET WAKES" },
+      { type: "action", text: "Morning in the harbor town. The market slowly opens. Music fills the streets. We meet vendors, musicians, workers, customers." },
+      { type: "action", text: "Captain Beignet names himself and Pants. Ripple splashes into their lives. The trio dynamic is established. Captain introduces his philosophy. The trio begins wandering — looking for food, adventure, and trouble." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "ACT II — LIFE IN THE MARKET" },
+      { type: "action", text: "The trio becomes woven into daily market life. Comedic sequences: Captain attempting redistribution, Ripple causing accidental chaos, Pants trying to keep them out of trouble." },
+      { type: "action", text: "Character songs explore the town. Sushi performs her song about belonging. We see how each person depends on the market. Tension slowly builds — something threatens the balance." },
+      { type: "action", text: "Possible threats: declining fish, greedy outside buyers, storm season approaching, city inspectors, rising costs, loss of community spirit." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "ACT III — THE CRISIS" },
+      { type: "action", text: "The threat reaches its peak. The market might close or change. Workers fear losing their livelihoods. Music becomes quieter. The trio tries to help in their own chaotic way." },
+      { type: "action", text: "Captain realizes that community isn't just taking — it's protecting. He leads a ridiculous but heartfelt effort to bring the town together. Buskers unite musically for the first time." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "ACT IV — THE MARKET SINGS" },
+      { type: "action", text: "The community comes together through music and action. Everyone contributes: vendors, musicians, workers — even the animals. The town rediscovers why the market matters." },
+      { type: "action", text: "The market survives. Morning again. Life continues." },
+      { type: "fade",   text: "——" },
+      { type: "scene",  text: "FINAL IMAGE" },
+      { type: "action", text: "Captain, Pants, and Ripple sit on their crate. Pants is licking her paw. Ripple splashes her. Captain tosses her the sponge. The sponge opens its eyes." },
+      { type: "character", text: "SPONGE" },
+      { type: "dialogue", text: "Hi." },
+      { type: "action", text: "Pants sighs. Captain smiles at the sunrise." },
+      { type: "character", text: "CAPTAIN BEIGNET" },
+      { type: "dialogue", text: "Another day to fix the economy." },
+      { type: "action", text: "They walk into the waking market. Music rises." },
+      { type: "fade",   text: "FADE OUT." },
+    ],
+  },
+
   // ── ACT I ─────────────────────────────────────────────────────────────────
 
   {

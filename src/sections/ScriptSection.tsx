@@ -184,9 +184,10 @@ function MoonWidget() {
 // ── Act / scene structure ──────────────────────────────────────────────────
 
 const ACTS = [
-  { label: "ACT I",   roman: "I",   start: 0,   end: 34  },
-  { label: "ACT II",  roman: "II",  start: 35,  end: 94  },
-  { label: "ACT III", roman: "III", start: 95,  end: 124 },
+  { label: "Overview", roman: "0",   start: 0,   end: 3   },
+  { label: "ACT I",    roman: "I",   start: 4,   end: 38  },
+  { label: "ACT II",   roman: "II",  start: 39,  end: 98  },
+  { label: "ACT III",  roman: "III", start: 99,  end: 128 },
 ];
 
 /** Extract the first SCENE heading text from a page */
@@ -438,20 +439,55 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 <div className="mb-5 flex items-center gap-3">
                   <div className="h-px flex-1 bg-white/10" />
                   <span
-                    className="rounded-full border border-white/15 bg-white/6 px-2.5 py-0.5 text-[10px] tabular-nums text-white/55"
+                    className={cn(
+                      "rounded-full border px-2.5 py-0.5 text-[10px] tabular-nums",
+                      p.isBible
+                        ? "border-white/20 bg-white/10 text-white/70"
+                        : "border-white/15 bg-white/6 text-white/55"
+                    )}
                     style={{ fontFamily: "var(--font-screenplay)" }}
                   >
-                    {String(idx + 1).padStart(2, "0")}
+                    {p.isBible ? p.id.replace("bible-", "§") : String(idx + 1).padStart(2, "0")}
                   </span>
                   <div className="h-px flex-1 bg-white/10" />
                 </div>
 
                 {/* Page content */}
-                <div className="space-y-2 pb-12">
-                  {p.elements.map((el, i) => (
-                    <ScriptLine key={i} type={el.type} text={el.text} />
-                  ))}
-                </div>
+                {p.isBible ? (
+                  <div className="mb-12 rounded-2xl border border-white/8 bg-white/3 px-8 py-8 space-y-4">
+                    {p.elements.map((el, i) => {
+                      if (el.type === "scene") return (
+                        <p key={i} className="pt-3 text-[10px] font-bold uppercase tracking-[0.3em] text-white/55" style={{ fontFamily: "var(--font-cinematic)" }}>
+                          {el.text}
+                        </p>
+                      );
+                      if (el.type === "fade") return (
+                        <div key={i} className="my-2 h-px w-full bg-white/8" />
+                      );
+                      if (el.type === "character") return (
+                        <p key={i} className="mt-4 text-xs font-semibold uppercase tracking-widest text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>
+                          {el.text}
+                        </p>
+                      );
+                      if (el.type === "dialogue") return (
+                        <p key={i} className="ml-6 text-sm italic leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>
+                          "{el.text}"
+                        </p>
+                      );
+                      return (
+                        <p key={i} className="text-sm leading-relaxed text-white/60" style={{ fontFamily: "var(--font-screenplay)" }}>
+                          {el.text}
+                        </p>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="space-y-2 pb-12">
+                    {p.elements.map((el, i) => (
+                      <ScriptLine key={i} type={el.type} text={el.text} />
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
