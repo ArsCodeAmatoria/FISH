@@ -838,7 +838,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-27",
-    characterIds: ["ripple", "captain-beignet", "pants", "fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["ripple", "captain-beignet", "pants", "elmer", "pepe"],
     setIds: ["open-market", "fish-market"],
     elements: [
       { type: "scene", text: "EXT. OPEN MARKET — MIDDAY — THE NEXT DAY" },
@@ -1018,7 +1018,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-122",
-    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["elmer", "pepe"],
     songIds: ["bank-river-z"],
     setIds: ["fish-market"],
     elements: [
@@ -1298,7 +1298,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-39",
-    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["elmer", "pepe"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — MORNING" },
@@ -1329,7 +1329,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-41",
-    characterIds: ["zuri", "fish-thief-cat"],
+    characterIds: ["zuri", "elmer"],
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVER DOCKS — AFTERNOON" },
@@ -1432,7 +1432,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-48",
-    characterIds: ["zuri", "fish-thief-dog"],
+    characterIds: ["zuri", "pepe"],
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVER DOCKS — EVENING" },
@@ -1447,7 +1447,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-49",
-    characterIds: ["ade", "fish-thief-cat"],
+    characterIds: ["ade", "elmer"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — NIGHT" },
@@ -1522,7 +1522,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-54",
-    characterIds: ["zuri", "fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["zuri", "elmer", "pepe"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — AFTERNOON" },
@@ -1765,7 +1765,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-70",
-    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["elmer", "pepe"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — EVENING" },
@@ -1965,7 +1965,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-84",
-    characterIds: ["zuri", "fish-thief-cat"],
+    characterIds: ["zuri", "elmer"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — AFTERNOON" },
@@ -2052,7 +2052,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-90",
-    characterIds: ["zuri", "fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["zuri", "elmer", "pepe"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — SUNRISE" },
@@ -2116,7 +2116,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-94",
-    characterIds: ["zuri", "fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["zuri", "elmer", "pepe"],
     setIds: ["fish-market"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — AFTERNOON" },
@@ -2130,7 +2130,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-95",
-    characterIds: ["zuri", "ade", "fish-thief-dog"],
+    characterIds: ["zuri", "ade", "pepe"],
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVERSIDE — CONTINUOUS" },
@@ -2236,7 +2236,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-102",
-    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["elmer", "pepe"],
     setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL STAGE — CONTINUOUS" },
@@ -2251,7 +2251,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-103",
-    characterIds: ["zuri", "fish-thief-cat"],
+    characterIds: ["zuri", "elmer"],
     setIds: ["festival-stage"],
     elements: [
       { type: "scene", text: "EXT. FESTIVAL STAGE — CONTINUOUS" },
@@ -2266,7 +2266,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-104",
-    characterIds: ["zuri", "ade", "fish-thief-dog"],
+    characterIds: ["zuri", "ade", "pepe"],
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVERSIDE — NIGHT" },
@@ -2296,7 +2296,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-106",
-    characterIds: ["fish-thief-cat", "fish-thief-dog"],
+    characterIds: ["elmer", "pepe"],
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVERSIDE — CONTINUOUS" },
