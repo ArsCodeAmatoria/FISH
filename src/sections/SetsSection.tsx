@@ -49,7 +49,7 @@ export function SetsSection({ openCharacter }: Props) {
           src={set.image}
           alt={set.name}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-contain transition-transform duration-700 group-hover:scale-105"
           sizes="40vw"
           priority
           style={{ animation: "fadeIn 0.4s ease-out both" }}
