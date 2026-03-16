@@ -1,7 +1,6 @@
 "use client";
 
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { TitleSlide } from "@/sections/TitleSlide";
 import { CharactersSection } from "@/sections/CharactersSection";
 import { SetsSection } from "@/sections/SetsSection";
@@ -18,9 +17,7 @@ function HomeInner() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isScrollingRef = useRef(false);
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const activeCharacterId = searchParams.get("character");
+  const [activeCharacterId, setActiveCharacterId] = useState<string | null>(null);
 
   const goToSlide = useCallback((index: number) => {
     const i = Math.max(0, Math.min(index, SLIDE_COUNT - 1));
@@ -31,8 +28,8 @@ function HomeInner() {
   }, []);
 
   const openCharacter = useCallback((id: string) => {
-    router.push(`?character=${id}`, { scroll: false });
-  }, [router]);
+    setActiveCharacterId(id);
+  }, []);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -68,7 +65,7 @@ function HomeInner() {
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
         <SongsSection openCharacter={openCharacter} />
-        <ScriptSection openCharacter={openCharacter} />
+        <ScriptSection openCharacter={openCharacter} goToSlide={goToSlide} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
       </div>
@@ -106,6 +103,7 @@ function HomeInner() {
         <CharacterModal
           characterId={activeCharacterId}
           onOpenCharacter={openCharacter}
+          onClose={() => setActiveCharacterId(null)}
         />
       )}
     </div>

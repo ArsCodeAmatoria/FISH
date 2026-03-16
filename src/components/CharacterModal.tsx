@@ -2,7 +2,6 @@
 
 import { useEffect, useCallback } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { X, Music } from "lucide-react";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
@@ -11,18 +10,18 @@ import { cn } from "@/lib/utils";
 interface CharacterModalProps {
   characterId: string;
   onOpenCharacter: (id: string) => void;
+  onClose: () => void;
 }
 
-export function CharacterModal({ characterId, onOpenCharacter }: CharacterModalProps) {
-  const router = useRouter();
+export function CharacterModal({ characterId, onOpenCharacter, onClose }: CharacterModalProps) {
   const character = characters.find((c) => c.id === characterId);
   const characterSongs = character
     ? songs.filter((s) => character.songIds.includes(s.id))
     : [];
 
   const close = useCallback(() => {
-    router.push("/", { scroll: false });
-  }, [router]);
+    onClose();
+  }, [onClose]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {

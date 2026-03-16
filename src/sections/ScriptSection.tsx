@@ -85,9 +85,12 @@ function ScriptLine({
 
 // ── Main component ─────────────────────────────────────────────────────────
 
-interface Props { openCharacter: (id: string) => void; }
+interface Props {
+  openCharacter: (id: string) => void;
+  goToSlide: (index: number) => void;
+}
 
-export function ScriptSection({ openCharacter }: Props) {
+export function ScriptSection({ openCharacter, goToSlide }: Props) {
   const [page, setPage] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -392,9 +395,11 @@ export function ScriptSection({ openCharacter }: Props) {
               </p>
               <div className="flex flex-col gap-2">
                 {pageSets.map((set) => (
-                  <div
+                  <button
                     key={set.id}
-                    className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 transition-all hover:border-white/15 hover:bg-white/5"
+                    type="button"
+                    onClick={() => goToSlide(2)}
+                    className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 text-left transition-all hover:border-white/15 hover:bg-white/5"
                   >
                     <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-lg ring-1 ring-white/15">
                       <Image src={set.image} alt={set.name} fill className="object-cover" sizes="32px" />
@@ -413,7 +418,7 @@ export function ScriptSection({ openCharacter }: Props) {
                         {set.slug}
                       </p>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
