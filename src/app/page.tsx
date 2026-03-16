@@ -10,6 +10,7 @@ import { LyricsSection } from "@/sections/LyricsSection";
 import { CreditsSection } from "@/sections/CreditsSection";
 import { FloatingLinks } from "@/components/FloatingLinks";
 import { CharacterModal } from "@/components/CharacterModal";
+import { SetModal } from "@/components/SetModal";
 
 const SLIDE_COUNT = 7;
 
@@ -18,6 +19,7 @@ function HomeInner() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const isScrollingRef = useRef(false);
   const [activeCharacterId, setActiveCharacterId] = useState<string | null>(null);
+  const [activeSetId, setActiveSetId] = useState<string | null>(null);
 
   const goToSlide = useCallback((index: number) => {
     const i = Math.max(0, Math.min(index, SLIDE_COUNT - 1));
@@ -29,6 +31,10 @@ function HomeInner() {
 
   const openCharacter = useCallback((id: string) => {
     setActiveCharacterId(id);
+  }, []);
+
+  const openSet = useCallback((id: string) => {
+    setActiveSetId(id);
   }, []);
 
   useEffect(() => {
@@ -65,7 +71,7 @@ function HomeInner() {
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
         <SongsSection openCharacter={openCharacter} />
-        <ScriptSection openCharacter={openCharacter} goToSlide={goToSlide} />
+        <ScriptSection openCharacter={openCharacter} openSet={openSet} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
       </div>
@@ -104,6 +110,16 @@ function HomeInner() {
           characterId={activeCharacterId}
           onOpenCharacter={openCharacter}
           onClose={() => setActiveCharacterId(null)}
+        />
+      )}
+
+      {/* Set modal overlay */}
+      {activeSetId && (
+        <SetModal
+          setId={activeSetId}
+          onOpenSet={openSet}
+          onOpenCharacter={openCharacter}
+          onClose={() => setActiveSetId(null)}
         />
       )}
     </div>

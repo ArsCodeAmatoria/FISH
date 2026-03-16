@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import Image from "next/image";
-import { X, Music } from "lucide-react";
+import { X, Music, Play, Pause } from "lucide-react";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { cn } from "@/lib/utils";
@@ -19,7 +19,25 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
     ? songs.filter((s) => character.songIds.includes(s.id))
     : [];
 
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = useCallback((song: typeof songs[0]) => {
+    if (playingId === song.id) {
+      audioRef.current?.pause();
+      setPlayingId(null);
+    } else {
+      audioRef.current?.pause();
+      const audio = new Audio(song.audioSrc);
+      audio.addEventListener("ended", () => setPlayingId(null));
+      audio.play().catch(() => {});
+      audioRef.current = audio;
+      setPlayingId(song.id);
+    }
+  }, [playingId]);
+
   const close = useCallback(() => {
+    audioRef.current?.pause();
     onClose();
   }, [onClose]);
 
@@ -152,36 +170,51 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
                 <Music className="size-3" /> Songs
               </p>
               <div className="flex flex-col gap-2">
-                {characterSongs.map((song) => (
-                  <div
-                    key={song.id}
-                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/4 px-3 py-2"
-                  >
-                    <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
-                      <Image
-                        src={song.image}
-                        alt={song.title}
-                        fill
-                        className="object-cover object-top"
-                        sizes="36px"
-                      />
-                    </div>
-                    <div>
-                      <p
-                        className="text-xs font-medium text-white/85"
-                        style={{ fontFamily: "var(--font-cinematic)" }}
-                      >
-                        {song.title}
-                      </p>
-                      <p
-                        className="mt-0.5 text-[9px] text-white/45"
-                        style={{ fontFamily: "var(--font-screenplay)" }}
-                      >
-                        {song.singers}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                {characterSongs.map((song) => {
+                  const isPlaying = playingId === song.id;
+                  return (
+                    <button
+                      key={song.id}
+                      type="button"
+                      onClick={() => togglePlay(song)}
+                      className={cn(
+                        "group flex w-full items-center gap-3 rounded-xl border px-3 py-2 text-left transition-all duration-200",
+                        isPlaying
+                          ? "border-white/30 bg-white/12"
+                          : "border-white/10 bg-white/4 hover:border-white/20 hover:bg-white/8"
+                      )}
+                    >
+                      <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg">
+                        <Image src={song.image} alt={song.title} fill className="object-cover object-top" sizes="36px" />
+                        <div className={cn("absolute inset-0 flex items-center justify-center bg-black/55 transition-opacity", isPlaying ? "opacity-100" : "opacity-0 group-hover:opacity-100")}>
+                          {isPlaying
+                            ? <Pause className="size-3 fill-white text-white" />
+                            : <Play className="size-3 fill-white text-white" />}
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className={cn("truncate text-xs font-medium", isPlaying ? "text-white" : "text-white/85")} style={{ fontFamily: "var(--font-cinematic)" }}>
+                          {song.title}
+                        </p>
+                        <div className="flex items-center gap-1.5">
+                          <p className="truncate text-[9px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>
+                            {song.singers}
+                          </p>
+                          {isPlaying && (
+                            <span className="flex items-end gap-px" style={{ height: "8px" }}>
+                              {[0, 1, 2].map((b) => (
+                                <span key={b} className="w-px rounded-sm bg-white/60" style={{ height: "60%", animation: `waveBar 0.6s ease-in-out ${b * 0.12}s infinite alternate` }} />
+                              ))}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all", isPlaying ? "border-white/40 bg-white text-black" : "border-white/15 text-white/50 group-hover:border-white/30 group-hover:text-white")}>
+                        {isPlaying ? <Pause className="size-3 fill-current" /> : <Play className="ml-px size-3 fill-current" />}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -219,6 +252,12 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
           })}
         </div>
       </div>
+      <style>{`
+        @keyframes waveBar {
+          from { transform: scaleY(0.2); }
+          to   { transform: scaleY(1); }
+        }
+      `}</style>
     </div>
   );
 }

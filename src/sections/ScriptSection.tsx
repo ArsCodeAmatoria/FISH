@@ -87,10 +87,10 @@ function ScriptLine({
 
 interface Props {
   openCharacter: (id: string) => void;
-  goToSlide: (index: number) => void;
+  openSet: (id: string) => void;
 }
 
-export function ScriptSection({ openCharacter, goToSlide }: Props) {
+export function ScriptSection({ openCharacter, openSet }: Props) {
   const [page, setPage] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -398,7 +398,7 @@ export function ScriptSection({ openCharacter, goToSlide }: Props) {
                   <button
                     key={set.id}
                     type="button"
-                    onClick={() => goToSlide(2)}
+                    onClick={() => openSet(set.id)}
                     className="group flex items-center gap-2.5 rounded-xl border border-transparent px-2 py-1.5 text-left transition-all hover:border-white/15 hover:bg-white/5"
                   >
                     <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-lg ring-1 ring-white/15">
