@@ -333,12 +333,21 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="mb-4 flex shrink-0 items-center justify-between px-8">
         <div className="section-heading flex-1 text-2xl">Script</div>
-        <span
-          className="text-[11px] tabular-nums text-white/25"
-          style={{ fontFamily: "var(--font-screenplay)" }}
-        >
-          {String(page + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-        </span>
+        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5">
+          <span
+            className="text-sm font-bold tabular-nums text-white"
+            style={{ fontFamily: "var(--font-screenplay)" }}
+          >
+            {String(page + 1).padStart(2, "0")}
+          </span>
+          <span className="text-white/30 text-xs">/</span>
+          <span
+            className="text-xs tabular-nums text-white/45"
+            style={{ fontFamily: "var(--font-screenplay)" }}
+          >
+            {String(total).padStart(2, "0")}
+          </span>
+        </div>
       </div>
 
       {/* ── Three-column content ────────────────────────────────── */}
@@ -426,15 +435,15 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 className="mb-1"
               >
                 {/* Page separator + number */}
-                <div className="mb-4 flex items-center gap-3">
-                  <div className="h-px flex-1 bg-white/6" />
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="h-px flex-1 bg-white/10" />
                   <span
-                    className="text-[9px] tabular-nums text-white/20"
+                    className="rounded-full border border-white/15 bg-white/6 px-2.5 py-0.5 text-[10px] tabular-nums text-white/55"
                     style={{ fontFamily: "var(--font-screenplay)" }}
                   >
                     {String(idx + 1).padStart(2, "0")}
                   </span>
-                  <div className="h-px flex-1 bg-white/6" />
+                  <div className="h-px flex-1 bg-white/10" />
                 </div>
 
                 {/* Page content */}
