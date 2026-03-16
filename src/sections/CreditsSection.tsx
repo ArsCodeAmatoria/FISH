@@ -91,6 +91,7 @@ const creditLines: CreditLine[] = [
   { type: "role-name", role: "Flow On",                       name: "Cedar" },
   { type: "role-name", role: "Quiet River",                   name: "Ade" },
   { type: "role-name", role: "Keys to the Block",             name: "Holly" },
+  { type: "role-name", role: "Roll It Tight",                 name: "Sushi" },
   { type: "role-name", role: "Stars Over the Block",          name: "Zuri" },
   { type: "role-name", role: "Trumpet",                       name: "Louis" },
   { type: "role-name", role: "The Girl Who Pooped Her Pants", name: "Pants" },

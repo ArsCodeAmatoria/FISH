@@ -155,7 +155,7 @@ export const characters: Character[] = [
       "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and always behind the counter.",
     personalityTraits: ["Resourceful", "Sharp", "Welcoming"],
     image: "/characters/sushi.png",
-    songIds: [],
+    songIds: ["roll-it-tight"],
   },
   {
     id: "j",

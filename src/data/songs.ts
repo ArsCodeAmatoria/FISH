@@ -100,6 +100,15 @@ export const songs: Song[] = [
     audioSrc: "/songs/STARS OVER THE BLOCK (2).wav",
   },
   {
+    id: "roll-it-tight",
+    title: "Roll It Tight",
+    singers: "Sushi",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/characters/sushi.png",
+    writtenBy: "Leigh Akin",
+    audioSrc: "/songs/ROLL IT TIGHT.wav",
+  },
+  {
     id: "trumpet",
     title: "Trumpet",
     singers: "Louis",
