@@ -413,6 +413,42 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
           <div className="pointer-events-none absolute left-[calc(50%-20rem)] top-0 bottom-0 w-px bg-white/8" />
 
           <div className="mx-auto max-w-xl px-4 py-6 pb-16">
+
+            {/* ── Letterhead ──────────────────────────────────── */}
+            <div className="mb-10 border-b border-white/8 pb-10 text-center">
+              <p
+                className="mb-1 text-[9px] uppercase tracking-[0.5em] text-white/30"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                Feature Film — Original Screenplay
+              </p>
+              <h2
+                className="mb-1 text-4xl tracking-[0.25em] text-white/80"
+                style={{ fontFamily: "var(--font-title)" }}
+              >
+                FISH
+              </h2>
+              <p
+                className="mb-6 text-[10px] uppercase tracking-[0.35em] text-white/30"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                A River Story
+              </p>
+              <div className="mx-auto mb-6 h-px w-12 bg-white/15" />
+              <p
+                className="text-[11px] text-white/45"
+                style={{ fontFamily: "var(--font-screenplay)" }}
+              >
+                Written by Leigh Akin
+              </p>
+              <p
+                className="mt-4 text-[9px] uppercase tracking-[0.3em] text-white/20"
+                style={{ fontFamily: "var(--font-cinematic)" }}
+              >
+                Draft — {new Date().getFullYear()}
+              </p>
+            </div>
+
             {scriptPages.map((p, idx) => (
               <div
                 key={p.id}
