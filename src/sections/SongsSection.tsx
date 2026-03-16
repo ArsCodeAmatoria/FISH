@@ -99,7 +99,7 @@ export function SongsSection({ openCharacter }: Props) {
         style={{ background: "rgba(255,255,255,0.02)" }}
       >
         {/* Header */}
-        <div className="shrink-0 px-6 pt-10 pb-4">
+        <div className="shrink-0 px-6 pt-14 pb-4">
           <div className="flex items-center gap-2">
             <Music className="size-3 text-white/35" />
             <span

@@ -53,7 +53,7 @@ export function LyricsSection({ openCharacter }: Props) {
   return (
     <section
       id="lyrics"
-      className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-10 pb-8"
+      className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14 pb-20"
     >
       {/* ── Header ───────────────────────────────────────────── */}
       <div className="mb-5 flex shrink-0 items-center justify-between px-8">
