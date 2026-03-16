@@ -331,23 +331,8 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
       className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14 pb-20"
     >
       {/* ── Header ─────────────────────────────────────────────── */}
-      <div className="mb-4 flex shrink-0 items-center justify-between px-8">
-        <div className="section-heading flex-1 text-2xl">Script</div>
-        <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5">
-          <span
-            className="text-sm font-bold tabular-nums text-white"
-            style={{ fontFamily: "var(--font-screenplay)" }}
-          >
-            {String(page + 1).padStart(2, "0")}
-          </span>
-          <span className="text-white/30 text-xs">/</span>
-          <span
-            className="text-xs tabular-nums text-white/45"
-            style={{ fontFamily: "var(--font-screenplay)" }}
-          >
-            {String(total).padStart(2, "0")}
-          </span>
-        </div>
+      <div className="mb-4 flex shrink-0 items-center px-8">
+        <div className="section-heading text-2xl">Script</div>
       </div>
 
       {/* ── Three-column content ────────────────────────────────── */}
@@ -513,6 +498,31 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
               </p>
             </div>
           </a>
+
+          {/* Page counter */}
+          <div className="flex items-center gap-2 px-1">
+            <span
+              className="text-xl font-bold tabular-nums text-white"
+              style={{ fontFamily: "var(--font-screenplay)" }}
+            >
+              {String(page + 1).padStart(2, "0")}
+            </span>
+            <div className="flex flex-col justify-center gap-0.5">
+              <div className="h-px w-6 bg-white/20" />
+              <span
+                className="text-[10px] tabular-nums text-white/35"
+                style={{ fontFamily: "var(--font-screenplay)" }}
+              >
+                {String(total).padStart(2, "0")}
+              </span>
+            </div>
+            <span
+              className="ml-1 text-[9px] uppercase tracking-[0.3em] text-white/30"
+              style={{ fontFamily: "var(--font-cinematic)" }}
+            >
+              Page
+            </span>
+          </div>
 
           <div className="h-px bg-white/8" />
 
