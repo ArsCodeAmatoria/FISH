@@ -211,7 +211,7 @@ export function ConstructionSection() {
     >
       {/* ── Header ──────────────────────────────────────────────── */}
       <div className="mb-4 shrink-0 px-8">
-        <h1 className="section-heading text-2xl">Script Construction</h1>
+        <h1 className="section-heading text-2xl">To Be Written</h1>
       </div>
 
       <div className="flex flex-1 overflow-hidden">
