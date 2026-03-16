@@ -77,7 +77,7 @@ export function CharacterModal({ characterId, onOpenCharacter, onClose }: Charac
           type="button"
           onClick={close}
           aria-label="Close"
-          className="absolute right-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/60 backdrop-blur-sm transition-colors hover:border-white/35 hover:text-white"
+          className="absolute left-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white/60 backdrop-blur-sm transition-colors hover:border-white/35 hover:text-white"
         >
           <X className="size-4" />
         </button>
