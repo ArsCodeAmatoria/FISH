@@ -127,9 +127,9 @@ export const characters: Character[] = [
   {
     id: "elmer",
     name: "Elmer",
-    role: "Fish Thief Cat",
+    role: "Fish Thief Cat — Orange Tabby",
     description:
-      "Lean, street-hardened, and dressed in a very small vest. Elmer runs his own fish thief outfit and does not appreciate newcomers using his gang sign. He is not unfriendly — just territorial and precise. He invented the Spock sign two years ago and will tell you so calmly and at length.",
+      "A lean, street-hardened orange tabby in a very small vest. Elmer runs his own fish thief outfit and does not appreciate newcomers using his gang sign. He is not unfriendly — just territorial and precise. He invented the Spock sign two years ago and will tell you so calmly and at length.",
     personalityTraits: ["Territorial", "Precise", "Deadpan"],
     image: "/characters/fishtheifcat.png",
     songIds: [],
@@ -137,9 +137,9 @@ export const characters: Character[] = [
   {
     id: "pepe",
     name: "Pepe",
-    role: "Fish Thief Dog",
+    role: "Fish Thief Dog — Chihuahua",
     description:
-      "An enormous dog with extremely gentle eyes. Elmer's partner — he rarely speaks but watches everything with quiet interest. He has no opinion on most disputes but is unfailingly polite. When Elmer is tense, Pepe is calm. They balance each other perfectly.",
+      "A Chihuahua with enormous eyes and an extremely gentle disposition. Elmer's partner — he rarely speaks but watches everything with quiet interest. He has no opinion on most disputes but is unfailingly polite. His paws are too small to make the gang sign properly, which he refuses to acknowledge. When Elmer is tense, Pepe is calm. They balance each other perfectly.",
     personalityTraits: ["Gentle", "Observant", "Unflappable"],
     image: "/characters/fishtheifdog1.png",
     songIds: [],
