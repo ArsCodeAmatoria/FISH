@@ -19,6 +19,7 @@ interface Beat {
   song?: string;
   status: Status;
   act: ActNum;
+  group?: string;
 }
 
 const PAGES = [
@@ -53,28 +54,36 @@ const CORPORATE_BEATS: Beat[] = [
 ];
 
 const ANIMAL_BEATS: Beat[] = [
-  { act: 1, scene: "The Naming",                  chars: ["Captain Beignet", "Pants"],            location: "Market Square", status: "written", description: "Captain Beignet names himself on the crate. Then names Pants because she isn't wearing any. She points out none of them are. He says: exactly. This is the whole film in miniature." },
-  { act: 1, scene: "Ripple Arrives",              chars: ["Ripple", "Pants"],                     location: "Market Square", status: "written", description: "Ripple erupts from the harbour and soaks Pants. She has just cleaned her paw. The sponge appears. The trio is complete. Pants sighs. This is her life now." },
-  { act: 1, scene: "The Gang is Formed",          chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "Captain declares the formation of the Fish Thief Gang. He has a name, a crate headquarters, and a manifesto. Pants asks what the plan is. Captain says: fish. Ripple says: yes. Pants says: that is not a plan. Captain says: it is a philosophy." },
-  { act: 1, scene: "The Name",                    chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Every gang needs a name. Captain proposes several — all very long, all involving the word 'revolutionary'. Pants vetoes each one. Ripple suggests 'Fish.' Dead silence. Captain stares at him. Then: yes. That's it. Fish. Pants: that is literally the thing we are stealing. Captain: exactly. It is a statement." },
-  { act: 1, scene: "The Gang Sign",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Pants says every gang needs a sign. Captain raises his paw and produces the Spock live-long-and-prosper. He holds it proudly. Pants stares at it for a long time. Ripple tries it. His paw does not cooperate. He does something else entirely. Captain tries to correct him. There are several beats of this. Nobody's paw is doing the right thing. Captain declares this is the sign." },
-  { act: 1, scene: "Sign Practice",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Market Square", status: "tbw",     description: "Montage. The trio practicing the sign in various locations around the market. A fish vendor glances over and looks confused. A child tries to copy Ripple's version. Captain greets a pigeon with the sign. The pigeon does not respond. Pants has perfected it but refuses to admit this." },
-  { act: 1, scene: "Elmer and Pepe",              chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "Elmer — a lean, street-hardened cat in a very small vest — and Pepe — an enormous dog with extremely gentle eyes — appear from around a corner. Elmer sees Captain's sign. He goes very still. He raises the exact same sign back. Captain raises his. Elmer raises his. Long pause. Elmer: that's our sign. Captain: we invented it. Elmer: we invented it two years ago. Pants: we invented it this morning. Pepe (to Elmer, quietly): they're doing the sign, Elmer." },
-  { act: 1, scene: "The Standoff",                chars: ["Captain Beignet", "Pants", "Elmer", "Pepe"],           location: "Market Square", status: "tbw", description: "A tense and extremely small territorial dispute. Elmer explains calmly that this sign belongs to his outfit — the Fish. Captain: we are also called Fish. Elmer: we were called Fish first. Captain: we were called Fish independently. Pants (to Captain, low): we were called Fish ten minutes ago. Captain (to Pants, lower): not helpful. Pepe watches both conversations with great interest and no opinion." },
-  { act: 1, scene: "The New Sign",                chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "A resolution is reached. Elmer keeps the Spock sign. Fish — their Fish — needs a new one. Long pause. Captain slowly raises one index finger. Straight up. He looks at it. He looks at the others. Ripple raises his. Pants raises hers with visible reluctance. Elmer studies this. Nods once. Pepe smiles. They go their separate ways. The sign is one finger up. No one asks what it means." },
-  { act: 1, scene: "First Heist — Total Failure", chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Fish Market",   status: "written", description: "The first heist is elaborate. There is a diagram. There are assigned roles. Ripple goes off-script immediately. Pants goes off-script correcting Ripple. Captain improvises everything. The whole market watches. They escape with one very small fish." },
-  { act: 1, scene: "Ripple Eats the Fish",        chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "The trio regroup at the crate. Captain presents the fish for division. Ripple has already eaten it. He looks very pleased. Captain stares at the empty space where the fish was. Pants stares at Captain. Long pause." },
-  { act: 2, scene: "They Steal a Boat",           chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "The trio hide in a docked motorboat to avoid being spotted after the heist. Ripple notices the ignition. He cannot not press it. The engine turns over. The boat begins to move. Captain: did you start the boat? Ripple: I was just looking at it. Pants: looking at it started it? They are now on the river. Captain immediately assumes a heroic pose at the bow and points at the horizon. They are committed." },
-  { act: 2, scene: "The Chess Gag",               chars: ["Ripple"],                              location: "Market Square", status: "tbw",     description: "Two old men are deep in a chess game. Total silence. Years of thought concentrated into a single next move. Ripple passes, clips the table. One piece nudges to another square. Both men stare. Then — rapid fire. Move. Move. Move. Counter. Capture. Check. Checkmate. The whole game collapses in twelve seconds. Neither man speaks. One slowly tips his king. They sit in silence. Ripple is already gone." },
-  { act: 2, scene: "The Donut Shop",              chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Donut Shop",    status: "tbw",     song: "Glazed", description: "They discover the donut shop from the water — the smell hits first. They dock illegally and go inside. Pants encounters a glazed donut. Something happens to her face. She sings Glazed. The donut shop owner watches with complicated feelings." },
-  { act: 2, scene: "Pants Discovers Espresso",    chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Someone has left an espresso unattended. Pants sniffs it. Sips. Goes very still. Sips again. Her eyes go wide. The cup is empty in four seconds. She pushes it toward the machine with her paw and stares at the barista until another appears." },
-  { act: 2, scene: "The Long Night",              chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Donut Shop",    status: "tbw",     description: "Montage. Donuts. Espresso. More donuts. More espresso. Captain is philosophical. Ripple is in the fountain outside. Pants is vibrating. At some point they are all on the table. The owner has given up." },
-  { act: 2, scene: "The Crash",                   chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Morning. Pants wakes face-down in a box of glazed donuts. Captain is asleep sitting upright. Ripple is somehow on the roof. Pants lifts her head. The world is terrible. She needs an espresso." },
-  { act: 2, scene: "One More Espresso",           chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Pants gets the espresso. Drinks it. She begins walking. She feels better. Then fast. Then too fast. Something is building inside her. She is moving through the market at speed. The music starts." },
-  { act: 2, scene: "The Pants Song",              chars: ["Pants"],                               location: "Fish Market",   status: "tbw",     song: "The Girl Who Pooped Her Pants", description: "Pants is moving through the market. The song builds. She is looking for a washroom with escalating urgency. The market goes about its business around her. The ending is left to the audience's imagination. The sponge watches from a post and says nothing." },
-  { act: 3, scene: "Overheard",                   chars: ["Captain Beignet", "Pants", "Sushi"],   location: "Fish Market",   status: "written", description: "The trio overhear Sushi telling a neighbouring vendor what Kane really wants — the land, the brand, not the people. The animals are on a rooftop, unseen. Captain goes very quiet. Pants: did you hear that. Captain: that is our market." },
-  { act: 3, scene: "Ripple Floods the Office",    chars: ["Ripple", "Captain Beignet", "Pants"],  location: "Fish Market",   status: "written", description: "Ripple pressed a button. There was a pipe. He thought it would be fine. The buried environmental reports float out into the market. No one connects this to Ripple. Pants suspects." },
-  { act: 4, scene: "Final Coda",                  chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Fish Market",   status: "tbw",     description: "Morning. The market opens. Pants licks her paw. Ripple splashes her. Captain tosses the sponge. The sponge opens its eyes. Hi. Pants sighs. Captain smiles at the sunrise. Another day to fix the economy. They walk in." },
+  // ── ACT I · Formation ──────────────────────────────────────────────────
+  { act: 1, group: "Formation",    scene: "The Naming",                  chars: ["Captain Beignet", "Pants"],            location: "Market Square", status: "written", description: "Captain Beignet names himself on the crate. Then names Pants because she isn't wearing any. She points out none of them are. He says: exactly. This is the whole film in miniature." },
+  { act: 1, group: "Formation",    scene: "Ripple Arrives",              chars: ["Ripple", "Pants"],                     location: "Market Square", status: "written", description: "Ripple erupts from the harbour and soaks Pants. She has just cleaned her paw. The sponge appears. The trio is complete. Pants sighs. This is her life now." },
+  { act: 1, group: "Formation",    scene: "The Gang is Formed",          chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "Captain declares the formation of the Fish Thief Gang. He has a name, a crate headquarters, and a manifesto. Pants asks what the plan is. Captain says: fish. Ripple says: yes. Pants says: that is not a plan. Captain says: it is a philosophy." },
+  { act: 1, group: "Formation",    scene: "The Name",                    chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Every gang needs a name. Captain proposes several — all very long, all involving the word 'revolutionary'. Pants vetoes each one. Ripple suggests 'Fish.' Dead silence. Captain stares at him. Then: yes. That's it. Fish. Pants: that is literally the thing we are stealing. Captain: exactly. It is a statement." },
+  // ── ACT I · The Sign ───────────────────────────────────────────────────
+  { act: 1, group: "The Sign",     scene: "The Gang Sign",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "Pants says every gang needs a sign. Captain raises his paw and produces the Spock live-long-and-prosper. He holds it proudly. Pants stares at it for a long time. Ripple tries it. His paw does not cooperate. He does something else entirely. Captain tries to correct him. There are several beats of this. Nobody's paw is doing the right thing. Captain declares this is the sign." },
+  { act: 1, group: "The Sign",     scene: "Sign Practice",               chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Market Square", status: "tbw",     description: "Montage. The trio practicing the sign in various locations around the market. A fish vendor glances over and looks confused. A child tries to copy Ripple's version. Captain greets a pigeon with the sign. The pigeon does not respond. Pants has perfected it but refuses to admit this." },
+  { act: 1, group: "The Sign",     scene: "Elmer and Pepe",              chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "Elmer — a lean, street-hardened cat in a very small vest — and Pepe — an enormous dog with extremely gentle eyes — appear from around a corner. Elmer sees Captain's sign. He goes very still. He raises the exact same sign back. Captain raises his. Elmer raises his. Long pause. Elmer: that's our sign. Captain: we invented it. Elmer: we invented it two years ago. Pants: we invented it this morning. Pepe (to Elmer, quietly): they're doing the sign, Elmer." },
+  { act: 1, group: "The Sign",     scene: "The Standoff",                chars: ["Captain Beignet", "Pants", "Elmer", "Pepe"],           location: "Market Square", status: "tbw", description: "A tense and extremely small territorial dispute. Elmer explains calmly that this sign belongs to his outfit — the Fish. Captain: we are also called Fish. Elmer: we were called Fish first. Captain: we were called Fish independently. Pants (to Captain, low): we were called Fish ten minutes ago. Captain (to Pants, lower): not helpful. Pepe watches both conversations with great interest and no opinion." },
+  { act: 1, group: "The Sign",     scene: "The New Sign",                chars: ["Captain Beignet", "Pants", "Ripple", "Elmer", "Pepe"], location: "Market Square", status: "tbw", description: "A resolution is reached. Elmer keeps the Spock sign. Fish — their Fish — needs a new one. Long pause. Captain slowly raises one index finger. Straight up. He looks at it. He looks at the others. Ripple raises his. Pants raises hers with visible reluctance. Elmer studies this. Nods once. Pepe smiles. They go their separate ways. The sign is one finger up. No one asks what it means." },
+  // ── ACT I · The Heist ─────────────────────────────────────────────────
+  { act: 1, group: "The Heist",    scene: "First Heist — Total Failure", chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Fish Market",   status: "written", description: "The first heist is elaborate. There is a diagram. There are assigned roles. Ripple goes off-script immediately. Pants goes off-script correcting Ripple. Captain improvises everything. The whole market watches. They escape with one very small fish." },
+  { act: 1, group: "The Heist",    scene: "Ripple Eats the Fish",        chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "written", description: "The trio regroup at the crate. Captain presents the fish for division. Ripple has already eaten it. He looks very pleased. Captain stares at the empty space where the fish was. Pants stares at Captain. Long pause." },
+  // ── ACT II · On the Water ─────────────────────────────────────────────
+  { act: 2, group: "On the Water", scene: "They Steal a Boat",           chars: ["Captain Beignet", "Pants", "Ripple"],  location: "River Docks",   status: "tbw",     description: "The trio hide in a docked motorboat to avoid being spotted after the heist. Ripple notices the ignition. He cannot not press it. The engine turns over. The boat begins to move. Captain: did you start the boat? Ripple: I was just looking at it. Pants: looking at it started it? They are now on the river. Captain immediately assumes a heroic pose at the bow and points at the horizon. They are committed." },
+  { act: 2, group: "On the Water", scene: "The Chess Gag",               chars: ["Ripple"],                              location: "Market Square", status: "tbw",     description: "Two old men are deep in a chess game. Total silence. Years of thought concentrated into a single next move. Ripple passes, clips the table. One piece nudges to another square. Both men stare. Then — rapid fire. Move. Move. Move. Counter. Capture. Check. Checkmate. The whole game collapses in twelve seconds. Neither man speaks. One slowly tips his king. They sit in silence. Ripple is already gone." },
+  // ── ACT II · The Donut Shop ───────────────────────────────────────────
+  { act: 2, group: "The Donut Shop", scene: "The Donut Shop",            chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Donut Shop",    status: "tbw",     song: "Glazed", description: "They discover the donut shop from the water — the smell hits first. They dock illegally and go inside. Pants encounters a glazed donut. Something happens to her face. She sings Glazed. The donut shop owner watches with complicated feelings." },
+  { act: 2, group: "The Donut Shop", scene: "Pants Discovers Espresso",  chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Someone has left an espresso unattended. Pants sniffs it. Sips. Goes very still. Sips again. Her eyes go wide. The cup is empty in four seconds. She pushes it toward the machine with her paw and stares at the barista until another appears." },
+  { act: 2, group: "The Donut Shop", scene: "The Long Night",            chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Donut Shop",    status: "tbw",     description: "Montage. Donuts. Espresso. More donuts. More espresso. Captain is philosophical. Ripple is in the fountain outside. Pants is vibrating. At some point they are all on the table. The owner has given up." },
+  { act: 2, group: "The Donut Shop", scene: "The Crash",                 chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Morning. Pants wakes face-down in a box of glazed donuts. Captain is asleep sitting upright. Ripple is somehow on the roof. Pants lifts her head. The world is terrible. She needs an espresso." },
+  // ── ACT II · The Pants Song ───────────────────────────────────────────
+  { act: 2, group: "The Pants Song", scene: "One More Espresso",         chars: ["Pants"],                               location: "Donut Shop",    status: "tbw",     description: "Pants gets the espresso. Drinks it. She begins walking. She feels better. Then fast. Then too fast. Something is building inside her. She is moving through the market at speed. The music starts." },
+  { act: 2, group: "The Pants Song", scene: "The Pants Song",            chars: ["Pants"],                               location: "Fish Market",   status: "tbw",     song: "The Girl Who Pooped Her Pants", description: "Pants is moving through the market. The song builds. She is looking for a washroom with escalating urgency. The market goes about its business around her. The ending is left to the audience's imagination. The sponge watches from a post and says nothing." },
+  // ── ACT III · The Turn ────────────────────────────────────────────────
+  { act: 3, group: "The Turn",     scene: "Overheard",                   chars: ["Captain Beignet", "Pants", "Sushi"],   location: "Fish Market",   status: "written", description: "The trio overhear Sushi telling a neighbouring vendor what Kane really wants — the land, the brand, not the people. The animals are on a rooftop, unseen. Captain goes very quiet. Pants: did you hear that. Captain: that is our market." },
+  { act: 3, group: "The Turn",     scene: "Ripple Floods the Office",    chars: ["Ripple", "Captain Beignet", "Pants"],  location: "Fish Market",   status: "written", description: "Ripple pressed a button. There was a pipe. He thought it would be fine. The buried environmental reports float out into the market. No one connects this to Ripple. Pants suspects." },
+  // ── ACT IV · Coda ─────────────────────────────────────────────────────
+  { act: 4, group: "Coda",         scene: "Final Coda",                  chars: ["Captain Beignet", "Pants", "Ripple"],  location: "Fish Market",   status: "tbw",     description: "Morning. The market opens. Pants licks her paw. Ripple splashes her. Captain tosses the sponge. The sponge opens its eyes. Hi. Pants sighs. Captain smiles at the sunrise. Another day to fix the economy. They walk in." },
 ];
 
 const ZURI_BEATS: Beat[] = [
@@ -218,10 +227,25 @@ function ActDivider({ act }: { act: ActNum }) {
   );
 }
 
-function BeatRow({ beat, index, showActLabel }: { beat: Beat; index: number; showActLabel?: boolean }) {
+function GroupDivider({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-2.5 pb-1 pt-4 first:pt-0">
+      <span
+        className="shrink-0 rounded border border-white/10 px-2 py-0.5 text-[8px] uppercase tracking-[0.3em] text-white/45"
+        style={{ fontFamily: "var(--font-cinematic)", background: "rgba(255,255,255,0.04)" }}
+      >
+        {label}
+      </span>
+      <div className="h-px flex-1 bg-white/6" />
+    </div>
+  );
+}
+
+function BeatRow({ beat, index, showActLabel, showGroupLabel }: { beat: Beat; index: number; showActLabel?: boolean; showGroupLabel?: boolean }) {
   return (
     <>
       {showActLabel && <ActDivider act={beat.act} />}
+      {showGroupLabel && beat.group && <GroupDivider label={beat.group} />}
       <div className="border-b border-white/6 py-4 last:border-0">
         <div className="mb-1.5 flex items-start justify-between gap-4">
           <div className="flex items-start gap-3">
@@ -275,14 +299,17 @@ function BeatRow({ beat, index, showActLabel }: { beat: Beat; index: number; sho
   );
 }
 
-function BeatList({ beats }: { beats: Beat[] }) {
+function BeatList({ beats, showGroups }: { beats: Beat[]; showGroups?: boolean }) {
   let lastAct: ActNum | null = null;
+  let lastGroup: string | null = null;
   return (
     <>
       {beats.map((beat, i) => {
-        const showActLabel = beat.act !== lastAct;
-        lastAct = beat.act;
-        return <BeatRow key={i} beat={beat} index={i} showActLabel={showActLabel} />;
+        const showActLabel  = beat.act !== lastAct;
+        const showGroupLabel = showGroups && (showActLabel || beat.group !== lastGroup);
+        lastAct   = beat.act;
+        lastGroup = beat.group ?? null;
+        return <BeatRow key={i} beat={beat} index={i} showActLabel={showActLabel} showGroupLabel={!!showGroupLabel} />;
       })}
     </>
   );
@@ -688,7 +715,7 @@ export function ConstructionSection() {
                   They name the gang Fish. They need a sign. Captain does the Spock. They almost lose it to Elmer (Fish Thief Cat) and Pepe (Fish Thief Dog), who own that sign. New sign: one finger up. Then the heist. Then a boat. Then donuts. Then the espresso. Then the Pants Song.
                 </p>
               </div>
-              <BeatList beats={ANIMAL_BEATS} />
+              <BeatList beats={ANIMAL_BEATS} showGroups />
             </div>
           )}
 
