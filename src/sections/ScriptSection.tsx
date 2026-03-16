@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Play, Pause, Download } from "lucide-react";
 import { scriptPages, type ScriptPage } from "@/data/script";
@@ -9,6 +9,177 @@ import { songs } from "@/data/songs";
 import { sets } from "@/data/sets";
 import { crew } from "@/data/crew";
 import { cn } from "@/lib/utils";
+
+// ── Moon phase helpers ─────────────────────────────────────────────────────
+
+/** Returns phase 0–1 where 0 = new moon, 0.5 = full moon */
+function getLunarPhase(date: Date): number {
+  const knownNewMoon = new Date("2000-01-06T18:14:00Z");
+  const lunarCycle = 29.530588853;
+  const days = (date.getTime() - knownNewMoon.getTime()) / 86_400_000;
+  return (((days % lunarCycle) + lunarCycle) % lunarCycle) / lunarCycle;
+}
+
+function getMoonPhaseName(phase: number): string {
+  if (phase < 0.03 || phase > 0.97) return "New Moon";
+  if (phase < 0.22) return "Waxing Crescent";
+  if (phase < 0.28) return "First Quarter";
+  if (phase < 0.47) return "Waxing Gibbous";
+  if (phase < 0.53) return "Full Moon";
+  if (phase < 0.72) return "Waning Gibbous";
+  if (phase < 0.78) return "Last Quarter";
+  return "Waning Crescent";
+}
+
+/** 0 = bright daylight, 1 = deep night */
+function getNightness(hour: number): number {
+  if (hour >= 20 || hour < 5) return 1;
+  if (hour >= 5 && hour < 8) return 1 - (hour - 5) / 3;
+  if (hour >= 17 && hour < 20) return (hour - 17) / 3;
+  return 0;
+}
+
+function MoonSVG({ phase, size = 44, glow }: { phase: number; size?: number; glow: number }) {
+  const r = size / 2 - 2;
+  const cx = size / 2;
+  const cy = size / 2;
+  const topX = cx, topY = cy - r;
+  const botX = cx, botY = cy + r;
+
+  const moonColor = `rgba(255,245,190,${0.2 + glow * 0.75})`;
+  const glowColor = `rgba(255,235,130,${glow * 0.5})`;
+  const ringColor = `rgba(255,245,190,${0.1 + glow * 0.2})`;
+
+  // New moon — just a faint ring
+  if (phase < 0.03 || phase > 0.97) {
+    return (
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke={ringColor} strokeWidth="1" />
+      </svg>
+    );
+  }
+
+  const waxing = phase <= 0.5;
+  const t = waxing ? phase * 2 : (phase - 0.5) * 2; // 0→1 within each half
+
+  // terminatorRx: waxing r→0→-r, waning -r→0→r
+  const terminatorRx = waxing
+    ? r * Math.cos(t * Math.PI)
+    : -r * Math.cos(t * Math.PI);
+  const absRx = Math.abs(terminatorRx);
+
+  let d: string;
+  if (waxing) {
+    // Right side lit (outer arc sweeps right = sweep-flag 1)
+    if (absRx < 0.5) {
+      d = `M ${topX} ${topY} A ${r} ${r} 0 0 1 ${botX} ${botY} L ${topX} ${topY}`;
+    } else {
+      const sweep = terminatorRx > 0 ? 0 : 1;
+      d = `M ${topX} ${topY} A ${r} ${r} 0 0 1 ${botX} ${botY} A ${absRx} ${r} 0 0 ${sweep} ${topX} ${topY}`;
+    }
+  } else {
+    // Left side lit (outer arc sweeps left = sweep-flag 0)
+    if (absRx < 0.5) {
+      d = `M ${topX} ${topY} A ${r} ${r} 0 0 0 ${botX} ${botY} L ${topX} ${topY}`;
+    } else {
+      const sweep = terminatorRx > 0 ? 1 : 0;
+      d = `M ${topX} ${topY} A ${r} ${r} 0 0 0 ${botX} ${botY} A ${absRx} ${r} 0 0 ${sweep} ${topX} ${topY}`;
+    }
+  }
+
+  const filterId = `mg-${Math.round(phase * 100)}`;
+
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ overflow: "visible" }}>
+      <defs>
+        <filter id={filterId} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation={3 + glow * 4} result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      {/* Soft glow layer */}
+      {glow > 0.1 && <path d={d} fill={glowColor} filter={`url(#${filterId})`} />}
+      {/* Moon shape */}
+      <path d={d} fill={moonColor} />
+    </svg>
+  );
+}
+
+function MoonWidget() {
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setNow(new Date());
+    const t = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(t);
+  }, []);
+
+  if (!now) return null;
+
+  const phase = getLunarPhase(now);
+  const hour = now.getHours() + now.getMinutes() / 60;
+  const glow = getNightness(hour);
+  const isNight = glow > 0.5;
+  const phaseName = getMoonPhaseName(phase);
+  const timeStr = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+  return (
+    <div
+      className="mt-auto flex flex-col items-center gap-2 pb-2 pt-6"
+      style={{ transition: "opacity 1s ease" }}
+    >
+      {/* Divider */}
+      <div className="mb-1 h-px w-full bg-white/8" />
+
+      {/* Moon */}
+      <div
+        style={{
+          filter: isNight ? `drop-shadow(0 0 ${6 + glow * 8}px rgba(255,235,130,${glow * 0.6}))` : "none",
+          transition: "filter 2s ease",
+        }}
+      >
+        <MoonSVG phase={phase} size={44} glow={glow} />
+      </div>
+
+      {/* Phase name */}
+      <p
+        className="text-center text-[9px] uppercase tracking-[0.25em]"
+        style={{
+          fontFamily: "var(--font-cinematic)",
+          color: `rgba(255,245,190,${0.2 + glow * 0.55})`,
+          transition: "color 2s ease",
+        }}
+      >
+        {phaseName}
+      </p>
+
+      {/* Day/night label + time */}
+      <div className="flex items-center gap-1.5">
+        <span
+          className="h-1.5 w-1.5 rounded-full"
+          style={{
+            background: isNight
+              ? `rgba(180,200,255,${0.4 + glow * 0.5})`
+              : `rgba(255,220,80,${0.6})`,
+            boxShadow: isNight
+              ? `0 0 ${4 + glow * 6}px rgba(180,200,255,${glow * 0.7})`
+              : "0 0 6px rgba(255,200,60,0.6)",
+            transition: "all 2s ease",
+          }}
+        />
+        <p
+          className="text-[9px] tabular-nums"
+          style={{
+            fontFamily: "var(--font-screenplay)",
+            color: `rgba(255,255,255,${0.18 + glow * 0.3})`,
+          }}
+        >
+          {timeStr}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 // ── Act / scene structure ──────────────────────────────────────────────────
 
@@ -161,7 +332,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
 
         {/* ── Left: Act / Scene navigation ───────────────────── */}
         <div
-          className="w-44 shrink-0 overflow-y-auto pl-8 pr-4"
+          className="flex w-44 shrink-0 flex-col overflow-y-auto pl-8 pr-4"
           style={{ scrollbarWidth: "none" }}
         >
           {ACTS.map((act) => (
@@ -225,6 +396,8 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
               </div>
             </div>
           ))}
+
+          <MoonWidget />
         </div>
 
         {/* ── Center: Script text + own arrows ───────────────── */}
