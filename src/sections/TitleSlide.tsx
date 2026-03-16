@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, RotateCcw } from "lucide-react";
 import { songs } from "@/data/songs";
 import { crew } from "@/data/crew";
 import { cn } from "@/lib/utils";
@@ -23,118 +23,161 @@ export function TitleSlide() {
         audio.addEventListener("ended", () => setPlaying(false));
         audioRef.current = audio;
       }
-      audioRef.current!.play().catch(() => {});
+      audioRef.current.play().catch(() => {});
       setPlaying(true);
     }
   }, [playing]);
+
+  const replay = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+    } else {
+      const audio = new Audio(fishSong.audioSrc);
+      audio.addEventListener("ended", () => setPlaying(false));
+      audioRef.current = audio;
+    }
+    audioRef.current!.play().catch(() => {});
+    setPlaying(true);
+  }, []);
 
   return (
     <section
       id="title"
       className="relative flex h-screen w-screen shrink-0 flex-col items-center justify-center overflow-hidden bg-black"
     >
-      {/* Deep radial vignette */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_50%,transparent_20%,rgba(0,0,0,0.92)_100%)]" />
+      {/* Radial vignette */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.85)_100%)]" />
 
-      {/* Bottom horizon glow — ocean blue */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/2 bg-[radial-gradient(ellipse_120%_60%_at_50%_100%,rgba(0,40,80,0.25)_0%,transparent_70%)]" />
+      {/* Subtle horizon glow */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-[rgba(0,30,60,0.4)] to-transparent" />
 
-      {/* ── YEAR / GENRE line ─────────────────────────────────── */}
-      <p
-        className="relative z-10 mb-10 text-[10px] uppercase tracking-[0.55em] text-white/25"
-        style={{
-          fontFamily: "var(--font-cinematic)",
-          animation: "fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) 0.3s both",
-        }}
-      >
-        A Musical Drama
-      </p>
-
-      {/* ── TITLE ─────────────────────────────────────────────── */}
+      {/* FISH */}
       <h1
         className="relative z-10 select-none leading-none text-white"
         style={{
           fontFamily: "var(--font-title)",
-          fontSize: "clamp(7rem, 26vw, 19rem)",
-          animation: "titleReveal 1.2s cubic-bezier(0.16,1,0.3,1) 0.1s both",
-          textShadow: "0 0 120px rgba(255,255,255,0.08), 0 12px 60px rgba(0,0,0,0.95)",
-          letterSpacing: "0.14em",
+          fontSize: "clamp(6rem, 24vw, 17rem)",
+          animation: "titleReveal 1.2s cubic-bezier(0.16,1,0.3,1) both",
+          textShadow:
+            "0 0 80px rgba(255,255,255,0.12), 0 8px 40px rgba(0,0,0,0.9)",
+          letterSpacing: "0.12em",
         }}
       >
         FISH
       </h1>
 
-      {/* ── RULE ──────────────────────────────────────────────── */}
-      <div
-        className="relative z-10 mt-8 h-px w-16 bg-white/15"
-        style={{ animation: "fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) 0.7s both" }}
-      />
-
-      {/* ── WRITER ────────────────────────────────────────────── */}
+      {/* Tagline */}
       <p
-        className="relative z-10 mt-6 text-[11px] uppercase tracking-[0.4em] text-white/35"
+        className="relative z-10 mt-6 text-xs uppercase tracking-[0.45em] text-white/40"
         style={{
           fontFamily: "var(--font-cinematic)",
-          animation: "fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) 0.9s both",
+          animation: "fadeIn 1.8s ease both",
+          animationDelay: "0.8s",
         }}
       >
-        Written &amp; composed by&nbsp;&nbsp;{writer.name}
+        A cinematic journey
       </p>
 
-      {/* ── PLAY THEME ────────────────────────────────────────── */}
-      <button
-        type="button"
-        onClick={togglePlay}
-        aria-label={playing ? "Pause theme" : "Play theme"}
-        className={cn(
-          "relative z-10 mt-10 flex items-center gap-3 rounded-full border px-5 py-2.5 text-[10px] uppercase tracking-[0.35em] transition-all duration-300",
-          playing
-            ? "border-white/40 bg-white/10 text-white backdrop-blur-md"
-            : "border-white/15 bg-transparent text-white/40 hover:border-white/30 hover:text-white/70"
-        )}
+      {/* Credits line */}
+      <div
+        className="relative z-10 mt-10 flex flex-col items-center gap-1"
         style={{
-          fontFamily: "var(--font-cinematic)",
-          animation: "fadeUp 1.4s cubic-bezier(0.16,1,0.3,1) 1.1s both",
+          animation: "fadeIn 1.8s ease both",
+          animationDelay: "1.2s",
         }}
       >
-        {/* Waveform / icon */}
-        <span className="flex items-end gap-px" style={{ height: "12px", width: "20px" }}>
-          {Array.from({ length: 5 }, (_, b) => (
-            <span
+        <p
+          className="text-[11px] uppercase tracking-[0.3em] text-white/35"
+          style={{ fontFamily: "var(--font-cinematic)" }}
+        >
+          Written by {writer.name}
+        </p>
+        <p
+          className="text-[10px] uppercase tracking-[0.25em] text-white/22"
+          style={{ fontFamily: "var(--font-cinematic)" }}
+        >
+          All songs written by {writer.name}
+        </p>
+      </div>
+
+      {/* Mini player */}
+      <div
+        className="relative z-10 mt-10 flex items-center gap-3 rounded-2xl border border-white/12 bg-white/5 px-5 py-3 backdrop-blur-md"
+        style={{
+          animation: "fadeIn 1.8s ease both",
+          animationDelay: "1.5s",
+        }}
+      >
+        {/* Waveform bars */}
+        <div className="flex items-end gap-px" style={{ height: "18px", width: "32px" }}>
+          {Array.from({ length: 8 }, (_, b) => (
+            <div
               key={b}
               className={cn(
                 "flex-1 rounded-sm transition-colors duration-300",
-                playing ? "bg-white/70" : "bg-white/25"
+                playing ? "bg-white/60" : "bg-white/20"
               )}
               style={{
-                height: `${35 + Math.round(Math.abs(Math.sin(b * 0.9)) * 65)}%`,
+                height: `${30 + Math.round(Math.abs(Math.sin(b * 0.7)) * 70)}%`,
                 animation: playing
-                  ? `waveBar 0.65s ease-in-out ${b * 0.1}s infinite alternate`
+                  ? `waveBar 0.7s ease-in-out ${b * 0.09}s infinite alternate`
                   : "none",
               }}
             />
           ))}
-        </span>
+        </div>
 
-        {playing ? (
-          <>
-            <Pause className="size-3 fill-current" />
-            <span>Pause</span>
-          </>
-        ) : (
-          <>
-            <Play className="size-3 fill-current" />
-            <span>Play Theme</span>
-          </>
-        )}
-      </button>
+        {/* Song info */}
+        <div className="min-w-0">
+          <p
+            className="text-xs font-semibold text-white/80"
+            style={{ fontFamily: "var(--font-cinematic)" }}
+          >
+            {fishSong.title}
+          </p>
+          <p
+            className="text-[10px] text-white/40"
+            style={{ fontFamily: "var(--font-screenplay)" }}
+          >
+            {fishSong.singers}
+          </p>
+        </div>
 
-      {/* ── CORNER MARKS ──────────────────────────────────────── */}
-      {(["top-7 left-7", "top-7 right-7", "bottom-7 left-7", "bottom-7 right-7"] as const).map(
+        {/* Replay */}
+        <button
+          type="button"
+          onClick={replay}
+          aria-label="Replay"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/45 transition-all hover:border-white/30 hover:bg-white/10 hover:text-white"
+        >
+          <RotateCcw className="size-3" />
+        </button>
+
+        {/* Play / Pause */}
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={playing ? "Pause" : "Play"}
+          className={cn(
+            "flex h-9 w-9 items-center justify-center rounded-full border transition-all duration-200",
+            playing
+              ? "border-white/50 bg-white text-black"
+              : "border-white/30 bg-white/10 text-white hover:bg-white/20 hover:border-white/50"
+          )}
+        >
+          {playing
+            ? <Pause className="size-3.5 fill-current" />
+            : <Play className="ml-0.5 size-3.5 fill-current" />
+          }
+        </button>
+      </div>
+
+      {/* Corner frame marks */}
+      {["top-6 left-6", "top-6 right-6", "bottom-6 left-6", "bottom-6 right-6"].map(
         (pos, i) => (
           <div
             key={i}
-            className={`pointer-events-none absolute ${pos} h-6 w-6 opacity-15`}
+            className={`pointer-events-none absolute ${pos} h-8 w-8 opacity-20`}
             style={{
               borderTop: i < 2 ? "1px solid white" : "none",
               borderBottom: i >= 2 ? "1px solid white" : "none",
@@ -145,36 +188,10 @@ export function TitleSlide() {
         )
       )}
 
-      {/* ── SCROLL CUE ────────────────────────────────────────── */}
-      <div
-        className="pointer-events-none absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-1.5 opacity-20"
-        style={{ animation: "fadeUp 1.4s ease 2s both" }}
-      >
-        <span
-          className="text-[9px] uppercase tracking-[0.5em] text-white"
-          style={{ fontFamily: "var(--font-cinematic)" }}
-        >
-          Scroll
-        </span>
-        <div className="h-6 w-px bg-white/50" style={{ animation: "scrollPulse 2s ease-in-out infinite" }} />
-      </div>
-
       <style>{`
         @keyframes waveBar {
-          from { transform: scaleY(0.2); }
+          from { transform: scaleY(0.25); }
           to   { transform: scaleY(1); }
-        }
-        @keyframes titleReveal {
-          from { opacity: 0; transform: translateY(24px); filter: blur(12px); }
-          to   { opacity: 1; transform: translateY(0);   filter: blur(0); }
-        }
-        @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes scrollPulse {
-          0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
-          50%       { opacity: 0.8; transform: scaleY(1); }
         }
       `}</style>
     </section>

@@ -356,67 +356,106 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
 
         {/* ── Left: Act / Scene navigation ───────────────────── */}
         <div
-          className="w-44 shrink-0 overflow-y-auto pl-8 pr-4"
+          className="w-40 shrink-0 overflow-y-auto pl-8 pr-3 pt-1"
           style={{ scrollbarWidth: "none" }}
         >
-          {ACTS.map((act) => (
-            <div key={act.label} className="mb-5">
-              <button
-                type="button"
-                onClick={() => scrollToPage(act.start)}
-                className={cn(
-                  "mb-2 flex items-center gap-2 text-left transition-colors",
-                  page >= act.start && page <= act.end
-                    ? "text-white"
-                    : "text-white/55 hover:text-white/80"
-                )}
-              >
-                <span
-                  className="text-[9px] font-bold uppercase tracking-[0.3em]"
-                  style={{ fontFamily: "var(--font-cinematic)" }}
-                >
-                  {act.label}
-                </span>
-                {page >= act.start && page <= act.end && (
-                  <span className="h-px flex-1 bg-white/20" />
-                )}
-              </button>
+          {ACTS.map((act) => {
+            const isActiveAct = page >= act.start && page <= act.end;
+            const actProgress = isActiveAct
+              ? (page - act.start) / Math.max(1, act.end - act.start)
+              : 0;
 
-              <div className="flex flex-col gap-0.5">
-                {scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
-                  const idx = act.start + offset;
-                  const isActive = idx === page;
-                  const label = sceneLabel(p);
-                  return (
-                    <button
-                      key={p.id}
-                      type="button"
-                      onClick={() => scrollToPage(idx)}
-                      className={cn(
-                        "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
-                        isActive
-                          ? "bg-white/10 text-white"
-                          : "text-white/60 hover:bg-white/5 hover:text-white/85"
-                      )}
-                    >
-                      <span
-                        className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
-                        style={{ fontFamily: "var(--font-screenplay)" }}
-                      >
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span
-                        className="line-clamp-2 text-[10px] leading-snug"
-                        style={{ fontFamily: "var(--font-cinematic)" }}
-                      >
-                        {label}
-                      </span>
-                    </button>
-                  );
-                })}
+            return (
+              <div key={act.label} className="mb-6">
+                {/* Act header */}
+                <button
+                  type="button"
+                  onClick={() => scrollToPage(act.start)}
+                  className="group mb-3 flex w-full items-center gap-3 text-left"
+                >
+                  {/* Roman numeral accent */}
+                  <span
+                    className={cn(
+                      "shrink-0 text-[10px] tabular-nums transition-colors duration-200",
+                      isActiveAct ? "text-white/30" : "text-white/15"
+                    )}
+                    style={{ fontFamily: "var(--font-screenplay)", minWidth: "14px" }}
+                  >
+                    {act.roman}
+                  </span>
+                  <span
+                    className={cn(
+                      "text-[9px] font-bold uppercase tracking-[0.35em] transition-colors duration-200",
+                      isActiveAct
+                        ? "text-white"
+                        : "text-white/35 group-hover:text-white/60"
+                    )}
+                    style={{ fontFamily: "var(--font-cinematic)" }}
+                  >
+                    {act.label}
+                  </span>
+                </button>
+
+                {/* Progress bar (active act only) */}
+                {isActiveAct && (
+                  <div className="mb-3 ml-[26px] h-px w-full max-w-[80px] bg-white/10">
+                    <div
+                      className="h-full bg-white/35 transition-all duration-500"
+                      style={{ width: `${actProgress * 100}%` }}
+                    />
+                  </div>
+                )}
+
+                {/* Scene list — only show in active act */}
+                {isActiveAct && (
+                  <div className="flex flex-col">
+                    {scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
+                      const idx = act.start + offset;
+                      const isActive = idx === page;
+                      const label = sceneLabel(p);
+                      return (
+                        <button
+                          key={p.id}
+                          type="button"
+                          onClick={() => scrollToPage(idx)}
+                          className={cn(
+                            "group flex items-center gap-2.5 py-[5px] pl-[26px] text-left transition-colors duration-150",
+                            isActive
+                              ? "text-white/90"
+                              : "text-white/28 hover:text-white/60"
+                          )}
+                        >
+                          {/* Active dot */}
+                          <span
+                            className={cn(
+                              "mt-px h-1 w-1 shrink-0 rounded-full transition-all duration-200",
+                              isActive ? "bg-white/70 scale-125" : "bg-white/20"
+                            )}
+                          />
+                          <span
+                            className="line-clamp-1 text-[10px] leading-snug"
+                            style={{ fontFamily: "var(--font-cinematic)" }}
+                          >
+                            {label}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {/* Inactive act — show scene count only */}
+                {!isActiveAct && (
+                  <p
+                    className="ml-[26px] text-[9px] text-white/18"
+                    style={{ fontFamily: "var(--font-screenplay)" }}
+                  >
+                    {act.end - act.start + 1} scenes
+                  </p>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* ── Center: Scrolling screenplay ─────────────────────── */}
