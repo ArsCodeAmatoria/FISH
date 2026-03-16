@@ -137,7 +137,7 @@ const ZURI_BEATS: Beat[] = [
   { act: 3, scene: "Ade's Song",               chars: ["Ade"],                      location: "Mama Amara — Cabin", status: "tbw",     song: "Quiet River",       description: "Ade alone at dusk. Quiet River. He blames music. He also knows the storm was the storm and not the song. He has never let himself reach that second thought. The song is the first time he does." },
   { act: 4, scene: "Zuri Sings in Public",     chars: ["Zuri", "Ade", "Louis"],     location: "Dock Stage",         status: "tbw",     song: "Stars Over the Block", description: "Zuri sings in public for the first time. Unplanned, at the dock stage, to a small crowd. Ade hears it from the water. He rows toward the sound without thinking. He hears Amara. He hears Zuri. He hears that they are not the same person and the storm was not the music's fault." },
   { act: 4, scene: "Ade Walks to the Stage",   chars: ["Zuri", "Ade"],              location: "Dock Stage",         status: "tbw",                                description: "After the song. Ade ties up the boat. Walks to the stage. He doesn't say anything. He just stands there beside her. That is everything. The audience should feel it before they can name it." },
-  { act: 4, scene: "Fish Reprise",             chars: ["Zuri", "Ade", "Louis", "Sushi", "J"], location: "Fish Market", status: "tbw", song: "Fish (Reprise)",     description: "Full musical sequence. Every character. Zuri leads. Ade is in the crowd this time — watching, not leaving. The whole town is the chorus. The market is saved not by argument but by music. That is what the film was always about." },
+  { act: 4, scene: "Fish Reprise",             chars: ["Zuri"],                               location: "End Credits", status: "tbw", song: "Fish (Reprise)",     description: "End credits. Black screen. No visuals. Zuri's voice alone — the full song, unaccompanied. After everything that happened, it is just her. The market, the river, her mother, her father — all of it held in one voice. The credits roll in silence around it." },
 ];
 
 const CHARACTER_ARCS = [
@@ -199,7 +199,7 @@ const ACT_SUMMARIES: {
     subtitle: "Everyone contributes. Music is the argument that wins.",
     corporate: "Marcus cancels the project. Kane exits. He doesn't understand why a song defeated him.",
     animals: "The coda. Morning again. Ripple splashes Pants. The sponge says hi. Captain smiles. Another day to fix the economy.",
-    zuri: "Zuri sings in public for the first time. Ade rows toward the sound. He walks to the stage. He stands beside her.",
+    zuri: "Zuri sings in public for the first time. Ade rows toward the sound. He walks to the stage. He stands beside her. Fish Reprise plays over the end credits — black screen, Zuri's voice alone.",
   },
 ];
 
@@ -218,7 +218,7 @@ const SONG_GUIDE = [
   { title: "Quiet River",                 singer: "Ade",            track: "Zuri",      act: 3 as ActNum, purpose: "Ade alone at dusk. The grief song. He blames music. He also knows the storm was the storm. For the first time he lets himself reach that second thought.",           status: "tbw"     as Status },
   { title: "The Girl Who Pooped Her Pants",singer: "Pants",         track: "Animals",   act: 2 as ActNum, purpose: "Pants moving through the market at speed. The song builds with the urgency. The market goes about its business. The sponge watches from a post and says nothing.",   status: "tbw"     as Status },
   { title: "Stars Over the Block",        singer: "Zuri",           track: "Zuri",      act: 4 as ActNum, purpose: "Zuri sings in public for the first time. Unplanned. Small crowd. Ade hears it from the river. This is the scene the whole film has been building toward.",          status: "tbw"     as Status },
-  { title: "Fish (Reprise)",              singer: "Zuri + Full Cast",track: "All",      act: 4 as ActNum, purpose: "Full company number. Every character. Every track converges. Zuri leads. Ade is in the crowd, watching. The market sings itself back to life.",                    status: "tbw"     as Status },
+  { title: "Fish (Reprise)",              singer: "Zuri",            track: "Zuri",     act: 4 as ActNum, purpose: "Plays over the end credits. No visuals — black screen, Zuri's voice alone. The whole film distilled into one voice. After everything, it is just her singing.",        status: "tbw"     as Status },
 ];
 
 // ── World & Locations data ─────────────────────────────────────────────────
