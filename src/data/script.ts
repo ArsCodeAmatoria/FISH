@@ -35,10 +35,10 @@ export const scriptPages: ScriptPage[] = [
       { type: "scene", text: "EXT. THE RIVER — SUNSET — AERIAL" },
       { type: "action", text: "MUSIC IN: \"FISH\" — deep, rolling, alive with bass and purpose." },
       { type: "action", text: "From high above: a wide brown river cutting through Spanish moss and cypress. The sun is going down hard. The water burns copper and gold. Herons stand in the shallows like they own the place." },
-      { type: "action", text: "Moving along the current — deliberate, unhurried — a TUGBOAT. Converted. Fishing nets hang from the rigging. Crates lashed to the deck. Rust on the hull in the shape of a map to nowhere in particular. Hand-painted letters on the bow: ZURI MAE." },
+      { type: "action", text: "Moving along the current — deliberate, unhurried — a TUGBOAT. Converted. Fishing nets hang from the rigging. Crates lashed to the deck. Rust on the hull in the shape of a map to nowhere in particular. Hand-painted letters on the bow: MAMA AMARA." },
       { type: "action", text: "The camera drifts down. Slow. The boat doesn't know it's being watched." },
       { type: "action", text: "Up ahead: a fishing town. Rooftops. Steeples. Smoke from fryers catching the last of the light. Lanterns beginning to flicker on, one by one, like stars that gave up waiting for dark." },
-      { type: "action", text: "The ZURI MAE leans into the current like a dog recognizing home." },
+      { type: "action", text: "The MAMA AMARA leans into the current like a dog recognizing home." },
     ],
   },
   {
@@ -48,7 +48,7 @@ export const scriptPages: ScriptPage[] = [
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "EXT. RIVER DOCKS — GOLDEN HOUR — CONTINUOUS" },
-      { type: "action", text: "The ZURI MAE eases into its slip with a low groan of wood and rope. ZURI (17) stands at the bow, barefoot, quick-eyed. She throws a line to the dock like she has thrown it ten thousand times. She has." },
+      { type: "action", text: "The MAMA AMARA eases into its slip with a low groan of wood and rope. ZURI (17) stands at the bow, barefoot, quick-eyed. She throws a line to the dock like she has thrown it ten thousand times. She has." },
       { type: "action", text: "ADE (17), lanky and grinning, catches it from the stern side and ties off in two moves. He makes everything look effortless. This also annoys her a little." },
       { type: "character", text: "ADE" },
       { type: "dialogue", text: "You want to count 'em before we unload, or you want to argue about counting them?" },
@@ -130,7 +130,7 @@ export const scriptPages: ScriptPage[] = [
     characterIds: ["zuri", "ade"],
     setIds: ["river-docks"],
     elements: [
-      { type: "scene", text: "INT. ZURI MAE — BOAT CABIN — LATE NIGHT" },
+      { type: "scene", text: "INT. MAMA AMARA — BOAT CABIN — LATE NIGHT" },
       { type: "action", text: "The boat rocks with the river. Small, patient movements. Through the porthole: the market has gone dark. A few lanterns still burn above the dock, their reflections stretching long and gold across the black water." },
       { type: "action", text: "Ade is already asleep in the upper bunk. One arm dangling. Mouth slightly open. Completely at peace with the known universe." },
       { type: "action", text: "Zuri lies below, staring at the underside of his bunk. She hums something low under her breath — the trumpet phrase from the market. Half-remembered. Close enough." },
