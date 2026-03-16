@@ -33,12 +33,12 @@ export const characters: Character[] = [
   {
     id: "papa-louis",
     name: "Louis",
-    role: "Musical Mentor",
+    role: "Elder Busker",
     description:
       "An old jazz musician wandering the docks with a battered trumpet. He hears harmony where others hear noise, and immediately recognises Zuri's gift. He introduces her to the Wheel of Groove — the idea that rhythm connects all people across time.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
-    songIds: [],
+    songIds: ["trumpet"],
   },
   {
     id: "mama-sabine",

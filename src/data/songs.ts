@@ -100,6 +100,15 @@ export const songs: Song[] = [
     audioSrc: "/songs/STARS OVER THE BLOCK (2).wav",
   },
   {
+    id: "trumpet",
+    title: "Trumpet",
+    singers: "Louis",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/characters/louis.png",
+    writtenBy: "Leigh Akin",
+    audioSrc: "/songs/Trumpet.wav",
+  },
+  {
     id: "pants-song",
     title: "The Girl Who Pooped Her Pants",
     singers: "Pants",
