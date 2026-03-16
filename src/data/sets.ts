@@ -48,6 +48,14 @@ export const sets: Set[] = [
     image: "/sets/Kojin_Fox_60s_retro_poster_of_a_Creole_Fishmarket_in_a_Fishin_39ba8fdd-23b3-4b25-92e4-7cd2a1702d7d_2.png",
   },
   {
+    id: "sushi-stall",
+    name: "Sushi's Stall",
+    slug: "EXT./INT.",
+    description:
+      "Sushi's corner of the Fish Market — spotless, precise, and always busy. Fresh rolls made to order, pride in every cut. The stall Kane tries to buy and cannot. The one place in the market that holds its ground without moving.",
+    image: "/sets/sushishop.png",
+  },
+  {
     id: "donut-shop",
     name: "Donut Shop",
     slug: "INT.",
