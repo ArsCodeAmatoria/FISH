@@ -328,7 +328,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
   return (
     <section
       id="script"
-      className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14 pb-20"
+      className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14"
     >
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="mb-4 shrink-0 px-8">
@@ -406,7 +406,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
         {/* ── Center: Scrolling screenplay ─────────────────────── */}
         <div
           ref={scrollRef}
-          className="relative flex-1 overflow-y-auto"
+          className="relative flex-1 overflow-y-auto pb-20"
           style={{ scrollbarWidth: "none" }}
         >
           {/* Left margin rule */}
@@ -479,7 +479,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
 
         {/* ── Right: Contextual sidebar ───────────────────────── */}
         <div
-          className="flex w-56 shrink-0 flex-col gap-5 overflow-y-auto rounded-2xl border border-white/8 p-4 mr-8"
+          className="flex w-56 shrink-0 flex-col gap-5 overflow-y-auto rounded-2xl border border-white/8 p-4 pb-20 mr-8"
           style={{ background: "rgba(255,255,255,0.03)", scrollbarWidth: "none" }}
         >
           {/* Download script PDF */}
