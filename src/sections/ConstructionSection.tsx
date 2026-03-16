@@ -90,7 +90,7 @@ const CHARACTER_ARCS = [
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p
-      className="mb-3 text-[9px] uppercase tracking-[0.4em] text-white/30"
+      className="mb-3 text-[9px] uppercase tracking-[0.4em] text-white/55"
       style={{ fontFamily: "var(--font-cinematic)" }}
     >
       {children}
@@ -99,7 +99,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function Divider() {
-  return <div className="my-6 h-px w-full bg-white/8" />;
+  return <div className="my-6 h-px w-full bg-white/12" />;
 }
 
 function StatusPill({ status }: { status: Status }) {
@@ -107,7 +107,7 @@ function StatusPill({ status }: { status: Status }) {
     <span
       className={cn(
         "shrink-0 rounded px-1.5 py-0.5 text-[8px] uppercase tracking-[0.2em]",
-        status === "written" ? "text-white/40" : status === "partial" ? "text-amber-400/50" : "text-white/18 border border-white/10"
+        status === "written" ? "text-white/70" : status === "partial" ? "text-amber-400/50" : "text-white/18 border border-white/18"
       )}
       style={{ fontFamily: "var(--font-cinematic)" }}
     >
@@ -122,7 +122,7 @@ function BeatRow({ beat, index }: { beat: Beat; index: number }) {
       <div className="mb-1.5 flex items-start justify-between gap-4">
         <div className="flex items-start gap-3">
           <span
-            className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/20"
+            className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/45"
             style={{ fontFamily: "var(--font-screenplay)", minWidth: "18px" }}
           >
             {String(index + 1).padStart(2, "0")}
@@ -133,7 +133,7 @@ function BeatRow({ beat, index }: { beat: Beat; index: number }) {
           >
             {beat.scene}
             {beat.song && (
-              <span className="ml-2 text-[9px] font-normal normal-case tracking-normal text-white/30">
+              <span className="ml-2 text-[9px] font-normal normal-case tracking-normal text-white/55">
                 ♪ {beat.song}
               </span>
             )}
@@ -143,7 +143,7 @@ function BeatRow({ beat, index }: { beat: Beat; index: number }) {
       </div>
 
       <p
-        className="mb-2.5 pl-6 text-[12px] leading-relaxed text-white/50"
+        className="mb-2.5 pl-6 text-[12px] leading-relaxed text-white/80"
         style={{ fontFamily: "var(--font-screenplay)" }}
       >
         {beat.description}
@@ -153,14 +153,14 @@ function BeatRow({ beat, index }: { beat: Beat; index: number }) {
         {beat.chars.map((c) => (
           <span
             key={c}
-            className="rounded border border-white/10 px-2 py-0.5 text-[9px] text-white/30"
+            className="rounded border border-white/10 px-2 py-0.5 text-[9px] text-white/55"
             style={{ fontFamily: "var(--font-cinematic)" }}
           >
             {c}
           </span>
         ))}
         <span
-          className="rounded border border-white/6 px-2 py-0.5 text-[9px] italic text-white/20"
+          className="rounded border border-white/6 px-2 py-0.5 text-[9px] italic text-white/45"
           style={{ fontFamily: "var(--font-screenplay)" }}
         >
           {beat.location}
@@ -174,14 +174,14 @@ function RuleBlock({ number, title, rules }: { number: string; title: string; ru
   return (
     <div>
       <div className="mb-3 flex items-center gap-3">
-        <span className="text-[9px] text-white/20" style={{ fontFamily: "var(--font-screenplay)" }}>{number}</span>
+        <span className="text-[9px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>{number}</span>
         <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/70" style={{ fontFamily: "var(--font-cinematic)" }}>{title}</p>
       </div>
       <ul className="space-y-2 pl-6">
         {rules.map((r, i) => (
           <li key={i} className="flex items-start gap-2.5">
             <span className="mt-2 h-px w-2.5 shrink-0 bg-white/18" />
-            <p className="text-[12px] leading-relaxed text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{r}</p>
+            <p className="text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>{r}</p>
           </li>
         ))}
       </ul>
@@ -217,12 +217,12 @@ export function ConstructionSection() {
         >
           {/* Scene count */}
           <div className="mb-5 border-b border-white/8 pb-4">
-            <p className="text-[9px] uppercase tracking-[0.3em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>Scenes</p>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/50" style={{ fontFamily: "var(--font-cinematic)" }}>Scenes</p>
             <p className="mt-1 text-lg font-bold tabular-nums text-white/60" style={{ fontFamily: "var(--font-screenplay)" }}>
               {written}
-              <span className="ml-1 text-sm font-normal text-white/25">/ {total}</span>
+              <span className="ml-1 text-sm font-normal text-white/50">/ {total}</span>
             </p>
-            <p className="text-[9px] text-white/20" style={{ fontFamily: "var(--font-screenplay)" }}>written</p>
+            <p className="text-[9px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>written</p>
           </div>
 
           {/* Nav */}
@@ -235,7 +235,7 @@ export function ConstructionSection() {
                 className={cn(
                   "flex items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-all duration-150",
                   activePage === p.id
-                    ? "bg-white/8 text-white"
+                    ? "bg-white/12 text-white"
                     : "text-white/40 hover:bg-white/4 hover:text-white/70"
                 )}
               >
@@ -249,15 +249,15 @@ export function ConstructionSection() {
 
           {/* Story tracks legend */}
           <div className="mt-6 border-t border-white/8 pt-4">
-            <p className="mb-2.5 text-[9px] uppercase tracking-[0.3em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>Three Tracks</p>
+            <p className="mb-2.5 text-[9px] uppercase tracking-[0.3em] text-white/50" style={{ fontFamily: "var(--font-cinematic)" }}>Three Tracks</p>
             {[
               { label: "Corporate",  desc: "MU / Kane / Marcus" },
               { label: "Animals",    desc: "The Trio / Sushi"   },
               { label: "Zuri & Ade", desc: "Voice / Grief"      },
             ].map(({ label, desc }) => (
               <div key={label} className="mb-2">
-                <p className="text-[10px] text-white/45" style={{ fontFamily: "var(--font-cinematic)" }}>{label}</p>
-                <p className="text-[9px] text-white/22" style={{ fontFamily: "var(--font-screenplay)" }}>{desc}</p>
+                <p className="text-[10px] text-white/75" style={{ fontFamily: "var(--font-cinematic)" }}>{label}</p>
+                <p className="text-[9px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -284,13 +284,13 @@ export function ConstructionSection() {
 
               <div>
                 <SectionLabel>The Corporate Story</SectionLabel>
-                <p className="mb-4 text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mb-4 text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">MU</strong> — a music technology company — has identified land on River Z as ideal for a new data center. The river provides free cooling. The land is cheap because nobody in the city knows about the fishing town downstream.
                 </p>
-                <p className="mb-4 text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mb-4 text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">Victor Kane</strong> is MU's operations director. He doesn't hate the town. He simply doesn't see it. The studies showing the coolant intake would cripple the fishing grounds are on his desk. He files them under acceptable externality and moves the timeline forward.
                 </p>
-                <p className="text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">Marcus Vale</strong> is MU's CEO. He grew up in this town. He left at seventeen and never came back. He approved the project without looking at the location. When Zuri sings, he realises where he is. He calls off the deal. Kane doesn't understand why. That is the entire difference between them.
                 </p>
               </div>
@@ -299,10 +299,10 @@ export function ConstructionSection() {
 
               <div>
                 <SectionLabel>The Animals Story</SectionLabel>
-                <p className="mb-4 text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mb-4 text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">Captain Beignet</strong> believes the market belongs to whoever lives in it. His philosophy of redistribution — comedic on the surface — is the film's central political argument. When the market is threatened, he has a use case for the first time.
                 </p>
-                <p className="text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   The trio's interference is chaotic and accidental. Ripple floods the office containing the buried environmental reports. Captain's schemes delay Kane's schedule through collateral damage. Pants objects to everything and is right about all of it. Their cumulative accidental effect is decisive. Captain takes full credit.
                 </p>
               </div>
@@ -311,13 +311,13 @@ export function ConstructionSection() {
 
               <div>
                 <SectionLabel>Zuri &amp; Ade</SectionLabel>
-                <p className="mb-4 text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mb-4 text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">Zuri</strong> has her mother Amara's voice. Ade knows this and cannot bear it. After Amara died in a storm during a music event, he has kept Zuri away from performing. She hums in secret. She listens to recordings of her mother in the dark. She doesn't sing in public because she doesn't know she's allowed to.
                 </p>
-                <p className="mb-4 text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mb-4 text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   <strong className="font-semibold text-white/75">Louis</strong> has been waiting for the next bearer of the Wheel of Groove. He recognises Zuri immediately. He doesn't push. He just keeps playing near her until she picks up the trumpet herself.
                 </p>
-                <p className="text-[12px] leading-relaxed text-white/55" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="text-[12px] leading-relaxed text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>
                   When Zuri finally sings in public — unplanned, at the dock stage — Ade hears it from the water. He hears Amara. The scene that follows is the film's emotional resolution: he walks to the stage and stands beside her. He doesn't speak. He doesn't need to.
                 </p>
               </div>
@@ -337,7 +337,7 @@ export function ConstructionSection() {
                       <span className="mt-2 h-px w-4 shrink-0 bg-white/20" />
                       <div>
                         <p className="text-[11px] font-semibold text-white/65" style={{ fontFamily: "var(--font-cinematic)" }}>{title}</p>
-                        <p className="text-[11px] leading-relaxed text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>{body}</p>
+                        <p className="text-[11px] leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>{body}</p>
                       </div>
                     </div>
                   ))}
@@ -351,7 +351,7 @@ export function ConstructionSection() {
             <div className="mx-auto max-w-xl py-2 pb-16">
               <div className="mb-6 border-b border-white/8 pb-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Corporate Story — MU / Kane / Marcus</p>
-                <p className="mt-1.5 text-[12px] leading-relaxed text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mt-1.5 text-[12px] leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>
                   MU proposes a data center on River Z. Victor Kane just wants cheap land. Marcus Vale grew up here. Zuri's voice is the thing that changes everything.
                 </p>
               </div>
@@ -364,7 +364,7 @@ export function ConstructionSection() {
             <div className="mx-auto max-w-xl py-2 pb-16">
               <div className="mb-6 border-b border-white/8 pb-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Animals Story — The Trio / Sushi</p>
-                <p className="mt-1.5 text-[12px] leading-relaxed text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mt-1.5 text-[12px] leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>
                   Captain's philosophy meets a real use case. The trio's accidental interference is the mechanism that makes everything else possible. Pants is right about all of it.
                 </p>
               </div>
@@ -377,7 +377,7 @@ export function ConstructionSection() {
             <div className="mx-auto max-w-xl py-2 pb-16">
               <div className="mb-6 border-b border-white/8 pb-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Zuri &amp; Ade — Voice / Grief</p>
-                <p className="mt-1.5 text-[12px] leading-relaxed text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>
+                <p className="mt-1.5 text-[12px] leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>
                   The emotional spine of the film. Everything else is the world. This is the heart. Zuri finds her voice. Ade lets her use it. That's the whole story.
                 </p>
               </div>
@@ -390,7 +390,7 @@ export function ConstructionSection() {
             <div className="mx-auto max-w-xl py-2 pb-16 space-y-0">
               <div className="mb-4 border-b border-white/8 pb-4">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Character Arcs</p>
-                <p className="mt-1 text-[11px] text-white/35" style={{ fontFamily: "var(--font-screenplay)" }}>Every character has one want, one need, and one arc. These should never overlap.</p>
+                <p className="mt-1 text-[11px] text-white/65" style={{ fontFamily: "var(--font-screenplay)" }}>Every character has one want, one need, and one arc. These should never overlap.</p>
               </div>
               {CHARACTER_ARCS.map((arc) => {
                 const char = characters.find(c => c.id === arc.id);
@@ -409,15 +409,15 @@ export function ConstructionSection() {
                         </div>
                         <div className="grid grid-cols-3 gap-3">
                           <div>
-                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>Want</p>
-                            <p className="text-[10px] leading-snug text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.want}</p>
+                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/50" style={{ fontFamily: "var(--font-cinematic)" }}>Want</p>
+                            <p className="text-[10px] leading-snug text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.want}</p>
                           </div>
                           <div>
-                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>Need</p>
-                            <p className="text-[10px] leading-snug text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.need}</p>
+                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/50" style={{ fontFamily: "var(--font-cinematic)" }}>Need</p>
+                            <p className="text-[10px] leading-snug text-white/80" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.need}</p>
                           </div>
                           <div>
-                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>Arc</p>
+                            <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/50" style={{ fontFamily: "var(--font-cinematic)" }}>Arc</p>
                             <p className="text-[10px] leading-snug text-white/65 italic" style={{ fontFamily: "var(--font-cinematic)" }}>{arc.arc}</p>
                           </div>
                         </div>
@@ -493,16 +493,16 @@ export function ConstructionSection() {
               return (
                 <div key={label} className="mb-3">
                   <div className="flex items-baseline justify-between">
-                    <p className="text-[10px] text-white/45" style={{ fontFamily: "var(--font-cinematic)" }}>{label}</p>
-                    <p className="text-[9px] tabular-nums text-white/25" style={{ fontFamily: "var(--font-screenplay)" }}>{w}/{beats.length}</p>
+                    <p className="text-[10px] text-white/75" style={{ fontFamily: "var(--font-cinematic)" }}>{label}</p>
+                    <p className="text-[9px] tabular-nums text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{w}/{beats.length}</p>
                   </div>
-                  <p className="text-[9px] text-white/22" style={{ fontFamily: "var(--font-screenplay)" }}>{beats.length - w} to write</p>
+                  <p className="text-[9px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>{beats.length - w} to write</p>
                 </div>
               );
             })}
           </div>
 
-          <div className="h-px bg-white/8" />
+          <div className="h-px bg-white/12" />
 
           {/* Songs */}
           <div>
@@ -514,15 +514,15 @@ export function ConstructionSection() {
                     <Image src={song.image} alt={song.title} fill className="object-cover" sizes="24px" />
                   </div>
                   <div className="min-w-0">
-                    <p className="truncate text-[10px] text-white/55" style={{ fontFamily: "var(--font-cinematic)" }}>{song.title}</p>
-                    <p className="truncate text-[9px] text-white/28" style={{ fontFamily: "var(--font-screenplay)" }}>{song.singers}</p>
+                    <p className="truncate text-[10px] text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>{song.title}</p>
+                    <p className="truncate text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{song.singers}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="h-px bg-white/8" />
+          <div className="h-px bg-white/12" />
 
           {/* Cast */}
           <div>
@@ -534,8 +534,8 @@ export function ConstructionSection() {
                     <Image src={char.image} alt={char.name} fill className="object-cover object-top" sizes="24px" />
                   </div>
                   <div className="min-w-0">
-                    <p className="truncate text-[10px] text-white/55" style={{ fontFamily: "var(--font-cinematic)" }}>{char.name}</p>
-                    <p className="truncate text-[9px] text-white/28" style={{ fontFamily: "var(--font-screenplay)" }}>{char.role}</p>
+                    <p className="truncate text-[10px] text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>{char.name}</p>
+                    <p className="truncate text-[9px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>{char.role}</p>
                   </div>
                 </div>
               ))}
