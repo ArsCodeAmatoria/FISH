@@ -22,15 +22,46 @@ interface Beat {
   group?: string;
 }
 
-const PAGES = [
-  { id: "plot",       label: "The Plot",       shortLabel: "Plot"      },
-  { id: "acts",       label: "Act Structure",  shortLabel: "Acts"      },
-  { id: "corporate",  label: "Corporate",      shortLabel: "Corporate" },
-  { id: "animals",    label: "Animals",        shortLabel: "Animals"   },
-  { id: "zuri",       label: "Zuri & Ade",     shortLabel: "Zuri & Ade"},
-  { id: "characters", label: "Character Arcs", shortLabel: "Arcs"      },
-  { id: "rules",      label: "Writing Rules",  shortLabel: "Rules"     },
+const NAV_GROUPS = [
+  {
+    label: "Story",
+    pages: [
+      { id: "plot",         shortLabel: "The Plot"      },
+      { id: "acts",         shortLabel: "Act Structure" },
+      { id: "scene-master", shortLabel: "Scene Master"  },
+    ],
+  },
+  {
+    label: "Tracks",
+    pages: [
+      { id: "corporate",    shortLabel: "Corporate"     },
+      { id: "animals",      shortLabel: "Animals"       },
+      { id: "zuri",         shortLabel: "Zuri & Ade"    },
+    ],
+  },
+  {
+    label: "Characters",
+    pages: [
+      { id: "characters",   shortLabel: "Arcs"          },
+      { id: "world",        shortLabel: "World"         },
+    ],
+  },
+  {
+    label: "Music",
+    pages: [
+      { id: "songs",        shortLabel: "Songs"         },
+    ],
+  },
+  {
+    label: "Rules",
+    pages: [
+      { id: "rules",        shortLabel: "Writing"       },
+      { id: "animation",    shortLabel: "Animation"     },
+    ],
+  },
 ];
+
+const ALL_PAGES = NAV_GROUPS.flatMap(g => g.pages);
 
 const ACT_LABELS: Record<ActNum, string> = {
   1: "Act I — The Market Wakes",
@@ -169,6 +200,139 @@ const ACT_SUMMARIES: {
     corporate: "Marcus cancels the project. Kane exits. He doesn't understand why a song defeated him.",
     animals: "The coda. Morning again. Ripple splashes Pants. The sponge says hi. Captain smiles. Another day to fix the economy.",
     zuri: "Zuri sings in public for the first time. Ade rows toward the sound. He walks to the stage. He stands beside her.",
+  },
+];
+
+// ── Song placement data ────────────────────────────────────────────────────
+
+const SONG_GUIDE = [
+  { title: "Fish",                        singer: "Zuri + Town",    track: "Zuri",      act: 1 as ActNum, purpose: "Opening sequence. Aerial of Mama Amara on the river. Sets the town, the feeling, and what is at stake before a word is spoken.",                                      status: "tbw"     as Status },
+  { title: "Trumpet",                     singer: "Louis",          track: "Zuri",      act: 1 as ActNum, purpose: "Louis plays to nobody. Zuri stops. He doesn't stop playing. First introduction of the Wheel of Groove — rhythm that connects people across time.",                   status: "tbw"     as Status },
+  { title: "Alien Groove",                singer: "Captain Beignet",track: "Animals",   act: 1 as ActNum, purpose: "Captain's manifesto song. Delivered on the crate. Part philosophy lecture, part jazz scat. Explains redistribution. Ripple joins in. Pants watches.",               status: "tbw"     as Status },
+  { title: "Roll It Tight",               singer: "Sushi",          track: "Corporate", act: 2 as ActNum, purpose: "Sushi at her stall. Quiet pride in the work. The song is about belonging to a place through what you make. Kane is watching from across the market.",                status: "tbw"     as Status },
+  { title: "Glazed",                      singer: "Pants",          track: "Animals",   act: 2 as ActNum, purpose: "Pants encounters the glazed donut. Joy she has never felt before. First song — performed mostly to the donut. The shop owner watches with complicated feelings.",     status: "tbw"     as Status },
+  { title: "Bank (River Z)",              singer: "J",              track: "Corporate", act: 2 as ActNum, purpose: "J on a crate in the market square. About the river as home, as economy, as memory. The town hears itself described. A warning.",                                     status: "tbw"     as Status },
+  { title: "Echo in the Water",           singer: "Mama Sabine",    track: "Zuri",      act: 2 as ActNum, purpose: "Mama Sabine at the river bank. The vision of Amara appears. The song is the river speaking. Zuri sees her mother as a person, not an absence.",                      status: "tbw"     as Status },
+  { title: "Flow On",                     singer: "Cedar",          track: "Zuri",      act: 2 as ActNum, purpose: "Cedar in the market. About endurance and staying when things get hard. Speaks directly to Zuri's situation without knowing it.",                                     status: "tbw"     as Status },
+  { title: "Keys to the Block",           singer: "Holly",          track: "Corporate", act: 3 as ActNum, purpose: "Holly in the open square after the development notice. About who holds the keys to a place — deed or belonging. The market listens.",                                status: "tbw"     as Status },
+  { title: "Quiet River",                 singer: "Ade",            track: "Zuri",      act: 3 as ActNum, purpose: "Ade alone at dusk. The grief song. He blames music. He also knows the storm was the storm. For the first time he lets himself reach that second thought.",           status: "tbw"     as Status },
+  { title: "The Girl Who Pooped Her Pants",singer: "Pants",         track: "Animals",   act: 2 as ActNum, purpose: "Pants moving through the market at speed. The song builds with the urgency. The market goes about its business. The sponge watches from a post and says nothing.",   status: "tbw"     as Status },
+  { title: "Stars Over the Block",        singer: "Zuri",           track: "Zuri",      act: 4 as ActNum, purpose: "Zuri sings in public for the first time. Unplanned. Small crowd. Ade hears it from the river. This is the scene the whole film has been building toward.",          status: "tbw"     as Status },
+  { title: "Fish (Reprise)",              singer: "Zuri + Full Cast",track: "All",      act: 4 as ActNum, purpose: "Full company number. Every character. Every track converges. Zuri leads. Ade is in the crowd, watching. The market sings itself back to life.",                    status: "tbw"     as Status },
+];
+
+// ── World & Locations data ─────────────────────────────────────────────────
+
+const LOCATIONS = [
+  {
+    name: "Fish Market",
+    type: "Central Setting",
+    description: "The heart of the town. Wooden stalls, hanging lanterns, nets and crates. Fishmongers, bakers, buskers, street cooks. The market is a living organism — it has moods, rhythms, and a stake in the outcome of the film. At full life it is the loudest, warmest, most colourful place in the world. Under threat it goes quiet in a way that is frightening.",
+    scenes: ["Trio's Naming", "The Heist", "Overheard", "The Pants Song", "Fish Reprise"],
+    atmosphere: "Warm amber, sea-salt haze, trumpet echoes from two directions at once.",
+  },
+  {
+    name: "River Z",
+    type: "Emotional Core",
+    description: "The river is never background. It is the reason for the town, the reason for the data center, and the reason Amara is gone. Every scene near the water carries weight. The river is wider and slower than it looks. It does not forgive things — but it holds them.",
+    scenes: ["Opening Aerial", "Fishing with Ade", "Mama Sabine's Vision", "Zuri Fishes Alone", "Ade Rows Toward the Song"],
+    atmosphere: "Deep green-grey. Still. Reflective. At night it holds the light from the lanterns.",
+  },
+  {
+    name: "River Docks",
+    type: "Transitional Space",
+    description: "Where the river meets the town. The crate headquarters of the Fish Thief Gang. Where Mama Amara is moored. Where Ade ties up every morning and stands alone at dusk. The dock is where the two worlds — water and land — press against each other.",
+    scenes: ["Gang Formation", "Ade Hears Zuri Sing", "Ade Confrontation", "Marcus Alone at the Dock"],
+    atmosphere: "Salt and rope. Creaking wood. The smell of fish and fuel.",
+  },
+  {
+    name: "Mama Amara (The Boat)",
+    type: "Intimate Space",
+    description: "A converted fishing vessel — Zuri and Ade's home. Small, functional, precise. Ade's side is spare and ordered. Zuri's corner has a hidden compartment with a recorder and headphones. The porthole faces the river. The cabin is where nothing is said and everything is understood.",
+    scenes: ["Before Sleep", "Zuri and Ade — The Rule", "Zuri Sings Alone"],
+    atmosphere: "Dim. Warm. The river audible through the hull.",
+  },
+  {
+    name: "Market Square",
+    type: "Public Stage",
+    description: "The open centre of the market. Louis plays here. The chess players sit here. Buskers pass through. It is where the gang sign practice happens, where Elmer and Pepe appear, and where the community gathers when something important is about to happen.",
+    scenes: ["Louis and the Trumpet", "Wheel of Groove", "Sign Practice", "The Chess Gag"],
+    atmosphere: "Open sky. Echoes. The sound of two trumpets never quite in sync.",
+  },
+  {
+    name: "Mama Sabine's Shop",
+    type: "Mystical Space",
+    description: "Candles, shells, vinyl records, dried herbs. Everything is organised by a logic that isn't immediately apparent. Sabine knows who you are before you speak. She does not have a sign outside. People find it anyway.",
+    scenes: ["Mama Sabine's Scene", "The River Bank Vision"],
+    atmosphere: "Low light. Incense. The sound of water even though there is no water nearby.",
+  },
+  {
+    name: "The Donut Shop",
+    type: "Comedy Set-piece",
+    description: "Discovered from the water. Clean, bright, improbably well-stocked. The owner is a patient man who has seen many things but nothing quite like this. The interior becomes the setting for The Long Night and The Crash. In the morning it looks like a crime scene committed entirely in glaze.",
+    scenes: ["The Donut Shop", "Pants Discovers Espresso", "The Long Night", "The Crash"],
+    atmosphere: "Fluorescent warmth. The smell of sugar. A ceiling fan that does nothing.",
+  },
+  {
+    name: "Dock Stage",
+    type: "Climactic Space",
+    description: "Where Amara performed the night the storm came. A small wooden stage at the water's edge, used for market concerts and festivals. It has been used since, but nobody mentions that night. Zuri's first public performance happens here, unplanned. Ade hears it from the river.",
+    scenes: ["The Storm — Remembered", "Zuri Sings in Public", "Ade Walks to the Stage"],
+    atmosphere: "Open water on three sides. The river close. At dusk the light comes from behind.",
+  },
+];
+
+// ── Animation notes data ───────────────────────────────────────────────────
+
+const ANIMATION_NOTES = [
+  {
+    category: "Character Movement",
+    notes: [
+      { char: "Captain Beignet", note: "Big declarative gestures. He leads with his chest. Walks like he owns whatever surface he is on. His pelican pouch sways with momentum. When surprised, he goes completely still, then recalibrates in one smooth motion." },
+      { char: "Pants", note: "Precise and contained. Small, controlled movements. When she sighs it comes from deep in the body. When she gets wet she freezes — total paralysis, then one slow head-turn. Her grooming is a coping mechanism." },
+      { char: "Ripple", note: "Constant low-level motion even when still — a tail flicker, a weight shift. He moves through the world in arcs and curves, never straight lines. He touches everything he passes. He is never fully in one place." },
+      { char: "Zuri", note: "She listens with her whole body — she tilts slightly toward music. When she hides her humming she physically compresses, shoulders in, chin down. When she finally sings she opens, like a door someone forgot was closed." },
+      { char: "Ade", note: "Economy of movement. He does not gesture. His hands are always doing something practical — rope, net, oar. When he goes still in emotion it reads as seismic." },
+      { char: "Louis", note: "Slow and unhurried. He takes up exactly the space he needs. His trumpet playing involves his whole body. He knows when to stop playing and when silence is the next note." },
+    ],
+  },
+  {
+    category: "Visual Comedy Timing",
+    notes: [
+      { char: "The Sign Gag", note: "Hold on Captain's proud face after producing the Spock. Long enough to feel the weight of his confidence. Then cut to Pants' face. Hold. The longer the hold, the bigger the laugh." },
+      { char: "Ripple Gag Template", note: "Establish the stillness. The chess players, the old man asleep, the teetering stack. Ripple enters frame. The smallest possible contact. Then — immediate consequence, full speed, no pause. Ripple is already gone." },
+      { char: "Pants Getting Wet", note: "Show the clean paw. Show the incoming splash. Cut to result. Hold on her face for five full seconds before any reaction. Let the audience fill the silence." },
+      { char: "Pepe's Sign", note: "Cut to Pepe's paw attempts in close-up. Each attempt gets its own beat. His face contorts more with each try. When he finally holds one finger up, hold on the shaking effort of it. Let it wobble." },
+      { char: "The Sponge", note: "The sponge is never announced. It is simply there. It opens its eyes mid-scene with no transition. It says one word. Cut away before anyone has time to react to it." },
+    ],
+  },
+  {
+    category: "Colour & Light",
+    notes: [
+      { char: "Fish Market", note: "Warm amber and gold from lanterns. Deep shadow beneath the stalls. The market in full life glows. As the threat builds, desaturate slowly — the colour drains from the market the way warmth leaves a room." },
+      { char: "The River", note: "Green-grey and deep. It does not warm up until Act IV. At night it reflects the lantern light. The river where Amara disappeared is the same river where Zuri fishes — same colour, same current. That is the point." },
+      { char: "The Boat Cabin", note: "Amber and dim. The one warm space Zuri and Ade share. When she plays the recorder the light should seem slightly different — as if the room is listening." },
+      { char: "MU / Corporate", note: "Cool, flat, over-lit. Kane's presence brings the colour temperature down wherever he stands. His scenes should feel like being indoors under fluorescent lights." },
+      { char: "The Donut Shop", note: "Aggressively warm and bright. Pink and gold. Everything slightly too saturated, like a fever dream. The morning after: same colours, now horrifying." },
+    ],
+  },
+  {
+    category: "Recurring Visual Elements",
+    notes: [
+      { char: "The Sponge", note: "Appears once per act. Different location. Different context. Never explained. Always has eyes. Always says one thing." },
+      { char: "The Gang Sign", note: "Once established — one finger up — characters flash it at odd moments across the film. In the background. In passing. A child does it to a pigeon. The pigeon does not respond. Same joke, different scale." },
+      { char: "Ripple's Buttons", note: "Every scene Ripple enters should have at least one thing he could press. A dial, a valve, a switch, a lid. The camera should notice it before he does." },
+      { char: "Captain's Pouch", note: "Something new is inside it every time it appears. The contents are never relevant to the scene. They are always surprising." },
+    ],
+  },
+  {
+    category: "Musical Integration",
+    notes: [
+      { char: "Song Entrance", note: "Songs start in speaking rhythm. A character's dialogue begins to find a beat, then the world provides the music — a busker, a market sound, a drummed surface. The transition should feel discovered, not announced." },
+      { char: "The Pants Song", note: "The song's tempo mirrors her urgency. It starts slow, builds. The market choreography around her is incidental — people going about their day. She is the only one aware of the song." },
+      { char: "Fish Reprise", note: "The camera should pull back slowly through the entire reprise, until the market is a small point of light on the river at night. Then cut to morning." },
+      { char: "Silence", note: "After Ade Walks to the Stage: no music. No score. The only sound is the river. Hold until the audience is uncomfortable. Then — the sponge says hi. Hold. Then music." },
+    ],
   },
 ];
 
@@ -496,9 +660,9 @@ function RightSidebarContent({ activePage }: { activePage: string }) {
 export function ConstructionSection() {
   const [activePage, setActivePage] = useState("plot");
 
-  const allBeats = [...CORPORATE_BEATS, ...ANIMAL_BEATS, ...ZURI_BEATS];
-  const written  = allBeats.filter(b => b.status === "written").length;
-  const total    = allBeats.length;
+  const masterBeats = [...CORPORATE_BEATS, ...ANIMAL_BEATS, ...ZURI_BEATS];
+  const written  = masterBeats.filter(b => b.status === "written").length;
+  const total    = masterBeats.length;
 
   return (
     <section
@@ -529,25 +693,34 @@ export function ConstructionSection() {
             </div>
           </div>
 
-          {/* Nav */}
-          <div className="flex flex-col gap-0.5">
-            {PAGES.map((p) => (
-              <button
-                key={p.id}
-                type="button"
-                onClick={() => setActivePage(p.id)}
-                className={cn(
-                  "flex items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-all duration-150",
-                  activePage === p.id
-                    ? "bg-white/12 text-white"
-                    : "text-white/40 hover:bg-white/4 hover:text-white/70"
-                )}
-              >
-                <span className={cn("h-px w-3 shrink-0 transition-all", activePage === p.id ? "bg-white/60" : "bg-white/15")} />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ fontFamily: "var(--font-cinematic)" }}>
-                  {p.shortLabel}
-                </span>
-              </button>
+          {/* Grouped nav */}
+          <div className="flex flex-col gap-4">
+            {NAV_GROUPS.map((group) => (
+              <div key={group.label}>
+                <p className="mb-1 px-2 text-[8px] uppercase tracking-[0.4em] text-white/25" style={{ fontFamily: "var(--font-cinematic)" }}>
+                  {group.label}
+                </p>
+                <div className="flex flex-col gap-0.5">
+                  {group.pages.map((p) => (
+                    <button
+                      key={p.id}
+                      type="button"
+                      onClick={() => setActivePage(p.id)}
+                      className={cn(
+                        "flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-left transition-all duration-150",
+                        activePage === p.id
+                          ? "bg-white/12 text-white"
+                          : "text-white/40 hover:bg-white/4 hover:text-white/70"
+                      )}
+                    >
+                      <span className={cn("h-px w-2.5 shrink-0 transition-all", activePage === p.id ? "bg-white/60" : "bg-white/12")} />
+                      <span className="text-[9.5px] font-semibold uppercase tracking-[0.18em]" style={{ fontFamily: "var(--font-cinematic)" }}>
+                        {p.shortLabel}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
 
@@ -661,7 +834,7 @@ export function ConstructionSection() {
                 <p className="mt-1 text-[11px] text-white/50" style={{ fontFamily: "var(--font-screenplay)" }}>All three stories run in parallel. They intersect at crisis points. They resolve together.</p>
               </div>
               {ACT_SUMMARIES.map((act) => {
-                const allActBeats = allBeats.filter(b => b.act === act.act);
+                const allActBeats = masterBeats.filter(b => b.act === act.act);
                 const w = allActBeats.filter(b => b.status === "written").length;
                 return (
                   <div key={act.act} className="rounded-xl border border-white/8 overflow-hidden" style={{ background: "rgba(255,255,255,0.02)" }}>
@@ -773,6 +946,162 @@ export function ConstructionSection() {
                   </div>
                 );
               })}
+            </div>
+          )}
+
+          {/* ── SCENE MASTER ── */}
+          {activePage === "scene-master" && (() => {
+            const trackColors: Record<string, string> = {
+              corporate: "border-blue-400/25 text-blue-300/70 bg-blue-400/8",
+              animals:   "border-amber-400/25 text-amber-300/70 bg-amber-400/8",
+              zuri:      "border-emerald-400/25 text-emerald-300/70 bg-emerald-400/8",
+            };
+            const allByAct = ([1,2,3,4] as ActNum[]).map(act => ({
+              act,
+              beats: [
+                ...CORPORATE_BEATS.filter(b => b.act === act).map(b => ({ ...b, trackId: "corporate", trackLabel: "Corporate" })),
+                ...ANIMAL_BEATS.filter(b => b.act === act).map(b => ({ ...b, trackId: "animals", trackLabel: "Animals" })),
+                ...ZURI_BEATS.filter(b => b.act === act).map(b => ({ ...b, trackId: "zuri", trackLabel: "Zuri & Ade" })),
+              ],
+            }));
+            return (
+              <div className="mx-auto max-w-2xl py-2 pb-16 space-y-6">
+                <div className="mb-2 border-b border-white/8 pb-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Scene Master — All Tracks</p>
+                  <p className="mt-1 text-[11px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>Every scene in the film, ordered by act, across all three tracks.</p>
+                  <div className="mt-2 flex items-center gap-3">
+                    {[["corporate","Corporate"],["animals","Animals"],["zuri","Zuri & Ade"]].map(([id, label]) => (
+                      <span key={id} className={cn("rounded border px-2 py-0.5 text-[8px] uppercase tracking-[0.2em]", trackColors[id])} style={{ fontFamily: "var(--font-cinematic)" }}>{label}</span>
+                    ))}
+                  </div>
+                </div>
+                {allByAct.map(({ act, beats }) => beats.length === 0 ? null : (
+                  <div key={act}>
+                    <div className="mb-2 flex items-center gap-3">
+                      <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-white/40" style={{ fontFamily: "var(--font-cinematic)" }}>Act {["I","II","III","IV"][act-1]}</span>
+                      <div className="h-px flex-1 bg-white/8" />
+                      <span className="text-[8px] italic text-white/25" style={{ fontFamily: "var(--font-screenplay)" }}>{ACT_LABELS[act].split(" — ")[1]}</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {beats.map((beat, i) => (
+                        <div key={i} className="flex items-start gap-3 rounded-lg border border-white/6 px-3 py-2.5" style={{ background: "rgba(255,255,255,0.02)" }}>
+                          <span className={cn("mt-0.5 shrink-0 rounded border px-1.5 py-0.5 text-[7px] uppercase tracking-[0.2em]", trackColors[beat.trackId])} style={{ fontFamily: "var(--font-cinematic)", minWidth: 60, textAlign: "center" }}>{beat.trackLabel}</span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-baseline gap-2">
+                              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/75" style={{ fontFamily: "var(--font-cinematic)" }}>{beat.scene}</p>
+                              {beat.song && <span className="text-[8px] text-white/35" style={{ fontFamily: "var(--font-screenplay)" }}>♪ {beat.song}</span>}
+                            </div>
+                            <p className="mt-0.5 text-[9px] leading-snug text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>{beat.location}</p>
+                          </div>
+                          <StatusPill status={beat.status} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            );
+          })()}
+
+          {/* ── WORLD & LOCATIONS ── */}
+          {activePage === "world" && (
+            <div className="mx-auto max-w-xl py-2 pb-16 space-y-1">
+              <div className="mb-5 border-b border-white/8 pb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>World & Locations</p>
+                <p className="mt-1 text-[11px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>A coastal market town where music, food, and small lives intersect. The setting is as much a character as anyone in it.</p>
+              </div>
+              {LOCATIONS.map((loc) => (
+                <div key={loc.name} className="border-b border-white/6 py-4 last:border-0">
+                  <div className="mb-2 flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>{loc.name}</p>
+                      <p className="text-[9px] uppercase tracking-[0.25em] text-white/35" style={{ fontFamily: "var(--font-cinematic)" }}>{loc.type}</p>
+                    </div>
+                  </div>
+                  <p className="mb-3 text-[11px] leading-relaxed text-white/65" style={{ fontFamily: "var(--font-screenplay)" }}>{loc.description}</p>
+                  <div className="mb-2 flex flex-wrap gap-1.5">
+                    {loc.scenes.map(s => (
+                      <span key={s} className="rounded border border-white/10 px-2 py-0.5 text-[8px] text-white/45" style={{ fontFamily: "var(--font-cinematic)" }}>{s}</span>
+                    ))}
+                  </div>
+                  <p className="text-[9px] italic text-white/30" style={{ fontFamily: "var(--font-screenplay)" }}>{loc.atmosphere}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* ── SONGS ── */}
+          {activePage === "songs" && (
+            <div className="mx-auto max-w-2xl py-2 pb-16">
+              <div className="mb-5 border-b border-white/8 pb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Song Placement Guide</p>
+                <p className="mt-1 text-[11px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>Every song has one job. Songs reveal what dialogue cannot say. They never explain what the audience already knows.</p>
+              </div>
+              {([1,2,3,4] as ActNum[]).map(act => {
+                const actSongs = SONG_GUIDE.filter(s => s.act === act);
+                if (actSongs.length === 0) return null;
+                return (
+                  <div key={act} className="mb-6">
+                    <div className="mb-3 flex items-center gap-3">
+                      <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-white/35" style={{ fontFamily: "var(--font-cinematic)" }}>Act {["I","II","III","IV"][act-1]}</span>
+                      <div className="h-px flex-1 bg-white/8" />
+                    </div>
+                    <div className="space-y-2">
+                      {actSongs.map((song) => {
+                        const trackColor = song.track === "Corporate" ? "text-blue-300/60 border-blue-400/20 bg-blue-400/6"
+                          : song.track === "Animals" ? "text-amber-300/60 border-amber-400/20 bg-amber-400/6"
+                          : song.track === "All" ? "text-purple-300/60 border-purple-400/20 bg-purple-400/6"
+                          : "text-emerald-300/60 border-emerald-400/20 bg-emerald-400/6";
+                        const songData = songs.find(s => s.title === song.title);
+                        return (
+                          <div key={song.title} className="rounded-lg border border-white/6 p-3" style={{ background: "rgba(255,255,255,0.02)" }}>
+                            <div className="mb-2 flex items-start gap-3">
+                              {songData && (
+                                <div className="relative mt-0.5 h-8 w-8 shrink-0 overflow-hidden rounded">
+                                  <Image src={songData.image} alt={song.title} fill className="object-cover" sizes="32px" />
+                                </div>
+                              )}
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-baseline gap-2 flex-wrap">
+                                  <p className="text-[11px] font-bold text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>{song.title}</p>
+                                  <span className={cn("rounded border px-1.5 py-0.5 text-[7px] uppercase tracking-[0.2em]", trackColor)} style={{ fontFamily: "var(--font-cinematic)" }}>{song.track}</span>
+                                  <StatusPill status={song.status} />
+                                </div>
+                                <p className="text-[9px] text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>♪ {song.singer}</p>
+                              </div>
+                            </div>
+                            <p className="text-[10px] leading-relaxed text-white/60" style={{ fontFamily: "var(--font-screenplay)" }}>{song.purpose}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {/* ── ANIMATION NOTES ── */}
+          {activePage === "animation" && (
+            <div className="mx-auto max-w-xl py-2 pb-16 space-y-8">
+              <div className="border-b border-white/8 pb-3">
+                <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60" style={{ fontFamily: "var(--font-cinematic)" }}>Animation Notes</p>
+                <p className="mt-1 text-[11px] text-white/45" style={{ fontFamily: "var(--font-screenplay)" }}>Visual language, comedy timing, character movement, and film grammar for a hand-crafted animated musical.</p>
+              </div>
+              {ANIMATION_NOTES.map((section) => (
+                <div key={section.category}>
+                  <SectionLabel>{section.category}</SectionLabel>
+                  <div className="space-y-3">
+                    {section.notes.map((note, i) => (
+                      <div key={i} className="rounded-lg border border-white/6 p-3" style={{ background: "rgba(255,255,255,0.02)" }}>
+                        <p className="mb-1 text-[9px] font-bold uppercase tracking-[0.25em] text-white/55" style={{ fontFamily: "var(--font-cinematic)" }}>{note.char}</p>
+                        <p className="text-[11px] leading-relaxed text-white/70" style={{ fontFamily: "var(--font-screenplay)" }}>{note.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <Divider />
+                </div>
+              ))}
             </div>
           )}
 
