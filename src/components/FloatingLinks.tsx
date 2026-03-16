@@ -1,14 +1,15 @@
 "use client";
 
-import { Users, MapPin, BookOpen, Mic2, Star } from "lucide-react";
+import { Users, MapPin, BookOpen, Mic2, Star, ClipboardList } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "Characters", icon: Users,     slideIndex: 1 },
-  { label: "Sets",        icon: MapPin,    slideIndex: 2 },
-  { label: "Script",      icon: BookOpen,  slideIndex: 3 },
-  { label: "Lyrics",      icon: Mic2,      slideIndex: 4 },
-  { label: "Credits",     icon: Star,      slideIndex: 5 },
+  { label: "Characters", icon: Users,          slideIndex: 1 },
+  { label: "Sets",        icon: MapPin,         slideIndex: 2 },
+  { label: "Script",      icon: BookOpen,       slideIndex: 3 },
+  { label: "Lyrics",      icon: Mic2,           slideIndex: 4 },
+  { label: "Credits",     icon: Star,           slideIndex: 5 },
+  { label: "TBW",         icon: ClipboardList,  slideIndex: 6 },
 ];
 
 interface FloatingLinksProps {

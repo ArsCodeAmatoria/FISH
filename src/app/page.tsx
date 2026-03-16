@@ -7,11 +7,12 @@ import { SetsSection } from "@/sections/SetsSection";
 import { ScriptSection } from "@/sections/ScriptSection";
 import { LyricsSection } from "@/sections/LyricsSection";
 import { CreditsSection } from "@/sections/CreditsSection";
+import { ConstructionSection } from "@/sections/ConstructionSection";
 import { FloatingLinks } from "@/components/FloatingLinks";
 import { CharacterModal } from "@/components/CharacterModal";
 import { SetModal } from "@/components/SetModal";
 
-const SLIDE_COUNT = 6;
+const SLIDE_COUNT = 7;
 
 function HomeInner() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -72,6 +73,7 @@ function HomeInner() {
         <ScriptSection openCharacter={openCharacter} openSet={openSet} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
+        <ConstructionSection />
       </div>
 
       {/* Floating home link — top right, hidden on title slide */}
