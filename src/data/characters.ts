@@ -63,14 +63,14 @@ export const characters: Character[] = [
 
   // ── Animal Comedy Trio (Fish Thieves) ──────────────────────
   {
-    id: "captain-beignet",
-    name: "Captain Beignet",
+    id: "big-nay",
+    name: "Big Nay",
     role: "Leader of the Fish Thieves",
     description:
-      "A pelican who sees himself as a brilliant criminal mastermind — in reality he is chaotic and constantly improvising. His enormous pelican pouch functions as a portable storage vault for stolen fish, donuts, and random objects. Despite his schemes, he secretly loves the town. Everything somehow ends up in his pouch.",
-    personalityTraits: ["Theatrical", "Overly serious", "Secretly a hoarder"],
+      "A large, scruffy orange cat and self-declared philosopher of the market. He talks like a rapper and thinks like a preacher — theatrical, morally flexible, and completely convinced that stealing fish is not stealing, it is redistribution. He leads the gang with enormous confidence and zero planning. His manifesto has a beat.",
+    personalityTraits: ["Theatrical", "Philosophical", "Absolutely certain he's right"],
     image: "/characters/captain.png",
-    songIds: ["alien-groove"],
+    songIds: ["alien-groove", "redistribution"],
   },
   {
     id: "pants",

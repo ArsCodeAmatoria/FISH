@@ -39,7 +39,7 @@ export const songs: Song[] = [
   {
     id: "alien-groove",
     title: "Alien Groove",
-    singers: "Captain Beignet",
+    singers: "Big Nay",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/songs/covers/lionfish.png",
     writtenBy: "Leigh Akin",
@@ -48,8 +48,8 @@ export const songs: Song[] = [
   {
     id: "redistribution",
     title: "Redistribution",
-    singers: "Captain Beignet",
-    description: "Captain's manifesto — a full rap number on the philosophy of taking fish. The beat drops in a market alley after the first failed heist. Pants is covered in slime. Ripple is immediately in.",
+    singers: "Big Nay",
+    description: "Big Nay's manifesto — a full rap number on the philosophy of taking fish. The beat drops in a market alley after the first failed heist. Pants is covered in slime. Ripple is immediately in.",
     image: "/songs/covers/lionfish.png",
     writtenBy: "Leigh Akin",
     audioSrc: "",
