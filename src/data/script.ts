@@ -635,7 +635,7 @@ export const scriptPages: ScriptPage[] = [
       { type: "scene", text: "EXT. THE MARKET CIRCLE — SUSHI'S STALL — LATE MORNING" },
       { type: "action", text: "The circle is busy. Market mid-morning — the best hour of noise and colour and transaction." },
       { type: "action", text: "A man moves through it who does not belong here." },
-      { type: "action", text: "VICTOR KANE (50s) — suit, good shoes, the practiced ease of someone who has decided in advance that every room will be impressed by him. He doesn't look around like a visitor. He looks around like a surveyor." },
+      { type: "action", text: "VICTOR KANE (30s) — suit, good shoes, the practiced ease of someone who has decided in advance that every room will be impressed by him. He doesn't look around like a visitor. He looks around like a surveyor." },
       { type: "action", text: "He stops at Sushi's stall. Smiles. It is a professionally warm smile." },
       { type: "character", text: "VICTOR KANE" },
       { type: "dialogue", text: "Beautiful setup. How long have you been here?" },
@@ -984,7 +984,7 @@ export const scriptPages: ScriptPage[] = [
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — MAIN ENTRANCE — NOON" },
       { type: "action", text: "A car that has no business being on cobblestones eases to a stop at the edge of the market square. Black. Clean. Expensive. It sits there like a wrong note in a song." },
-      { type: "action", text: "VICTOR KANE (50s) steps out. Suit. Good shoes. He has the practiced ease of someone who has decided, in advance, that every room will be impressed by him." },
+      { type: "action", text: "VICTOR KANE (30s) steps out. Suit. Good shoes. He has the practiced ease of someone who has decided, in advance, that every room will be impressed by him." },
       { type: "action", text: "Behind him: MARCUS VALE (40s) — sharper, faster, carrying a folder of documents. He surveys the market the way a surveyor surveys land. Measuring. Calculating." },
       { type: "action", text: "Victor Kane looks at the market. The shouting. The gulls. The riot of color and smell and sound." },
       { type: "action", text: "He smiles." },
