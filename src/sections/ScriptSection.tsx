@@ -184,9 +184,9 @@ function MoonWidget() {
 // ── Act / scene structure ──────────────────────────────────────────────────
 
 const ACTS = [
-  { label: "ACT I",   start: 0,   end: 46  },
-  { label: "ACT II",  start: 47,  end: 106 },
-  { label: "ACT III", start: 107, end: 140 },
+  { label: "ACT I",   start: 0,   end: 47  },
+  { label: "ACT II",  start: 48,  end: 107 },
+  { label: "ACT III", start: 108, end: 141 },
 ];
 
 /** Extract the first SCENE heading text from a page */
