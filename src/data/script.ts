@@ -68,7 +68,7 @@ export const scriptPages: ScriptPage[] = [
       { type: "scene", text: "EXT. MAMA AMARA — RIVER DOCKS — DUSK — CONTINUOUS" },
       { type: "action", text: "The boat is still. The river moves past it, indifferent." },
       { type: "action", text: "A beat. Two beats." },
-      { type: "action", text: "The cabin door opens. ADE (late 40s) fills the frame — and we mean fills it. A big man. Strong. The kind of build that comes from decades of hauling nets on the river, not a gym. Handsome in a Caribbean way that time has only improved. He leans against the doorframe and looks at his daughter the way you look at something you worked hard for and are quietly proud of." },
+      { type: "action", text: "The cabin door opens. ADE (late 40s) fills the frame — and we mean fills it. A big man. Strong. The kind of build that comes from decades of hauling nets on the river, not a gym. Handsome in a Caribbean way — clean-faced, no wear on him. He leans against the doorframe and looks at his daughter the way you look at something you worked hard for and are quietly proud of." },
       { type: "character", text: "ADE" },
       { type: "dialogue", text: "Good knot." },
       { type: "character", text: "ZURI" },

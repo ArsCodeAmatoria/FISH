@@ -25,7 +25,7 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a handsome Caribbean face weathered by years on the water. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm tied to a music event and has kept Zuri away from music ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
+      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a clean handsome Caribbean face. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm tied to a music event and has kept Zuri away from music ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
     songIds: ["quiet-river"],
