@@ -80,7 +80,7 @@ export const characters: Character[] = [
       "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos.",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
     image: "/characters/pants.png",
-    songIds: ["glazed", "pants-song"],
+    songIds: ["redistribution", "glazed", "pants-song"],
   },
   {
     id: "ripple",
