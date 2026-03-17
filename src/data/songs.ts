@@ -39,8 +39,8 @@ export const songs: Song[] = [
   {
     id: "alien-groove",
     title: "Alien Groove",
-    singers: "Big Nay",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    singers: "TBD",
+    description: "Singer not yet assigned.",
     image: "/songs/covers/lionfish.png",
     writtenBy: "Leigh Akin",
     audioSrc: "/songs/ALIEN GROOVE.wav",
