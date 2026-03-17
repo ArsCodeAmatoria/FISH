@@ -46,6 +46,15 @@ export const songs: Song[] = [
     audioSrc: "/songs/ALIEN GROOVE.wav",
   },
   {
+    id: "redistribution",
+    title: "Redistribution",
+    singers: "Captain Beignet",
+    description: "Captain's manifesto — a full rap number on the philosophy of taking fish. The beat drops in a market alley after the first failed heist. Pants is covered in slime. Ripple is immediately in.",
+    image: "/songs/covers/lionfish.png",
+    writtenBy: "Leigh Akin",
+    audioSrc: "",
+  },
+  {
     id: "glazed",
     title: "Glazed",
     singers: "Pants",
