@@ -87,7 +87,7 @@ export const characters: Character[] = [
     name: "Ripple",
     role: "Chaos Engine",
     description:
-      "A playful, hyperactive otter who loves water, gadgets, and pressing buttons he should not press. Most of the trio's accidents happen because Ripple touched something. Despite this, his curiosity accidentally helps uncover the villain's scheme. Cannot resist pushing buttons.",
+      "A sleek black river otter with a slightly bulldog-shaped head — compact, solid, and built like a small battering ram. That head is the source of most of the trio's structural damage. He loves water, gadgets, and pressing buttons he should not press. He bumps into things with cheerful, total commitment. Despite the chaos, his curiosity accidentally helps uncover the villain's scheme.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
     songIds: [],
