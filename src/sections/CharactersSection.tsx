@@ -258,7 +258,7 @@ export function CharactersSection({ openCharacter }: Props) {
         {[
           { label: "Main",      ids: ["zuri","ade","papa-louis","mama-sabine","amara"] },
           { label: "Corporate", ids: ["marcus-vale","victor-kane","henchman"] },
-          { label: "Comedy",    ids: ["captain-beignet","pants","ripple","elmer","pepe"] },
+          { label: "Comedy",    ids: ["big-nay","pants","ripple","elmer","pepe"] },
           { label: "Market",    ids: ["sushi","j","cedar","sticks","chops","bass","holly"] },
         ].map(({ label, ids }) => (
           <div key={label} className="mb-1">
