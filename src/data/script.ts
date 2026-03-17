@@ -250,7 +250,7 @@ export const scriptPages: ScriptPage[] = [
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — BUSKER'S CORNER — NIGHT" },
       { type: "action", text: "She finds him in a small alcove between a salt vendor and a shuttered tackle shop. Just enough room for a crate and a man with a trumpet." },
-      { type: "action", text: "LOUIS (70s) — thin, dressed like someone who was once important and stopped caring about proving it — sits with a battered trumpet resting on his knee. The open case in front of him holds three coins and a damp paper receipt." },
+      { type: "action", text: "LOUIS (70s) — the Elder Busker, as much a fixture of this market as the flame-tree in the circle. He sits with a battered trumpet resting on his knee. The open case in front of him holds three coins and a damp paper receipt. Zuri has watched him play from this exact spot more times than she can count." },
       { type: "action", text: "He plays. Not for the coins. Not for the few people who slow as they pass. He plays like he's having a private conversation with the air and the air is finally listening." },
       { type: "action", text: "Zuri stops. Her feet just — stop." },
       { type: "action", text: "Louis opens one eye. Registers her. Closes it. Keeps playing." },

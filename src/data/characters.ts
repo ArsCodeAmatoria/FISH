@@ -35,7 +35,7 @@ export const characters: Character[] = [
     name: "Louis",
     role: "Elder Busker",
     description:
-      "An old jazz musician wandering the docks with a battered trumpet. He hears harmony where others hear noise, and immediately recognises Zuri's gift. He introduces her to the Wheel of Groove — the idea that rhythm connects all people across time.",
+      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. Louis has played his corner of the market for years and Zuri has been stopping to listen for almost as long. He hears harmony where others hear noise, and he already knows what Zuri is before she does. He introduces her to the Wheel of Groove — the idea that rhythm connects all people across time.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
     image: "/characters/louis.png",
     songIds: ["trumpet"],
