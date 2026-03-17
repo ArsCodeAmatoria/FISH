@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 const groups = [
   { label: "Zuri",       ids: ["fish", "fish-2", "stars-over-the-block"] },
   { label: "The River",  ids: ["quiet-river", "bank-river-z", "echo-in-the-water"] },
-  { label: "The Trio",   ids: ["alien-groove", "glazed", "pants-song"] },
+  { label: "The Trio",   ids: ["redistribution", "alien-groove", "glazed", "pants-song"] },
   { label: "The Market", ids: ["keys-to-the-block", "flow-on", "roll-it-tight", "trumpet"] },
 ];
 
