@@ -144,17 +144,17 @@ const ZURI_BEATS: Beat[] = [
 ];
 
 const CHARACTER_ARCS = [
-  { id: "zuri",            name: "Zuri",         want: "To fish and secretly hear music",   need: "To understand that music is a language — not a hobby",       arc: "Hidden → Learning → Speaking",         song: "Fish / Stars Over the Block" },
-  { id: "ade",             name: "Ade",           want: "To keep music out of their lives",  need: "To understand the storm took Amara — not the song",          arc: "Blame → Grief → Release",              song: "Quiet River"                 },
-  { id: "papa-louis",      name: "Louis",         want: "To pass on the Wheel of Groove",    need: "To give Zuri the one thing no argument can give Marcus",     arc: "Watching → Teaching → Witnessing",     song: "Trumpet"                     },
-  { id: "mama-sabine",     name: "Mama Sabine",   want: "To honour Amara's memory",          need: "To show Zuri the river bank before it is too late",          arc: "Keeper → Revealer → Witness",          song: "Echo in the Water"           },
-  { id: "sushi",           name: "Sushi",         want: "To keep her stall and her place",   need: "To trust the community to fight with her",                   arc: "Quiet pride → Threatened → Defended",  song: "Roll It Tight"               },
-  { id: "captain-beignet", name: "Captain",       want: "Fish. Freedom. Chaos.",             need: "To protect something bigger than himself",                   arc: "Taker → Protector",                    song: "Alien Groove"                },
-  { id: "pants",           name: "Pants",         want: "Order. Cleanliness. Logic.",        need: "To accept that love is messier than logic",                  arc: "Skeptic → Reluctant Hero",             song: "Glazed"                      },
-  { id: "ripple",          name: "Ripple",        want: "Every dial, switch, and button.",   need: "Nothing. He is the constant.",                               arc: "He is already complete.",              song: "—"                           },
-  { id: "marcus-vale",     name: "Marcus Vale",   want: "The development deal",              need: "To reconnect with the town he abandoned",                    arc: "Disconnected → Confronted → Humbled",  song: "—"                           },
-  { id: "victor-kane",     name: "Victor Kane",   want: "Cheap land and the contract",       need: "Nothing — he is the obstacle",                               arc: "Threat → Removed",                     song: "—"                           },
-  { id: "j",               name: "J",             want: "The market to survive",             need: "To be heard beyond the block",                               arc: "Observer → Voice",                     song: "Bank (River Z)"              },
+  { id: "zuri",            name: "Zuri",         age: "17",        appearance: "Barefoot, quick-eyed, at home on the water and in the market.",                                                                                 want: "To fish and secretly hear music",   need: "To understand that music is a language — not a hobby",       arc: "Hidden → Learning → Speaking",         song: "Fish / Stars Over the Block" },
+  { id: "ade",             name: "Ade",           age: "Late 40s",  appearance: "Big, strong, muscular. Handsome in a Caribbean way — clean-faced, no wear on him. The kind of build that comes from decades of hauling nets.",  want: "To keep music out of their lives",  need: "To understand the storm took Amara — not the song",          arc: "Blame → Grief → Release",              song: "Quiet River"                 },
+  { id: "papa-louis",      name: "Louis",         age: "70s",       appearance: "Thin. Dressed like someone who was once important and stopped caring about proving it. Battered trumpet.",                                       want: "To pass on the Wheel of Groove",    need: "To give Zuri the one thing no argument can give Marcus",     arc: "Watching → Teaching → Witnessing",     song: "Trumpet"                     },
+  { id: "mama-sabine",     name: "Mama Sabine",   age: "—",         appearance: "Still. Knowing. Moves like the river decides where she goes.",                                                                                   want: "To honour Amara's memory",          need: "To show Zuri the river bank before it is too late",          arc: "Keeper → Revealer → Witness",          song: "Echo in the Water"           },
+  { id: "sushi",           name: "Sushi",         age: "40s",       appearance: "Behind the counter, knife in hand. Economy of movement — nothing wasted.",                                                                      want: "To keep her stall and her place",   need: "To trust the community to fight with her",                   arc: "Quiet pride → Threatened → Defended",  song: "Roll It Tight"               },
+  { id: "captain-beignet", name: "Captain",       age: "—",         appearance: "Large scruffy orange cat. Weathered sailor's cap. Confident posture of someone who has absolutely declared himself important.",                  want: "Fish. Freedom. Chaos.",             need: "To protect something bigger than himself",                   arc: "Taker → Protector",                    song: "Alien Groove"                },
+  { id: "pants",           name: "Pants",         age: "—",         appearance: "Smaller gray cat. Bright eyes. Perpetually confused expression. Perpetually without pants.",                                                    want: "Order. Cleanliness. Logic.",        need: "To accept that love is messier than logic",                  arc: "Skeptic → Reluctant Hero",             song: "Glazed"                      },
+  { id: "ripple",          name: "Ripple",        age: "—",         appearance: "Sleek, happy river otter. Looks like he has never experienced a thought that wasn't exciting.",                                                  want: "Every dial, switch, and button.",   need: "Nothing. He is the constant.",                               arc: "He is already complete.",              song: "—"                           },
+  { id: "marcus-vale",     name: "Marcus Vale",   age: "—",         appearance: "Polished. Out of place. Expensive shoes, wrong town.",                                                                                          want: "The development deal",              need: "To reconnect with the town he abandoned",                    arc: "Disconnected → Confronted → Humbled",  song: "—"                           },
+  { id: "victor-kane",     name: "Victor Kane",   age: "—",         appearance: "Slick. Corporate. Treats everything like an acquisition.",                                                                                      want: "Cheap land and the contract",       need: "Nothing — he is the obstacle",                               arc: "Threat → Removed",                     song: "—"                           },
+  { id: "j",               name: "J",             age: "Early 20s", appearance: "Dressed like a 1960s jazz poster — high-waisted trousers, fitted blouse, headscarf tied just so. Everything chosen, nothing accidental.",       want: "The market to survive",             need: "To be heard beyond the block",                               arc: "Observer → Voice",                     song: "Bank (River Z)"              },
 ];
 
 // ── Act overview data ──────────────────────────────────────────────────────
@@ -924,12 +924,18 @@ export function ConstructionSection() {
                         {char && <Image src={char.image} alt={char.name} fill className="object-cover object-top" sizes="32px" />}
                       </div>
                       <div className="min-w-0 flex-1">
-                        <div className="mb-2 flex items-baseline gap-2">
+                        <div className="mb-1.5 flex items-baseline gap-2">
                           <p className="text-[12px] font-bold text-white/80" style={{ fontFamily: "var(--font-cinematic)" }}>{arc.name}</p>
+                          {arc.age !== "—" && (
+                            <p className="text-[9px] text-white/30" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.age}</p>
+                          )}
                           {arc.song !== "—" && (
                             <p className="text-[9px] italic text-white/25" style={{ fontFamily: "var(--font-screenplay)" }}>♪ {arc.song}</p>
                           )}
                         </div>
+                        {arc.appearance && (
+                          <p className="mb-2 text-[10px] leading-snug text-white/40" style={{ fontFamily: "var(--font-screenplay)" }}>{arc.appearance}</p>
+                        )}
                         <div className="grid grid-cols-3 gap-3">
                           <div>
                             <p className="mb-0.5 text-[8px] uppercase tracking-[0.3em] text-white/40" style={{ fontFamily: "var(--font-cinematic)" }}>Want</p>
