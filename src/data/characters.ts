@@ -25,7 +25,7 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "A hardworking fisherman and Zuri's father — disciplined, protective, and quietly grieving. He lost his wife in a storm tied to a music event and has kept Zuri from singing ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
+      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a handsome Caribbean face weathered by years on the water. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm tied to a music event and has kept Zuri away from music ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
     songIds: ["quiet-river"],
@@ -162,7 +162,7 @@ export const characters: Character[] = [
     name: "J",
     role: "Market Girl",
     description:
-      "One of the Market Girls — quick with a laugh and quicker with her hands. She knows every stall, every vendor, and every secret the Fish Market holds.",
+      "A few years older than Zuri, J is one of the Market Circle's fixtures — sharp, warm, and dressed like she stepped out of a 1960s jazz poster. High-waisted trousers, a fitted blouse, a headscarf tied just so. She knows every stall, every vendor, and every piece of news before it happens. She's the kind of person who makes a room feel like a party just by arriving in it.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
     songIds: ["bank-river-z"],
