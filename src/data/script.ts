@@ -308,7 +308,7 @@ export const scriptPages: ScriptPage[] = [
       { type: "action", text: "First light. The harbor is pale and quiet. A PELICAN lands on a dock post, looks around with enormous dignity, then falls off sideways. No one sees this. This is fine." },
       { type: "action", text: "Wooden stalls creak as shopkeepers begin opening shutters. Nets hang drying. Crates stacked. The day shifting its weight before it stands up." },
       { type: "action", text: "Somewhere down the dock, a trumpet player warms up. One scale. Two scales. A wrong note. A pause. Then — the right note, held long and clean." },
-      { type: "action", text: "At the edge of the square sits an old wooden crate. On it sits BIG NAY — a large, scruffy orange cat who looks at the market the way a man looks at something he already owns. Beside him sits a smaller gray cat with bright eyes and a perpetually confused expression. This is PANTS — though she does not know that yet." },
+      { type: "action", text: "At the edge of the square sits an old wooden crate. On it sits BIG NAY — a large pelican who looks at the market the way a man looks at something he already owns. Beside him sits a smaller gray cat with bright eyes and a perpetually confused expression. This is PANTS — though she does not know that yet." },
       { type: "action", text: "Big Nay surveys the rising sun. Pants licks her paw with careful dignity. Silence. Then—" },
       { type: "character", text: "PANTS" },
       { type: "dialogue", text: "So… when do we pick the names?" },

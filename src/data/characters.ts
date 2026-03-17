@@ -67,7 +67,7 @@ export const characters: Character[] = [
     name: "Big Nay",
     role: "Leader of the Fish Thieves",
     description:
-      "A large, scruffy orange cat and self-declared philosopher of the market. He talks like a rapper and thinks like a preacher — theatrical, morally flexible, and completely convinced that stealing fish is not stealing, it is redistribution. He leads the gang with enormous confidence and zero planning. His manifesto has a beat.",
+      "A large pelican and self-declared philosopher of the market. He talks like a rapper and thinks like a preacher — theatrical, morally flexible, and completely convinced that stealing fish is not stealing, it is redistribution. He leads the gang with enormous confidence and zero planning. His manifesto has a beat.",
     personalityTraits: ["Theatrical", "Philosophical", "Absolutely certain he's right"],
     image: "/characters/captain.png",
     songIds: ["redistribution"],
