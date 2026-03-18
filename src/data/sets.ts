@@ -64,6 +64,14 @@ export const sets: Set[] = [
     image: "/sets/Kojin_Fox_60s_retro_poster_of_a_Creole_Donut_Shop_in_a_Fishin_dc156f36-4c20-44f4-a55e-282317839069_2.png",
   },
   {
+    id: "mama-amara",
+    name: "Mama Amara (Boat)",
+    slug: "EXT./INT.",
+    description:
+      "The fishing tug that brings Zuri and Ade home each Friday — converted from a workboat, nets on the rigging, the hull carrying its years without apology. The boat Ade named for his late wife.",
+    image: "/sets/Kojin_Fox_disney_shot_of_a_fishing_town_dock_and_boats_downto_820f0e62-c360-4ecb-a446-44efe821e2b2_0.png",
+  },
+  {
     id: "river-docks",
     name: "River Docks",
     slug: "EXT.",

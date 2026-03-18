@@ -184,10 +184,9 @@ function MoonWidget() {
 // ── Act / scene structure ──────────────────────────────────────────────────
 
 const ACTS = [
-  { label: "ACT I",   start: 0,   end: 69  },
-  { label: "ACT II",  start: 70,  end: 129 },
-  { label: "ACT III", start: 130, end: 164 },
-  { label: "ACT IV",  start: 165, end: 172 },
+  { label: "ACT I",   start: 0,   end: 34  },  // Ends: Ade & Zuri gather evidence upstream
+  { label: "ACT II",  start: 35,  end: 40  },  // Ends: page-7 (Riverside Fish Market); fresh content starts page 8
+  { label: "ACT III", start: 41,  end: 41  },  // Placeholder — not yet written
 ];
 
 /** Extract the first SCENE heading text from a page */
@@ -505,7 +504,17 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 ) : (
                   <div className="space-y-2 pb-12">
                     {p.elements.map((el, i) => (
-                      <ScriptLine key={i} type={el.type} text={el.text} />
+                      <div key={i} className="flex gap-3 items-baseline">
+                        <span
+                          className="w-8 shrink-0 text-right text-[10px] tabular-nums text-white/25 select-none"
+                          title={`${p.id} line ${i + 1}`}
+                        >
+                          {i + 1}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <ScriptLine type={el.type} text={el.text} />
+                        </div>
+                      </div>
                     ))}
                   </div>
                 )}
