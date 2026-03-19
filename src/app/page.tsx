@@ -68,12 +68,12 @@ function HomeInner() {
         style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
       >
         <TitleSlide />
+        <AboutSection />
         <CharactersSection openCharacter={openCharacter} />
         <SetsSection openCharacter={openCharacter} />
         <ScriptSection openCharacter={openCharacter} openSet={openSet} />
         <LyricsSection openCharacter={openCharacter} />
         <CreditsSection />
-        <AboutSection />
       </div>
 
       {/* Floating home link — top right, hidden on title slide */}

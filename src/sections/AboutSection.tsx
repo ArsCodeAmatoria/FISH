@@ -1,72 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { characters } from "@/data/characters";
-import { cn } from "@/lib/utils";
-
-const mainCharacterIds = [
-  "zuri",
-  "ade",
-  "big-nay",
-  "pants",
-  "ripple",
-  "papa-louis",
-  "mama-sabine",
-  "sushi",
-  "j",
-  "victor-kane",
-  "marcus-vale",
-];
 
 export function AboutSection() {
-  const mainChars = characters.filter((c) => mainCharacterIds.includes(c.id));
-
   return (
     <section
       id="about"
-      className="relative flex h-screen w-screen shrink-0 flex-col overflow-hidden bg-black pt-14 pb-20"
+      className="relative flex h-screen w-screen shrink-0 overflow-hidden bg-black"
     >
-      {/* ── Header ───────────────────────────────────────────── */}
-      <div className="mb-6 flex shrink-0 justify-center px-8">
-        <h1
-          className="section-heading text-2xl"
-          style={{ fontFamily: "var(--font-cinematic)" }}
-        >
-          About
-        </h1>
+      {/* ── Left: Image (pulls to center) ──────────────────────── */}
+      <div className="relative flex h-full w-[40%] shrink-0 items-center justify-center overflow-hidden">
+        <Image
+          src="/songs/covers/redfish.png"
+          alt="FISH — A River Story"
+          fill
+          className="object-cover object-center"
+          sizes="40vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-black/90" />
       </div>
 
-      {/* ── Body: scrollable ─────────────────────────────────── */}
-      <div className="flex flex-1 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
-        <div className="mx-auto flex max-w-3xl flex-col gap-10 px-8 pb-24">
-          {/* Hero image */}
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl">
-            <Image
-              src="/songs/covers/redfish.png"
-              alt="FISH — A River Story"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 896px"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <p
-                className="text-sm uppercase tracking-[0.2em] text-white/90"
-                style={{ fontFamily: "var(--font-cinematic)" }}
-              >
-                F I S H
-              </p>
-              <p
-                className="text-xs text-white/60"
-                style={{ fontFamily: "var(--font-screenplay)" }}
-              >
-                A River Story
-              </p>
-            </div>
-          </div>
+      {/* ── Right: Content (pulls to center) ───────────────────── */}
+      <div className="relative flex flex-1 flex-col overflow-y-auto pl-8 pr-12 pt-14 pb-20" style={{ scrollbarWidth: "none" }}>
+        <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-black/40 pointer-events-none" />
+        <div className="relative flex flex-col">
+          <h1
+            className="mb-5 section-heading text-2xl"
+            style={{ fontFamily: "var(--font-cinematic)" }}
+          >
+            About
+          </h1>
 
-          {/* Logline — Save the Cat */}
+          <div className="flex max-w-xl flex-col gap-10">
+          {/* Logline */}
           <div>
             <h2
               className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
@@ -82,7 +49,7 @@ export function AboutSection() {
             </p>
           </div>
 
-          {/* Genre — Save the Cat */}
+          {/* Genre */}
           <div>
             <h2
               className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
@@ -98,7 +65,7 @@ export function AboutSection() {
             </p>
           </div>
 
-          {/* The Story — Setup & World */}
+          {/* The Story */}
           <div>
             <h2
               className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
@@ -121,58 +88,7 @@ export function AboutSection() {
               </p>
             </div>
           </div>
-
-          {/* Characters */}
-          <div>
-            <h2
-              className="mb-6 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
-              style={{ fontFamily: "var(--font-cinematic)" }}
-            >
-              Characters
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {mainChars.map((c) => (
-                <div
-                  key={c.id}
-                  className={cn(
-                    "rounded-xl border border-white/8 bg-white/[0.02] p-4 transition-colors hover:bg-white/[0.05]"
-                  )}
-                >
-                  <div className="mb-2 flex items-center gap-3">
-                    <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg">
-                      <Image
-                        src={c.image}
-                        alt={c.name}
-                        fill
-                        className="object-cover"
-                        sizes="40px"
-                      />
-                    </div>
-                    <div>
-                      <p
-                        className="font-semibold text-white"
-                        style={{ fontFamily: "var(--font-cinematic)" }}
-                      >
-                        {c.name}
-                      </p>
-                      <p
-                        className="text-[10px] text-white/50"
-                        style={{ fontFamily: "var(--font-screenplay)" }}
-                      >
-                        {c.role}
-                      </p>
-                    </div>
-                  </div>
-                  <p
-                    className="text-[12px] leading-relaxed text-white/65 line-clamp-3"
-                    style={{ fontFamily: "var(--font-screenplay)" }}
-                  >
-                    {c.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+        </div>
         </div>
       </div>
     </section>
