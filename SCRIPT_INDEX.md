@@ -35,16 +35,19 @@ Example: `page-ade-zuri-upstream line 7` = 7th element on that page.
 | page-rowboat-2 | 860 | RIVER Z — MOVING UPRIVER — CONTINUOUS |
 | page-uptown-1 | 885 | UPTOWN MARKET STRETCH — CONTINUOUS |
 | page-elmer-pepe-2 | 930 | UPTOWN MARKET STRETCH — CONTINUOUS |
-| page-louis-girls | 979 | FISH MARKET — LOUIS |
-| page-donut-heist | 1020 | DONUT SHOP — FRONT DOOR — NIGHT |
-| page-victor-marcus | 1060 | MU REGIONAL OFFICE — DOWNTOWN — NIGHT |
-| page-zuri-ade-tell | 1092 | MAMA AMARA — CABIN — NIGHT |
-| page-sea-can | 1128 | RIVER DOCKS — LATE NIGHT |
-| page-mama-sabine-vision | 1160 | MAMA AMARA — DOCK — NIGHT |
-| page-ade-zuri-upstream | 1223 | MAMA AMARA — RIVER Z — MORNING |
-| page-6 | 1284 | ROWBOAT — LATE MORNING — ACT II |
-| page-act2-pants-coffee | 1312 | MARKET — COFFEE STALL — LATE MORNING |
-| page-act2-pants-song | 1331 | MARKET STREETS — CONTINUOUS |
-| page-act2-victor-market | 1349 | THE MARKET CIRCLE — DAY |
-| page-act2-ade-zuri-dry | 1372 | MAMA AMARA — TOP DECK — DAY |
-| page-7 | 1391 | RIVERSIDE FISH MARKET — DAWN |
+| page-louis-girls | 982 | FISH MARKET — LOUIS |
+| page-donut-heist | 1023 | DONUT SHOP — FRONT DOOR — NIGHT |
+| page-victor-marcus | 1063 | MU REGIONAL OFFICE — DOWNTOWN — NIGHT |
+| page-zuri-ade-tell | 1095 | MAMA AMARA — CABIN — NIGHT |
+| page-sea-can | 1131 | RIVER DOCKS — LATE NIGHT |
+| page-mama-sabine-vision | 1163 | MAMA AMARA — DOCK — NIGHT |
+| page-ade-zuri-upstream | 1226 | MAMA AMARA — RIVER Z — MORNING |
+| page-6 | 1287 | ROWBOAT — LATE MORNING — ACT II |
+| page-act2-pants-coffee | 1315 | MARKET — COFFEE STALL — LATE MORNING |
+| page-act2-pants-song | 1334 | MARKET STREETS — CONTINUOUS |
+| page-act2-victor-market | 1352 | THE MARKET CIRCLE — DAY |
+| page-act2-ade-zuri-dry | 1375 | MAMA AMARA — TOP DECK — DAY |
+| page-41 | 1397 | RIVER — UPSTREAM — SUNDAY — LATE MORNING |
+| page-42 | 1429 | MAMA AMARA — DOCK — SUNDAY — AFTERNOON |
+| page-43 | 1452 | TOWN HALL — SUNDAY — EVENING |
+| page-44 | 1479 | DOCK STAGE — SUNDAY — NIGHT |

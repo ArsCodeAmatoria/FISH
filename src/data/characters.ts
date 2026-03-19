@@ -28,7 +28,7 @@ export const characters: Character[] = [
       "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a clean handsome Caribbean face. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm tied to a music event and has kept Zuri away from music ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
     personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
     image: "/characters/ade.png",
-    songIds: ["quiet-river"],
+    songIds: [],
   },
   {
     id: "papa-louis",
@@ -87,7 +87,7 @@ export const characters: Character[] = [
     name: "Ripple",
     role: "Chaos Engine",
     description:
-      "A sleek black river otter with a slightly bulldog-shaped head — compact, solid, and built like a small battering ram. That head is the source of most of the trio's structural damage. He loves water, gadgets, and pressing buttons he should not press. He bumps into things with cheerful, total commitment. Despite the chaos, his curiosity accidentally helps uncover the villain's scheme.",
+      "A sleek black river otter with a slightly bulldog-shaped head — compact, solid, and built like a small battering ram. He never speaks; he nods. That head is the source of most of the trio's structural damage. He loves water, gadgets, and pressing buttons he should not press. He bumps into things with cheerful, total commitment. Despite the chaos, his curiosity accidentally helps uncover the villain's scheme.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
     songIds: [],
@@ -139,12 +139,34 @@ export const characters: Character[] = [
     name: "Pepe",
     role: "Fish Thief Dog — Chihuahua",
     description:
-      "A Chihuahua with enormous eyes and an extremely gentle disposition. Elmer's partner — he rarely speaks but watches everything with quiet interest. He has no opinion on most disputes but is unfailingly polite. His paws are too small to make the gang sign properly, which he refuses to acknowledge. When Elmer is tense, Pepe is calm. They balance each other perfectly.",
-    personalityTraits: ["Gentle", "Observant", "Unflappable"],
+      "A Chihuahua with enormous eyes, a gentle disposition, and a warm Mexican accent. Elmer's partner — he rarely speaks but watches everything with quiet interest. When he does speak, or sing, it's in Spanish or with a melodic Mexican lilt. His paws are too small to make the gang sign properly, which he refuses to acknowledge. When Elmer is tense, Pepe is calm. They balance each other perfectly.",
+    personalityTraits: ["Gentle", "Observant", "Unflappable", "Warm", "Musical"],
     image: "/characters/fishtheifdog1.png",
     songIds: [],
   },
 
+
+  // ── Town Officials ──────────────────────────────────────────
+  {
+    id: "the-councilor",
+    name: "The Councilor",
+    role: "Town Council",
+    description:
+      "An older blind man who serves as The Councilor — a respected town leader. He navigates the docks and decisions with the steady certainty of someone who has seen the river change over decades.",
+    personalityTraits: ["Steady", "Perceptive", "Authoritative"],
+    image: "/characters/council.png",
+    songIds: [],
+  },
+  {
+    id: "fishing-warden",
+    name: "Fishing Warden",
+    role: "Town Authority",
+    description:
+      "An older rough man with white hair and beard — the town's fishery authority. He's seen the river in every season and trusts his gut over anyone's smooth talk. Announces the three-day fishing shutdown at the town hall meeting. By-the-book, but his book was written on the water.",
+    personalityTraits: ["Seasoned", "Stubborn", "No-nonsense"],
+    image: "/characters/warden.png",
+    songIds: [],
+  },
 
   // ── Market Characters ──────────────────────────────────────
   {
@@ -155,7 +177,7 @@ export const characters: Character[] = [
       "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and always behind the counter.",
     personalityTraits: ["Resourceful", "Sharp", "Welcoming"],
     image: "/characters/sushi.png",
-    songIds: ["roll-it-tight"],
+    songIds: [],
   },
   {
     id: "j",
@@ -165,7 +187,7 @@ export const characters: Character[] = [
       "A few years older than Zuri, J is one of the Market Circle's fixtures — sharp, warm, and dressed like she stepped out of a 1960s jazz poster. High-waisted trousers, a fitted blouse, a headscarf tied just so. She knows every stall, every vendor, and every piece of news before it happens. She's the kind of person who makes a room feel like a party just by arriving in it.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
-    songIds: ["bank-river-z"],
+    songIds: [],
   },
   {
     id: "cedar",
@@ -175,7 +197,7 @@ export const characters: Character[] = [
       "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
     personalityTraits: ["Steady", "Loyal", "Protective"],
     image: "/characters/misspine.png",
-    songIds: ["flow-on"],
+    songIds: [],
   },
   {
     id: "sticks",

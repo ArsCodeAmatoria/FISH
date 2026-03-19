@@ -176,6 +176,14 @@ export const sets: Set[] = [
     image: "/sets/Kojin_Fox_60s_Retro_poster_of_a_Creole_Fishing_town._Creole_h_d544c032-49a7-46f6-9766-e8447b785f73_0.png",
   },
   {
+    id: "town-hall",
+    name: "Town Hall",
+    slug: "INT.",
+    description:
+      "The town council chamber — wooden benches, a raised podium, and the weight of every decision the town has ever made. Where the Fishing Warden announces the shutdown.",
+    image: "/sets/Kojin_Fox_60s_Retro_poster_of_a_Creole_Fishing_town._Creole_p_03557bb0-114c-4be8-bdb8-783826a161ff_0.png",
+  },
+  {
     id: "town-center",
     name: "Town Center",
     slug: "EXT.",
@@ -192,11 +200,27 @@ export const sets: Set[] = [
     image: "/sets/Kojin_Fox_60s_retro_poster_of_a_Creole_Fishing_town._3D_Pixar_7289488c-2220-46f4-b707-bf898ba5e168_1.png",
   },
   {
+    id: "mu-headquarters",
+    name: "MU Headquarters",
+    slug: "EXT./INT.",
+    description:
+      "A tall concrete tower in the city — modern, stark, the MU logo lit against the night sky. Where Marcus Vale runs his empire and makes the calls that reach all the way down the river.",
+    image: "/sets/MU.png",
+  },
+  {
     id: "the-waterfront",
     name: "The Waterfront",
     slug: "EXT.",
     description:
       "The waterfront promenade where the town takes its evening walks — a long stretch of boardwalk between the buildings and the river.",
     image: "/sets/Kojin_Fox_60s_retro_poster_of_a_Creole_Fishing_town._3D_Pixar_7289488c-2220-46f4-b707-bf898ba5e168_3.png",
+  },
+  {
+    id: "creole-hotel",
+    name: "Creole Hotel",
+    slug: "EXT./INT.",
+    description:
+      "The large hotel of the village — a landmark building where visitors stay and the town gathers for occasions that call for more than a dock.",
+    image: "/sets/creolehotel.png",
   },
 ];
