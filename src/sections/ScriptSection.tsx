@@ -185,8 +185,8 @@ function MoonWidget() {
 
 const ACTS = [
   { label: "ACT I",   start: 0,   end: 34  },  // Ends: Ade & Zuri gather evidence upstream
-  { label: "ACT II",  start: 35,  end: 46  },  // Through Town Hall, Open Mic, canister, stage, Councilor, Ade/Zuri hunt
-  { label: "ACT III", start: 47,  end: 46  },  // Empty — not yet written
+  { label: "ACT II",  start: 35,  end: 48  },  // Through Councilor, downriver, mother talk, dock rescue, gators
+  { label: "ACT III", start: 49,  end: 48  },  // Empty — not yet written
 ];
 
 /** Extract the first SCENE heading text from a page */

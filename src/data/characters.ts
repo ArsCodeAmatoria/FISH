@@ -80,7 +80,7 @@ export const characters: Character[] = [
       "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos.",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
     image: "/characters/pants.png",
-    songIds: ["redistribution", "glazed", "pants-song"],
+    songIds: ["redistribution", "glazed", "chaos", "pants-song"],
   },
   {
     id: "ripple",
@@ -90,6 +90,38 @@ export const characters: Character[] = [
       "A sleek black river otter with a slightly bulldog-shaped head — compact, solid, and built like a small battering ram. He never speaks; he nods. That head is the source of most of the trio's structural damage. He loves water, gadgets, and pressing buttons he should not press. He bumps into things with cheerful, total commitment. Despite the chaos, his curiosity accidentally helps uncover the villain's scheme.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
+    songIds: [],
+  },
+
+  // ── Marsh / River Creatures ────────────────────────────────
+  {
+    id: "gator",
+    name: "Gator",
+    role: "Marsh Gator",
+    description:
+      "An alligator with a smooth African accent. The self-proclaimed king of the shoreline. One mistake and he makes headlines. Sings his philosophy to anyone who gets too close to the water.",
+    personalityTraits: ["Smooth", "Theatrical", "Dangerous"],
+    image: "/characters/gator.png",
+    songIds: ["gator"],
+  },
+  {
+    id: "byte",
+    name: "Byte",
+    role: "Marsh Gator",
+    description:
+      "A spooky alligator who lurks in the marsh. Part of Gator's crew. Unnerving presence.",
+    personalityTraits: ["Spooky", "Quiet", "Unnerving"],
+    image: "/characters/byte.png",
+    songIds: [],
+  },
+  {
+    id: "teddy",
+    name: "Teddy",
+    role: "Marsh Gator",
+    description:
+      "A dumb, hungry alligator. Part of Gator's crew. Always thinking about the next meal.",
+    personalityTraits: ["Hungry", "Simple", "Persistent"],
+    image: "/characters/teddy.png",
     songIds: [],
   },
 
@@ -187,7 +219,7 @@ export const characters: Character[] = [
       "A few years older than Zuri, J is one of the Market Circle's fixtures — sharp, warm, and dressed like she stepped out of a 1960s jazz poster. High-waisted trousers, a fitted blouse, a headscarf tied just so. She knows every stall, every vendor, and every piece of news before it happens. She's the kind of person who makes a room feel like a party just by arriving in it.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
-    songIds: [],
+    songIds: ["porcelain"],
   },
   {
     id: "cedar",
@@ -197,7 +229,7 @@ export const characters: Character[] = [
       "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
     personalityTraits: ["Steady", "Loyal", "Protective"],
     image: "/characters/misspine.png",
-    songIds: [],
+    songIds: ["porcelain"],
   },
   {
     id: "sticks",
@@ -237,6 +269,6 @@ export const characters: Character[] = [
       "Holly has the most traditional street-performer style — sings soulful songs in the open market square and her voice draws crowds naturally. She is the first person to tell Zuri she should sing publicly. A voice that makes strangers stop walking.",
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
-    songIds: ["keys-to-the-block"],
+    songIds: ["keys-to-the-block", "hustle-busker"],
   },
 ];
