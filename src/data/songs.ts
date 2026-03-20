@@ -43,7 +43,7 @@ export const songs: Song[] = [
     description: "Big Nay's manifesto — a full rap number on the philosophy of taking fish. The beat drops in a market alley after the first failed heist. Pants is covered in slime and somehow ends up on it anyway. Ripple is immediately in.",
     image: "/songs/covers/lionfish.png",
     writtenBy: "Leigh Akin",
-    audioSrc: "/songs/redistribute.wav",
+    audioSrc: "/songs/redistribute (rap).wav",
   },
   {
     id: "glazed",
