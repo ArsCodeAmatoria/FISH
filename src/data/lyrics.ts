@@ -579,6 +579,20 @@ export const allLyrics: SongLyrics[] = [
     ],
   },
   {
+    songId: "louis",
+    lines: [
+      label("[Instrumental]"),
+      v("Louis, PG, Chops, Sticks & Bass. Trumpet, ukulele, guitar, percussion, bass."),
+    ],
+  },
+  {
+    songId: "chops",
+    lines: [
+      label("[Instrumental]"),
+      v("Electric guitar. No lyrics."),
+    ],
+  },
+  {
     songId: "redistribution",
     lines: [
       label("[Hook]"),

@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Play, Pause, Download } from "lucide-react";
-import { scriptPages, type ScriptPage } from "@/data/script";
+import { scriptPages, pageLabels, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { sets } from "@/data/sets";
@@ -184,16 +184,18 @@ function MoonWidget() {
 // ── Act / scene structure ──────────────────────────────────────────────────
 
 const ACTS = [
-  { label: "ACT I",   start: 0,   end: 34  },  // Ends: Ade & Zuri gather evidence upstream
-  { label: "ACT II",  start: 35,  end: 48  },  // Through Councilor, downriver, mother talk, dock rescue, gators
-  { label: "ACT III", start: 49,  end: 48  },  // Empty — not yet written
+  { label: "ACT I",   start: 0,  end: 34 },   // Pages 1–35: Setup through proof gathered upstream
+  { label: "ACT IIa", start: 35, end: 45 },   // Pages 36–46: Trio fun & games through stage destroyed
+  { label: "ACT IIb", start: 46, end: 59 },   // Pages 47–60: Councilor through Chaos, evacuation
+  { label: "ACT III", start: 60, end: 64 },   // Pages 61–65: Victor blocks, climax, Stars Over the Block, THE END
 ];
 
-/** Extract the first SCENE heading text from a page */
-function sceneLabel(page: ScriptPage): string {
+/** Get human-readable title for sidebar (pageLabels or derived from first SCENE) */
+function pageTitle(page: ScriptPage): string {
+  const custom = pageLabels[page.id];
+  if (custom) return custom;
   const el = page.elements.find((e) => e.type === "scene");
   if (!el) return page.id;
-  // Trim after "—" to keep it short
   const parts = el.text.split("—");
   return parts[0].trim();
 }
@@ -370,7 +372,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 {scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
                   const idx = act.start + offset;
                   const isActive = idx === page;
-                  const label = sceneLabel(p);
+                  const label = pageTitle(p);
                   return (
                     <button
                       key={p.id}

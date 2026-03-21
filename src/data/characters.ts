@@ -35,10 +35,10 @@ export const characters: Character[] = [
     name: "Louis",
     role: "Elder Busker",
     description:
-      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. Louis has played his corner of the market for years and Zuri has been stopping to listen for almost as long. He hears harmony where others hear noise, and he already knows what Zuri is before she does. He introduces her to the Wheel of Groove — the idea that rhythm connects all people across time.",
+      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. Louis has played his corner of the market for years, these days often alongside his granddaughter PG on ukulele. He hears harmony where others hear noise, and he already knows what Zuri is before she does.",
     personalityTraits: ["Wise", "Playful", "Philosophical"],
-    image: "/characters/louis.png",
-    songIds: ["trumpet"],
+    image: "/characters/louis2.png",
+    songIds: ["louis"],
   },
   {
     id: "mama-sabine",
@@ -157,6 +157,36 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
+    id: "oscar",
+    name: "Oscar",
+    role: "Victor's Cat",
+    description:
+      "Victor Kane's black cat. Appears when least expected. Observes. Judges. Belongs to the opposition.",
+    personalityTraits: ["Aloof", "Mysterious", "Victor's shadow"],
+    image: "/characters/oscar.png",
+    songIds: [],
+  },
+  {
+    id: "security-1",
+    name: "Security",
+    role: "Hotel Security",
+    description:
+      "One of Victor's men in black. Big. Suit. Earpiece. Blocks the Creole Hotel entrance. Nobody gets through.",
+    personalityTraits: ["Imposing", "Impersonal", "Obedient"],
+    image: "/characters/security.png",
+    songIds: [],
+  },
+  {
+    id: "security-2",
+    name: "Security",
+    role: "Hotel Security",
+    description:
+      "Victor's other man in black. Same uniform. Same mission. No bookings. Move on.",
+    personalityTraits: ["Imposing", "Impersonal", "Obedient"],
+    image: "/characters/security2.png",
+    songIds: [],
+  },
+  {
     id: "elmer",
     name: "Elmer",
     role: "Fish Thief Cat — Orange Tabby",
@@ -202,6 +232,16 @@ export const characters: Character[] = [
 
   // ── Market Characters ──────────────────────────────────────
   {
+    id: "fishmonger",
+    name: "The Vendor",
+    role: "Market Fishmonger",
+    description:
+      "A broad man in a fish-stained apron. Checks crates at the loading dock. Knows the river, knows the catches. The unhurried energy of someone who trusts his own judgment. He's heard about the machine upriver.",
+    personalityTraits: ["Steady", "Observant", "No-nonsense"],
+    image: "/characters/fishmonger.png",
+    songIds: [],
+  },
+  {
     id: "sushi",
     name: "Sushi",
     role: "Sushi Shop Owner",
@@ -239,7 +279,7 @@ export const characters: Character[] = [
       "A high-energy street percussionist who performs using buckets, fish crates, and anything that makes noise. He loves rhythm and believes music should be loud, fun, and shared. He's among the first to treat Zuri like a fellow musician. Can turn any object into a drum.",
     personalityTraits: ["Rhythmic", "Restless", "Energetic"],
     image: "/characters/sticks.png",
-    songIds: [],
+    songIds: ["louis"],
   },
   {
     id: "chops",
@@ -249,7 +289,7 @@ export const characters: Character[] = [
       "The loudest personality on the block. He performs near the train yard, blasting electric guitar solos that sync with passing trains. Loves dramatic riffs and playful showmanship. Treats every performance like a stadium concert.",
     personalityTraits: ["Flashy", "Passionate", "Showman"],
     image: "/characters/chops.png",
-    songIds: [],
+    songIds: ["chops", "louis"],
   },
   {
     id: "bass",
@@ -259,7 +299,7 @@ export const characters: Character[] = [
       "Calm, quiet, and deeply cool. Rarely speaks and prefers communicating through bass lines — kids dance when she plays. When something important happens, she expresses it through music rather than words. Answers questions with bass riffs.",
     personalityTraits: ["Soulful", "Cool", "Grounded"],
     image: "/characters/bass.png",
-    songIds: [],
+    songIds: ["louis"],
   },
   {
     id: "holly",
@@ -270,5 +310,15 @@ export const characters: Character[] = [
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
     songIds: ["keys-to-the-block", "hustle-busker"],
+  },
+  {
+    id: "pg",
+    name: "PG",
+    role: "Louis's Granddaughter & Busker",
+    description:
+      "Louis's granddaughter. She plays ukulele and busks with Louis at the market — the two of them a familiar duo, passing melodies and rhythm between trumpet and ukulele.",
+    personalityTraits: ["Warm", "Playful", "Musical"],
+    image: "/characters/PG1.png",
+    songIds: ["louis"],
   },
 ];
