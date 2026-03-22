@@ -579,6 +579,20 @@ export const allLyrics: SongLyrics[] = [
     ],
   },
   {
+    songId: "monday",
+    lines: [
+      label("[Instrumental]"),
+      v("PG on ukulele, Bass on bass, Sticks on drums."),
+    ],
+  },
+  {
+    songId: "tiny-space",
+    lines: [
+      label("[Instrumental]"),
+      v("PG on ukulele, Bass on bass, Sticks on drums, Chops on electric guitar."),
+    ],
+  },
+  {
     songId: "louis",
     lines: [
       label("[Instrumental]"),
@@ -935,6 +949,37 @@ export const allLyrics: SongLyrics[] = [
       label("[Outro]"),
       v("Just a ripple…"),
       v("That's all it takes."),
+    ],
+  },
+  {
+    songId: "going-up",
+    lines: [
+      label("[Verse 1]"),
+      v("Going up, going up, to the top"),
+      v("Floor by floor, we don't stop"),
+      v("Left the ground, left the block"),
+      v("Coming up — watch us rise"),
+      blank,
+      label("[Chorus]"),
+      v("Going up — we're going up"),
+      v("Growing up — we're growing up"),
+      v("Showing up — that's enough"),
+      v("Showing up — we showed up"),
+      blank,
+      label("[Verse 2]"),
+      v("Was afraid to raise my voice"),
+      v("Now I'm singing, that's my choice"),
+      v("We came through the fire and noise"),
+      v("One more floor — watch us rise"),
+      blank,
+      label("[Chorus]"),
+      v("Going up — we're going up"),
+      v("Growing up — we're growing up"),
+      v("Showing up — that's enough"),
+      v("Showing up — we showed up"),
+      blank,
+      label("[Outro]"),
+      v("We showed up."),
     ],
   },
 ];

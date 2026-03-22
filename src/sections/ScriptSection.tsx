@@ -183,11 +183,63 @@ function MoonWidget() {
 
 // ── Act / scene structure ──────────────────────────────────────────────────
 
-const ACTS = [
-  { label: "ACT I",   start: 0,  end: 34 },   // Pages 1–35: Setup through proof gathered upstream
-  { label: "ACT IIa", start: 35, end: 45 },   // Pages 36–46: Trio fun & games through stage destroyed
-  { label: "ACT IIb", start: 46, end: 59 },   // Pages 47–60: Councilor through Chaos, evacuation
-  { label: "ACT III", start: 60, end: 64 },   // Pages 61–65: Victor blocks, climax, Stars Over the Block, THE END
+type ActSection = { label: string; start: number; end: number };
+
+const ACTS: Array<{
+  label: string;
+  start: number;
+  end: number;
+  sections?: ActSection[];
+}> = [
+  {
+    label: "ACT I",
+    start: 0,
+    end: 34,
+    sections: [
+      { label: "Opening", start: 0, end: 7 },
+      { label: "The Gang Meeting", start: 8, end: 11 },
+      { label: "Heists & Delivery", start: 12, end: 16 },
+      { label: "Kane & the Poster", start: 17, end: 23 },
+      { label: "Rowboat & Uptown", start: 24, end: 27 },
+      { label: "Louis, Donut, Victor", start: 29, end: 31 },
+      { label: "Sea Can, Sabine, Upstream", start: 32, end: 34 },
+    ],
+  },
+  {
+    label: "ACT IIa",
+    start: 35,
+    end: 45,
+    sections: [
+      { label: "Trio Wake & Coffee", start: 35, end: 37 },
+      { label: "Victor & Market", start: 38, end: 41 },
+      { label: "Town Hall & Stage", start: 42, end: 45 },
+    ],
+  },
+  {
+    label: "ACT IIb",
+    start: 46,
+    end: 59,
+    sections: [
+      { label: "Councilor & Ban", start: 46, end: 48 },
+      { label: "Downriver & Gators", start: 49, end: 50 },
+      { label: "Polaroid & Rope", start: 51, end: 55 },
+      { label: "Porcelain & Hotel", start: 56, end: 58 },
+      { label: "Chaos", start: 59, end: 59 },
+    ],
+  },
+  {
+    label: "ACT III",
+    start: 60,
+    end: 69,
+    sections: [
+      { label: "Victor Takes Marcus", start: 60, end: 60 },
+      { label: "Bus & Old Lady", start: 61, end: 61 },
+      { label: "MU Building & Elevator", start: 62, end: 63 },
+      { label: "Penthouse & Secretary", start: 64, end: 65 },
+      { label: "Square & Car", start: 67, end: 68 },
+      { label: "Stars & THE END", start: 68, end: 69 },
+    ],
+  },
 ];
 
 /** Get human-readable title for sidebar (pageLabels or derived from first SCENE) */
@@ -342,7 +394,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
 
         {/* ── Left: Act / Scene navigation ───────────────────── */}
         <div
-          className="w-44 shrink-0 overflow-y-auto pl-8 pr-4"
+          className="w-52 shrink-0 overflow-y-auto pl-8 pr-4"
           style={{ scrollbarWidth: "none" }}
         >
           {ACTS.map((act) => (
@@ -369,37 +421,81 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
               </button>
 
               <div className="flex flex-col gap-0.5">
-                {scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
-                  const idx = act.start + offset;
-                  const isActive = idx === page;
-                  const label = pageTitle(p);
-                  return (
-                    <button
-                      key={p.id}
-                      type="button"
-                      onClick={() => scrollToPage(idx)}
-                      className={cn(
-                        "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
-                        isActive
-                          ? "bg-white/10 text-white"
-                          : "text-white/60 hover:bg-white/5 hover:text-white/85"
-                      )}
-                    >
-                      <span
-                        className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
-                        style={{ fontFamily: "var(--font-screenplay)" }}
-                      >
-                        {String(idx + 1).padStart(2, "0")}
-                      </span>
-                      <span
-                        className="line-clamp-2 text-[10px] leading-snug"
+                {act.sections ? (
+                  act.sections.map((sec) => (
+                    <div key={sec.label} className="mb-2">
+                      <div
+                        className="mb-1 px-2 py-0.5 text-[8px] uppercase tracking-[0.2em] text-white/35"
                         style={{ fontFamily: "var(--font-cinematic)" }}
                       >
-                        {label}
-                      </span>
-                    </button>
-                  );
-                })}
+                        {sec.label}
+                      </div>
+                      {scriptPages.slice(sec.start, sec.end + 1).map((p, offset) => {
+                        const idx = sec.start + offset;
+                        const isActive = idx === page;
+                        const label = pageTitle(p);
+                        return (
+                          <button
+                            key={p.id}
+                            type="button"
+                            onClick={() => scrollToPage(idx)}
+                            className={cn(
+                              "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
+                              isActive
+                                ? "bg-white/10 text-white"
+                                : "text-white/60 hover:bg-white/5 hover:text-white/85"
+                            )}
+                          >
+                            <span
+                              className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
+                              style={{ fontFamily: "var(--font-screenplay)" }}
+                            >
+                              {String(idx + 1).padStart(2, "0")}
+                            </span>
+                            <span
+                              className="line-clamp-2 text-[10px] leading-snug"
+                              style={{ fontFamily: "var(--font-cinematic)" }}
+                            >
+                              {label}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ))
+                ) : (
+                  scriptPages.slice(act.start, act.end + 1).map((p, offset) => {
+                    const idx = act.start + offset;
+                    const isActive = idx === page;
+                    const label = pageTitle(p);
+                    return (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => scrollToPage(idx)}
+                        className={cn(
+                          "group flex items-start gap-2 rounded-lg px-2 py-1 text-left transition-all duration-150",
+                          isActive
+                            ? "bg-white/10 text-white"
+                            : "text-white/60 hover:bg-white/5 hover:text-white/85"
+                        )}
+                      >
+                        <span
+                          className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
+                          style={{ fontFamily: "var(--font-screenplay)" }}
+                        >
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span
+                          className="line-clamp-2 text-[10px] leading-snug"
+                          style={{ fontFamily: "var(--font-cinematic)" }}
+                        >
+                          {label}
+                        </span>
+                      </button>
+                    );
+                  })
+                )}
               </div>
             </div>
           ))}

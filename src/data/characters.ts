@@ -279,7 +279,7 @@ export const characters: Character[] = [
       "A high-energy street percussionist who performs using buckets, fish crates, and anything that makes noise. He loves rhythm and believes music should be loud, fun, and shared. He's among the first to treat Zuri like a fellow musician. Can turn any object into a drum.",
     personalityTraits: ["Rhythmic", "Restless", "Energetic"],
     image: "/characters/sticks.png",
-    songIds: ["louis"],
+    songIds: ["louis", "monday", "tiny-space"],
   },
   {
     id: "chops",
@@ -289,7 +289,7 @@ export const characters: Character[] = [
       "The loudest personality on the block. He performs near the train yard, blasting electric guitar solos that sync with passing trains. Loves dramatic riffs and playful showmanship. Treats every performance like a stadium concert.",
     personalityTraits: ["Flashy", "Passionate", "Showman"],
     image: "/characters/chops.png",
-    songIds: ["chops", "louis"],
+    songIds: ["chops", "louis", "tiny-space"],
   },
   {
     id: "bass",
@@ -299,7 +299,7 @@ export const characters: Character[] = [
       "Calm, quiet, and deeply cool. Rarely speaks and prefers communicating through bass lines — kids dance when she plays. When something important happens, she expresses it through music rather than words. Answers questions with bass riffs.",
     personalityTraits: ["Soulful", "Cool", "Grounded"],
     image: "/characters/bass.png",
-    songIds: ["louis"],
+    songIds: ["louis", "monday", "tiny-space"],
   },
   {
     id: "holly",
@@ -319,6 +319,6 @@ export const characters: Character[] = [
       "Louis's granddaughter. She plays ukulele and busks with Louis at the market — the two of them a familiar duo, passing melodies and rhythm between trumpet and ukulele.",
     personalityTraits: ["Warm", "Playful", "Musical"],
     image: "/characters/PG1.png",
-    songIds: ["louis"],
+    songIds: ["louis", "monday", "tiny-space"],
   },
 ];
