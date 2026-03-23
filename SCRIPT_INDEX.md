@@ -7,73 +7,73 @@ Example: `page-ade-zuri-upstream line 7` = 7th element on that page.
 
 | Page ID | ~Line | Scene |
 |---------|-------|-------|
-| page-1 | 39 | RIVER Z — LATE AFTERNOON — AERIAL — WIDE |
-| page-2 | 55 | RIVER Z — APPROACHING TOWN — DUSK — CONTINUOU |
-| page-3 | 74 | MAMA AMARA — RIVER DOCKS — DUSK — CONTINUOUS |
-| page-3b | 118 | FISH MARKET — DUSK |
-| page-3c | 178 | THE MARKET CIRCLE — FRIDAY NIGHT — CONTINUOUS |
-| page-4 | 246 | FISH MARKET — STALLS — EVENING — CONTINUOUS |
-| page-5 | 261 | FISH MARKET — BUSKER |
-| page-sleep | 307 | MAMA AMARA — BOAT CABIN — LATE NIGHT |
-| page-trio-1 | 342 | FISH MARKET SQUARE — DAWN — GANG MEETING |
-| page-trio-2 | 379 |  |
-| page-trio-3 | 419 |  |
-| page-trio-sign | 495 | FISH MARKET — THROUGHOUT THE MORNING — MONTAG |
-| page-heist-1 | 514 | FISH MARKET SQUARE — MORNING — THE HEIST |
-| page-heist-2 | 541 |  |
-| page-heist-3 | 573 | FISH MARKET — ALLEY EDGE — CONTINUOUS |
-| page-delivery-1 | 608 | /EXT. DELIVERY TRUCK — MORNING |
-| page-delivery-2 | 635 | MARKET VENDOR — BACK LOADING — MORNING — CONT |
-| page-kane-1 | 675 | THE MARKET CIRCLE — SUSHI |
-| page-kane-2 | 717 | THE MARKET CIRCLE — CONTINUOUS |
-| page-j-cedar-1 | 737 | THE MARKET CIRCLE — MOMENTS LATER |
-| page-mama-amara-dock | 763 | MAMA AMARA — DOCK — LATE AFTERNOON |
-| page-holly-busking | 785 | MARKET CIRCLE — THE LONG WAY AROUND — CONTINU |
-| page-noticeboard | 803 | THE MARKET CIRCLE — NOTICE BOARD — CONTINUOUS |
-| page-sushi-girls | 841 | SUSHI |
-| page-rowboat-1 | 886 | RIVER Z — DOCK / JETTY — AFTERNOON |
-| page-rowboat-2 | 931 | RIVER Z — MOVING UPRIVER — CONTINUOUS |
-| page-uptown-1 | 964 | UPTOWN MARKET STRETCH — CONTINUOUS |
-| page-elmer-pepe-2 | 1009 | UPTOWN MARKET STRETCH — CONTINUOUS |
-| page-louis-girls | 1061 | FISH MARKET — LOUIS |
-| page-donut-heist | 1105 | DONUT SHOP — FRONT DOOR — NIGHT |
-| page-victor-marcus | 1160 | MU REGIONAL OFFICE — DOWNTOWN — NIGHT |
-| page-zuri-ade-tell | 1196 | MAMA AMARA — CABIN — NIGHT |
-| page-sea-can | 1259 | RIVER DOCKS — LATE NIGHT |
-| page-mama-sabine-vision | 1298 | MAMA AMARA — DOCK — NIGHT |
-| page-ade-zuri-upstream | 1373 | MAMA AMARA — RIVER Z — MORNING |
-| page-6 | 1436 | ROWBOAT — LATE MORNING — ACT II |
-| page-act2-pants-coffee | 1464 | MARKET — COFFEE STALL — LATE MORNING |
-| page-act2-pants-song | 1483 | MARKET STREETS — CONTINUOUS |
-| page-41 | 1501 | RIVER — UPSTREAM — SUNDAY — LATE MORNING |
-| page-act2-victor-market | 1531 | THE MARKET CIRCLE — DAY |
-| page-act2-ade-zuri-dry | 1557 | MAMA AMARA — TOP DECK — DAY |
-| page-42 | 1579 | MAMA AMARA — DOCK — SUNDAY — AFTERNOON |
-| page-43 | 1602 | TOWN HALL — SUNDAY — EVENING |
-| page-44 | 1639 | DOCK STAGE — SUNDAY — NIGHT |
-| page-45 | 1686 | MAMA AMARA — BOW — LATE NIGHT |
-| page-46 | 1738 | DOCK STAGE — LATE NIGHT |
-| page-47 | 1765 | RIVER DOCKS — EARLY MORNING |
-| page-48 | 1800 | MAMA AMARA — RIVER Z — MORNING — LATER |
-| page-49 | 1825 | MARSH — WETLANDS — LATE MORNING |
-| page-50 | 1876 | MARKET — NEAR TRAIN YARD — DAY |
-| page-51 | 1908 | MARKET — CHOP |
-| page-52 | 1947 | MAMA AMARA — RIVER Z — LATE AFTERNOON |
-| page-53 | 1975 | MAMA AMARA — RIVER Z — LATER |
-| page-54 | 1997 | MARKET SQUARE — NOTICE BOARD — DAY |
-| page-55 | 2020 | MAIN DOCK — NIGHT |
-| page-56 | 2043 | CREOLE HOTEL — NIGHT |
-| page-57 | 2073 | SUSHI |
-| page-58 | 2121 | CREOLE HOTEL — ENTRANCE — NEXT MORNING |
-| page-59 | 2140 | PARK — ACROSS FROM CREOLE HOTEL — MORNING |
-| page-60 | 2160 | /INT. CREOLE HOTEL — MORNING |
-| page-61 | 2182 | CREOLE HOTEL — EVACUATION AREA — MORNING — CO |
-| page-61-bus | 2216 | BUS — HIGHWAY — AFTERNOON |
-| page-61-mu | 2307 | MU HEADQUARTERS — CITY — LATE AFTERNOON |
-| page-61-elevator | 2325 | PENTHOUSE ELEVATOR — LOBBY — CONTINUOUS |
-| page-61-penthouse | 2346 | MU PENTHOUSE — EVENING |
-| page-61-secretary | 2374 | MU HEADQUARTERS — PENTHOUSE — NEXT MORNING |
-| page-62 | 2393 | MARKET SQUARE — SUSHI |
-| page-63 | 2412 | CAR — HIGHWAY TO RIVER Z — LATE AFTERNOON |
-| page-64 | 2439 | MARKET SQUARE — NIGHT |
-| page-65 | 2485 | PARK — EDGE OF SQUARE — LATER |
+| page-1 | 85 | RIVER Z — LATE AFTERNOON — AERIAL — WIDE |
+| page-2 | 101 | RIVER Z — APPROACHING TOWN — DUSK — CONTINUOU |
+| page-3 | 120 | MAMA AMARA — RIVER DOCKS — DUSK — CONTINUOUS |
+| page-3b | 164 | FISH MARKET — DUSK |
+| page-3c | 224 | THE MARKET CIRCLE — FRIDAY NIGHT — CONTINUOUS |
+| page-4 | 292 | FISH MARKET — STALLS — EVENING — CONTINUOUS |
+| page-5 | 307 | FISH MARKET — BUSKER |
+| page-sleep | 353 | MAMA AMARA — BOAT CABIN — LATE NIGHT |
+| page-trio-1 | 388 | FISH MARKET SQUARE — DAWN — GANG MEETING |
+| page-trio-2 | 425 |  |
+| page-trio-3 | 465 |  |
+| page-trio-sign | 541 | FISH MARKET — THROUGHOUT THE MORNING — MONTAG |
+| page-heist-1 | 560 | FISH MARKET SQUARE — MORNING — THE HEIST |
+| page-heist-2 | 587 |  |
+| page-heist-3 | 619 | FISH MARKET — ALLEY EDGE — CONTINUOUS |
+| page-delivery-1 | 654 | /EXT. DELIVERY TRUCK — MORNING |
+| page-delivery-2 | 681 | MARKET VENDOR — BACK LOADING — MORNING — CONT |
+| page-kane-1 | 721 | THE MARKET CIRCLE — SUSHI |
+| page-kane-2 | 763 | THE MARKET CIRCLE — CONTINUOUS |
+| page-j-cedar-1 | 783 | THE MARKET CIRCLE — MOMENTS LATER |
+| page-mama-amara-dock | 809 | MAMA AMARA — DOCK — LATE AFTERNOON |
+| page-holly-busking | 836 | MARKET CIRCLE — THE LONG WAY AROUND — CONTINU |
+| page-noticeboard | 854 | THE MARKET CIRCLE — NOTICE BOARD — CONTINUOUS |
+| page-sushi-girls | 892 | SUSHI |
+| page-rowboat-1 | 937 | RIVER Z — DOCK / JETTY — AFTERNOON |
+| page-rowboat-2 | 982 | RIVER Z — MOVING UPRIVER — CONTINUOUS |
+| page-uptown-1 | 1015 | UPTOWN MARKET STRETCH — CONTINUOUS |
+| page-elmer-pepe-2 | 1060 | UPTOWN MARKET STRETCH — CONTINUOUS |
+| page-louis-girls | 1112 | FISH MARKET — LOUIS |
+| page-donut-heist | 1156 | DONUT SHOP — FRONT DOOR — NIGHT |
+| page-victor-marcus | 1211 | MU REGIONAL OFFICE — DOWNTOWN — NIGHT |
+| page-zuri-ade-tell | 1247 | MAMA AMARA — CABIN — NIGHT |
+| page-sea-can | 1310 | RIVER DOCKS — LATE NIGHT |
+| page-mama-sabine-vision | 1349 | MAMA AMARA — DOCK — NIGHT |
+| page-ade-zuri-upstream | 1424 | MAMA AMARA — RIVER Z — MORNING |
+| page-6 | 1487 | ROWBOAT — LATE MORNING — ACT II |
+| page-act2-pants-coffee | 1515 | MARKET — COFFEE STALL — LATE MORNING |
+| page-act2-pants-song | 1534 | MARKET STREETS — CONTINUOUS |
+| page-41 | 1552 | RIVER — UPSTREAM — SUNDAY — LATE MORNING |
+| page-act2-victor-market | 1582 | THE MARKET CIRCLE — DAY |
+| page-act2-ade-zuri-dry | 1608 | MAMA AMARA — TOP DECK — DAY |
+| page-42 | 1633 | MAMA AMARA — DOCK — SUNDAY — AFTERNOON |
+| page-43 | 1656 | TOWN HALL — SUNDAY — EVENING |
+| page-44 | 1693 | DOCK STAGE — SUNDAY — NIGHT |
+| page-45 | 1740 | MAMA AMARA — BOW — LATE NIGHT |
+| page-46 | 1792 | DOCK STAGE — LATE NIGHT |
+| page-47 | 1819 | RIVER DOCKS — EARLY MORNING |
+| page-48 | 1854 | MAMA AMARA — RIVER Z — MORNING — LATER |
+| page-49 | 1879 | MARSH — WETLANDS — LATE MORNING |
+| page-50 | 1930 | MARKET — NEAR TRAIN YARD — DAY |
+| page-51 | 1962 | MARKET — CHOP |
+| page-52 | 2001 | MAMA AMARA — RIVER Z — LATE AFTERNOON |
+| page-53 | 2037 | MAMA AMARA — RIVER Z — LATER |
+| page-54 | 2061 | MARKET SQUARE — NOTICE BOARD — DAY |
+| page-55 | 2089 | MAIN DOCK — NIGHT |
+| page-56 | 2112 | CREOLE HOTEL — NIGHT |
+| page-57 | 2142 | SUSHI |
+| page-58 | 2190 | CREOLE HOTEL — ENTRANCE — NEXT MORNING |
+| page-59 | 2209 | PARK — ACROSS FROM CREOLE HOTEL — MORNING |
+| page-60 | 2229 | /INT. CREOLE HOTEL — MORNING |
+| page-61 | 2251 | CREOLE HOTEL — EVACUATION AREA — MORNING — CO |
+| page-61-bus | 2285 | BUS — HIGHWAY — AFTERNOON |
+| page-61-mu | 2376 | MU HEADQUARTERS — CITY — LATE AFTERNOON |
+| page-61-elevator | 2396 | PENTHOUSE ELEVATOR — LOBBY — CONTINUOUS |
+| page-61-penthouse | 2417 | MU PENTHOUSE — EVENING |
+| page-61-secretary | 2449 | MU HEADQUARTERS — PENTHOUSE — NEXT MORNING |
+| page-62 | 2468 | MARKET SQUARE — SUSHI |
+| page-63 | 2495 | CAR — HIGHWAY TO RIVER Z — LATE AFTERNOON |
+| page-64 | 2522 | MARKET SQUARE — NIGHT |
+| page-65 | 2568 | PARK — EDGE OF SQUARE — LATER |

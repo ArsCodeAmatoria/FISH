@@ -18,7 +18,7 @@ export const characters: Character[] = [
       "A sharp-witted 17-year-old who hears rhythm in everything. She grew up on the docks helping her father but secretly dreams of music like her late mother. Quietly rebellious, deeply observant, and naturally gifted — she sings only in private, terrified of performing where anyone can hear.",
     personalityTraits: ["Creative", "Observant", "Shy but determined"],
     image: "/characters/zuri.png",
-    songIds: ["fish", "fish-2", "stars-over-the-block"],
+    songIds: ["fish", "fish-2", "going-up", "stars-over-the-block"],
   },
   {
     id: "ade",
@@ -259,7 +259,7 @@ export const characters: Character[] = [
       "A few years older than Zuri, J is one of the Market Circle's fixtures — sharp, warm, and dressed like she stepped out of a 1960s jazz poster. High-waisted trousers, a fitted blouse, a headscarf tied just so. She knows every stall, every vendor, and every piece of news before it happens. She's the kind of person who makes a room feel like a party just by arriving in it.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
-    songIds: ["porcelain"],
+    songIds: ["going-up", "porcelain"],
   },
   {
     id: "cedar",
@@ -269,7 +269,7 @@ export const characters: Character[] = [
       "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
     personalityTraits: ["Steady", "Loyal", "Protective"],
     image: "/characters/misspine.png",
-    songIds: ["porcelain"],
+    songIds: ["going-up", "porcelain"],
   },
   {
     id: "sticks",
