@@ -3,7 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 import { Play, Pause, Download } from "lucide-react";
-import { scriptPages, pageLabels, type ScriptPage } from "@/data/script";
+import { scriptPages, pageLabels, getScriptPageStarts, getTotalScreenplayPages, type ScriptPage } from "@/data/script";
 import { characters } from "@/data/characters";
 import { songs } from "@/data/songs";
 import { sets } from "@/data/sets";
@@ -201,7 +201,7 @@ const ACTS: Array<{
       { label: "Heists & Delivery", start: 12, end: 16 },
       { label: "Kane & the Poster", start: 17, end: 23 },
       { label: "Rowboat & Uptown", start: 24, end: 27 },
-      { label: "Louis, Donut, Victor", start: 29, end: 31 },
+      { label: "Louis, Donut, Victor", start: 28, end: 31 },
       { label: "Sea Can, Sabine, Upstream", start: 32, end: 34 },
     ],
   },
@@ -236,7 +236,7 @@ const ACTS: Array<{
       { label: "Bus & Old Lady", start: 61, end: 61 },
       { label: "MU Building & Elevator", start: 62, end: 63 },
       { label: "Penthouse & Secretary", start: 64, end: 65 },
-      { label: "Square & Car", start: 67, end: 68 },
+      { label: "Square & Car", start: 66, end: 67 },
       { label: "Stars & THE END", start: 68, end: 69 },
     ],
   },
@@ -315,6 +315,9 @@ interface Props {
   openSet: (id: string) => void;
 }
 
+const scriptPageStarts = getScriptPageStarts(scriptPages);
+const totalScreenplayPages = getTotalScreenplayPages(scriptPages);
+
 export function ScriptSection({ openCharacter, openSet }: Props) {
   const [page, setPage] = useState(0);
   const [playingId, setPlayingId] = useState<string | null>(null);
@@ -323,6 +326,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
   const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const total = scriptPages.length;
   const current = scriptPages[page];
+  const currentScreenplayPage = scriptPageStarts[Math.min(page, scriptPageStarts.length - 1)] ?? 1;
 
   const pageCharacters = (current.characterIds ?? [])
     .map((id) => characters.find((c) => c.id === id))
@@ -450,7 +454,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                               className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
                               style={{ fontFamily: "var(--font-screenplay)" }}
                             >
-                              {String(idx + 1).padStart(2, "0")}
+                              {String(scriptPageStarts[idx] ?? idx + 1).padStart(2, "0")}
                             </span>
                             <span
                               className="line-clamp-2 text-[10px] leading-snug"
@@ -484,7 +488,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                           className="mt-0.5 shrink-0 text-[9px] tabular-nums text-white/40"
                           style={{ fontFamily: "var(--font-screenplay)" }}
                         >
-                          {String(idx + 1).padStart(2, "0")}
+                          {String(scriptPageStarts[idx] ?? idx + 1).padStart(2, "0")}
                         </span>
                         <span
                           className="line-clamp-2 text-[10px] leading-snug"
@@ -553,7 +557,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 ref={(el) => { pageRefs.current[idx] = el; }}
                 className="mb-1"
               >
-                {/* Page separator + number */}
+                {/* Page separator + number (screenplay format) */}
                 <div className="mb-5 flex items-center gap-3">
                   <div className="h-px flex-1 bg-white/10" />
                   <span
@@ -565,7 +569,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                     )}
                     style={{ fontFamily: "var(--font-screenplay)" }}
                   >
-                    {p.isBible ? p.id.replace("bible-", "§") : String(idx + 1).padStart(2, "0")}
+                    {p.isBible ? p.id.replace("bible-", "§") : String(scriptPageStarts[idx] ?? idx + 1)}
                   </span>
                   <div className="h-px flex-1 bg-white/10" />
                 </div>
@@ -643,13 +647,13 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
             </div>
           </a>
 
-          {/* Page counter */}
+          {/* Page counter — screenplay format (~55 lines/page) */}
           <div className="flex items-center gap-2 px-1">
             <span
               className="text-xl font-bold tabular-nums text-white"
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
-              {String(page + 1).padStart(2, "0")}
+              {String(currentScreenplayPage).padStart(2, "0")}
             </span>
             <div className="flex flex-col justify-center gap-0.5">
               <div className="h-px w-6 bg-white/20" />
@@ -657,7 +661,7 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
                 className="text-[10px] tabular-nums text-white/35"
                 style={{ fontFamily: "var(--font-screenplay)" }}
               >
-                {String(total).padStart(2, "0")}
+                {String(totalScreenplayPages).padStart(2, "0")}
               </span>
             </div>
             <span

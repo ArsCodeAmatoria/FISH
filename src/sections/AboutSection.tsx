@@ -84,9 +84,47 @@ export function AboutSection() {
                 The town revolves around the Market Circle: stalls, buskers, and a rhythm that never stops. Meanwhile, a comedic trio — Big Nay the pelican, Pants the cat, and Ripple the otter — stumble through fish &quot;redistribution,&quot; donut heists, and espresso-induced emergencies, unaware that their chaos will collide with a corporate threat.
               </p>
               <p>
-                MU, a global music platform, plans to build a data center upstream, using the river for cooling. The pumps are already warming the water. Fish are moving. Victor Kane, operations director, pushes the project at any cost. Marcus Vale, MU&apos;s CEO and a hometown boy, doesn&apos;t know the full picture. Zuri, her father, and the town must find proof, tell the story, and fight for what the river means to them.
+                MU, a global music platform, plans to build a data center upstream, using the river for cooling. The pumps are already warming the water. Fish are moving. Victor Kane, operations director, pushes the project at any cost. Marcus Vale, MU&apos;s CEO and a hometown boy, doesn&apos;t know the full picture.
+              </p>
+              <p>
+                Mama Sabine, the spiritual guide, reveals the truth about Amara: she didn&apos;t drown in fear. She saw Zuri reaching into the water and chose to give herself so her daughter could stay. The river mythology — Maman Fon-Dlo, memory that learned how to move — runs through everything. Sabine keeps Amara&apos;s recordings. When Zuri is ready, she&apos;ll hear her mother&apos;s voice again.
+              </p>
+              <p>
+                Zuri joins forces with J and Cedar — market girls who love Motown, who showed up from elsewhere and never looked back. They gather proof, chase Victor, and when the town plan fails, they take a bus to the city. They infiltrate MU headquarters, sing &quot;Up We Go&quot; in the penthouse elevator, and slide the evidence under Marcus&apos;s door. He reads it. He comes back. The market square fills. Zuri sings.
               </p>
             </div>
+          </div>
+
+          {/* By the Numbers */}
+          <div>
+            <h2
+              className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
+              style={{ fontFamily: "var(--font-cinematic)" }}
+            >
+              By the Numbers
+            </h2>
+            <p
+              className="text-sm leading-relaxed text-white/80"
+              style={{ fontFamily: "var(--font-screenplay)" }}
+            >
+              17 original songs · 70 script scenes · 4 acts with section navigation · ~120 min runtime
+            </p>
+          </div>
+
+          {/* Credits */}
+          <div>
+            <h2
+              className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-white/70"
+              style={{ fontFamily: "var(--font-cinematic)" }}
+            >
+              Credits
+            </h2>
+            <p
+              className="text-sm leading-relaxed text-white/80"
+              style={{ fontFamily: "var(--font-screenplay)" }}
+            >
+              Written by Leigh Akin · Produced by Kojin Fox
+            </p>
           </div>
         </div>
         </div>

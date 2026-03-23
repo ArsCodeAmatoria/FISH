@@ -34,7 +34,7 @@ export const songs: Song[] = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     image: "/characters/witchdoctor.png",
     writtenBy: "Leigh Akin",
-    audioSrc: "/songs/ECHO IN THE WATER.wav",
+    audioSrc: "/songs/Echo in the Water (2).wav",
   },
   {
     id: "redistribution",
@@ -146,12 +146,21 @@ export const songs: Song[] = [
   },
   {
     id: "going-up",
-    title: "Going Up",
+    title: "Up We Go",
     singers: "Zuri, J & Cedar",
-    description: "All three sing — going up, growing up, showing up. Sung in the penthouse elevator as they rise. Relief. Triumph. Determination.",
+    description: "Powerful Motown soul, gospel energy. Sung in the penthouse elevator as they rise — from the block to the top floor. Relief. Triumph. Truth stepping out.",
     image: "/characters/zuri.png",
     writtenBy: "Leigh Akin",
-    audioSrc: "/songs/going-up.wav",
+    audioSrc: "/songs/upwego.wav",
+  },
+  {
+    id: "carry-the-sound",
+    title: "Carry the Sound",
+    singers: "Marcus Vale",
+    description: "Marcus's early song about leaving town. Plays on the donut shop jukebox — Pants and Elmer hear it before Glazed. Soft, intimate, the kind that knows what it's walking away from.",
+    image: "/characters/MarcusVale1.png",
+    writtenBy: "Leigh Akin",
+    audioSrc: "/songs/Carry the Sound.wav",
   },
   {
     id: "pants-song",

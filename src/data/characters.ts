@@ -134,7 +134,7 @@ export const characters: Character[] = [
       "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. Zuri's music forces him to confront the community he left behind.",
     personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
     image: "/characters/MarcusVale1.png",
-    songIds: [],
+    songIds: ["carry-the-sound"],
   },
   {
     id: "victor-kane",
@@ -310,6 +310,26 @@ export const characters: Character[] = [
     personalityTraits: ["Free-spirited", "Warm", "Resilient"],
     image: "/characters/holly.png",
     songIds: ["keys-to-the-block", "hustle-busker"],
+  },
+  {
+    id: "bus-rider",
+    name: "Bus Rider",
+    role: "Mysterious Stranger",
+    description:
+      "An old woman on the bus to the city. Shawl, a basket in her lap, eyes that have seen too much. She speaks in riddles — the bird, the nest, first light. She tells the girls what they seek is not there until tomorrow.",
+    personalityTraits: ["Cryptic", "Wise", "Unfazed"],
+    image: "/characters/busrider.png",
+    songIds: [],
+  },
+  {
+    id: "elevator-sec",
+    name: "Elevator Guard",
+    role: "Penthouse Security",
+    description:
+      "A broad, unmoving guard at the penthouse elevator. The only way up. When his radio crackles with a lobby problem, he steps away — and the girls slip past.",
+    personalityTraits: ["Stoic", "Alert", "Outmaneuvered"],
+    image: "/characters/elevatorsec.png",
+    songIds: [],
   },
   {
     id: "pg",

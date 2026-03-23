@@ -156,7 +156,7 @@ MARKET CHARACTERS
 | 13 | **Gator** | Gator |
 | 14 | **Monday** | PG, Bass, Sticks (instrumental) |
 | 15 | **Tiny Space** | PG, Bass, Sticks, Chops (instrumental) |
-| 16 | **Going Up** | Zuri, J & Cedar |
+| 16 | **Up We Go** | Zuri, J & Cedar |
 | 17 | **The Girl Who Pooped Her Pants** | Pants |
 
 ---
