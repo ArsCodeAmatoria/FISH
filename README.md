@@ -9,14 +9,14 @@
 
 <br/>
 
-[![](https://img.shields.io/badge/GENRE-ANIMATED_MUSICAL-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
-[![](https://img.shields.io/badge/RUNTIME-120_MIN-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
-[![](https://img.shields.io/badge/SONGS-10_ORIGINALS-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
-[![](https://img.shields.io/badge/SCRIPT-120_PAGES-000000?style=for-the-badge&labelColor=111111)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/GENRE-ANIMATED_MUSICAL-000000?style=for-the-badge&labelColor=111111)](https://fish-kcqyntpgo-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/RUNTIME-120_MIN-000000?style=for-the-badge&labelColor=111111)](https://fish-kcqyntpgo-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/SONGS-17_ORIGINALS-000000?style=for-the-badge&labelColor=111111)](https://fish-kcqyntpgo-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/SCRIPT-70_SCENES-000000?style=for-the-badge&labelColor=111111)](https://fish-kcqyntpgo-kojin-foxs-projects.vercel.app)
 
 <br/>
 
-[![](https://img.shields.io/badge/WATCH_NOW-LIVE_ON_VERCEL-ffffff?style=for-the-badge&logo=vercel&logoColor=black&labelColor=ffffff)](https://fish-e0pyt6qbg-kojin-foxs-projects.vercel.app)
+[![](https://img.shields.io/badge/WATCH_NOW-LIVE_ON_VERCEL-ffffff?style=for-the-badge&logo=vercel&logoColor=black&labelColor=ffffff)](https://fish-kcqyntpgo-kojin-foxs-projects.vercel.app)
 
 </div>
 
@@ -34,7 +34,7 @@
 
 **FISH** is a cinematic web experience — a full animated feature world told through a
 widescreen side-scrolling slideshow. Characters, locations, songs, lyrics, and a
-120-page formatted screenplay. White on black. Film grain. All of it.
+formatted screenplay. White on black. Film grain. All of it.
 
 ---
 
@@ -50,28 +50,31 @@ widescreen side-scrolling slideshow. Characters, locations, songs, lyrics, and a
 
 ## THE STORY
 
-**ZURI** is fifteen. She hears rhythm in everything — the market, the river, the rain on
-the dock. Her father **ADE** lost his wife to a flood and banned music from their home.
-What Zuri doesn't know is that her late mother **AMARA** was the most beloved singer the
-river town had ever heard.
+**ZURI** is seventeen. She hears rhythm in everything — the market, the river, the rain on
+the dock. Her father **ADE** lost his wife **AMARA** to the river and has kept music at a
+distance ever since. What Zuri doesn't know at first is that her mother didn't drown in
+fear — she chose to give herself so Zuri could stay. Amara was the most beloved singer
+the river town had ever heard.
 
-When a corporate developer threatens to dam the river, Zuri uncovers her mother's
-recordings, assembles the most unlikely crew in town — a dramatic pelican, a sarcastic
-cat, and an otter with no regard for consequence — and leads a protest concert on the
-dock that changes everything.
+When **MU** — a music platform — plans to build a data center upstream, using the river
+for cooling, Zuri uncovers the truth with **J**, **Cedar**, and an unlikely crew: **Big Nay**
+(a dramatic pelican), **Pants** (a sarcastic cat), and **Ripple** (an otter with no regard
+for consequence). The river mythology — Maman Fon-Dlo, memory that learned how to move —
+guides them. Zuri finds her voice, leads a protest concert in the market square, and
+changes everything.
 
 ---
 
 ## THE WORLD
 
 | SLIDE | LOCATION | DESCRIPTION |
-|-------|----------|-------------|
+|-------|----------|--------------|
 | `00` | **FISH** | Title card — animated letter reveal, radial vignette, film grain |
 | `01` | **CHARACTERS** | Full-height portrait gallery with bios, traits, and playable songs |
 | `02` | **SETS** | Location artwork with INT./EXT. sluglines and scene context |
 | `03` | **SONGS** | Featured player + full track list with real audio playback |
 | `04` | **LYRICS** | Song lyrics in screenplay format with cast sidebar |
-| `05` | **SCRIPT** | 120-page formatted screenplay with act/scene navigation |
+| `05` | **SCRIPT** | Formatted screenplay with act/section navigation — 70 scenes, 4 acts |
 
 ---
 
@@ -84,10 +87,10 @@ MAIN CHARACTERS
 
 | CHARACTER | ROLE |
 |-----------|------|
-| **Zuri** | Protagonist — 15-year-old aspiring musician |
+| **Zuri** | Protagonist — 17-year-old aspiring musician |
 | **Ade** | Zuri's Father — hardworking fisherman |
-| **Louis** | Musical Mentor — elderly jazz musician |
-| **Mama Sabine** | Spiritual Guide & Witch Doctor |
+| **Louis** | Musical Mentor — elderly trumpet player |
+| **Mama Sabine** | Spiritual Guide & Keeper of Amara's recordings |
 | **Amara** | Zuri's Late Mother — the emotional engine of the story |
 
 ```
@@ -97,9 +100,9 @@ ANIMAL COMEDY TRIO
 
 | CHARACTER | ROLE |
 |-----------|------|
-| **Captain Beignet** | Leader of the Fish Thieves — dramatic pelican |
-| **Pants** | The Realist — sarcastic tabby cat |
-| **Ripple** | Accidental Chaos Agent — river otter |
+| **Big Nay** | Leader of the Fish Gang — dramatic pelican, philosopher of redistribution |
+| **Pants** | The Realist — sarcastic tabby, chaos strategist |
+| **Ripple** | Accidental Chaos Agent — river otter who nods and presses buttons |
 
 ```
 CORPORATE ANTAGONISTS
@@ -108,11 +111,9 @@ CORPORATE ANTAGONISTS
 
 | CHARACTER | ROLE |
 |-----------|------|
-| **Marcus Vale** | CEO — morally conflicted corporate leader |
-| **Victor Kane** | Primary Human Antagonist — ruthless operations director |
+| **Marcus Vale** | CEO of MU — morally conflicted, from the river town |
+| **Victor Kane** | Primary Antagonist — ruthless operations director |
 | **Henchman** | Victor Kane's on-the-ground enforcer |
-| **Fish Thief Cat** | Cunning market antagonist |
-| **Fish Thief Dog** | The muscle of the operation |
 
 ```
 MARKET CHARACTERS
@@ -121,20 +122,20 @@ MARKET CHARACTERS
 
 | CHARACTER | ROLE |
 |-----------|------|
-| **Sushi** | Sushi Shop Owner |
-| **J** | Market Girl |
-| **Cedar** | Market Girl |
-| **Sticks** | Market Busker & Market Boy |
-| **Chops** | Electric Guitar Busker |
-| **Bass** | Market Busker |
+| **Sushi** | Sushi Shop Owner — Woody Allen–style wit, notices the price of rice |
+| **J** | Market Girl — sharp, from elsewhere (NY energy), loves Motown |
+| **Cedar** | Market Girl — steady, from elsewhere (LA energy), loves Motown |
 | **Holly** | Fish Market Busker |
+| **Sticks** | Percussionist — buckets, crates, rhythm |
+| **Chops** | Electric Guitar Busker |
+| **Bass** | Market Busker — speaks in bass lines |
 
 ---
 
 ## ORIGINAL SOUNDTRACK
 
 ```
-10 ORIGINAL SONGS
+17 ORIGINAL SONGS
 ───────────────────────────────────────────────────────
 ```
 
@@ -142,44 +143,69 @@ MARKET CHARACTERS
 |---|-------|--------------|
 | 01 | **Fish** | Zuri |
 | 02 | **Fish (Reprise)** | Zuri |
-| 03 | **Echo in the Water** | Ripple & Chorus |
-| 04 | **Alien Groove** | Captain Beignet |
+| 03 | **Echo in the Water** | Mama Sabine |
+| 04 | **Redistribution** | Big Nay & Pants |
 | 05 | **Glazed** | Pants |
-| 06 | **Bank (River Z)** | Ensemble |
-| 07 | **Flow On** | Zuri |
-| 08 | **Quiet River** | Ade |
-| 09 | **Keys to the Block** | Holly |
-| 10 | **The Girl Who Pooped Her Pants** | Mama Sabine & Pants |
+| 06 | **Chaos** | Pants |
+| 07 | **Porcelain** | J & Cedar |
+| 08 | **Keys to the Block** | Holly |
+| 09 | **The Hustle Busker** | Holly |
+| 10 | **Stars Over the Block** | Zuri |
+| 11 | **Louis** | Louis, Chops, Sticks, Bass, PG |
+| 12 | **Chops** | Chops (instrumental) |
+| 13 | **Gator** | Gator |
+| 14 | **Monday** | PG, Bass, Sticks (instrumental) |
+| 15 | **Tiny Space** | PG, Bass, Sticks, Chops (instrumental) |
+| 16 | **Going Up** | Zuri, J & Cedar |
+| 17 | **The Girl Who Pooped Her Pants** | Pants |
 
 ---
 
 ## THE SCREENPLAY
 
 ```
-THREE ACTS · 22 LOCATIONS · 120 PAGES
+FOUR ACTS · 70 SCENES · ACT/SECTION NAVIGATION
 ───────────────────────────────────────────────────────
 
-ACT ONE    — The River Town. Zuri's world, Ade's grief, the market
-             alive with music she's not allowed to make.
+ACT I       — The River Town. Zuri's world, Ade's grief, the market alive.
+             Kane & the poster. Louis, the gang, upstream proof.
 
-ACT TWO    — The Discovery. Amara's recordings. The dam threat.
-             Unlikely alliances and the cost of speaking up.
+ACT IIa     — Trio wake. Victor & market. Town hall. Stage destroyed.
 
-ACT THREE  — The Concert. The dock stage. The river saved —
-             or at least, the fight begun.
+ACT IIb     — Councilor & ban. Downriver, gators, mother talk.
+             Polaroid evidence. Porcelain. Hotel chaos.
+
+ACT III     — Victor takes Marcus to HQ. Bus & old lady's riddle.
+             MU building. Elevator — Going Up. Penthouse. Secretary.
+             Marcus returns. Stars Over the Block. THE END.
 ```
+
+---
+
+## DEVELOPMENT
+
+```bash
+npm install
+npm run dev
+```
+
+- **Script index:** `npm run script-index` — generates `SCRIPT_INDEX.md` from `script.ts`
+- **Build:** `npm run build`
+- **Deploy:** Push to `main` or run `npx vercel --prod`
 
 ---
 
 ```
                     PRODUCED BY KOJIN FOX
+                    WRITTEN BY LEIGH AKIN
 ```
 
 <div align="center">
 
-[![](https://img.shields.io/badge/NEXT.JS_15-App_Router-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![](https://img.shields.io/badge/NEXT.JS_16-App_Router-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![](https://img.shields.io/badge/TYPESCRIPT-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![](https://img.shields.io/badge/TAILWIND_CSS-v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![](https://img.shields.io/badge/REACT-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 
 </div>
 
