@@ -166,7 +166,7 @@ export const scriptPages: ScriptPage[] = [
   },
   {
     id: "page-3b",
-    characterIds: ["zuri", "sushi"],
+    characterIds: ["zuri", "mango-vendor", "sushi"],
     setIds: ["fish-market", "market-square", "sushi-stall"],
     elements: [
       { type: "scene", text: "EXT. FISH MARKET — DUSK" },
@@ -368,8 +368,8 @@ export const scriptPages: ScriptPage[] = [
     setIds: ["river-docks"],
     elements: [
       { type: "scene", text: "INT. MAMA AMARA — BOAT CABIN — LATE NIGHT" },
-      { type: "action", text: "The boat rocks. The market has gone quiet. A few lanterns on the dock still burn, their reflections stretching long and gold across the black water." },
-      { type: "action", text: "ZURI lies in her bunk. Earbuds in. Eyes open, fixed on the ceiling. We cannot hear what she is listening to. But her hands are open beside her and her jaw is slightly loose — that particular stillness that music makes when it is working." },
+      { type: "action", text: "The boat rocks. The market has gone quiet. A few lanterns on the dock still burn, their reflections stretching long and gold across the black water. From a porthole near the bow — small spots of light on the river. Dancing. A disco ball, spinning somewhere inside." },
+      { type: "action", text: "ZURI lies in her bunk. Earbuds in. Above her, a small disco ball — her mother's — hangs from the ceiling. It catches the dock light through the porthole, turns slowly. Spots of silver circle her face, her hands, the pillow. Eyes open, fixed on the ceiling. We cannot hear what she is listening to. But her hands are open beside her and her jaw is slightly loose — that particular stillness that music makes when it is working." },
       { type: "action", text: "A sound above. Movement." },
       { type: "action", text: "ADE's feet on the ladder rungs. He climbs down in the dark, heading for the water jug. He turns." },
       { type: "action", text: "And sees her. The white earbuds. The faraway look on her face." },

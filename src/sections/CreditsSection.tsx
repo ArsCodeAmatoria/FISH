@@ -34,7 +34,6 @@ const creditLines: CreditLine[] = [
 
   { type: "heading", text: "Story By" },
   { type: "name", text: "Leigh Akin" },
-  { type: "name", text: "Marie-Claire Boudreaux" },
   { type: "gap" },
 
   { type: "heading", text: "Directed By" },
@@ -96,10 +95,15 @@ const creditLines: CreditLine[] = [
   { type: "role-name", role: "Chaos",                         name: "Pants" },
   { type: "role-name", role: "Porcelain",                     name: "J & Cedar" },
   { type: "role-name", role: "Keys to the Block",             name: "Holly" },
-  { type: "role-name", role: "The Hustle Busker",             name: "Holly" },
+  { type: "role-name", role: "The Hustle Busker (Busk Till Dawn)", name: "Holly" },
   { type: "role-name", role: "Stars Over the Block",          name: "Zuri" },
-  { type: "role-name", role: "Louis",                          name: "Louis" },
-  { type: "role-name", role: "Gator",                          name: "Gator" },
+  { type: "role-name", role: "Louis",                         name: "Louis, Chops, Sticks, Bass, PG" },
+  { type: "role-name", role: "Chops",                         name: "Chops" },
+  { type: "role-name", role: "Gator",                         name: "Gator" },
+  { type: "role-name", role: "Monday",                         name: "PG, Bass, Sticks" },
+  { type: "role-name", role: "Tiny Space",                    name: "PG, Bass, Sticks, Chops" },
+  { type: "role-name", role: "Up We Go",                      name: "Zuri, J & Cedar" },
+  { type: "role-name", role: "Carry the Sound",               name: "Marcus Vale" },
   { type: "role-name", role: "The Girl Who Pooped Her Pants", name: "Pants" },
   { type: "gap" },
 
@@ -317,8 +321,8 @@ export function CreditsSection() {
         {/* ── Center: Scrolling credits + player ──────────────── */}
         <div className="relative flex flex-1 flex-col overflow-hidden">
           {/* Fade masks top & bottom */}
-          <div className="pointer-events-none absolute top-0 left-0 right-0 z-10 h-16 bg-linear-to-b from-black to-transparent" />
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-24 bg-linear-to-t from-black to-transparent" />
+          <div className="pointer-events-none absolute top-0 left-0 right-0 z-10 h-16 bg-gradient-to-b from-black to-transparent" />
+          <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-24 bg-gradient-to-t from-black to-transparent" />
 
           {/* Credits scroll area — user scroll disabled, controlled by RAF */}
           <div
@@ -359,18 +363,18 @@ export function CreditsSection() {
                 if (line.type === "role-name") return (
                   <div
                     key={i}
-                    className="flex items-baseline justify-center gap-3 text-[12px]"
+                    className="mx-auto grid max-w-sm grid-cols-[1fr_auto_1fr] items-baseline gap-2 text-[12px]"
                   >
                     <span
-                      className="text-right text-white/40"
-                      style={{ fontFamily: "var(--font-screenplay)", minWidth: "120px" }}
+                      className="min-w-0 truncate text-right text-white/40"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {line.role}
                     </span>
-                    <span className="w-px self-stretch bg-white/15" />
+                    <span className="w-px self-stretch justify-self-center bg-white/15" aria-hidden />
                     <span
-                      className="text-left text-white/80"
-                      style={{ fontFamily: "var(--font-screenplay)", minWidth: "120px" }}
+                      className="min-w-0 truncate text-left text-white/80"
+                      style={{ fontFamily: "var(--font-screenplay)" }}
                     >
                       {line.name}
                     </span>
@@ -474,9 +478,9 @@ export function CreditsSection() {
               {[
                 { label: "Genre", value: "Animated Musical" },
                 { label: "Runtime", value: "120 min" },
-                { label: "Pages", value: "49 pages" },
-                { label: "Songs", value: "13 originals" },
-                { label: "Characters", value: "22 characters" },
+                { label: "Pages", value: "70 scenes" },
+                { label: "Songs", value: "17 originals" },
+                { label: "Characters", value: "34 characters" },
                 { label: "Locations", value: "27 sets" },
               ].map(({ label, value }) => (
                 <div key={label} className="flex items-center justify-between">

@@ -18,12 +18,12 @@ export function AboutSection() {
           sizes="40vw"
           priority
         />
-        <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/90" />
       </div>
 
       {/* ── Right: Content (pulls to center) ───────────────────── */}
       <div className="relative flex flex-1 flex-col overflow-y-auto pl-8 pr-12 pt-14 pb-20" style={{ scrollbarWidth: "none" }}>
-        <div className="absolute inset-0 bg-linear-to-l from-transparent via-transparent to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/40 pointer-events-none" />
         <div className="relative flex flex-col">
           <h1
             className="mb-5 section-heading text-2xl"
@@ -78,10 +78,10 @@ export function AboutSection() {
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
               <p>
-                In a coastal market town where music, food, and small lives intersect, the fishing tug <em>Mama Amara</em> brings 17-year-old Zuri home from the river each Friday. She helps her father Ade on the water, but secretly dreams of music like her late mother Amara — a passion Ade has shut out ever since the storm that took her. Zuri sings only in private, too afraid to perform where anyone can hear.
+                In a river market town where music, food, and small lives intersect, the fishing tug <em>Mama Amara</em> brings 17-year-old Zuri home from the river each Friday. She helps her father Ade on the water, but secretly dreams of music like her late mother Amara — a passion Ade has shut out ever since the storm that took her. Zuri sings only in private, too afraid to perform where anyone can hear.
               </p>
               <p>
-                The town revolves around the Market Circle: stalls, buskers, and a rhythm that never stops. Meanwhile, a comedic trio — Big Nay the pelican, Pants the cat, and Ripple the otter — stumble through fish &quot;redistribution,&quot; donut heists, and espresso-induced emergencies, unaware that their chaos will collide with a corporate threat.
+                The town revolves around the Market Circle: stalls, buskers, and a rhythm that never stops. Meanwhile, a comedic trio — Big Nay the pelican, Pants the cat, and Ripple the otter — stumble through fish &quot;redistribution,&quot; donut heists, and coffee-induced emergencies, unaware that their chaos will collide with a corporate threat.
               </p>
               <p>
                 MU, a global music platform, plans to build a data center upstream, using the river for cooling. The pumps are already warming the water. Fish are moving. Victor Kane, operations director, pushes the project at any cost. Marcus Vale, MU&apos;s CEO and a hometown boy, doesn&apos;t know the full picture.
@@ -123,7 +123,7 @@ export function AboutSection() {
               className="text-sm leading-relaxed text-white/80"
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
-              Written by Leigh Akin · Produced by Kojin Fox
+              Written and created by Leigh Akin
             </p>
           </div>
         </div>

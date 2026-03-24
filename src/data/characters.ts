@@ -15,8 +15,8 @@ export const characters: Character[] = [
     name: "Zuri",
     role: "Protagonist",
     description:
-      "A sharp-witted 17-year-old who hears rhythm in everything. She grew up on the docks helping her father but secretly dreams of music like her late mother. Quietly rebellious, deeply observant, and naturally gifted — she sings only in private, terrified of performing where anyone can hear.",
-    personalityTraits: ["Creative", "Observant", "Shy but determined"],
+      "A sharp-witted 17-year-old who hears rhythm in everything. She grew up on the docks helping her father but secretly dreams of music like her late mother. Quietly kind — she catches a fallen mango, hums to soothe a fussy toddler, tells Ade 'I miss her too' — but sings only in private, terrified of performing. By the end she finds her voice, overcomes her fear of the water, and sings to save the river.",
+    personalityTraits: ["Creative", "Observant", "Kind", "Shy then brave"],
     image: "/characters/zuri.png",
     songIds: ["fish", "fish-2", "going-up", "stars-over-the-block"],
   },
@@ -25,8 +25,8 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a clean handsome Caribbean face. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm tied to a music event and has kept Zuri away from music ever since. Beneath the stern exterior is a man learning that love sometimes means letting go.",
-    personalityTraits: ["Disciplined", "Protective", "Emotionally guarded"],
+      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a clean handsome Caribbean face. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm and has kept Zuri away from music. When she says 'I miss her too,' he answers 'I know.' By the end he tells her 'I'm with you. All the way' — and when she sings, he sees Amara. Love sometimes means letting go.",
+    personalityTraits: ["Disciplined", "Protective", "Quietly tender", "Learning to let go"],
     image: "/characters/ade.png",
     songIds: [],
   },
@@ -35,8 +35,8 @@ export const characters: Character[] = [
     name: "Louis",
     role: "Elder Busker",
     description:
-      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. Louis has played his corner of the market for years, these days often alongside his granddaughter PG on ukulele. He hears harmony where others hear noise, and he already knows what Zuri is before she does.",
-    personalityTraits: ["Wise", "Playful", "Philosophical"],
+      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. He plays with his granddaughter PG on ukulele. He hears harmony where others hear noise. He remembers when Zuri used to get up there with Marcus, before he left. He already knows what Zuri is before she does.",
+    personalityTraits: ["Wise", "Playful", "Sees what others miss"],
     image: "/characters/louis2.png",
     songIds: ["louis"],
   },
@@ -77,8 +77,8 @@ export const characters: Character[] = [
     name: "Pants",
     role: "Reluctant Accomplice",
     description:
-      "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos.",
-    personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic"],
+      "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos. By the end she quits the gang — 'Too much risk. And the drugs' — but stays close to Big Nay and Ripple. Still their friend.",
+    personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic", "Grounded"],
     image: "/characters/pants.png",
     songIds: ["redistribution", "glazed", "chaos", "pants-song"],
   },
@@ -109,7 +109,7 @@ export const characters: Character[] = [
     name: "Byte",
     role: "Marsh Gator",
     description:
-      "A spooky alligator who lurks in the marsh. Part of Gator's crew. Unnerving presence.",
+      "One of three alligators in the marsh. Spooky, still, unnerving — he sways with Gator's song. Part of the crew that blocks Zuri and Ade from the submerged dock post.",
     personalityTraits: ["Spooky", "Quiet", "Unnerving"],
     image: "/characters/byte.png",
     songIds: [],
@@ -119,8 +119,8 @@ export const characters: Character[] = [
     name: "Teddy",
     role: "Marsh Gator",
     description:
-      "A dumb, hungry alligator. Part of Gator's crew. Always thinking about the next meal.",
-    personalityTraits: ["Hungry", "Simple", "Persistent"],
+      "One of three alligators in the marsh. Dumb, hungry, drooling — he sways with Gator's song and nearly gets Zuri when she surfaces. Part of the crew that blocks the submerged dock.",
+    personalityTraits: ["Hungry", "Simple", "Dangerous when hungry"],
     image: "/characters/teddy.png",
     songIds: [],
   },
@@ -131,8 +131,8 @@ export const characters: Character[] = [
     name: "Marcus Vale",
     role: "Former Hometown Hero Turned Tech CEO",
     description:
-      "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. Zuri's music forces him to confront the community he left behind.",
-    personalityTraits: ["Pragmatic", "Reflective", "Morally conflicted"],
+      "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. When his secretary hands him the envelope the girls left under his door — the Polaroid, the river reports — something breaks. He drives to River Z. 'I'm going to hear what the river says.' He cancels the project. Comes home.",
+    personalityTraits: ["Pragmatic", "Reflective", "Capable of change", "Hometown heart"],
     image: "/characters/MarcusVale1.png",
     songIds: ["carry-the-sound"],
   },
@@ -141,8 +141,8 @@ export const characters: Character[] = [
     name: "Victor Kane",
     role: "Corporate Antagonist",
     description:
-      "Operations director pushing the construction project at any cost. Unlike Marcus, he has no emotional connection to the town — only targets. He secretly runs illegal dredging operations and is always three steps ahead, all of them for profit.",
-    personalityTraits: ["Ruthless", "Calculating", "Profit-driven"],
+      "Operations director pushing the construction project at any cost. Unlike Marcus, he has no emotional connection to the town — only targets. He runs illegal dredging, bribes the fishing warden, cuts the dock stage ropes to sabotage the town, and is always three steps ahead — all for profit.",
+    personalityTraits: ["Ruthless", "Calculating", "Profit-driven", "Saboteur"],
     image: "/characters/VictorKane.png",
     songIds: [],
   },
@@ -151,8 +151,8 @@ export const characters: Character[] = [
     name: "Henchman",
     role: "Victor Kane's Enforcer",
     description:
-      "Victor Kane's on-the-ground enforcer at the construction site. Does what he's told, asks no questions, and makes sure the project keeps moving no matter what stands in the way.",
-    personalityTraits: ["Obedient", "Intimidating", "Blunt"],
+      "Victor Kane's on-the-ground enforcer. Dumps waste in the river, bribes the fishing warden, cuts the dock stage ropes. When the trio's Polaroid catches him handing the Warden money, he becomes the evidence that brings Marcus home.",
+    personalityTraits: ["Obedient", "Intimidating", "Caught on film"],
     image: "/characters/henchman.png",
     songIds: [],
   },
@@ -184,6 +184,16 @@ export const characters: Character[] = [
       "Victor's other man in black. Same uniform. Same mission. No bookings. Move on.",
     personalityTraits: ["Imposing", "Impersonal", "Obedient"],
     image: "/characters/security2.png",
+    songIds: [],
+  },
+  {
+    id: "secretary",
+    name: "Secretary",
+    role: "Marcus Vale's Assistant",
+    description:
+      "Marcus's penthouse secretary. She brings coffee and mail, moves through the marble halls with practiced efficiency. The morning she finds the envelope under his door — unmarked, left by the girls — she hands it to him and changes everything.",
+    personalityTraits: ["Efficient", "Unassuming", "Pivotal"],
+    image: "/characters/secretary.png",
     songIds: [],
   },
   {
@@ -224,13 +234,23 @@ export const characters: Character[] = [
     name: "Fishing Warden",
     role: "Town Authority",
     description:
-      "An older rough man with white hair and beard — the town's fishery authority. He's seen the river in every season and trusts his gut over anyone's smooth talk. Announces the three-day fishing shutdown at the town hall meeting. By-the-book, but his book was written on the water.",
-    personalityTraits: ["Seasoned", "Stubborn", "No-nonsense"],
+      "An older rough man with white hair and beard — the town's fishery authority. He's seen the river in every season. Announces the three-day fishing shutdown. But he takes Victor's bribe — and when the Polaroid catches him accepting the cash, he's the proof that breaks the case.",
+    personalityTraits: ["Seasoned", "Compromised", "Exposed"],
     image: "/characters/warden.png",
     songIds: [],
   },
 
   // ── Market Characters ──────────────────────────────────────
+  {
+    id: "mango-vendor",
+    name: "Mango Vendor",
+    role: "Market Fruit Vendor",
+    description:
+      "The first vendor Zuri passes when she walks into the market. A mango rolls off his stack — she catches it without breaking stride, sets it back without looking. He calls after her: 'You're a good one.' She doesn't react. She wasn't doing it for thanks.",
+    personalityTraits: ["Warm", "Quick to notice", "Unhurried"],
+    image: "/characters/vendor1.png",
+    songIds: [],
+  },
   {
     id: "fishmonger",
     name: "The Vendor",
@@ -246,8 +266,8 @@ export const characters: Character[] = [
     name: "Sushi",
     role: "Sushi Shop Owner",
     description:
-      "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and always behind the counter.",
-    personalityTraits: ["Resourceful", "Sharp", "Welcoming"],
+      "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and deadpan — 'Catfish nigiri doesn't sell very well.' She obsesses over vinegar ratios, refuses to sell her stall to Victor Kane, and sends the girls off with 'Don't get arrested. I still need that bream by Thursday.'",
+    personalityTraits: ["Resourceful", "Sharp", "Deadpan", "Warm"],
     image: "/characters/sushi.png",
     songIds: [],
   },
@@ -316,8 +336,8 @@ export const characters: Character[] = [
     name: "Bus Rider",
     role: "Mysterious Stranger",
     description:
-      "An old woman on the bus to the city. Shawl, a basket in her lap, eyes that have seen too much. She speaks in riddles — the bird, the nest, first light. She tells the girls what they seek is not there until tomorrow.",
-    personalityTraits: ["Cryptic", "Wise", "Unfazed"],
+      "An old woman on the bus to the city. Shawl, a basket in her lap, eyes that have seen too much. She speaks in riddles — the bird, the nest, first light — and tells the girls what they seek is not there until tomorrow. She's been riding this route twenty years; she knows who gets on, who gets off, and when three girls with proof in a bag aren't going for the sights.",
+    personalityTraits: ["Cryptic", "Wise", "Unfazed", "Playful"],
     image: "/characters/busrider.png",
     songIds: [],
   },

@@ -10,9 +10,9 @@ export const crew: CrewMember[] = [
   {
     id: "leigh-akin",
     name: "Leigh Akin",
-    role: "Writer & Songwriter",
+    role: "Writer & Creator",
     description:
-      "Writer of FISH and composer of all original songs. Leigh Akin created the world of the river town, its characters, and the music that runs through every scene.",
+      "Story by Leigh Akin. Writer of FISH and composer of all original songs. Leigh Akin created the world of the river town, its characters, and the music that runs through every scene.",
     image: "/crew/leighakin.svg.png",
   },
 ];
