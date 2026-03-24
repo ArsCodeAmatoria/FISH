@@ -338,16 +338,19 @@ export function ScriptSection({ openCharacter, openSet }: Props) {
     .map((id) => sets.find((s) => s.id === id))
     .filter(Boolean) as typeof sets;
 
-  // Track visible page via IntersectionObserver
+  // Track visible page via IntersectionObserver — prefer topmost visible page
+  // so we show the correct songs (e.g. Gator not Chops) when between two sections
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        let topmostIdx = -1;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const idx = pageRefs.current.findIndex((r) => r === entry.target);
-            if (idx !== -1) setPage(idx);
+            if (idx !== -1 && (topmostIdx === -1 || idx < topmostIdx)) topmostIdx = idx;
           }
         });
+        if (topmostIdx !== -1) setPage(topmostIdx);
       },
       { root: scrollRef.current, threshold: 0.4 }
     );
