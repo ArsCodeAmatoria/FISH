@@ -89,7 +89,6 @@ MAIN CHARACTERS
 |-----------|------|
 | **Zuri** | Protagonist — 17-year-old aspiring musician |
 | **Ade** | Zuri's Father — hardworking fisherman |
-| **Louis** | Musical Mentor — elderly trumpet player |
 | **Mama Sabine** | Spiritual Guide & Keeper of Amara's recordings |
 | **Amara** | Zuri's Late Mother — the emotional engine of the story |
 
@@ -122,20 +121,19 @@ MARKET CHARACTERS
 
 | CHARACTER | ROLE |
 |-----------|------|
-| **Sushi** | Sushi Shop Owner — Woody Allen–style wit, notices the price of rice |
+| **Koi** | Sushi shop owner — sharp wit, notices the price of rice |
 | **J** | Market Girl — sharp, from elsewhere (NY energy), loves Motown |
 | **Cedar** | Market Girl — steady, from elsewhere (LA energy), loves Motown |
-| **Holly** | Fish Market Busker |
 | **Sticks** | Percussionist — buckets, crates, rhythm |
-| **Chops** | Electric Guitar Busker |
-| **Bass** | Market Busker — speaks in bass lines |
+| **Slide** | Electric guitar busker |
+| **Pocket** | Market busker — speaks in bass lines |
 
 ---
 
 ## ORIGINAL SOUNDTRACK
 
 ```
-17 ORIGINAL SONGS
+10 ORIGINAL SONGS
 ───────────────────────────────────────────────────────
 ```
 
@@ -145,19 +143,12 @@ MARKET CHARACTERS
 | 02 | **Fish (Reprise)** | Zuri |
 | 03 | **Echo in the Water** | Mama Sabine |
 | 04 | **Redistribution** | Big Nay & Pants |
-| 05 | **Glazed** | Pants |
-| 06 | **Chaos** | Pants |
-| 07 | **Porcelain** | J & Cedar |
-| 08 | **Keys to the Block** | Holly |
-| 09 | **The Hustle Busker** | Holly |
-| 10 | **Stars Over the Block** | Zuri |
-| 11 | **Louis** | Louis, Chops, Sticks, Bass, PG |
-| 12 | **Chops** | Chops (instrumental) |
-| 13 | **Gator** | Gator |
-| 14 | **Monday** | PG, Bass, Sticks (instrumental) |
-| 15 | **Tiny Space** | PG, Bass, Sticks, Chops (instrumental) |
-| 16 | **Up We Go** | Zuri, J & Cedar |
-| 17 | **The Girl Who Pooped Her Pants** | Pants |
+| 05 | **Chaos** | Pants |
+| 06 | **Porcelain** | J & Cedar |
+| 07 | **Stars Over the Block** | Zuri |
+| 08 | **Slide** | Slide (instrumental) |
+| 09 | **Up We Go** | Zuri, J & Cedar |
+| 10 | **Carry the Sound** | Marcus Vale |
 
 ---
 
@@ -168,11 +159,11 @@ FOUR ACTS · 70 SCENES · ACT/SECTION NAVIGATION
 ───────────────────────────────────────────────────────
 
 ACT I       — The River Town. Zuri's world, Ade's grief, the market alive.
-             Kane & the poster. Louis, the gang, upstream proof.
+             Kane & the poster. The circle, the gang, upstream proof.
 
 ACT IIa     — Trio wake. Victor & market. Town hall. Stage destroyed.
 
-ACT IIb     — Councilor & ban. Downriver, gators, mother talk.
+ACT IIb     — Councilor & ban. Downriver, marsh, mother talk.
              Polaroid evidence. Porcelain. Hotel chaos.
 
 ACT III     — Victor takes Marcus to HQ. Bus & old lady's riddle.

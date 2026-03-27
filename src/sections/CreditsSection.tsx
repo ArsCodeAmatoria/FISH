@@ -5,6 +5,9 @@ import Image from "next/image";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { songs } from "@/data/songs";
 import { crew } from "@/data/crew";
+import { scriptPages } from "@/data/script";
+import { characters } from "@/data/characters";
+import { sets } from "@/data/sets";
 import { cn } from "@/lib/utils";
 
 // ── Credit lines ────────────────────────────────────────────────────────────
@@ -60,29 +63,22 @@ const creditLines: CreditLine[] = [
   { type: "gap" },
   { type: "role-name", role: "Zuri",            name: "Celestine Baptiste" },
   { type: "role-name", role: "Ade",             name: "Marcel Fontenot" },
-  { type: "role-name", role: "Louis",           name: "Jean-Marc Moreau" },
   { type: "role-name", role: "Mama Sabine",     name: "Marie-Louise Thibodeaux" },
   { type: "role-name", role: "Amara",           name: "Sophie Durand" },
   { type: "role-name", role: "Big Nay",         name: "Jamal Washington" },
   { type: "role-name", role: "Pants",           name: "Keisha Thompson" },
   { type: "role-name", role: "Ripple",          name: "—" },
-  { type: "role-name", role: "Gator",           name: "Kwame Osei" },
-  { type: "role-name", role: "Byte",            name: "Linh Nguyen" },
-  { type: "role-name", role: "Teddy",           name: "Wei Zhang" },
   { type: "role-name", role: "Marcus Vale",     name: "Marcus Johnson" },
   { type: "role-name", role: "Victor Kane",     name: "Étienne Bernard" },
   { type: "role-name", role: "Henchman",        name: "Carlos Mendez" },
-  { type: "role-name", role: "Holly",           name: "Tamika Johnson" },
-  { type: "role-name", role: "Sushi",           name: "Hana Kim" },
+  { type: "role-name", role: "Koi",             name: "Hana Kim" },
   { type: "role-name", role: "J",               name: "Yuki Nakamura" },
   { type: "role-name", role: "Cedar",           name: "Clémentine Savoie" },
   { type: "role-name", role: "Sticks",          name: "DeShawn Williams" },
-  { type: "role-name", role: "Chops",           name: "Rashad Moore" },
-  { type: "role-name", role: "Bass",            name: "Mei Chen" },
+  { type: "role-name", role: "Slide",           name: "Rashad Moore" },
+  { type: "role-name", role: "Pocket",          name: "Mei Chen" },
   { type: "role-name", role: "The Councilor",   name: "Thierry Dubois" },
   { type: "role-name", role: "Fishing Warden",  name: "Pierre Laurent" },
-  { type: "role-name", role: "Elmer",           name: "Kenji Tanaka" },
-  { type: "role-name", role: "Pepe",            name: "Diego Rivera" },
   { type: "gap" },
 
   { type: "heading", text: "Original Songs" },
@@ -91,20 +87,12 @@ const creditLines: CreditLine[] = [
   { type: "role-name", role: "Fish (Reprise)",                name: "Zuri" },
   { type: "role-name", role: "Echo in the Water",             name: "Mama Sabine" },
   { type: "role-name", role: "Redistribution",                name: "Big Nay & Pants" },
-  { type: "role-name", role: "Glazed",                        name: "Pants" },
   { type: "role-name", role: "Chaos",                         name: "Pants" },
   { type: "role-name", role: "Porcelain",                     name: "J & Cedar" },
-  { type: "role-name", role: "Keys to the Block",             name: "Holly" },
-  { type: "role-name", role: "The Hustle Busker (Busk Till Dawn)", name: "Holly" },
   { type: "role-name", role: "Stars Over the Block",          name: "Zuri" },
-  { type: "role-name", role: "Louis",                         name: "Louis, Chops, Sticks, Bass, PG" },
-  { type: "role-name", role: "Chops",                         name: "Chops" },
-  { type: "role-name", role: "Gator",                         name: "Gator" },
-  { type: "role-name", role: "Monday",                         name: "PG, Bass, Sticks" },
-  { type: "role-name", role: "Tiny Space",                    name: "PG, Bass, Sticks, Chops" },
+  { type: "role-name", role: "Slide",                         name: "Slide" },
   { type: "role-name", role: "Up We Go",                      name: "Zuri, J & Cedar" },
   { type: "role-name", role: "Carry the Sound",               name: "Marcus Vale" },
-  { type: "role-name", role: "The Girl Who Pooped Her Pants", name: "Pants" },
   { type: "gap" },
 
   { type: "heading", text: "Music Production" },
@@ -478,10 +466,10 @@ export function CreditsSection() {
               {[
                 { label: "Genre", value: "Animated Musical" },
                 { label: "Runtime", value: "120 min" },
-                { label: "Pages", value: "70 scenes" },
-                { label: "Songs", value: "17 originals" },
-                { label: "Characters", value: "34 characters" },
-                { label: "Locations", value: "27 sets" },
+                { label: "Pages", value: `${scriptPages.length} scenes` },
+                { label: "Songs", value: `${songs.length} originals` },
+                { label: "Characters", value: `${characters.length} characters` },
+                { label: "Locations", value: `${sets.length} sets` },
               ].map(({ label, value }) => (
                 <div key={label} className="flex items-center justify-between">
                   <span

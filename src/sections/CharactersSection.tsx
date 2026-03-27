@@ -256,11 +256,10 @@ export function CharactersSection({ openCharacter }: Props) {
         style={{ scrollbarWidth: "none" }}
       >
         {[
-          { label: "Main",      ids: ["zuri","ade","papa-louis","mama-sabine","amara"] },
+          { label: "Main",      ids: ["zuri","ade","mama-sabine","amara"] },
           { label: "Town",      ids: ["the-councilor","fishing-warden"] },
-          { label: "Market",    ids: ["mango-vendor","sushi","j","cedar","sticks","chops","bass","holly","pg","fishmonger"] },
-          { label: "Comedy",    ids: ["big-nay","pants","ripple","elmer","pepe"] },
-          { label: "Marsh",     ids: ["gator","byte","teddy"] },
+          { label: "Market",    ids: ["mango-vendor","koi","j","cedar","sticks","slide","pocket","fishmonger"] },
+          { label: "Comedy",    ids: ["big-nay","pants","ripple"] },
           { label: "Corporate", ids: ["marcus-vale","secretary","victor-kane","henchman","oscar","security-1","security-2"] },
           { label: "City",      ids: ["bus-rider","elevator-sec"] },
         ].map(({ label, ids }) => (

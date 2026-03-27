@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 /**
- * Generates SCRIPT_INDEX.md from src/data/script.ts
+ * Generates SCRIPT_INDEX.md from src/data/script-draft2.ts (active draft)
  * Run: npm run script-index
  */
 const fs = require("fs");
 const path = require("path");
 
-const scriptPath = path.join(__dirname, "../src/data/script.ts");
+// Draft 1 holds literal page blocks; draft 2 may be a clone import — index both drafts’ beat ids from draft 1 until draft 2 is authored as a standalone file.
+const scriptPath = path.join(__dirname, "../src/data/script-draft1.ts");
 const outPath = path.join(__dirname, "../SCRIPT_INDEX.md");
 const content = fs.readFileSync(scriptPath, "utf8");
 const lines = content.split("\n");

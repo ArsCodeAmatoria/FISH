@@ -31,16 +31,6 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
-    id: "papa-louis",
-    name: "Louis",
-    role: "Elder Busker",
-    description:
-      "The Elder Busker of the Market Circle — a fixture of the town as much as the flame-tree or the lanterns. He plays with his granddaughter PG on ukulele. He hears harmony where others hear noise. He remembers when Zuri used to get up there with Marcus, before he left. He already knows what Zuri is before she does.",
-    personalityTraits: ["Wise", "Playful", "Sees what others miss"],
-    image: "/characters/louis2.png",
-    songIds: ["louis"],
-  },
-  {
     id: "mama-sabine",
     name: "Mama Sabine",
     role: "Spiritual Guide",
@@ -57,7 +47,7 @@ export const characters: Character[] = [
     description:
       "Zuri's late mother — a beloved singer who believed music could unite people. She died in a storm years before the story begins, but her voice lives on in recordings, and every path Zuri takes leads back to her.",
     personalityTraits: ["Soulful", "Courageous", "Artistic"],
-    image: "/characters/mother2.png",
+    image: "/characters/amara2.png",
     songIds: [],
   },
 
@@ -80,7 +70,7 @@ export const characters: Character[] = [
       "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos. By the end she quits the gang — 'Too much risk. And the drugs' — but stays close to Big Nay and Ripple. Still their friend.",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic", "Grounded"],
     image: "/characters/pants.png",
-    songIds: ["redistribution", "glazed", "chaos", "pants-song"],
+    songIds: ["redistribution", "chaos"],
   },
   {
     id: "ripple",
@@ -93,38 +83,6 @@ export const characters: Character[] = [
     songIds: [],
   },
 
-  // ── Marsh / River Creatures ────────────────────────────────
-  {
-    id: "gator",
-    name: "Gator",
-    role: "Marsh Gator",
-    description:
-      "An alligator with a smooth African accent. The self-proclaimed king of the shoreline. One mistake and he makes headlines. Sings his philosophy to anyone who gets too close to the water.",
-    personalityTraits: ["Smooth", "Theatrical", "Dangerous"],
-    image: "/characters/gator.png",
-    songIds: ["gator"],
-  },
-  {
-    id: "byte",
-    name: "Byte",
-    role: "Marsh Gator",
-    description:
-      "One of three alligators in the marsh. Spooky, still, unnerving — he sways with Gator's song. Part of the crew that blocks Zuri and Ade from the submerged dock post.",
-    personalityTraits: ["Spooky", "Quiet", "Unnerving"],
-    image: "/characters/byte.png",
-    songIds: [],
-  },
-  {
-    id: "teddy",
-    name: "Teddy",
-    role: "Marsh Gator",
-    description:
-      "One of three alligators in the marsh. Dumb, hungry, drooling — he sways with Gator's song and nearly gets Zuri when she surfaces. Part of the crew that blocks the submerged dock.",
-    personalityTraits: ["Hungry", "Simple", "Dangerous when hungry"],
-    image: "/characters/teddy.png",
-    songIds: [],
-  },
-
   // ── Corporate Antagonists ──────────────────────────────────
   {
     id: "marcus-vale",
@@ -133,7 +91,7 @@ export const characters: Character[] = [
     description:
       "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. When his secretary hands him the envelope the girls left under his door — the Polaroid, the river reports — something breaks. He drives to River Z. 'I'm going to hear what the river says.' He cancels the project. Comes home.",
     personalityTraits: ["Pragmatic", "Reflective", "Capable of change", "Hometown heart"],
-    image: "/characters/MarcusVale1.png",
+    image: "/characters/marcus2.png",
     songIds: ["carry-the-sound"],
   },
   {
@@ -143,7 +101,7 @@ export const characters: Character[] = [
     description:
       "Operations director pushing the construction project at any cost. Unlike Marcus, he has no emotional connection to the town — only targets. He runs illegal dredging, bribes the fishing warden, cuts the dock stage ropes to sabotage the town, and is always three steps ahead — all for profit.",
     personalityTraits: ["Ruthless", "Calculating", "Profit-driven", "Saboteur"],
-    image: "/characters/VictorKane.png",
+    image: "/characters/victor2.png",
     songIds: [],
   },
   {
@@ -196,27 +154,6 @@ export const characters: Character[] = [
     image: "/characters/secretary.png",
     songIds: [],
   },
-  {
-    id: "elmer",
-    name: "Elmer",
-    role: "Fish Thief Cat — Orange Tabby",
-    description:
-      "A lean, street-hardened orange tabby in a very small vest. Elmer runs his own fish thief outfit and does not appreciate newcomers using his gang sign. He is not unfriendly — just territorial and precise. He invented the Spock sign two years ago and will tell you so calmly and at length.",
-    personalityTraits: ["Territorial", "Precise", "Deadpan"],
-    image: "/characters/fishtheifcat.png",
-    songIds: [],
-  },
-  {
-    id: "pepe",
-    name: "Pepe",
-    role: "Fish Thief Dog — Chihuahua",
-    description:
-      "A Chihuahua with enormous eyes, a gentle disposition, and a warm Mexican accent. Elmer's partner — he rarely speaks but watches everything with quiet interest. When he does speak, or sing, it's in Spanish or with a melodic Mexican lilt. His paws are too small to make the gang sign properly, which he refuses to acknowledge. When Elmer is tense, Pepe is calm. They balance each other perfectly.",
-    personalityTraits: ["Gentle", "Observant", "Unflappable", "Warm", "Musical"],
-    image: "/characters/fishtheifdog1.png",
-    songIds: [],
-  },
-
 
   // ── Town Officials ──────────────────────────────────────────
   {
@@ -262,11 +199,11 @@ export const characters: Character[] = [
     songIds: [],
   },
   {
-    id: "sushi",
-    name: "Sushi",
-    role: "Sushi Shop Owner",
+    id: "koi",
+    name: "Koi",
+    role: "Fish Market Shop Owner",
     description:
-      "She runs the sushi shop at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and deadpan — 'Catfish nigiri doesn't sell very well.' She obsesses over vinegar ratios, refuses to sell her stall to Victor Kane, and sends the girls off with 'Don't get arrested. I still need that bream by Thursday.'",
+      "She runs the sushi bar at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and deadpan — 'Catfish nigiri doesn't sell very well.' She obsesses over vinegar ratios, refuses to sell her stall to Victor Kane, and sends the girls off with 'Don't get arrested. I still need that bream by Thursday.'",
     personalityTraits: ["Resourceful", "Sharp", "Deadpan", "Warm"],
     image: "/characters/sushi.png",
     songIds: [],
@@ -299,37 +236,27 @@ export const characters: Character[] = [
       "A high-energy street percussionist who performs using buckets, fish crates, and anything that makes noise. He loves rhythm and believes music should be loud, fun, and shared. He's among the first to treat Zuri like a fellow musician. Can turn any object into a drum.",
     personalityTraits: ["Rhythmic", "Restless", "Energetic"],
     image: "/characters/sticks.png",
-    songIds: ["louis", "monday", "tiny-space"],
+    songIds: [],
   },
   {
-    id: "chops",
-    name: "Chops",
+    id: "slide",
+    name: "Slide",
     role: "Market Busker",
     description:
       "The loudest personality on the block. He performs near the train yard, blasting electric guitar solos that sync with passing trains. Loves dramatic riffs and playful showmanship. Treats every performance like a stadium concert.",
     personalityTraits: ["Flashy", "Passionate", "Showman"],
     image: "/characters/chops.png",
-    songIds: ["chops", "louis", "tiny-space"],
+    songIds: ["slide"],
   },
   {
-    id: "bass",
-    name: "Bass",
+    id: "pocket",
+    name: "Pocket",
     role: "Market Busker",
     description:
       "Calm, quiet, and deeply cool. Rarely speaks and prefers communicating through bass lines — kids dance when she plays. When something important happens, she expresses it through music rather than words. Answers questions with bass riffs.",
     personalityTraits: ["Soulful", "Cool", "Grounded"],
     image: "/characters/bass.png",
-    songIds: ["louis", "monday", "tiny-space"],
-  },
-  {
-    id: "holly",
-    name: "Holly",
-    role: "Fish Market Busker",
-    description:
-      "Holly has the most traditional street-performer style — sings soulful songs in the open market square and her voice draws crowds naturally. She is the first person to tell Zuri she should sing publicly. A voice that makes strangers stop walking.",
-    personalityTraits: ["Free-spirited", "Warm", "Resilient"],
-    image: "/characters/holly.png",
-    songIds: ["keys-to-the-block", "hustle-busker"],
+    songIds: [],
   },
   {
     id: "bus-rider",
@@ -338,7 +265,7 @@ export const characters: Character[] = [
     description:
       "An old woman on the bus to the city. Shawl, a basket in her lap, eyes that have seen too much. She speaks in riddles — the bird, the nest, first light — and tells the girls what they seek is not there until tomorrow. She's been riding this route twenty years; she knows who gets on, who gets off, and when three girls with proof in a bag aren't going for the sights.",
     personalityTraits: ["Cryptic", "Wise", "Unfazed", "Playful"],
-    image: "/characters/busrider.png",
+    image: "/characters/busrider2.png",
     songIds: [],
   },
   {
@@ -350,15 +277,5 @@ export const characters: Character[] = [
     personalityTraits: ["Stoic", "Alert", "Outmaneuvered"],
     image: "/characters/elevatorsec.png",
     songIds: [],
-  },
-  {
-    id: "pg",
-    name: "PG",
-    role: "Louis's Granddaughter & Busker",
-    description:
-      "Louis's granddaughter. She plays ukulele and busks with Louis at the market — the two of them a familiar duo, passing melodies and rhythm between trumpet and ukulele.",
-    personalityTraits: ["Warm", "Playful", "Musical"],
-    image: "/characters/PG1.png",
-    songIds: ["louis", "monday", "tiny-space"],
   },
 ];

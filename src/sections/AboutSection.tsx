@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { scriptPages } from "@/data/script";
+import { songs } from "@/data/songs";
 
 export function AboutSection() {
   return (
@@ -107,7 +109,7 @@ export function AboutSection() {
               className="text-sm leading-relaxed text-white/80"
               style={{ fontFamily: "var(--font-screenplay)" }}
             >
-              17 original songs · 70 script scenes · 4 acts with section navigation · ~120 min runtime
+              {songs.length} original songs · {scriptPages.length} script scenes · 4 acts with section navigation · ~120 min runtime
             </p>
           </div>
 
