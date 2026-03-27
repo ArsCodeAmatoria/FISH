@@ -15,7 +15,7 @@ export const characters: Character[] = [
     name: "Zuri",
     role: "Protagonist",
     description:
-      "A sharp-witted 17-year-old who hears rhythm in everything. She grew up on the docks helping her father but secretly dreams of music like her late mother. Quietly kind — she catches a fallen mango, hums to soothe a fussy toddler, tells Ade 'I miss her too' — but sings only in private, terrified of performing. By the end she finds her voice, overcomes her fear of the water, and sings to save the river.",
+      "Zuri is caught between the life she has and the life she thinks she's supposed to chase. Raised in River Z, surrounded by music and memory, she's never believed her voice was enough to matter. She's observant, guarded, and quietly intense—but when she speaks, it carries weight. Her journey isn't about becoming talented—it's about becoming honest, and realizing that her voice has always been rooted in where she comes from.",
     personalityTraits: ["Creative", "Observant", "Kind", "Shy then brave"],
     image: "/characters/zuri.png",
     songIds: ["fish", "fish-2", "going-up", "stars-over-the-block"],
@@ -25,7 +25,7 @@ export const characters: Character[] = [
     name: "Ade",
     role: "Zuri's Father",
     description:
-      "A hardworking fisherman and Zuri's father — big, strong, and broad-shouldered, with a clean handsome Caribbean face. Disciplined, protective, and quietly grieving. He lost his wife Amara in a storm and has kept Zuri away from music. When she says 'I miss her too,' he answers 'I know.' By the end he tells her 'I'm with you. All the way' — and when she sings, he sees Amara. Love sometimes means letting go.",
+      "Ade is a fisherman who understands currents better than conversation. Since losing his wife, he's held tightly to routine, patience, and control—believing stability is the only way to protect what remains. He loves Zuri deeply but struggles to understand her need to leave. Over time, he learns that holding on too tightly can push people away, and that real love means trusting her to find her own way.",
     personalityTraits: ["Disciplined", "Protective", "Quietly tender", "Learning to let go"],
     image: "/characters/ade.png",
     songIds: [],
@@ -35,7 +35,7 @@ export const characters: Character[] = [
     name: "Mama Sabine",
     role: "Spiritual Guide",
     description:
-      "Owner of a mysterious shop of candles, shells, and records. Wise, calm, and slightly mystical — she speaks in poetic metaphors and seems to know things before they happen. She knew Zuri's mother well and keeps recordings of her voice.",
+      "Mama Sabine tends a world of candles, shells, and recordings—where memory stays audible. Wise, calm, and slightly mystical, she speaks in metaphor and seems to know the river's mind before it shows on the surface. She helps Zuri feel the story's deeper truth: that nothing real is ever lost—it only changes form.",
     personalityTraits: ["Mysterious", "Cryptic", "Powerful", "Insightful"],
     image: "/characters/witchdoctor.png",
     songIds: ["echo-in-the-water"],
@@ -45,7 +45,7 @@ export const characters: Character[] = [
     name: "Amara",
     role: "Zuri's Late Mother",
     description:
-      "Zuri's late mother — a beloved singer who believed music could unite people. She died in a storm years before the story begins, but her voice lives on in recordings, and every path Zuri takes leads back to her.",
+      "Amara is Zuri's mother—gone, but never truly absent. Her presence lingers in the river, in memory, and in music. Through her, the boundary between the physical and the spiritual softens. She represents the deeper truth of the story: that nothing real is ever lost—it simply changes form.",
     personalityTraits: ["Soulful", "Courageous", "Artistic"],
     image: "/characters/amara2.png",
     songIds: [],
@@ -57,7 +57,7 @@ export const characters: Character[] = [
     name: "Big Nay",
     role: "Leader of the Fish Thieves",
     description:
-      "A large pelican and self-declared philosopher of the market. He talks like a rapper and thinks like a preacher — theatrical, morally flexible, and completely convinced that stealing fish is not stealing, it is redistribution. He leads the gang with enormous confidence and zero planning. His manifesto has a beat.",
+      "Big Nay sees the world as a system—and systems, to him, are meant to be adjusted. Smooth, observant, and endlessly rationalizing, he calls what he does \"redistribution.\" Others might disagree. He's funny, clever, and always thinking a step ahead, using charm and logic to justify moves that blur the line between right and wrong.",
     personalityTraits: ["Theatrical", "Philosophical", "Absolutely certain he's right"],
     image: "/characters/captain.png",
     songIds: ["redistribution"],
@@ -67,7 +67,7 @@ export const characters: Character[] = [
     name: "Pants",
     role: "Reluctant Accomplice",
     description:
-      "An extremely clean and organised cat forced into messy fish-stealing adventures. She constantly grooms herself and hates getting dirty — whenever Ripple splashes water on her she freezes in horror. Her dry sarcasm contrasts sharply with the others' chaos. By the end she quits the gang — 'Too much risk. And the drugs' — but stays close to Big Nay and Ripple. Still their friend.",
+      "Pants doesn't break systems—she shifts them. Quick-thinking and precise, she believes the smallest change can create the biggest outcome. She moves through the world with quiet confidence, creating chaos not through force, but through subtle, strategic disruption. To her, you don't fight obstacles—you reroute them.",
     personalityTraits: ["Sarcastic", "Perfectionist", "Dramatic", "Grounded"],
     image: "/characters/pants.png",
     songIds: ["redistribution", "chaos"],
@@ -77,7 +77,7 @@ export const characters: Character[] = [
     name: "Ripple",
     role: "Chaos Engine",
     description:
-      "A sleek black river otter with a slightly bulldog-shaped head — compact, solid, and built like a small battering ram. He never speaks; he nods. That head is the source of most of the trio's structural damage. He loves water, gadgets, and pressing buttons he should not press. He bumps into things with cheerful, total commitment. Despite the chaos, his curiosity accidentally helps uncover the villain's scheme.",
+      "Ripple is pure motion. He acts before thinking, feels everything deeply, and often sets events in motion without realizing it. Loyal and impulsive, he brings heart and unpredictability to every situation. If anyone embodies the idea that small actions can create big waves, it's him.",
     personalityTraits: ["Curious", "Chaotic", "Joyful"],
     image: "/characters/ripple.png",
     songIds: [],
@@ -87,9 +87,9 @@ export const characters: Character[] = [
   {
     id: "marcus-vale",
     name: "Marcus Vale",
-    role: "Former Hometown Hero Turned Tech CEO",
+    role: "Global Star · Son of River Z",
     description:
-      "A hometown boy turned tech CEO whose company plans to build a data center that will destroy the marsh. He's not cruel — just disconnected. When his secretary hands him the envelope the girls left under his door — the Polaroid, the river reports — something breaks. He drives to River Z. 'I'm going to hear what the river says.' He cancels the project. Comes home.",
+      "Marcus Vale is proof that someone from River Z can make it out. A global music star with a past tied to the town, he represents everything Zuri thinks she wants. But success has come at a cost—distance, disconnection, and a quiet loss of identity. When he returns, he's forced to confront the truth: he didn't just leave the town—he left a part of himself behind.",
     personalityTraits: ["Pragmatic", "Reflective", "Capable of change", "Hometown heart"],
     image: "/characters/marcus2.png",
     songIds: ["carry-the-sound"],
@@ -99,7 +99,7 @@ export const characters: Character[] = [
     name: "Victor Kane",
     role: "Corporate Antagonist",
     description:
-      "Operations director pushing the construction project at any cost. Unlike Marcus, he has no emotional connection to the town — only targets. He runs illegal dredging, bribes the fishing warden, cuts the dock stage ropes to sabotage the town, and is always three steps ahead — all for profit.",
+      "Victor Kane is calm, controlled, and always thinking in terms of efficiency. He doesn't see himself as a villain—only as someone who improves systems that aren't working. To him, River Z is potential waiting to be optimized. His flaw is simple: he understands value, but not meaning.",
     personalityTraits: ["Ruthless", "Calculating", "Profit-driven", "Saboteur"],
     image: "/characters/victor2.png",
     songIds: [],
@@ -203,7 +203,7 @@ export const characters: Character[] = [
     name: "Koi",
     role: "Fish Market Shop Owner",
     description:
-      "She runs the sushi bar at the Fish Market, serving the freshest rolls on the river. Sharp-tongued, warm-hearted, and deadpan — 'Catfish nigiri doesn't sell very well.' She obsesses over vinegar ratios, refuses to sell her stall to Victor Kane, and sends the girls off with 'Don't get arrested. I still need that bream by Thursday.'",
+      "Koi is always nearby, always listening, and rarely surprised. A quiet observer with a dry sense of humor, she offers commentary that feels offhand but often cuts straight to the truth. While others are caught in the moment, Koi sees the bigger picture—one small remark at a time.",
     personalityTraits: ["Resourceful", "Sharp", "Deadpan", "Warm"],
     image: "/characters/sushi.png",
     songIds: [],
@@ -213,7 +213,7 @@ export const characters: Character[] = [
     name: "J",
     role: "Market Girl",
     description:
-      "A few years older than Zuri, J is one of the Market Circle's fixtures — sharp, warm, and dressed like she stepped out of a 1960s jazz poster. High-waisted trousers, a fitted blouse, a headscarf tied just so. She knows every stall, every vendor, and every piece of news before it happens. She's the kind of person who makes a room feel like a party just by arriving in it.",
+      "J is fearless in a way that feels earned. Expressive, sharp, and emotionally open, she pushes Zuri to stop holding back and step fully into herself. She understands that vulnerability isn't weakness—it's power. Where Cedar grounds, J ignites, bringing energy and confidence that challenges everyone around her to be more honest.",
     personalityTraits: ["Quick", "Street-smart", "Bold"],
     image: "/characters/J.png",
     songIds: ["going-up", "porcelain"],
@@ -223,7 +223,7 @@ export const characters: Character[] = [
     name: "Cedar",
     role: "Market Girl",
     description:
-      "One of the Market Girls — grounded and steady as the tree she's named for. Cedar keeps the group together when things get loud.",
+      "Cedar is grounded, steady, and quietly strong. She doesn't chase attention, but she sees things clearly and speaks with intention. Where Zuri hesitates, Cedar provides balance—reminding her of what's real and what matters. She's the kind of friend who doesn't just support you—she keeps you anchored when everything else starts to drift.",
     personalityTraits: ["Steady", "Loyal", "Protective"],
     image: "/characters/misspine.png",
     songIds: ["going-up", "porcelain"],
